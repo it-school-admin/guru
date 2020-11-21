@@ -1,0 +1,2 @@
+alter table GURU_SESSION add constraint FK_GURU_SESSION_ON_SPEAKER foreign key (SPEAKER_ID) references GURU_SPEAKER(ID);
+create index IDX_GURU_SESSION_ON_SPEAKER on GURU_SESSION (SPEAKER_ID);
