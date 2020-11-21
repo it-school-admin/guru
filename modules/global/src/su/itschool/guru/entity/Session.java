@@ -1,5 +1,7 @@
 package su.itschool.guru.entity;
 
+import com.haulmont.chile.core.annotations.MetaProperty;
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
@@ -9,6 +11,7 @@ import java.time.LocalDateTime;
 
 @Table(name = "GURU_SESSION")
 @Entity(name = "guru_Session")
+@NamePattern("%s|topic")
 public class Session extends StandardEntity {
     private static final long serialVersionUID = 479009085158631536L;
 
@@ -29,6 +32,18 @@ public class Session extends StandardEntity {
     @Column(name = "DURATION", nullable = false)
     @Positive
     private Integer duration;
+
+    @Lob
+    @Column(name = "DESCRIPTION")
+    private String description;
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     public Integer getDuration() {
         return duration;
@@ -60,5 +75,11 @@ public class Session extends StandardEntity {
 
     public void setTopic(String topic) {
         this.topic = topic;
+    }
+
+    @Transient
+    @MetaProperty(related = {"startTime", "duration"})
+    public LocalDateTime getEndTime() {
+        return (startTime != null && duration != null) ? startTime.plusHours(duration): null;
     }
 }
