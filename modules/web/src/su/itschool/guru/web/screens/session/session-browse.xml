@@ -20,6 +20,11 @@
     </data>
     <dialogMode height="600"
                 width="800"/>
+    <facets>
+        <editorScreen id="sessionEditorScreen" entityClass="su.itschool.guru.entity.Session" editMode="EDIT"
+                      openMode="DIALOG" screenClass="su.itschool.guru.web.screens.session.SessionEdit"
+                      container="sessionsDc"/>
+    </facets>
     <layout expand="sessionsTabSheet"
             spacing="true">
         <filter id="filter"
@@ -32,7 +37,7 @@
                  expand="sessionsCalendar">
                 <calendar id="sessionsCalendar" dataContainer="sessionsDc" descriptionProperty="description"
                           captionProperty="topic" endDateProperty="endTime" startDateProperty="startTime" navigationButtonsVisible="true"
-                          firstVisibleHourOfDay="8" lastVisibleHourOfDay="19">
+                          firstVisibleHourOfDay="8" lastVisibleHourOfDay="19" firstVisibleDayOfWeek="2">
                     <dayNames>
                         <day dayOfWeek="MONDAY" value="Понедельник"/>
                         <day dayOfWeek="TUESDAY" value="Вторник"/>
