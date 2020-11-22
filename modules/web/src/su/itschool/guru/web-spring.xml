@@ -7,5 +7,13 @@
     <context:component-scan base-package="su.itschool.guru"/>
     
     <gui:screens base-packages="su.itschool.guru.web"/>
+    <bean id="guru_proxyCreator" class="com.haulmont.cuba.web.sys.remoting.WebRemoteProxyBeanCreator">
+        <property name="serverSelector" ref="cuba_ServerSelector"/>
+        <property name="remoteServices">
+            <map>
+                <entry key="guru_SessionService" value="su.itschool.guru.service.SessionService"/>
+            </map>
+        </property>
+    </bean>
 
 </beans>
