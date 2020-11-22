@@ -20,37 +20,57 @@
     </data>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="sessionsTable"
+    <layout expand="sessionsTabSheet"
             spacing="true">
         <filter id="filter"
                 applyTo="sessionsTable"
                 dataLoader="sessionsDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="sessionsTable"
-                    width="100%"
-                    dataContainer="sessionsDc">
-            <actions>
-                <action id="create" type="create"/>
-                <action id="edit" type="edit"/>
-                <action id="remove" type="remove"/>
-            </actions>
-            <columns>
-                <column id="topic"/>
-                <column id="speaker"/>
-                <column id="startTime"/>
-                <column id="duration"/>
-                <column id="description"/>
-                <column id="endTime"/>
-            </columns>
-            <rowsCount/>
-            <buttonsPanel id="buttonsPanel"
-                          alwaysVisible="true">
-                <button id="createBtn" action="sessionsTable.create"/>
-                <button id="editBtn" action="sessionsTable.edit"/>
-                <button id="removeBtn" action="sessionsTable.remove"/>
-            </buttonsPanel>
-        </groupTable>
+        <tabSheet id="sessionsTabSheet">
+            <tab id="sessionsCalendarTab" caption="&#1050;&#1072;&#1083;&#1077;&#1085;&#1076;&#1072;&#1088;&#1100;" margin="true,false,false,false" spacing="true"
+                 expand="sessionsCalendar">
+                <calendar id="sessionsCalendar" dataContainer="sessionsDc" descriptionProperty="description"
+                          captionProperty="topic" endDateProperty="endTime" startDateProperty="startTime" navigationButtonsVisible="true"
+                          firstVisibleHourOfDay="8" lastVisibleHourOfDay="19">
+                    <dayNames>
+                        <day dayOfWeek="MONDAY" value="Понедельник"/>
+                        <day dayOfWeek="TUESDAY" value="Вторник"/>
+                        <day dayOfWeek="WEDNESDAY" value="Среда"/>
+                        <day dayOfWeek="THURSDAY" value="Четверг"/>
+                        <day dayOfWeek="FRIDAY" value="Пятница"/>
+                        <day dayOfWeek="SATURDAY" value="Суббота"/>
+                        <day dayOfWeek="SUNDAY" value="Воскресенье"/>
+                    </dayNames>
+                </calendar>
+            </tab>
+            <tab id="sessionsTableTab" caption="Tab">
+                <groupTable id="sessionsTable"
+                                    width="100%"
+                                    dataContainer="sessionsDc">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="remove" type="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="topic"/>
+                        <column id="speaker"/>
+                        <column id="startTime"/>
+                        <column id="duration"/>
+                        <column id="description"/>
+                        <column id="endTime"/>
+                    </columns>
+                    <rowsCount/>
+                    <buttonsPanel id="buttonsPanel"
+                                  alwaysVisible="true">
+                        <button id="createBtn" action="sessionsTable.create"/>
+                        <button id="editBtn" action="sessionsTable.edit"/>
+                        <button id="removeBtn" action="sessionsTable.remove"/>
+                    </buttonsPanel>
+                </groupTable>
+            </tab>
+        </tabSheet>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
