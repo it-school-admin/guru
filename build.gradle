@@ -166,3 +166,7 @@ task restart(dependsOn: ['stop', ":${modulePrefix}-core:deploy", ":${modulePrefi
 }
 restart.finalizedBy start
 
+task buildWar(type: CubaWarBuilding) {
+    singleWar = false
+    appProperties = ['cuba.automaticDatabaseUpdate': true]
+}
