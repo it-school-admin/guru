@@ -106,6 +106,13 @@ configure(coreModule) {
 
     task updateDb(dependsOn: assembleDbScripts, description: 'Updates local database', type: CubaDbUpdate) {
     }
+
+    task createTestDb(dependsOn: assemble, description: 'Creates local Postgres database for tests', type: CubaDbCreation) {
+        dbms = 'postgres'
+        dbName = 'sales_test'
+        dbUser = 'cuba'
+        dbPassword = 'cuba'
+    }
 }
 
 configure(webModule) {
