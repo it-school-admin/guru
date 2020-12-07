@@ -50,7 +50,7 @@
                     </dayNames>
                 </calendar>
             </tab>
-            <tab id="sessionsTableTab" caption="Tab">
+            <tab id="sessionsTableTab" caption="msg://sessionsTableTab.caption">
                 <groupTable id="sessionsTable"
                             width="100%"
                             dataContainer="sessionsDc"
