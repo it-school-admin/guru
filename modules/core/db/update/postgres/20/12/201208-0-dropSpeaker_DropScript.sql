@@ -1,0 +1,1 @@
+drop table if exists GURU_SPEAKER__U07756 cascade ;

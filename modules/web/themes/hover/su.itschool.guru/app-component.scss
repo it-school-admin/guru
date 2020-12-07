@@ -1,0 +1,5 @@
+@import "hover-ext";
+
+@mixin su_itschool_guru {
+  @include su_itschool_guru-hover-ext;
+}

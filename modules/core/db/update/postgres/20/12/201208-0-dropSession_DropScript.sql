@@ -1,0 +1,1 @@
+drop table if exists GURU_SESSION__U90678 cascade ;
