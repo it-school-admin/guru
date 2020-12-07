@@ -36,8 +36,8 @@ public class SampleIntegrationTest {
     public static void afterAll() throws Exception {
     }
 
-    @Test
     @Ignore //TODO enable
+    @Test
     public void testLoadUser() {
         try (Transaction tx = persistence.createTransaction()) {
             EntityManager em = persistence.getEntityManager();
