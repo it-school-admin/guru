@@ -36,7 +36,7 @@ public class SampleIntegrationTest {
     public static void afterAll() throws Exception {
     }
 
-    @Ignore //TODO enable
+/*    @Ignore("not yet ready , Please ignore.")
     @Test
     public void testLoadUser() {
         try (Transaction tx = persistence.createTransaction()) {
@@ -48,5 +48,5 @@ public class SampleIntegrationTest {
             tx.commit();
             Assertions.assertEquals(1, users.size());
         }
-    }
+    }*/
 }
