@@ -26,9 +26,10 @@ public class SampleIntegrationTest {
 
     @BeforeAll
     public static void beforeAll() throws Exception {
+        /*TODO
         metadata = cont.metadata();
         persistence = cont.persistence();
-        dataManager = AppBeans.get(DataManager.class);
+        dataManager = AppBeans.get(DataManager.class);*/
     }
 
     @AfterAll
