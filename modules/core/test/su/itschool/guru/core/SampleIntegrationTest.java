@@ -38,6 +38,7 @@ public class SampleIntegrationTest {
 
     @Test
     @Ignore //TODO enable
+
     public void testLoadUser() {
         try (Transaction tx = persistence.createTransaction()) {
             EntityManager em = persistence.getEntityManager();
