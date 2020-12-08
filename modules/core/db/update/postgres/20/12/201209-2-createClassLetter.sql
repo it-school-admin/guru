@@ -1,0 +1,1 @@
+create unique index IDX_GURU_CLASS_LETTER_UK_LETTER on GURU_CLASS_LETTER (LETTER) where DELETE_TS is null ;
