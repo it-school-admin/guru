@@ -198,4 +198,5 @@ task buildWar(type: CubaWarBuilding) {
                      'cuba.dataSource.dbName': 'gurudb']
 
     includeJdbcDriver = true
+
 }
