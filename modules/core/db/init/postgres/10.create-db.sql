@@ -204,6 +204,7 @@ create table GURU_SCHOOL (
     DELETED_BY varchar(50),
     --
     ORGANIZATION_SHORT_NAME varchar(255) not null,
+    PARENT_ORGANIZATION_ID uuid,
     ORGANIZATION_COUNTRY varchar(255),
     ORGANIZATION_LONG_NAME varchar(255) not null,
     ORGANIZATION_DOMAIN varchar(255),
@@ -258,7 +259,24 @@ create table GURU_GROUP_FOR_LESSON (
     TEACHER_ID uuid not null,
     EMAIL varchar(255),
     TEAMS_TEAM varchar(255),
+    PARENT_GROUP_ID uuid,
     --
     primary key (ID)
 )^
 -- end GURU_GROUP_FOR_LESSON
+-- begin GURU_TEST_ENTITY
+create table GURU_TEST_ENTITY (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    TEST_ENTITY_NAME varchar(255),
+    --
+    primary key (ID)
+)^
+-- end GURU_TEST_ENTITY
