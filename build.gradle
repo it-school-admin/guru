@@ -192,7 +192,7 @@ task buildWar(type: CubaWarBuilding) {
     singleWar = false
     //TODO datasource settings should be removed
     appProperties = ['cuba.automaticDatabaseUpdate': true,
-                     'cuba.connectionUrlList'      : 'http://services.it-school.su/schedule-core/',
+                     'cuba.connectionUrlList'      : 'http://213.139.210.102:8080/schedule-core/',
                      'cuba.dataSource.username': 'gurudbuser',
                      'cuba.dataSource.password': 'guruDbUser',
                      'cuba.dataSource.dbName': 'gurudb']
