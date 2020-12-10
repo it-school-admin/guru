@@ -36,6 +36,18 @@ public class GroupForLesson extends StandardEntity {
     @Column(name = "TEAMS_TEAM")
     private String teamsTeam;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PARENT_GROUP_ID")
+    private GroupForLesson parentGroup;
+
+    public GroupForLesson getParentGroup() {
+        return parentGroup;
+    }
+
+    public void setParentGroup(GroupForLesson parentGroup) {
+        this.parentGroup = parentGroup;
+    }
+
     public String getTeamsTeam() {
         return teamsTeam;
     }

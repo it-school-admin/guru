@@ -3,9 +3,7 @@ package su.itschool.guru.entity;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Table(name = "GURU_SCHOOL")
@@ -18,6 +16,10 @@ public class EducationalOrganization extends StandardEntity {
     @Column(name = "ORGANIZATION_SHORT_NAME", nullable = false, unique = true)
     private String organizationShortName;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PARENT_ORGANIZATION_ID")
+    private EducationalOrganization parentOrganization;
+
     @Column(name = "ORGANIZATION_COUNTRY")
     private String organizationCountry;
 
@@ -27,6 +29,14 @@ public class EducationalOrganization extends StandardEntity {
 
     @Column(name = "ORGANIZATION_DOMAIN")
     private String organizationDomain;
+
+    public EducationalOrganization getParentOrganization() {
+        return parentOrganization;
+    }
+
+    public void setParentOrganization(EducationalOrganization parentOrganization) {
+        this.parentOrganization = parentOrganization;
+    }
 
     public String getOrganizationCountry() {
         return organizationCountry;
