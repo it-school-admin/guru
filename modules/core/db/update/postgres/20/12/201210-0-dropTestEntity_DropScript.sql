@@ -1,0 +1,1 @@
+drop table if exists GURU_TEST_ENTITY__U96565 cascade ;

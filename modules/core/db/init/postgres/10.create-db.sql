@@ -264,19 +264,3 @@ create table GURU_GROUP_FOR_LESSON (
     primary key (ID)
 )^
 -- end GURU_GROUP_FOR_LESSON
--- begin GURU_TEST_ENTITY
-create table GURU_TEST_ENTITY (
-    ID uuid,
-    VERSION integer not null,
-    CREATE_TS timestamp,
-    CREATED_BY varchar(50),
-    UPDATE_TS timestamp,
-    UPDATED_BY varchar(50),
-    DELETE_TS timestamp,
-    DELETED_BY varchar(50),
-    --
-    TEST_ENTITY_NAME varchar(255),
-    --
-    primary key (ID)
-)^
--- end GURU_TEST_ENTITY
