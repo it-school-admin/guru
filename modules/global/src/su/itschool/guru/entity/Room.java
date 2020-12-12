@@ -2,9 +2,7 @@ package su.itschool.guru.entity;
 
 import com.haulmont.cuba.core.entity.StandardEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Table(name = "GURU_ROOM")
@@ -18,6 +16,19 @@ public class Room extends StandardEntity {
 
     @Column(name = "IR_TEH_ID")
     private String irTehId;
+
+    @JoinColumn(name = "EDUCTAIONAL_ORGANIZATION_ID")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @NotNull
+    private EducationalOrganization eductaionalOrganization;
+
+    public void setEductaionalOrganization(EducationalOrganization eductaionalOrganization) {
+        this.eductaionalOrganization = eductaionalOrganization;
+    }
+
+    public EducationalOrganization getEductaionalOrganization() {
+        return eductaionalOrganization;
+    }
 
     public String getIrTehId() {
         return irTehId;
