@@ -18,5 +18,6 @@
         <class>su.itschool.guru.entity.LessonsGridTypeItem</class>
         <class>su.itschool.guru.entity.TimeTableTemplate</class>
         <class>su.itschool.guru.entity.TimeTableTemplateItem</class>
+        <class>su.itschool.guru.entity.TimeTableImport</class>
     </persistence-unit>
 </persistence>

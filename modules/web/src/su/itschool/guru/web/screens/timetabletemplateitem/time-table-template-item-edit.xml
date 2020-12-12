@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://timeTableTemplateItemEdit.caption"
+        focusComponent="form"
+        messagesPack="su.itschool.guru.web.screens.timetabletemplateitem">
+    <data>
+        <instance id="timeTableTemplateItemDc"
+                  class="su.itschool.guru.entity.TimeTableTemplateItem">
+            <view extends="_local">
+                <property name="timeTableTemplate" view="_minimal"/>
+                <property name="subject" view="_minimal"/>
+                <property name="groupForLesson" view="_minimal"/>
+            </view>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="timeTableTemplateItemDc">
+            <column width="350px">
+                <pickerField id="timeTableTemplateField" property="timeTableTemplate">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <pickerField id="subjectField" property="subject">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <pickerField id="groupForLessonField" property="groupForLesson">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+                <dateField id="timeStartField" property="timeStart"/>
+                <dateField id="timeEndField" property="timeEnd"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

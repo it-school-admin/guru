@@ -16,6 +16,7 @@ public class TimeTableTemplateItem extends StandardEntity {
     @OnDelete(DeletePolicy.CASCADE)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TIME_TABLE_TEMPLATE_ID")
+    @NotNull
     private TimeTableTemplate timeTableTemplate;
 
     @NotNull

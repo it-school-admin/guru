@@ -13,5 +13,9 @@
         <item screen="guru_Lesson.browse" caption="mainMsg://menu_config.guru_Lesson.browse"/>
         <item screen="guru_LessonsGrid.browse" caption="mainMsg://menu_config.guru_LessonsGrid.browse"/>
         <item screen="guru_LessonsGridTypeItem.browse" caption="mainMsg://menu_config.guru_LessonsGridTypeItem.browse"/>
+        <item screen="guru_TimeTableTemplate.browse" caption="mainMsg://menu_config.guru_TimeTableTemplate.browse"/>
+        <item screen="guru_TimeTableTemplateItem.browse"
+              caption="mainMsg://menu_config.guru_TimeTableTemplateItem.browse"/>
+        <item screen="guru_TimeTableImport.browse" caption="mainMsg://menu_config.guru_TimeTableImport.browse"/>
     </menu>
 </menu-config>

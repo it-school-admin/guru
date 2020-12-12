@@ -23,7 +23,6 @@ public class EducationalOrganization extends StandardEntity {
     @Column(name = "ORGANIZATION_COUNTRY")
     private String organizationCountry;
 
-    @NotNull
     @Column(name = "ORGANIZATION_LONG_NAME", nullable = false)
     private String organizationLongName;
 
