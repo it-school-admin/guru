@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://teacherEdit.caption"
+        focusComponent="form"
+        messagesPack="su.itschool.guru.web.screens.teacher">
+    <data>
+        <instance id="teacherDc"
+                  class="su.itschool.guru.entity.Teacher">
+            <view extends="_local">
+                <property name="organization" view="_minimal"/>
+            </view>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="teacherDc">
+            <column width="350px">
+                <textField id="teacherNameField" property="teacherName"/>
+                <textField id="teacherSecondNameField" property="teacherSecondName"/>
+                <textField id="teacherFamilyNameField" property="teacherFamilyName"/>
+                <textField id="teacherEmailField" property="teacherEmail"/>
+                <pickerField id="organizationField" property="organization">
+                    <actions>
+                        <action id="lookup" type="picker_lookup"/>
+                        <action id="clear" type="picker_clear"/>
+                    </actions>
+                </pickerField>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

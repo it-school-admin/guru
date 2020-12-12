@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://educationalOrganizationBrowse.caption"
+        focusComponent="educationalOrganizationsTable"
+        messagesPack="su.itschool.guru.web.screens.educationalorganization">
+    <data readOnly="true">
+        <collection id="educationalOrganizationsDc"
+                    class="su.itschool.guru.entity.EducationalOrganization">
+            <view extends="_local">
+                <property name="parentOrganization" view="_minimal"/>
+            </view>
+            <loader id="educationalOrganizationsDl">
+                <query>
+                    <![CDATA[select e from guru_School e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="educationalOrganizationsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="educationalOrganizationsTable"
+                dataLoader="educationalOrganizationsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="educationalOrganizationsTable"
+                    width="100%"
+                    dataContainer="educationalOrganizationsDc" caption="msg://educationalOrganizationsTable.caption">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="organizationShortName" caption="msg://organizationShortName.caption"/>
+                <column id="parentOrganization" caption="msg://parentOrganization.caption"/>
+                <column id="organizationCountry" caption="msg://organizationCountry.caption"/>
+                <column id="organizationLongName" caption="msg://organizationLongName.caption"/>
+                <column id="organizationDomain" caption="msg://organizationDomain.caption"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="educationalOrganizationsTable.create"/>
+                <button id="editBtn" action="educationalOrganizationsTable.edit"/>
+                <button id="removeBtn" action="educationalOrganizationsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

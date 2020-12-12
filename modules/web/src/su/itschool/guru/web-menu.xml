@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
     <menu id="application-guru" insertBefore="administration" caption="mainMsg://menu_config.application-guru">
+        <item screen="guru_School.browse" caption="mainMsg://menu_config.guru_School.browse"/>
+        <item screen="guru_Teacher.browse" caption="mainMsg://menu_config.guru_Teacher.browse"/>
+        <item screen="guru_SchoolClass.browse" caption="mainMsg://menu_config.guru_SchoolClass.browse"/>
     </menu>
 </menu-config>
