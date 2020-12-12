@@ -31,10 +31,11 @@
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
+                <action id="uploadSheduleFromFileAction"/>
             </actions>
             <columns>
                 <column id="importTime"/>
-                <column id="importFile"/>
+                <column id="importXMLData"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
@@ -42,6 +43,8 @@
                 <button id="createBtn" action="timeTableImportsTable.create"/>
                 <button id="editBtn" action="timeTableImportsTable.edit"/>
                 <button id="removeBtn" action="timeTableImportsTable.remove"/>
+                <button id="uploadFileBtn" caption="msg://uploadFileBtn.caption"
+                />
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

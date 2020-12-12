@@ -4,6 +4,7 @@ import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Lob;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
@@ -18,15 +19,16 @@ public class TimeTableImport extends StandardEntity {
     private LocalDateTime importTime;
 
     @NotNull
-    @Column(name = "IMPORT_FILE", nullable = false)
-    private String importFile;
+    @Lob
+    @Column(name = "IMPORT_XML_DATA", nullable = false)
+    private String importXMLData;
 
-    public String getImportFile() {
-        return importFile;
+    public String getImportXMLData() {
+        return importXMLData;
     }
 
-    public void setImportFile(String importFile) {
-        this.importFile = importFile;
+    public void setImportXMLData(String importXMLData) {
+        this.importXMLData = importXMLData;
     }
 
     public LocalDateTime getImportTime() {
