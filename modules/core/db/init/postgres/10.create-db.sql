@@ -224,6 +224,7 @@ create table GURU_SUBJECT (
     DELETED_BY varchar(50),
     --
     SUBJECT_NAME varchar(255),
+    PARENT_SUBJECT_ID uuid,
     --
     primary key (ID)
 )^
