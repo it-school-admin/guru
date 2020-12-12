@@ -14,9 +14,20 @@ public class Subject extends StandardEntity {
     @Column(name = "SUBJECT_NAME")
     private String subjectName;
 
+    @Column(name = "IR_TECH_ID", unique = true)
+    private Integer irTechId;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PARENT_SUBJECT_ID")
     private Subject parentSubject;
+
+    public void setIrTechId(Integer irTechId) {
+        this.irTechId = irTechId;
+    }
+
+    public Integer getIrTechId() {
+        return irTechId;
+    }
 
     public Subject getParentSubject() {
         return parentSubject;

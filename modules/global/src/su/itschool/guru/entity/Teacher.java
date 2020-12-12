@@ -30,10 +30,21 @@ public class Teacher extends StandardEntity {
     @Email(message = "{msg://guru_Teacher.teacherEmail.validation.Email}")
     private String teacherEmail;
 
+    @Column(name = "IR_TECH_ID", unique = true)
+    private Integer irTechId;
+
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "ORGANIZATION_ID")
     private EducationalOrganization organization;
+
+    public Integer getIrTechId() {
+        return irTechId;
+    }
+
+    public void setIrTechId(Integer irTechId) {
+        this.irTechId = irTechId;
+    }
 
     public EducationalOrganization getOrganization() {
         return organization;

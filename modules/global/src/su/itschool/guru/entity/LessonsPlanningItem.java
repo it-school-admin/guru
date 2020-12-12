@@ -32,6 +32,17 @@ public class LessonsPlanningItem extends StandardEntity {
     @JoinColumn(name = "EDUCATIONAL_PERIOD_ID")
     private EducationalPeriod educationalPeriod;
 
+    @Column(name = "IR_TECH_ID", unique = true)
+    private Integer irTechID;
+
+    public Integer getIrTechID() {
+        return irTechID;
+    }
+
+    public void setIrTechID(Integer irTechID) {
+        this.irTechID = irTechID;
+    }
+
     public EducationalPeriod getEducationalPeriod() {
         return educationalPeriod;
     }

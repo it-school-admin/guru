@@ -37,6 +37,17 @@ public class TimeTableTemplateItem extends StandardEntity {
     @Column(name = "TIME_END", nullable = false)
     private LocalDateTime timeEnd;
 
+    @Column(name = "IR_TECH_ID", unique = true)
+    private Integer irTechId;
+
+    public Integer getIrTechId() {
+        return irTechId;
+    }
+
+    public void setIrTechId(Integer irTechId) {
+        this.irTechId = irTechId;
+    }
+
     public void setTimeStart(LocalDateTime timeStart) {
         this.timeStart = timeStart;
     }

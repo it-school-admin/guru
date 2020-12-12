@@ -18,6 +18,10 @@ public class SchoolClass extends StandardEntity {
     @NotNull
     private ClassLevel classLevel;
 
+    @NotNull
+    @Column(name = "IR_TECH_ID", nullable = false)
+    private String irTechId;
+
     @JoinColumn(name = "CLASS_LETTER_ID")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @NotNull
@@ -50,6 +54,14 @@ public class SchoolClass extends StandardEntity {
 
     @Column(name = "DESCRIPTION")
     private String description;
+
+    public String getIrTechId() {
+        return irTechId;
+    }
+
+    public void setIrTechId(String irTechId) {
+        this.irTechId = irTechId;
+    }
 
     public void setMainLessonsGridType(LessonsGridType mainLessonsGridType) {
         this.mainLessonsGridType = mainLessonsGridType;
