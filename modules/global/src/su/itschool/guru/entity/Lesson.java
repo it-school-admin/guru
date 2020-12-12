@@ -15,6 +15,10 @@ public class Lesson extends StandardEntity {
     @JoinColumn(name = "STUDY_GROUP_ID")
     private GroupForLesson studyGroup;
 
+    @NotNull
+    @Column(name = "IS_DISTANT", nullable = false)
+    private Boolean isDistant = false;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SUBJECT_ID")
     private LessonsPlanningItem subject;
@@ -30,6 +34,14 @@ public class Lesson extends StandardEntity {
     @NotNull
     @Column(name = "END_TIME", nullable = false)
     private String endTime;
+
+    public Boolean getIsDistant() {
+        return isDistant;
+    }
+
+    public void setIsDistant(Boolean isDistant) {
+        this.isDistant = isDistant;
+    }
 
     public String getEndTime() {
         return endTime;

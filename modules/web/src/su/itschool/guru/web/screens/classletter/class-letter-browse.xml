@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://classLetterBrowse.caption"
+        focusComponent="classLettersTable"
+        messagesPack="su.itschool.guru.web.screens.classletter">
+    <data readOnly="true">
+        <collection id="classLettersDc"
+                    class="su.itschool.guru.entity.ClassLetter">
+            <view extends="_local"/>
+            <loader id="classLettersDl">
+                <query>
+                    <![CDATA[select e from guru_ClassLetter e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="classLettersTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="classLettersTable"
+                dataLoader="classLettersDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="classLettersTable"
+                    width="100%"
+                    dataContainer="classLettersDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="letter"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="classLettersTable.create"/>
+                <button id="editBtn" action="classLettersTable.edit"/>
+                <button id="removeBtn" action="classLettersTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

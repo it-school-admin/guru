@@ -4,5 +4,14 @@
         <item screen="guru_School.browse" caption="mainMsg://menu_config.guru_School.browse"/>
         <item screen="guru_Teacher.browse" caption="mainMsg://menu_config.guru_Teacher.browse"/>
         <item screen="guru_SchoolClass.browse" caption="mainMsg://menu_config.guru_SchoolClass.browse"/>
+        <item screen="guru_Subject.browse" caption="mainMsg://menu_config.guru_Subject.browse"/>
+        <item screen="guru_EductaionalYear.browse" caption="mainMsg://menu_config.guru_EductaionalYear.browse"/>
+        <item screen="guru_ClassLetter.browse" caption="mainMsg://menu_config.guru_ClassLetter.browse"/>
+        <item screen="guru_ClassLevel.browse" caption="mainMsg://menu_config.guru_ClassLevel.browse"/>
+        <item screen="guru_GroupForLesson.browse" caption="mainMsg://menu_config.guru_GroupForLesson.browse"/>
+        <item screen="guru_LessonsPlanningItem.browse" caption="mainMsg://menu_config.guru_LessonsPlanningItem.browse"/>
+        <item screen="guru_Lesson.browse" caption="mainMsg://menu_config.guru_Lesson.browse"/>
+        <item screen="guru_LessonsGrid.browse" caption="mainMsg://menu_config.guru_LessonsGrid.browse"/>
+        <item screen="guru_LessonsGridTypeItem.browse" caption="mainMsg://menu_config.guru_LessonsGridTypeItem.browse"/>
     </menu>
 </menu-config>

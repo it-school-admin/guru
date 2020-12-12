@@ -13,9 +13,10 @@
         <class>su.itschool.guru.entity.EducationalPeriod</class>
         <class>su.itschool.guru.entity.EductaionalYear</class>
         <class>su.itschool.guru.entity.Lesson</class>
-        <class>su.itschool.guru.entity.LessonsGridTypeItem</class>
         <class>su.itschool.guru.entity.LessonsGridType</class>
         <class>su.itschool.guru.entity.LessonsGridForClassPerDayOfWeek</class>
-        <class>su.itschool.guru.entity.MainGridItems</class>
+        <class>su.itschool.guru.entity.LessonsGridTypeItem</class>
+        <class>su.itschool.guru.entity.TimeTableTemplate</class>
+        <class>su.itschool.guru.entity.TimeTableTemplateItem</class>
     </persistence-unit>
 </persistence>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://groupForLessonBrowse.caption"
+        focusComponent="groupForLessonsTable"
+        messagesPack="su.itschool.guru.web.screens.groupforlesson">
+    <data readOnly="true">
+        <collection id="groupForLessonsDc"
+                    class="su.itschool.guru.entity.GroupForLesson">
+            <view extends="_local">
+                <property name="schoolClass" view="_minimal"/>
+                <property name="subject" view="_minimal"/>
+                <property name="teacher" view="_minimal"/>
+            </view>
+            <loader id="groupForLessonsDl">
+                <query>
+                    <![CDATA[select e from guru_GroupForLesson e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="groupForLessonsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="groupForLessonsTable"
+                dataLoader="groupForLessonsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="groupForLessonsTable"
+                    width="100%"
+                    dataContainer="groupForLessonsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="groupName"/>
+                <column id="schoolClass"/>
+                <column id="subject"/>
+                <column id="teacher"/>
+                <column id="email"/>
+                <column id="teamsTeam"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="groupForLessonsTable.create"/>
+                <button id="editBtn" action="groupForLessonsTable.edit"/>
+                <button id="removeBtn" action="groupForLessonsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

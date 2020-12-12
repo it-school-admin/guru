@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://eductaionalYearBrowse.caption"
+        focusComponent="eductaionalYearsTable"
+        messagesPack="su.itschool.guru.web.screens.eductaionalyear">
+    <data readOnly="true">
+        <collection id="eductaionalYearsDc"
+                    class="su.itschool.guru.entity.EductaionalYear">
+            <view extends="_local"/>
+            <loader id="eductaionalYearsDl">
+                <query>
+                    <![CDATA[select e from guru_EductaionalYear e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="eductaionalYearsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="eductaionalYearsTable"
+                dataLoader="eductaionalYearsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="eductaionalYearsTable"
+                    width="100%"
+                    dataContainer="eductaionalYearsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="name"/>
+                <column id="startDate"/>
+                <column id="endDate"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="eductaionalYearsTable.create"/>
+                <button id="editBtn" action="eductaionalYearsTable.edit"/>
+                <button id="removeBtn" action="eductaionalYearsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

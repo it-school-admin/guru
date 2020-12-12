@@ -57,20 +57,7 @@ create table GURU_CLASS_LETTER (
     primary key (ID)
 )^
 -- end GURU_CLASS_LETTER
--- begin GURU_MAIN_GRID_ITEMS
-create table GURU_MAIN_GRID_ITEMS (
-    ID uuid,
-    VERSION integer not null,
-    CREATE_TS timestamp,
-    CREATED_BY varchar(50),
-    UPDATE_TS timestamp,
-    UPDATED_BY varchar(50),
-    DELETE_TS timestamp,
-    DELETED_BY varchar(50),
-    --
-    primary key (ID)
-)^
--- end GURU_MAIN_GRID_ITEMS
+
 -- begin GURU_EDUCATIONAL_PERIODS
 create table GURU_EDUCATIONAL_PERIODS (
     ID uuid,
@@ -88,20 +75,7 @@ create table GURU_EDUCATIONAL_PERIODS (
     primary key (ID)
 )^
 -- end GURU_EDUCATIONAL_PERIODS
--- begin GURU_LESSONS_GRID_ITEM
-create table GURU_LESSONS_GRID_ITEM (
-    ID uuid,
-    VERSION integer not null,
-    CREATE_TS timestamp,
-    CREATED_BY varchar(50),
-    UPDATE_TS timestamp,
-    UPDATED_BY varchar(50),
-    DELETE_TS timestamp,
-    DELETED_BY varchar(50),
-    --
-    primary key (ID)
-)^
--- end GURU_LESSONS_GRID_ITEM
+
 -- begin GURU_LESSON
 create table GURU_LESSON (
     ID uuid,
@@ -114,6 +88,7 @@ create table GURU_LESSON (
     DELETED_BY varchar(50),
     --
     STUDY_GROUP_ID uuid not null,
+    IS_DISTANT boolean not null,
     SUBJECT_ID uuid,
     TEACHER_ID uuid,
     START_TIME varchar(255) not null,
@@ -153,6 +128,7 @@ create table GURU_LESSONS_GRID (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
+    LESSONS_GRID_TYPE_NAME varchar(255) not null,
     ORGANIZATION_ID uuid not null,
     --
     primary key (ID)
@@ -265,3 +241,60 @@ create table GURU_GROUP_FOR_LESSON (
     primary key (ID)
 )^
 -- end GURU_GROUP_FOR_LESSON
+-- begin GURU_LESSONS_GRID_TYPE_ITEM
+create table GURU_LESSONS_GRID_TYPE_ITEM (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    LESSON_NUMBER integer not null,
+    LESSON_START_TIME timestamp not null,
+    LESSON_END_TIME varchar(255),
+    GRID_TYPE varchar(255) not null,
+    --
+    primary key (ID)
+)^
+-- end GURU_LESSONS_GRID_TYPE_ITEM
+-- begin GURU_TIME_TABLE_TEMPLATE_ITEM
+create table GURU_TIME_TABLE_TEMPLATE_ITEM (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    TIME_TABLE_TEMPLATE_ID uuid,
+    SUBJECT_ID uuid not null,
+    GROUP_FOR_LESSON_ID uuid not null,
+    TIME_START timestamp not null,
+    TIME_END timestamp not null,
+    --
+    primary key (ID)
+)^
+-- end GURU_TIME_TABLE_TEMPLATE_ITEM
+-- begin GURU_TIME_TABLE_TEMPLATE
+create table GURU_TIME_TABLE_TEMPLATE (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    SCHOOL_CLASS_ID uuid not null,
+    EDUCATIONAL_YEAR_ID uuid not null,
+    SCHEDULE_NAME varchar(255) not null,
+    --
+    primary key (ID)
+)^
+-- end GURU_TIME_TABLE_TEMPLATE
