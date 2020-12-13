@@ -11,6 +11,9 @@ import org.xml.sax.SAXException;
 import su.itschool.guru.entity.Subject;
 import su.itschool.guru.entity.Teacher;
 import su.itschool.guru.entity.TimeTableImport;
+import su.itschool.guru.service.entityImortExecutors.EntityImportExecutor;
+import su.itschool.guru.service.entityImortExecutors.SubjectImportExecutor;
+import su.itschool.guru.service.entityImortExecutors.TeacherImportExecutor;
 
 import javax.inject.Inject;
 import javax.xml.parsers.DocumentBuilder;
@@ -23,6 +26,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+//TODO very bad code. Rewrite all!!!
 @Service(ImportIrTechXMLToDBService.NAME)
 public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBService {
 
@@ -32,22 +36,15 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
     @Override
     public List<StandardEntity> parseIrTechXML(TimeTableImport timeTableImport) {
 
-        System.out.println(timeTableImport.getImportedXMLData());
         List<StandardEntity> result = new ArrayList<>();
-        DocumentBuilderFactory factory =
-                DocumentBuilderFactory.newInstance();
         try {
-            DocumentBuilder builder = factory.newDocumentBuilder();
-            byte[] bytes = timeTableImport.getImportedXMLData().getBytes(StandardCharsets.UTF_8);
-            Document importedXML = builder.parse(new ByteArrayInputStream(bytes));
+            Element rootElement = getDocumentElementByXMLText(timeTableImport.getImportedXMLData());
 
-            Element rootElement = importedXML.getDocumentElement();
+            result.addAll(createChildEntities(rootElement, "teachers", new TeacherImportExecutor(Teacher.class), dataManager));
 
-            Node teachers = rootElement.getElementsByTagName("teachers").item(0);
-            result.addAll(createTeachersEntities(teachers));
+            result.addAll(createChildEntities(rootElement, "subjects", new SubjectImportExecutor(Subject.class), dataManager));
 
-            Node subjects = rootElement.getElementsByTagName("subjects").item(0);
-            result.addAll(createSubjectEntities(subjects));
+
         } catch (ParserConfigurationException e) {
             throw new RuntimeException(e);
         } catch (SAXException e) {
@@ -57,54 +54,39 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
         }
         return null;
     }
+    //TODO move to a separate class
+    private Collection<? extends StandardEntity> createChildEntities(Element rootElement, String elementName, EntityImportExecutor entityImportExecutor, DataManager dataManager) {
+        Node rootElementCollectionNode = getFirstChildNodeByName(rootElement, elementName);
+        return createChildEntities(rootElementCollectionNode, entityImportExecutor, dataManager);
+    }
 
-    private Collection<? extends StandardEntity> createSubjectEntities(Node subjects) {
-        ArrayList<Subject> result = new ArrayList<>();
-        NodeList subjectNodes = subjects.getChildNodes();
+    private Collection<? extends StandardEntity> createChildEntities(Node rootElementCollectionNode, EntityImportExecutor entityImportExecutor, DataManager dataManager) {
+        ArrayList<StandardEntity> result = new ArrayList<>();
+        NodeList subjectNodes = rootElementCollectionNode.getChildNodes();
         for(int i = 0; i < subjectNodes.getLength(); i++) {
             Node item = subjectNodes.item(i);
             if(item.getNodeType()==Node.ELEMENT_NODE){
-                result.add(createSubjectEntityByXML(subjectNodes.item(i)));
+                result.add(entityImportExecutor.execute(subjectNodes.item(i), dataManager));
             }
 
         }
         return result;
     }
 
-    private Subject createSubjectEntityByXML(Node item) {
-
-        //		<subject sid="92764" name="Астрономия" abbr="Астр">
-        Subject subject = dataManager.create(Subject.class);
-        subject.setIrTechId(Integer.valueOf(item.getAttributes().getNamedItem("sid").getNodeValue()));
-        subject.setSubjectName(item.getAttributes().getNamedItem("name").getNodeValue());
-        subject.setShortenedName(item.getAttributes().getNamedItem("abbr").getNodeValue());
-        dataManager.commit(subject);
-        return subject;
+    private Node getFirstChildNodeByName(Element rootElement, String nodeName) {
+        return rootElement.getElementsByTagName(nodeName).item(0);
     }
 
-    private Collection<? extends StandardEntity> createTeachersEntities(Node teachers) {
+    private Element getDocumentElementByXMLText(String xmlDataAsString) throws ParserConfigurationException, SAXException, IOException {
+        DocumentBuilderFactory factory =
+                DocumentBuilderFactory.newInstance();
+        DocumentBuilder builder = factory.newDocumentBuilder();
+        //TODO analize encoding
+        byte[] bytes = xmlDataAsString.getBytes(StandardCharsets.UTF_8);
+        Document importedXML = builder.parse(new ByteArrayInputStream(bytes));
 
-        ArrayList<Teacher> result = new ArrayList<>();
-        NodeList teacherNodes = teachers.getChildNodes();
-        for(int i = 0; i < teacherNodes.getLength(); i++) {
-            Node item = teacherNodes.item(i);
-            if(item.getNodeType()==Node.ELEMENT_NODE){
-                result.add(createTeacherEntityByXML(teacherNodes.item(i)));
-            }
-
-            }
-        return result;
+        Element rootElement = importedXML.getDocumentElement();
+        return rootElement;
     }
 
-    private Teacher createTeacherEntityByXML(Node item) {
-
-        //		<teacher tid="1296030" firstname="" middlename="" lastname=""/>
-        Teacher teacher = dataManager.create(Teacher.class);
-        teacher.setIrTechId(Integer.valueOf(item.getAttributes().getNamedItem("tid").getNodeValue()));
-        teacher.setTeacherName(item.getAttributes().getNamedItem("firstname").getNodeValue());
-        teacher.setTeacherSecondName(item.getAttributes().getNamedItem("middlename").getNodeValue());
-        teacher.setTeacherFamilyName(item.getAttributes().getNamedItem("lastname").getNodeValue());
-        dataManager.commit(teacher);
-        return teacher;
-    }
 }
