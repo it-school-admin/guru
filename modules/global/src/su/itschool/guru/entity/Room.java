@@ -31,7 +31,7 @@ public class Room extends StandardEntity {
         this.irTehId = irTehId;
     }
 
-    public Integer getIrTehId(@NotNull Integer id) {
+    public Integer getIrTehId() {
         return irTehId;
     }
 
