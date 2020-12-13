@@ -11,23 +11,13 @@ public class SubjectImportExecutor<Teacher> extends AbstractImportExecutorImpl {
     }
 
     @Override
-    public Subject execute(Node entityInformation, DataManager dataManager) {
-        //		<subject sid="92764" name="Астрономия" abbr="Астр">
-        Subject subject = dataManager.create(Subject.class);
-        subject.setIrTechId(getID(entityInformation, "sid"));
-        subject.setSubjectName(getStringAttributeValue(entityInformation, "name"));
-        subject.setShortenedName(getStringAttributeValue(entityInformation, "abbr"));
-        dataManager.commit(subject);
-        return subject;
-    }
-
-    @Override
-    protected void setEntityFields(StandardEntity entity, Node entityInformation) {
+    protected StandardEntity setEntityFields(StandardEntity entity, Node entityInformation) {
         //		<subject sid="92764" name="Астрономия" abbr="Астр">
         Subject subject = (Subject) entity;
         subject.setIrTechId(getID(entityInformation, "sid"));
         subject.setSubjectName(getStringAttributeValue(entityInformation, "name"));
         subject.setShortenedName(getStringAttributeValue(entityInformation, "abbr"));
+        return entity;
     }
 
 }

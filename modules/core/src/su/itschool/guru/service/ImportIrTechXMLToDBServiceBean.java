@@ -8,10 +8,12 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
+import su.itschool.guru.entity.Room;
 import su.itschool.guru.entity.Subject;
 import su.itschool.guru.entity.Teacher;
 import su.itschool.guru.entity.TimeTableImport;
 import su.itschool.guru.service.entityImortExecutors.EntityImportExecutor;
+import su.itschool.guru.service.entityImortExecutors.RoomImportExecutor;
 import su.itschool.guru.service.entityImortExecutors.SubjectImportExecutor;
 import su.itschool.guru.service.entityImortExecutors.TeacherImportExecutor;
 
@@ -40,9 +42,9 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
         try {
             Element rootElement = getDocumentElementByXMLText(timeTableImport.getImportedXMLData());
 
-            result.addAll(createChildEntities(rootElement, "teachers", new TeacherImportExecutor(Teacher.class), dataManager));
-
-            result.addAll(createChildEntities(rootElement, "subjects", new SubjectImportExecutor(Subject.class), dataManager));
+            addSubjects(result, rootElement);
+            addTeachers(result, rootElement);
+            addRooms(result, rootElement);
 
 
         } catch (ParserConfigurationException e) {
@@ -54,6 +56,20 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
         }
         return null;
     }
+
+    private void addRooms(List<StandardEntity> result, Element rootElement) {
+        result.addAll(createChildEntities(rootElement, "Rooms", new RoomImportExecutor(Room.class), dataManager));
+
+    }
+
+    private void addTeachers(List<StandardEntity> result, Element rootElement) {
+        result.addAll(createChildEntities(rootElement, "subjects", new SubjectImportExecutor(Subject.class), dataManager));
+    }
+
+    private void addSubjects(List<StandardEntity> result, Element rootElement) {
+        result.addAll(createChildEntities(rootElement, "teachers", new TeacherImportExecutor(Teacher.class), dataManager));
+    }
+
     //TODO move to a separate class
     private Collection<? extends StandardEntity> createChildEntities(Element rootElement, String elementName, EntityImportExecutor entityImportExecutor, DataManager dataManager) {
         Node rootElementCollectionNode = getFirstChildNodeByName(rootElement, elementName);
@@ -62,11 +78,11 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
 
     private Collection<? extends StandardEntity> createChildEntities(Node rootElementCollectionNode, EntityImportExecutor entityImportExecutor, DataManager dataManager) {
         ArrayList<StandardEntity> result = new ArrayList<>();
-        NodeList subjectNodes = rootElementCollectionNode.getChildNodes();
-        for(int i = 0; i < subjectNodes.getLength(); i++) {
-            Node item = subjectNodes.item(i);
+        NodeList childNodes = rootElementCollectionNode.getChildNodes();
+        for(int i = 0; i < childNodes.getLength(); i++) {
+            Node item = childNodes.item(i);
             if(item.getNodeType()==Node.ELEMENT_NODE){
-                result.add(entityImportExecutor.execute(subjectNodes.item(i), dataManager));
+                result.add(entityImportExecutor.execute(childNodes.item(i), dataManager));
             }
 
         }

@@ -18,9 +18,9 @@
         <form id="form" dataContainer="subjectDc">
             <column width="350px">
                 <textField id="subjectNameField" property="subjectName"/>
-                <textField id="irTechIdField" property="irTechId"/>
                 <textField id="shortenedNameField" property="shortenedName"/>
                 <pickerField id="parentSubjectField" property="parentSubject"/>
+                <textField id="irTechIdField" property="irTechId"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

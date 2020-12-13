@@ -17,23 +17,25 @@ public abstract class AbstractImportExecutorImpl<T extends StandardEntity> imple
     }
 
     @Override
-    public T execute(Node entityInformation, DataManager dataManager) {
+    public final T execute(Node entityInformation, DataManager dataManager) {
         T entity = dataManager.create(entityClass);
-
-        setEntityFields(entity, entityInformation);
-        dataManager.commit(entity);
+        dataManager.commit(setEntityFields(entity, entityInformation));
         return entity;
     }
 
-    protected abstract void setEntityFields(T entity, Node entityInformation);
+    protected abstract StandardEntity setEntityFields(T entity, Node entityInformation);
 
 
-    protected String getStringAttributeValue(Node entityInformation, String fieldName) {
+    protected final String getStringAttributeValue(Node entityInformation, String fieldName) {
         return entityInformation.getAttributes().getNamedItem(fieldName).getNodeValue();
     }
 
+    protected final Integer getIntegerAttributeValue(Node entityInformation, String fieldName) {
+        return Integer.valueOf(entityInformation.getAttributes().getNamedItem(fieldName).getNodeValue());
+    }
+
     @NotNull
-    protected Integer getID(Node entityInformation, String fieldName) {
+    protected final Integer getID(Node entityInformation, String fieldName) {
         return Integer.valueOf(entityInformation.getAttributes().getNamedItem(fieldName).getNodeValue());
     }
 

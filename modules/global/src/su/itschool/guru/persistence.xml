@@ -20,5 +20,6 @@
         <class>su.itschool.guru.entity.TimeTableTemplateItem</class>
         <class>su.itschool.guru.entity.TimeTableImport</class>
         <class>su.itschool.guru.entity.Room</class>
+        <class>su.itschool.guru.entity.Block</class>
     </persistence-unit>
 </persistence>

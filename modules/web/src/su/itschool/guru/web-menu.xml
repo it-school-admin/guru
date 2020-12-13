@@ -17,5 +17,6 @@
         <item screen="guru_TimeTableTemplateItem.browse"
               caption="mainMsg://menu_config.guru_TimeTableTemplateItem.browse"/>
         <item screen="guru_TimeTableImport.browse" caption="mainMsg://menu_config.guru_TimeTableImport.browse"/>
+        <item screen="guru_Room.browse" caption="mainMsg://menu_config.guru_Room.browse"/>
     </menu>
 </menu-config>

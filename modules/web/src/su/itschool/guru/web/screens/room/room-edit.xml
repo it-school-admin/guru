@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://roomEdit.caption"
+        focusComponent="form"
+        messagesPack="su.itschool.guru.web.screens.room">
+    <data>
+        <instance id="roomDc"
+                  class="su.itschool.guru.entity.Room">
+            <view extends="_local"/>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="roomDc">
+            <column width="350px">
+                <textField id="roomNameField" property="roomName"/>
+                <textField id="roomFloorField" property="roomFloor"/>
+                <textField id="roomSeatsAmountField" property="roomSeatsAmount"/>
+                <textField id="irTehIdField" property="irTehId"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

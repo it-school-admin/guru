@@ -14,28 +14,49 @@ public class Room extends StandardEntity {
     @Column(name = "ROOM_NAME", nullable = false)
     private String roomName;
 
+    @JoinColumn(name = "ROOM_BLOCK_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Block roomBlock;
+
+    @Column(name = "ROOM_FLOOR")
+    private String roomFloor;
+
+    @Column(name = "ROOM_SEATS_AMOUNT")
+    private Integer roomSeatsAmount;
+
     @Column(name = "IR_TEH_ID")
-    private String irTehId;
+    private Integer irTehId;
 
-    @JoinColumn(name = "EDUCTAIONAL_ORGANIZATION_ID")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @NotNull
-    private EducationalOrganization eductaionalOrganization;
-
-    public void setEductaionalOrganization(EducationalOrganization eductaionalOrganization) {
-        this.eductaionalOrganization = eductaionalOrganization;
+    public void setIrTehId(Integer irTehId) {
+        this.irTehId = irTehId;
     }
 
-    public EducationalOrganization getEductaionalOrganization() {
-        return eductaionalOrganization;
-    }
-
-    public String getIrTehId() {
+    public Integer getIrTehId(@NotNull Integer id) {
         return irTehId;
     }
 
-    public void setIrTehId(String irTehId) {
-        this.irTehId = irTehId;
+    public Integer getRoomSeatsAmount() {
+        return roomSeatsAmount;
+    }
+
+    public void setRoomSeatsAmount(Integer roomSeatsAmount) {
+        this.roomSeatsAmount = roomSeatsAmount;
+    }
+
+    public void setRoomBlock(Block roomBlock) {
+        this.roomBlock = roomBlock;
+    }
+
+    public Block getRoomBlock() {
+        return roomBlock;
+    }
+
+    public String getRoomFloor() {
+        return roomFloor;
+    }
+
+    public void setRoomFloor(String roomFloor) {
+        this.roomFloor = roomFloor;
     }
 
     public String getRoomName() {
