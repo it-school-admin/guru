@@ -35,7 +35,7 @@
             </actions>
             <columns>
                 <column id="importTime"/>
-                <column id="importXMLData"/>
+                <column id="importedXMLData"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

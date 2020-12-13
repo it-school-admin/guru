@@ -21,21 +21,22 @@ public class TimeTableImport extends StandardEntity {
     @NotNull
     @Lob
     @Column(name = "IMPORT_XML_DATA", nullable = false)
-    private String importXMLData;
+    private String importedXMLData;
 
-    public String getImportXMLData() {
-        return importXMLData;
+    public void setImportTime(LocalDateTime importTime) {
+        this.importTime = importTime;
     }
 
-    public void setImportXMLData(String importXMLData) {
-        this.importXMLData = importXMLData;
+    public String getImportedXMLData() {
+        return importedXMLData;
+    }
+
+    public void setImportedXMLData(String importedXMLData) {
+        this.importedXMLData = importedXMLData;
     }
 
     public LocalDateTime getImportTime() {
         return importTime;
     }
 
-    public void setImportTime(LocalDateTime importTime) {
-        this.importTime = importTime;
-    }
 }

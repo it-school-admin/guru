@@ -7,9 +7,6 @@
     <data readOnly="true">
         <collection id="teachersDc"
                     class="su.itschool.guru.entity.Teacher">
-            <view extends="_local">
-                <property name="organization" view="_minimal"/>
-            </view>
             <loader id="teachersDl">
                 <query>
                     <![CDATA[select e from guru_Teacher e]]>
@@ -39,7 +36,7 @@
                 <column id="teacherSecondName" caption="msg://teacherSecondName.caption"/>
                 <column id="teacherFamilyName" caption="msg://teacherFamilyName.caption"/>
                 <column id="teacherEmail" caption="msg://teacherEmail.caption"/>
-                <column id="organization" caption="msg://organization.caption"/>
+                <column id="irTechId"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

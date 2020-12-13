@@ -3,7 +3,9 @@ package su.itschool.guru.entity;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
@@ -25,18 +27,12 @@ public class Teacher extends StandardEntity {
     @NotNull
     private String teacherFamilyName;
 
-    @NotNull
-    @Column(name = "TEACHER_EMAIL", nullable = false)
+    @Column(name = "TEACHER_EMAIL")
     @Email(message = "{msg://guru_Teacher.teacherEmail.validation.Email}")
     private String teacherEmail;
 
     @Column(name = "IR_TECH_ID", unique = true)
     private Integer irTechId;
-
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "ORGANIZATION_ID")
-    private EducationalOrganization organization;
 
     public Integer getIrTechId() {
         return irTechId;
@@ -44,14 +40,6 @@ public class Teacher extends StandardEntity {
 
     public void setIrTechId(Integer irTechId) {
         this.irTechId = irTechId;
-    }
-
-    public EducationalOrganization getOrganization() {
-        return organization;
-    }
-
-    public void setOrganization(EducationalOrganization organization) {
-        this.organization = organization;
     }
 
     public String getTeacherEmail() {

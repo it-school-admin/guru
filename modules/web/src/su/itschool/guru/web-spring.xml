@@ -11,6 +11,8 @@
         <property name="serverSelector" ref="cuba_ServerSelector"/>
         <property name="remoteServices">
             <map>
+                <entry key="guru_ImportIrTechXMLToDBService"
+                       value="su.itschool.guru.service.ImportIrTechXMLToDBService"/>
             </map>
         </property>
     </bean>

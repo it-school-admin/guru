@@ -16,7 +16,7 @@
         <form id="form" dataContainer="timeTableImportDc">
             <column width="350px">
                 <dateField id="importTimeField" property="importTime"/>
-                <textField id="importFileField" property="importFile"/>
+                <textArea rows="5" id="importXMLDataField" property="importedXMLData"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

@@ -12,8 +12,8 @@ create table GURU_TEACHER (
     TEACHER_NAME varchar(255) not null,
     TEACHER_SECOND_NAME varchar(255) not null,
     TEACHER_FAMILY_NAME varchar(255) not null,
-    TEACHER_EMAIL varchar(255) not null,
-    ORGANIZATION_ID uuid not null,
+    TEACHER_EMAIL varchar(255),
+    IR_TECH_ID integer,
     --
     primary key (ID)
 )^
@@ -30,6 +30,7 @@ create table GURU_SCHOOL_CLASS (
     DELETED_BY varchar(50),
     --
     CLASS_LEVEL_ID uuid not null,
+    IR_TECH_ID varchar(255) not null,
     CLASS_LETTER_ID uuid not null,
     EDUCATIONAL_YEAR_ID uuid not null,
     CLASS_EMAIL varchar(255) not null,
@@ -113,6 +114,7 @@ create table GURU_LESSONS_PLANNING_ITEM (
     SUBJECT_ID uuid not null,
     HOURS_PER_WEEK varchar(255) not null,
     EDUCATIONAL_PERIOD_ID uuid not null,
+    IR_TECH_ID integer,
     --
     primary key (ID)
 )^
@@ -200,6 +202,8 @@ create table GURU_SUBJECT (
     DELETED_BY varchar(50),
     --
     SUBJECT_NAME varchar(255),
+    IR_TECH_ID integer,
+    SHORTENED_NAME varchar(255),
     PARENT_SUBJECT_ID uuid,
     --
     primary key (ID)
@@ -276,6 +280,7 @@ create table GURU_TIME_TABLE_TEMPLATE_ITEM (
     GROUP_FOR_LESSON_ID uuid not null,
     TIME_START timestamp not null,
     TIME_END timestamp not null,
+    IR_TECH_ID integer,
     --
     primary key (ID)
 )^
@@ -310,8 +315,26 @@ create table GURU_TIME_TABLE_IMPORT (
     DELETED_BY varchar(50),
     --
     IMPORT_TIME timestamp not null,
-    IMPORT_FILE varchar(255) not null,
+    IMPORT_XML_DATA text not null,
     --
     primary key (ID)
 )^
 -- end GURU_TIME_TABLE_IMPORT
+-- begin GURU_ROOM
+create table GURU_ROOM (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    ROOM_NAME varchar(255) not null,
+    IR_TEH_ID varchar(255),
+    EDUCTAIONAL_ORGANIZATION_ID uuid not null,
+    --
+    primary key (ID)
+)^
+-- end GURU_ROOM
