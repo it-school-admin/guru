@@ -38,7 +38,7 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="groupName"/>
+                <column id="subGroupName"/>
                 <column id="schoolClass"/>
                 <column id="subject"/>
                 <column id="teacher"/>

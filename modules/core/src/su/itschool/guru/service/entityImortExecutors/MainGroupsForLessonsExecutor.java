@@ -9,13 +9,16 @@ import su.itschool.guru.service.EntitiesByIrTechIdFinderService;
 
 
 public class MainGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecutor {
-/*
-			<class id="913935" name="2Б" grade="2" studcnt="25" boys="12" girls="13">
-		<csg id="4826784" tid="1251021" sid="85831" name="Математика" groupid="" parentsubjectid="" hrsweek="5" studcnt="0"/>
+    private final SubGroupsForLessonsExecutor subGroupsForLessonsExecutor;
 
- */
-    public MainGroupsForLessonsExecutor(Class entityClass, EntitiesByIrTechIdFinderService entitiesByIrTechIdFinderService, DataManager dataManager) {
+    /*
+                <class id="913935" name="2Б" grade="2" studcnt="25" boys="12" girls="13">
+            <csg id="4826784" tid="1251021" sid="85831" name="Математика" groupid="" parentsubjectid="" hrsweek="5" studcnt="0"/>
+
+     */
+    public MainGroupsForLessonsExecutor(Class entityClass, SubGroupsForLessonsExecutor subGroupsForLessonsExecutor, EntitiesByIrTechIdFinderService entitiesByIrTechIdFinderService, DataManager dataManager) {
         super(entityClass, entitiesByIrTechIdFinderService, dataManager);
+        this.subGroupsForLessonsExecutor = subGroupsForLessonsExecutor;
     }
 
     @Override
@@ -23,11 +26,13 @@ public class MainGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecut
         GroupForLesson groupForLesson = (GroupForLesson) entity;
         SchoolClass schoolClass = (SchoolClass) rootEntity;
         groupForLesson.setSchoolClass(schoolClass);
-        groupForLesson.setGroupName(schoolClass.getClassName());
         groupForLesson.setIsFullClassGroup(true);
         groupForLesson.setSubject(getFinderService().findSubjectByIrTechId(getIntegerAttributeValue(entityInformation, "sid")));
         if(nodeNotContainsSubGroupInformation(entityInformation)) {
             groupForLesson.setTeacher(getFinderService().findTeacherByIrTechId(getIntegerAttributeValue(entityInformation, "tid")));
+        }
+        else {
+            subGroupsForLessonsExecutor.execute(rootNode, groupForLesson, entityInformation);
         }
 
         return groupForLesson;

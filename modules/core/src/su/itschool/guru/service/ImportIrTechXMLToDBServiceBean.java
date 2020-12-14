@@ -84,18 +84,20 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
 
         SchoolClassImportExecutor schoolClassImportExecutor = new SchoolClassImportExecutor(SchoolClass.class, finderService, dataManager);
         LessonPlanningItemImportExecutor lessonPlanningItemImportExecutor = new LessonPlanningItemImportExecutor(LessonsPlanningItem.class, finderService, dataManager);
-        MainGroupsForLessonsExecutor mainGroupsForLessonsExecutor = new MainGroupsForLessonsExecutor(GroupForLesson.class, finderService, dataManager);
-        SubGroupsForLessonsExecutor subGroupsForLessonsExecutor = new SubGroupsForLessonsExecutor(GroupForLesson.class, finderService, dataManager);
+        MainGroupsForLessonsExecutor mainGroupsForLessonsExecutor = new MainGroupsForLessonsExecutor(
+                GroupForLesson.class,
+                new SubGroupsForLessonsExecutor(GroupForLesson.class, finderService, dataManager),
+                finderService,
+                dataManager);
 
         for(int i = 0; i < childNodes.getLength(); i++) {
             Node item = childNodes.item(i);
             if(item.getNodeType()==Node.ELEMENT_NODE){
                 Node currentNode = childNodes.item(i);
                 //TODO
-                StandardEntity createdClass = schoolClassImportExecutor.execute(null, null, currentNode);
-                result.add(createdClass);
-                result.addAll(createChildEntities(currentNode, createdClass, mainGroupsForLessonsExecutor));
-                //result.addAll(createChildEntities(currentNode, subGroupsForLessonsExecutor));
+                StandardEntity createdSchoolClass = schoolClassImportExecutor.execute(null, null, currentNode);
+                result.add(createdSchoolClass);
+                result.addAll(createChildEntities(currentNode, createdSchoolClass, mainGroupsForLessonsExecutor));
             // TODO   result.addAll(createChildEntities(currentNode, lessonPlanningItemImportExecutor, dataManager));
             }
 

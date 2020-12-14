@@ -21,7 +21,7 @@ public abstract class AbstractImportExecutorImpl<T extends StandardEntity> imple
     }
 
     @Override
-    public final T execute(Node rootNode, StandardEntity rootEntity, Node entityInformationNode) {
+    public T execute(Node rootNode, StandardEntity rootEntity, Node entityInformationNode) {
         T entity = (T) findEntity(rootNode, rootEntity, entityInformationNode);
 
         if(entity == null)

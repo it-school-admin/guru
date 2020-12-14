@@ -1,6 +1,5 @@
 package su.itschool.guru.entity;
 
-import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
@@ -9,16 +8,8 @@ import javax.validation.constraints.NotNull;
 
 @Table(name = "GURU_GROUP_FOR_LESSON")
 @Entity(name = "guru_GroupForLesson")
-@NamePattern("%s|groupName")
 public class GroupForLesson extends StandardEntity {
     private static final long serialVersionUID = 5929795659783061502L;
-
-    @NotNull
-    @Column(name = "GROUP_NAME", nullable = false)
-    private String groupName;
-
-    @Column(name = "GROUP_IR_TECH_NAME")
-    private String groupIrTechName;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -33,6 +24,13 @@ public class GroupForLesson extends StandardEntity {
     private Boolean isFullClassGroup;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PARENT_GROUP_ID")
+    private GroupForLesson parentGroup;
+
+    @Column(name = "SUB_GROUP_NAME")
+    private String subGroupName;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TEACHER_ID")
     private Teacher teacher;
 
@@ -43,12 +41,19 @@ public class GroupForLesson extends StandardEntity {
     @Column(name = "GROUP_TEAMS_TEAM")
     private String groupTeamsTeam;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "PARENT_GROUP_ID")
-    private GroupForLesson parentGroup;
-
     @Column(name = "GROUP_IR_TECH_ID")
     private String groupIrTechId;
+
+    @Column(name = "GROUP_IR_TECH_NAME")
+    private String groupIrTechName;
+
+    public String getSubGroupName() {
+        return subGroupName;
+    }
+
+    public void setSubGroupName(String subGroupName) {
+        this.subGroupName = subGroupName;
+    }
 
     public String getGroupTeamsTeam() {
         return groupTeamsTeam;
@@ -122,11 +127,4 @@ public class GroupForLesson extends StandardEntity {
         this.schoolClass = schoolClass;
     }
 
-    public String getGroupName() {
-        return groupName;
-    }
-
-    public void setGroupName(String groupName) {
-        this.groupName = groupName;
-    }
 }

@@ -20,7 +20,7 @@
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="groupForLessonDc">
             <column width="350px">
-                <textField id="groupNameField" property="groupName"/>
+                <textField id="subGroupNameField" property="subGroupName"/>
                 <pickerField id="schoolClassField" property="schoolClass">
                     <actions>
                         <action id="lookup" type="picker_lookup"/>
