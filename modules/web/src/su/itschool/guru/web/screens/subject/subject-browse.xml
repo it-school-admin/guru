@@ -36,9 +36,9 @@
             </actions>
             <columns>
                 <column id="subjectName"/>
+                <column id="shortenedName"/>
                 <column id="parentSubject"/>
                 <column id="irTechId"/>
-                <column id="shortenedName"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

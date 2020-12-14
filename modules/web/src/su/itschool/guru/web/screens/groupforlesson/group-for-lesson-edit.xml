@@ -39,8 +39,6 @@
                         <action id="clear" type="picker_clear"/>
                     </actions>
                 </pickerField>
-                <textField id="emailField" property="email"/>
-                <textField id="teamsTeamField" property="teamsTeam"/>
                 <checkBox id="isFullClassGroupField" property="isFullClassGroup"/>
                 <textField id="groupIrTechNameField" property="groupIrTechName"/>
                 <textField id="groupEmailField" property="groupEmail"/>

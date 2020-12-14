@@ -43,11 +43,11 @@
                 <column id="subject"/>
                 <column id="teacher"/>
                 <column id="isFullClassGroup"/>
-                <column id="groupIrTechName"/>
-                <column id="groupEmail"/>
-                <column id="groupIrTechId"/>
-                <column id="groupTeamsTeam"/>
                 <column id="parentGroup"/>
+                <column id="groupEmail"/>
+                <column id="groupTeamsTeam"/>
+                <column id="groupIrTechName"/>
+                <column id="groupIrTechId"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

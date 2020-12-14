@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 
 @Table(name = "GURU_SCHOOL_CLASS")
 @Entity(name = "guru_SchoolClass")
-@NamePattern("%s|classLevel")
+@NamePattern("%s|className")
 public class SchoolClass extends StandardEntity {
     private static final long serialVersionUID = 6151984380717443318L;
 

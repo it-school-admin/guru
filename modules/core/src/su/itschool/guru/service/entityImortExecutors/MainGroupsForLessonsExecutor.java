@@ -8,8 +8,12 @@ import su.itschool.guru.entity.SchoolClass;
 import su.itschool.guru.service.EntitiesByIrTechIdFinderService;
 
 
-public class MainGroupsForLessonsExecutor extends AbstractImportExecutorImpl{
+public class MainGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecutor {
+/*
+			<class id="913935" name="2Б" grade="2" studcnt="25" boys="12" girls="13">
+		<csg id="4826784" tid="1251021" sid="85831" name="Математика" groupid="" parentsubjectid="" hrsweek="5" studcnt="0"/>
 
+ */
     public MainGroupsForLessonsExecutor(Class entityClass, EntitiesByIrTechIdFinderService entitiesByIrTechIdFinderService, DataManager dataManager) {
         super(entityClass, entitiesByIrTechIdFinderService, dataManager);
     }
@@ -21,8 +25,11 @@ public class MainGroupsForLessonsExecutor extends AbstractImportExecutorImpl{
         groupForLesson.setSchoolClass(schoolClass);
         groupForLesson.setGroupName(schoolClass.getClassName());
         groupForLesson.setIsFullClassGroup(true);
-        groupForLesson.setTeacher(getFinderService().findTeacherByIrTechId(getIntegerAttributeValue(entityInformation, "tid")));
         groupForLesson.setSubject(getFinderService().findSubjectByIrTechId(getIntegerAttributeValue(entityInformation, "sid")));
+        if(nodeNotContainsSubGroupInformation(entityInformation)) {
+            groupForLesson.setTeacher(getFinderService().findTeacherByIrTechId(getIntegerAttributeValue(entityInformation, "tid")));
+        }
+
         return groupForLesson;
     }
 
@@ -31,17 +38,22 @@ public class MainGroupsForLessonsExecutor extends AbstractImportExecutorImpl{
     public StandardEntity findEntity(Node rootNode, StandardEntity rootEntity, Node entityInformation) {
         GroupForLesson groupForLesson;
         try {
+
             groupForLesson = getDataManager().
                     load(GroupForLesson.class).
-                    viewProperties("irTechId").
-                    query("select id from guru_GroupForLesson as g " +
-                            "INNER JOIN guru_SchoolClass as c " +
-                            "where g.schoolClass = c.id" +
-                            "AND c.irTechId = :irTechId").
-                    parameter("irTechId", ((SchoolClass)rootEntity).getIrTechId()).
+                    query("select gr from guru_GroupForLesson as gr " +
+                            "JOIN gr.schoolClass cl " +
+                            "JOIN gr.subject sub "+
+                            "WHERE " +
+                            "gr.isFullClassGroup = true "+
+                            "AND cl.irTechId = :classIrTechId "+
+                            "AND sub.irTechId = :subjectIrTechId").
+                    parameter("classIrTechId", ((SchoolClass)rootEntity).getIrTechId()).
+                    parameter("subjectIrTechId", getIntegerAttributeValue(entityInformation, "sid")).
                     one();
+
         } catch (Exception e) {
-            //TODO
+            e.printStackTrace();
             return null;
         }
 
