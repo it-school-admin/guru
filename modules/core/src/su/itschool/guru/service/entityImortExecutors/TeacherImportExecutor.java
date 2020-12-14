@@ -1,17 +1,19 @@
 package su.itschool.guru.service.entityImortExecutors;
 
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.global.DataManager;
 import org.w3c.dom.Node;
 import su.itschool.guru.entity.Teacher;
+import su.itschool.guru.service.EntitiesByIrTechIdFinderService;
 
 public class TeacherImportExecutor extends AbstractImportExecutorImpl {
 
-    public TeacherImportExecutor(Class entityClass) {
-        super(entityClass);
+    public TeacherImportExecutor(Class entityClass, EntitiesByIrTechIdFinderService entitiesByIrTechIdFinderService, DataManager dataManager) {
+        super(entityClass, entitiesByIrTechIdFinderService, dataManager);
     }
 
     @Override
-    protected StandardEntity setEntityFields(StandardEntity entity, Node entityInformation) {
+    protected StandardEntity setEntityFields(StandardEntity entity, Node entityInformation, Node rootNode, StandardEntity rootEntity) {
         //		<teacher tid="1296030" firstname="" middlename="" lastname=""/>
 
         Teacher teacher = (Teacher) entity;
@@ -19,6 +21,10 @@ public class TeacherImportExecutor extends AbstractImportExecutorImpl {
         teacher.setTeacherName(entityInformation.getAttributes().getNamedItem("firstname").getNodeValue());
         teacher.setTeacherSecondName(entityInformation.getAttributes().getNamedItem("middlename").getNodeValue());
         teacher.setTeacherFamilyName(entityInformation.getAttributes().getNamedItem("lastname").getNodeValue());
-        return teacher;
+        return teacher;    }
+
+    @Override
+    public StandardEntity findEntity(Node rootNode, StandardEntity rootEntity, Node entityInformation) {
+        return null;
     }
 }

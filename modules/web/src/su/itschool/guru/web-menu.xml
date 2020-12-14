@@ -5,6 +5,7 @@
         <item screen="guru_Teacher.browse" caption="mainMsg://menu_config.guru_Teacher.browse"/>
         <item screen="guru_SchoolClass.browse" caption="mainMsg://menu_config.guru_SchoolClass.browse"/>
         <item screen="guru_Subject.browse" caption="mainMsg://menu_config.guru_Subject.browse"/>
+        <item screen="guru_Room.browse" caption="mainMsg://menu_config.guru_Room.browse"/>
         <item screen="guru_EductaionalYear.browse" caption="mainMsg://menu_config.guru_EductaionalYear.browse"/>
         <item screen="guru_ClassLetter.browse" caption="mainMsg://menu_config.guru_ClassLetter.browse"/>
         <item screen="guru_ClassLevel.browse" caption="mainMsg://menu_config.guru_ClassLevel.browse"/>
@@ -17,6 +18,5 @@
         <item screen="guru_TimeTableTemplateItem.browse"
               caption="mainMsg://menu_config.guru_TimeTableTemplateItem.browse"/>
         <item screen="guru_TimeTableImport.browse" caption="mainMsg://menu_config.guru_TimeTableImport.browse"/>
-        <item screen="guru_Room.browse" caption="mainMsg://menu_config.guru_Room.browse"/>
     </menu>
 </menu-config>

@@ -9,58 +9,93 @@ import javax.validation.constraints.NotNull;
 
 @Table(name = "GURU_SCHOOL_CLASS")
 @Entity(name = "guru_SchoolClass")
-@NamePattern("%s %s|classLevel,classLetter")
+@NamePattern("%s|classLevel")
 public class SchoolClass extends StandardEntity {
     private static final long serialVersionUID = 6151984380717443318L;
 
-    @JoinColumn(name = "CLASS_LEVEL_ID")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @NotNull
-    private ClassLevel classLevel;
+    @Column(name = "CLASS_NAME", nullable = false, unique = true)
+    private String className;
 
+    @Column(name = "CLASS_LEVEL", nullable = false)
     @NotNull
-    @Column(name = "IR_TECH_ID", nullable = false)
-    private String irTechId;
+    private Integer classLevel;
 
-    @JoinColumn(name = "CLASS_LETTER_ID")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @NotNull
-    private ClassLetter classLetter;
-
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "EDUCATIONAL_YEAR_ID")
-    private EductaionalYear educationalYear;
-
-    @NotNull
-    @Column(name = "CLASS_EMAIL", nullable = false, unique = true)
+    @Column(name = "CLASS_EMAIL", unique = true)
     @Email
     private String classEmail;
 
     @JoinColumn(name = "MAIN_LESSONS_GRID_TYPE_ID")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY)
     private LessonsGridType mainLessonsGridType;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "ORGANIZATION_ID")
-    private EducationalOrganization organization;
-
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MAIN_TEACHER_ID")
     private Teacher mainTeacher;
 
     @Column(name = "DESCRIPTION")
     private String description;
 
-    public String getIrTechId() {
-        return irTechId;
+    @Column(name = "STUDENT_COUNT")
+    @NotNull
+    private Integer studentCount;
+
+    @Column(name = "GIRLS_COUNT")
+    private Integer girlsCount;
+
+    @Column(name = "BOYS_COUNT")
+    private Integer boysCount;
+
+    @Column(name = "IR_TECH_ID", nullable = false)
+    @NotNull
+    private Integer irTechId;
+
+    public String getClassName() {
+        return className;
     }
 
-    public void setIrTechId(String irTechId) {
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    public void setClassLevel(Integer classLevel) {
+        this.classLevel = classLevel;
+    }
+
+    public Integer getClassLevel() {
+        return classLevel;
+    }
+
+    public Integer getBoysCount() {
+        return boysCount;
+    }
+
+    public void setBoysCount(Integer boysCount) {
+        this.boysCount = boysCount;
+    }
+
+    public Integer getGirlsCount() {
+        return girlsCount;
+    }
+
+    public void setGirlsCount(Integer girlsCount) {
+        this.girlsCount = girlsCount;
+    }
+
+    public Integer getStudentCount() {
+        return studentCount;
+    }
+
+    public void setStudentCount(Integer studentCount) {
+        this.studentCount = studentCount;
+    }
+
+    public void setIrTechId(Integer irTechId) {
         this.irTechId = irTechId;
+    }
+
+    public Integer getIrTechId() {
+        return irTechId;
     }
 
     public void setMainLessonsGridType(LessonsGridType mainLessonsGridType) {
@@ -79,14 +114,6 @@ public class SchoolClass extends StandardEntity {
         this.classEmail = classEmail;
     }
 
-    public EductaionalYear getEducationalYear() {
-        return educationalYear;
-    }
-
-    public void setEducationalYear(EductaionalYear educationalYear) {
-        this.educationalYear = educationalYear;
-    }
-
     public Teacher getMainTeacher() {
         return mainTeacher;
     }
@@ -101,30 +128,6 @@ public class SchoolClass extends StandardEntity {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public void setClassLevel(ClassLevel classLevel) {
-        this.classLevel = classLevel;
-    }
-
-    public ClassLevel getClassLevel() {
-        return classLevel;
-    }
-
-    public void setClassLetter(ClassLetter classLetter) {
-        this.classLetter = classLetter;
-    }
-
-    public ClassLetter getClassLetter() {
-        return classLetter;
-    }
-
-    public EducationalOrganization getOrganization() {
-        return organization;
-    }
-
-    public void setOrganization(EducationalOrganization organization) {
-        this.organization = organization;
     }
 
 }

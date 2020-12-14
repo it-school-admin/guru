@@ -10,6 +10,7 @@
                 <property name="schoolClass" view="_minimal"/>
                 <property name="subject" view="_minimal"/>
                 <property name="teacher" view="_minimal"/>
+                <property name="parentGroup" view="_minimal"/>
             </view>
             <loader/>
         </instance>
@@ -40,6 +41,11 @@
                 </pickerField>
                 <textField id="emailField" property="email"/>
                 <textField id="teamsTeamField" property="teamsTeam"/>
+                <checkBox id="isFullClassGroupField" property="isFullClassGroup"/>
+                <textField id="groupIrTechNameField" property="groupIrTechName"/>
+                <textField id="groupEmailField" property="groupEmail"/>
+                <textField id="groupTeamsTeamField" property="groupTeamsTeam"/>
+                <pickerField id="parentGroupField" property="parentGroup"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

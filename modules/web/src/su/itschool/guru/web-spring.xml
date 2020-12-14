@@ -13,6 +13,9 @@
             <map>
                 <entry key="guru_ImportIrTechXMLToDBService"
                        value="su.itschool.guru.service.ImportIrTechXMLToDBService"/>
+                <entry key="guru_EntitiesByIrTechIdFinderService"
+                       value="su.itschool.guru.service.EntitiesByIrTechIdFinderService"/>
+                <entry key="guru_ClearDBService" value="su.itschool.guru.service.ClearDBService"/>
             </map>
         </property>
     </bean>

@@ -9,6 +9,8 @@ import com.haulmont.cuba.gui.upload.FileUploadingAPI;
 import su.itschool.guru.entity.TimeTableImport;
 
 import javax.inject.Inject;
+
+import su.itschool.guru.service.ClearDBService;
 import su.itschool.guru.service.ImportIrTechXMLToDBService;
 
 @UiController("guru_TimeTableImport.browse")
@@ -21,11 +23,17 @@ public class TimeTableImportBrowse extends StandardLookup<TimeTableImport> {
     private ImportIrTechXMLToDBService importIrTechXMLToDBService;
     @Inject
     private CollectionContainer<TimeTableImport> timeTableImportsDc;
+    @Inject
+    private ClearDBService clearDBService;
 
     @Subscribe("uploadFileBtn")
     public void onUploadFileBtnClick(Button.ClickEvent event) {
-
         importIrTechXMLToDBService.parseIrTechXML(timeTableImportsDc.getItem());
 
+    }
+
+    @Subscribe("clearDBBtn")
+    public void onClearDBBtnClick(Button.ClickEvent event) {
+        clearDBService.clearDB();
     }
 }

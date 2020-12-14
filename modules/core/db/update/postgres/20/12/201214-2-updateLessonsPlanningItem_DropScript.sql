@@ -1,0 +1,2 @@
+alter table GURU_LESSONS_PLANNING_ITEM drop column SCHOOL_CLASS__U91603 cascade ;
+alter table GURU_LESSONS_PLANNING_ITEM drop column EDUCATIONAL_PERIOD_ID__U25199 cascade ;

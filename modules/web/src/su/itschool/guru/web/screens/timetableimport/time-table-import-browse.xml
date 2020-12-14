@@ -45,6 +45,7 @@
                 <button id="removeBtn" action="timeTableImportsTable.remove"/>
                 <button id="uploadFileBtn" caption="msg://uploadFileBtn.caption"
                 />
+                <button id="clearDBBtn" caption="msg://clearDBBtn.caption"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

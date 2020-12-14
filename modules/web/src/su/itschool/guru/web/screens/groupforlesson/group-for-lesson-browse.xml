@@ -11,6 +11,7 @@
                 <property name="schoolClass" view="_minimal"/>
                 <property name="subject" view="_minimal"/>
                 <property name="teacher" view="_minimal"/>
+                <property name="parentGroup" view="_minimal"/>
             </view>
             <loader id="groupForLessonsDl">
                 <query>
@@ -41,8 +42,12 @@
                 <column id="schoolClass"/>
                 <column id="subject"/>
                 <column id="teacher"/>
-                <column id="email"/>
-                <column id="teamsTeam"/>
+                <column id="isFullClassGroup"/>
+                <column id="groupIrTechName"/>
+                <column id="groupEmail"/>
+                <column id="groupIrTechId"/>
+                <column id="groupTeamsTeam"/>
+                <column id="parentGroup"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

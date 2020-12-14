@@ -1,0 +1,1 @@
+create unique index IDX_GURU_SCHOOL_CLASS_UK_CLASS_NAME on GURU_SCHOOL_CLASS (CLASS_NAME) where DELETE_TS is null ;

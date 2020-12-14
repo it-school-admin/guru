@@ -8,14 +8,8 @@ import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import su.itschool.guru.entity.Room;
-import su.itschool.guru.entity.Subject;
-import su.itschool.guru.entity.Teacher;
-import su.itschool.guru.entity.TimeTableImport;
-import su.itschool.guru.service.entityImortExecutors.EntityImportExecutor;
-import su.itschool.guru.service.entityImortExecutors.RoomImportExecutor;
-import su.itschool.guru.service.entityImortExecutors.SubjectImportExecutor;
-import su.itschool.guru.service.entityImortExecutors.TeacherImportExecutor;
+import su.itschool.guru.entity.*;
+import su.itschool.guru.service.entityImortExecutors.*;
 
 import javax.inject.Inject;
 import javax.xml.parsers.DocumentBuilder;
@@ -34,6 +28,8 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
 
     @Inject
     private DataManager dataManager;
+    @Inject
+    private EntitiesByIrTechIdFinderService finderService;
 
     @Override
     public List<StandardEntity> parseIrTechXML(TimeTableImport timeTableImport) {
@@ -45,6 +41,7 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
             addSubjects(result, rootElement);
             addTeachers(result, rootElement);
             addRooms(result, rootElement);
+            addClassesAndGroupsAndPlanningItems(result, rootElement);
 
 
         } catch (ParserConfigurationException e) {
@@ -57,32 +54,63 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
         return null;
     }
 
+    private void addClassesAndGroupsAndPlanningItems(List<StandardEntity> result, Element rootElement) {
+        result.addAll(parsePlanningItems(rootElement));
+    }
+
     private void addRooms(List<StandardEntity> result, Element rootElement) {
-        result.addAll(createChildEntities(rootElement, "Rooms", new RoomImportExecutor(Room.class), dataManager));
+        result.addAll(createChildEntities(rootElement, "Rooms", new RoomImportExecutor(Room.class, finderService, dataManager)));
 
     }
 
     private void addTeachers(List<StandardEntity> result, Element rootElement) {
-        result.addAll(createChildEntities(rootElement, "subjects", new SubjectImportExecutor(Subject.class), dataManager));
+        result.addAll(createChildEntities(rootElement, "subjects", new SubjectImportExecutor(Subject.class, finderService, dataManager)));
     }
 
     private void addSubjects(List<StandardEntity> result, Element rootElement) {
-        result.addAll(createChildEntities(rootElement, "teachers", new TeacherImportExecutor(Teacher.class), dataManager));
+        result.addAll(createChildEntities(rootElement, "teachers", new TeacherImportExecutor(Teacher.class, finderService, dataManager)));
     }
 
     //TODO move to a separate class
-    private Collection<? extends StandardEntity> createChildEntities(Element rootElement, String elementName, EntityImportExecutor entityImportExecutor, DataManager dataManager) {
+    private Collection<? extends StandardEntity> createChildEntities(Element rootElement, String elementName, EntityImportExecutor entityImportExecutor) {
         Node rootElementCollectionNode = getFirstChildNodeByName(rootElement, elementName);
-        return createChildEntities(rootElementCollectionNode, entityImportExecutor, dataManager);
+        return createChildEntities(rootElementCollectionNode, null, entityImportExecutor);
     }
 
-    private Collection<? extends StandardEntity> createChildEntities(Node rootElementCollectionNode, EntityImportExecutor entityImportExecutor, DataManager dataManager) {
+    private Collection<? extends StandardEntity> parsePlanningItems(Element documentRoot) {
+        ArrayList<StandardEntity> result = new ArrayList<>();
+
+        NodeList childNodes = getFirstChildNodeByName(documentRoot, "Plan").getChildNodes();
+
+        SchoolClassImportExecutor schoolClassImportExecutor = new SchoolClassImportExecutor(SchoolClass.class, finderService, dataManager);
+        LessonPlanningItemImportExecutor lessonPlanningItemImportExecutor = new LessonPlanningItemImportExecutor(LessonsPlanningItem.class, finderService, dataManager);
+        MainGroupsForLessonsExecutor mainGroupsForLessonsExecutor = new MainGroupsForLessonsExecutor(GroupForLesson.class, finderService, dataManager);
+        SubGroupsForLessonsExecutor subGroupsForLessonsExecutor = new SubGroupsForLessonsExecutor(GroupForLesson.class, finderService, dataManager);
+
+        for(int i = 0; i < childNodes.getLength(); i++) {
+            Node item = childNodes.item(i);
+            if(item.getNodeType()==Node.ELEMENT_NODE){
+                Node currentNode = childNodes.item(i);
+                //TODO
+                StandardEntity createdClass = schoolClassImportExecutor.execute(null, null, currentNode);
+                result.add(createdClass);
+                result.addAll(createChildEntities(currentNode, createdClass, mainGroupsForLessonsExecutor));
+                //result.addAll(createChildEntities(currentNode, subGroupsForLessonsExecutor));
+            // TODO   result.addAll(createChildEntities(currentNode, lessonPlanningItemImportExecutor, dataManager));
+            }
+
+        }
+        return result;
+    }
+
+
+    private Collection<? extends StandardEntity> createChildEntities(Node rootElementCollectionNode, StandardEntity rootEntity, EntityImportExecutor entityImportExecutor) {
         ArrayList<StandardEntity> result = new ArrayList<>();
         NodeList childNodes = rootElementCollectionNode.getChildNodes();
         for(int i = 0; i < childNodes.getLength(); i++) {
             Node item = childNodes.item(i);
             if(item.getNodeType()==Node.ELEMENT_NODE){
-                result.add(entityImportExecutor.execute(childNodes.item(i), dataManager));
+                result.add(entityImportExecutor.execute(rootElementCollectionNode, rootEntity, childNodes.item(i)));
             }
 
         }

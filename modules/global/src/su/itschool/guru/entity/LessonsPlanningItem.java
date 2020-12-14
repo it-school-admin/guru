@@ -10,9 +10,10 @@ import javax.validation.constraints.NotNull;
 public class LessonsPlanningItem extends StandardEntity {
     private static final long serialVersionUID = 3761661617055118840L;
 
-    @Column(name = "SCHOOL_CLASS", nullable = false)
+    @JoinColumn(name = "SCHOOL_CLASS_ID")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @NotNull
-    private String schoolClass;
+    private SchoolClass schoolClass;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "GROUP_OF_LEARNING_ID")
@@ -27,13 +28,16 @@ public class LessonsPlanningItem extends StandardEntity {
     @Column(name = "HOURS_PER_WEEK", nullable = false)
     private String hoursPerWeek;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "EDUCATIONAL_PERIOD_ID")
-    private EducationalPeriod educationalPeriod;
-
     @Column(name = "IR_TECH_ID", unique = true)
     private Integer irTechID;
+
+    public void setSchoolClass(SchoolClass schoolClass) {
+        this.schoolClass = schoolClass;
+    }
+
+    public SchoolClass getSchoolClass() {
+        return schoolClass;
+    }
 
     public Integer getIrTechID() {
         return irTechID;
@@ -41,14 +45,6 @@ public class LessonsPlanningItem extends StandardEntity {
 
     public void setIrTechID(Integer irTechID) {
         this.irTechID = irTechID;
-    }
-
-    public EducationalPeriod getEducationalPeriod() {
-        return educationalPeriod;
-    }
-
-    public void setEducationalPeriod(EducationalPeriod educationalPeriod) {
-        this.educationalPeriod = educationalPeriod;
     }
 
     public String getHoursPerWeek() {
@@ -75,11 +71,4 @@ public class LessonsPlanningItem extends StandardEntity {
         this.groupOfLearning = groupOfLearning;
     }
 
-    public String getSchoolClass() {
-        return schoolClass;
-    }
-
-    public void setSchoolClass(String schoolClass) {
-        this.schoolClass = schoolClass;
-    }
 }

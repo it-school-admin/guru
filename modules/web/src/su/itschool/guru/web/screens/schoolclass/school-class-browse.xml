@@ -7,7 +7,10 @@
     <data readOnly="true">
         <collection id="schoolClassesDc"
                     class="su.itschool.guru.entity.SchoolClass">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="mainLessonsGridType" view="_minimal"/>
+                <property name="mainTeacher" view="_minimal"/>
+            </view>
             <loader id="schoolClassesDl">
                 <query>
                     <![CDATA[select e from guru_SchoolClass e]]>
@@ -33,8 +36,16 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
+                <column id="className"/>
+                <column id="classLevel"/>
+                <column id="mainTeacher"/>
                 <column id="classEmail"/>
                 <column id="description"/>
+                <column id="mainLessonsGridType"/>
+                <column id="studentCount"/>
+                <column id="girlsCount"/>
+                <column id="boysCount"/>
+                <column id="irTechId"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

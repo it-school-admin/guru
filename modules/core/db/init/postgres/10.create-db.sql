@@ -29,15 +29,16 @@ create table GURU_SCHOOL_CLASS (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    CLASS_LEVEL_ID uuid not null,
-    IR_TECH_ID varchar(255) not null,
-    CLASS_LETTER_ID uuid not null,
-    EDUCATIONAL_YEAR_ID uuid not null,
-    CLASS_EMAIL varchar(255) not null,
-    MAIN_LESSONS_GRID_TYPE_ID uuid not null,
-    ORGANIZATION_ID uuid not null,
-    MAIN_TEACHER_ID uuid not null,
+    CLASS_NAME varchar(255) not null,
+    CLASS_LEVEL integer not null,
+    CLASS_EMAIL varchar(255),
+    MAIN_LESSONS_GRID_TYPE_ID uuid,
+    MAIN_TEACHER_ID uuid,
     DESCRIPTION varchar(255),
+    STUDENT_COUNT integer,
+    GIRLS_COUNT integer,
+    BOYS_COUNT integer,
+    IR_TECH_ID integer not null,
     --
     primary key (ID)
 )^
@@ -109,11 +110,10 @@ create table GURU_LESSONS_PLANNING_ITEM (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    SCHOOL_CLASS varchar(255) not null,
+    SCHOOL_CLASS_ID uuid not null,
     GROUP_OF_LEARNING_ID uuid,
     SUBJECT_ID uuid not null,
     HOURS_PER_WEEK varchar(255) not null,
-    EDUCATIONAL_PERIOD_ID uuid not null,
     IR_TECH_ID integer,
     --
     primary key (ID)
@@ -235,12 +235,15 @@ create table GURU_GROUP_FOR_LESSON (
     DELETED_BY varchar(50),
     --
     GROUP_NAME varchar(255) not null,
+    GROUP_IR_TECH_NAME varchar(255),
     SCHOOL_CLASS_ID uuid not null,
     SUBJECT_ID uuid,
-    TEACHER_ID uuid not null,
-    EMAIL varchar(255),
-    TEAMS_TEAM varchar(255),
+    IS_FULL_CLASS_GROUP boolean,
+    TEACHER_ID uuid,
+    GROUP_EMAIL varchar(255),
+    GROUP_TEAMS_TEAM varchar(255),
     PARENT_GROUP_ID uuid,
+    GROUP_IR_TECH_ID varchar(255),
     --
     primary key (ID)
 )^

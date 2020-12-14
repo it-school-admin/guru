@@ -6,7 +6,10 @@
     <data>
         <instance id="schoolClassDc"
                   class="su.itschool.guru.entity.SchoolClass">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="mainLessonsGridType" view="_minimal"/>
+                <property name="mainTeacher" view="_minimal"/>
+            </view>
             <loader/>
         </instance>
     </data>
@@ -15,8 +18,15 @@
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="schoolClassDc">
             <column width="350px">
+                <textField id="classNameField" property="className"/>
+                <textField id="classLevelField" property="classLevel"/>
+                <textField id="studentCountField" property="studentCount"/>
+                <pickerField id="mainTeacherField" property="mainTeacher"/>
                 <textField id="classEmailField" property="classEmail"/>
                 <textField id="descriptionField" property="description"/>
+                <textField id="girlsCountField" property="girlsCount"/>
+                <textField id="boysCountField" property="boysCount"/>
+                <pickerField id="mainLessonsGridTypeField" property="mainLessonsGridType"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">
