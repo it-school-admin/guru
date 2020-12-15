@@ -42,10 +42,18 @@ public class GroupForLesson extends StandardEntity {
     private String groupTeamsTeam;
 
     @Column(name = "GROUP_IR_TECH_ID")
-    private String groupIrTechId;
+    private Integer groupIrTechId;
 
     @Column(name = "GROUP_IR_TECH_NAME")
     private String groupIrTechName;
+
+    public void setGroupIrTechId(Integer groupIrTechId) {
+        this.groupIrTechId = groupIrTechId;
+    }
+
+    public Integer getGroupIrTechId() {
+        return groupIrTechId;
+    }
 
     public String getSubGroupName() {
         return subGroupName;
@@ -77,14 +85,6 @@ public class GroupForLesson extends StandardEntity {
 
     public void setIsFullClassGroup(Boolean isFullClassGroup) {
         this.isFullClassGroup = isFullClassGroup;
-    }
-
-    public String getGroupIrTechId() {
-        return groupIrTechId;
-    }
-
-    public void setGroupIrTechId(String groupIrTechId) {
-        this.groupIrTechId = groupIrTechId;
     }
 
     public String getGroupIrTechName() {

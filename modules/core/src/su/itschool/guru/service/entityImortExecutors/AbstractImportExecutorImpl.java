@@ -22,6 +22,7 @@ public abstract class AbstractImportExecutorImpl<T extends StandardEntity> imple
 
     @Override
     public T execute(Node rootNode, StandardEntity rootEntity, Node entityInformationNode) {
+        //TODO
         T entity = (T) findEntity(rootNode, rootEntity, entityInformationNode);
 
         if(entity == null)
@@ -50,5 +51,10 @@ public abstract class AbstractImportExecutorImpl<T extends StandardEntity> imple
 
     public EntitiesByIrTechIdFinderService getFinderService() {
         return entitiesByIrTechIdFinderService;
+    }
+
+    public boolean needToBeCreated(Node entityInformation)
+    {
+        return true;
     }
 }

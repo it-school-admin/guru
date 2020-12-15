@@ -240,7 +240,7 @@ create table GURU_GROUP_FOR_LESSON (
     TEACHER_ID uuid,
     GROUP_EMAIL varchar(255),
     GROUP_TEAMS_TEAM varchar(255),
-    GROUP_IR_TECH_ID varchar(255),
+    GROUP_IR_TECH_ID integer,
     GROUP_IR_TECH_NAME varchar(255),
     --
     primary key (ID)

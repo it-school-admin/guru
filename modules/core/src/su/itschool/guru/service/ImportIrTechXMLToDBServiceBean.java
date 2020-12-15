@@ -86,7 +86,10 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
         LessonPlanningItemImportExecutor lessonPlanningItemImportExecutor = new LessonPlanningItemImportExecutor(LessonsPlanningItem.class, finderService, dataManager);
         MainGroupsForLessonsExecutor mainGroupsForLessonsExecutor = new MainGroupsForLessonsExecutor(
                 GroupForLesson.class,
-                new SubGroupsForLessonsExecutor(GroupForLesson.class, finderService, dataManager),
+                finderService,
+                dataManager);
+        SubGroupsForLessonsExecutor subGroupsForLessonsExecutor = new SubGroupsForLessonsExecutor(
+                GroupForLesson.class,
                 finderService,
                 dataManager);
 
@@ -98,6 +101,7 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
                 StandardEntity createdSchoolClass = schoolClassImportExecutor.execute(null, null, currentNode);
                 result.add(createdSchoolClass);
                 result.addAll(createChildEntities(currentNode, createdSchoolClass, mainGroupsForLessonsExecutor));
+                result.addAll(createChildEntities(currentNode, createdSchoolClass, subGroupsForLessonsExecutor));
             // TODO   result.addAll(createChildEntities(currentNode, lessonPlanningItemImportExecutor, dataManager));
             }
 
@@ -112,7 +116,8 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
         for(int i = 0; i < childNodes.getLength(); i++) {
             Node item = childNodes.item(i);
             if(item.getNodeType()==Node.ELEMENT_NODE){
-                result.add(entityImportExecutor.execute(rootElementCollectionNode, rootEntity, childNodes.item(i)));
+                if(entityImportExecutor.needToBeCreated(item))
+                result.add(entityImportExecutor.execute(rootElementCollectionNode, rootEntity, item));
             }
 
         }
