@@ -1,6 +1,7 @@
 package su.itschool.guru.service;
 
 import su.itschool.guru.entity.GroupForLesson;
+import su.itschool.guru.entity.SchoolClass;
 import su.itschool.guru.entity.Subject;
 import su.itschool.guru.entity.Teacher;
 
@@ -10,7 +11,7 @@ public interface EntitiesByIrTechIdFinderService {
 
     Subject findSubjectByIrTechId(Integer irTechId);
 
-    GroupForLesson findSubGroupByIrTechId(Integer irTechId);
+    GroupForLesson findLearningSubGroup(Integer groupIrTechId, SchoolClass schoolClass, Integer subjectIrTechId);
 
-    GroupForLesson findMainGroupByClassIrTechID(Integer classIrTechId);
+    GroupForLesson findMainLearningGroup(Integer classIrTechId, Integer subjectIrTechId);
 }

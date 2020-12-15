@@ -44,6 +44,7 @@
                 <textField id="groupEmailField" property="groupEmail"/>
                 <textField id="groupTeamsTeamField" property="groupTeamsTeam"/>
                 <pickerField id="parentGroupField" property="parentGroup"/>
+                <textField id="irTechCountStudentField" property="irTechCountStudent"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

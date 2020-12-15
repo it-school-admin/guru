@@ -1,5 +1,6 @@
 package su.itschool.guru.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import javax.validation.constraints.NotNull;
 
 @Table(name = "GURU_GROUP_FOR_LESSON")
 @Entity(name = "guru_GroupForLesson")
+@NamePattern("%s %s %s %s|schoolClass,subject,subGroupName,teacher")
 public class GroupForLesson extends StandardEntity {
     private static final long serialVersionUID = 5929795659783061502L;
 
@@ -44,8 +46,19 @@ public class GroupForLesson extends StandardEntity {
     @Column(name = "GROUP_IR_TECH_ID")
     private Integer groupIrTechId;
 
+    @Column(name = "IR_TECH_COUNT_STUDENT")
+    private Integer irTechCountStudent;
+
     @Column(name = "GROUP_IR_TECH_NAME")
     private String groupIrTechName;
+
+    public Integer getIrTechCountStudent() {
+        return irTechCountStudent;
+    }
+
+    public void setIrTechCountStudent(Integer irTechCountStudent) {
+        this.irTechCountStudent = irTechCountStudent;
+    }
 
     public void setGroupIrTechId(Integer groupIrTechId) {
         this.groupIrTechId = groupIrTechId;

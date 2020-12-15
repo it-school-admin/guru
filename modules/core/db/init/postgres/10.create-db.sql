@@ -110,8 +110,8 @@ create table GURU_LESSONS_PLANNING_ITEM (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    GROUP_OF_LEARNING_ID uuid,
-    HOURS_PER_WEEK varchar(255) not null,
+    GROUP_OF_LEARNING_ID uuid not null,
+    HOURS_PER_WEEK integer not null,
     IR_TECH_ID integer,
     --
     primary key (ID)
@@ -241,6 +241,7 @@ create table GURU_GROUP_FOR_LESSON (
     GROUP_EMAIL varchar(255),
     GROUP_TEAMS_TEAM varchar(255),
     GROUP_IR_TECH_ID integer,
+    IR_TECH_COUNT_STUDENT integer,
     GROUP_IR_TECH_NAME varchar(255),
     --
     primary key (ID)

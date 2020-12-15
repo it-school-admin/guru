@@ -19,6 +19,7 @@ public class SubGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecuto
         SchoolClass schoolClass = (SchoolClass) rootEntity;
         GroupForLesson subGroup = (GroupForLesson) entity;
         subGroup.setSchoolClass(schoolClass);
+        subGroup.setIrTechCountStudent(getIntegerAttributeValue(entityInformation, "studcnt"));
         if(schoolClass.getClassLevel()<10)
         {
             subGroup.setSubGroupName(getSubGroupNameFromIrTechSubGroupName(getStringAttributeValue(entityInformation, "name")));
@@ -30,9 +31,10 @@ public class SubGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecuto
         subGroup.setGroupIrTechName(getStringAttributeValue(entityInformation, "name"));
         subGroup.setGroupIrTechId(getIntegerAttributeValue(entityInformation, "groupid"));
         subGroup.setIsFullClassGroup(false);
-        subGroup.setSubject(getFinderService().findSubjectByIrTechId(getIntegerAttributeValue(entityInformation, "sid")));
+        Integer subjectIrTechId = getIntegerAttributeValue(entityInformation, "sid");
+        subGroup.setSubject(getFinderService().findSubjectByIrTechId(subjectIrTechId));
         subGroup.setTeacher(getFinderService().findTeacherByIrTechId(getIntegerAttributeValue(entityInformation, "tid")));
-        subGroup.setParentGroup(getFinderService().findMainGroupByClassIrTechID(schoolClass.getIrTechId()));
+        subGroup.setParentGroup(getFinderService().findMainLearningGroup(schoolClass.getIrTechId(), subjectIrTechId));
 
         return subGroup;
     }

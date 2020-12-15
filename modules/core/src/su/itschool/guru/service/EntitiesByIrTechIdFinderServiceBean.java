@@ -3,6 +3,7 @@ package su.itschool.guru.service;
 import com.haulmont.cuba.core.global.DataManager;
 import org.springframework.stereotype.Service;
 import su.itschool.guru.entity.GroupForLesson;
+import su.itschool.guru.entity.SchoolClass;
 import su.itschool.guru.entity.Subject;
 import su.itschool.guru.entity.Teacher;
 
@@ -53,14 +54,19 @@ public class EntitiesByIrTechIdFinderServiceBean implements EntitiesByIrTechIdFi
     }
 
     @Override
-    public GroupForLesson findSubGroupByIrTechId(Integer irTechId) {
+    public GroupForLesson findLearningSubGroup(Integer groupIrTechId, SchoolClass schoolClass, Integer subjectIrTechId) {
         try {
             GroupForLesson groupForLesson = dataManager.
                     load(GroupForLesson.class).
                     query("select gr from guru_GroupForLesson as gr " +
+                            "JOIN gr.subject sub " +
                             "WHERE " +
-                            "gr.groupIrTechId = :groupIrTechId").
-                    parameter("groupIrTechId", irTechId).
+                            "gr.schoolClass = :schoolClass " +
+                            "AND sub.irTechId = :subjectIrTechId " +
+                            "AND gr.groupIrTechId = :groupIrTechId").
+                    parameter("groupIrTechId", groupIrTechId).
+                    parameter("subjectIrTechId", subjectIrTechId).
+                    parameter("schoolClass", schoolClass).
                     one();
 
             return groupForLesson;
@@ -71,16 +77,19 @@ public class EntitiesByIrTechIdFinderServiceBean implements EntitiesByIrTechIdFi
     }
 
     @Override
-    public GroupForLesson findMainGroupByClassIrTechID(Integer classIrTechId) {
+    public GroupForLesson findMainLearningGroup(Integer classIrTechId, Integer subjectIrTechId) {
         try {
             GroupForLesson groupForLesson = dataManager.
                     load(GroupForLesson.class).
                     query("select gr from guru_GroupForLesson as gr " +
                             "JOIN gr.schoolClass cl " +
+                            "JOIN gr.subject sub " +
                             "WHERE " +
                             "gr.isFullClassGroup = true " +
-                            "AND gr.irTechId = :classIrTechId").
+                            "AND sub.irTechId = :subjectIrTechId " +
+                            "AND cl.irTechId = :classIrTechId").
                     parameter("classIrTechId", classIrTechId).
+                    parameter("subjectIrTechId", subjectIrTechId).
                     one();
 
             return groupForLesson;

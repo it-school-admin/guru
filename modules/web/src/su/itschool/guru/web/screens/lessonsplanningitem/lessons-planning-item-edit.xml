@@ -6,7 +6,9 @@
     <data>
         <instance id="lessonsPlanningItemDc"
                   class="su.itschool.guru.entity.LessonsPlanningItem">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="groupOfLearning" view="_minimal"/>
+            </view>
             <loader/>
         </instance>
     </data>
@@ -17,6 +19,7 @@
             <column width="350px">
                 <textField id="schoolClassField" property="schoolClass"/>
                 <textField id="hoursPerWeekField" property="hoursPerWeek"/>
+                <pickerField id="groupOfLearningField" property="groupOfLearning"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

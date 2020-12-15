@@ -14,15 +14,15 @@ public class Subject extends StandardEntity {
     @Column(name = "SUBJECT_NAME")
     private String subjectName;
 
-    @Column(name = "IR_TECH_ID", unique = true)
-    private Integer irTechId;
-
     @Column(name = "SHORTENED_NAME")
     private String shortenedName;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PARENT_SUBJECT_ID")
     private Subject parentSubject;
+
+    @Column(name = "IR_TECH_ID", unique = true)
+    private Integer irTechId;
 
     public String getShortenedName() {
         return shortenedName;

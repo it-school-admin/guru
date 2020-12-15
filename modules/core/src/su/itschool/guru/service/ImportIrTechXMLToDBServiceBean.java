@@ -102,7 +102,7 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
                 result.add(createdSchoolClass);
                 result.addAll(createChildEntities(currentNode, createdSchoolClass, mainGroupsForLessonsExecutor));
                 result.addAll(createChildEntities(currentNode, createdSchoolClass, subGroupsForLessonsExecutor));
-            // TODO   result.addAll(createChildEntities(currentNode, lessonPlanningItemImportExecutor, dataManager));
+                result.addAll(createChildEntities(currentNode, createdSchoolClass, lessonPlanningItemImportExecutor));
             }
 
         }

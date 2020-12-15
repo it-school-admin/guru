@@ -7,7 +7,9 @@
     <data readOnly="true">
         <collection id="lessonsPlanningItemsDc"
                     class="su.itschool.guru.entity.LessonsPlanningItem">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="groupOfLearning" view="_minimal"/>
+            </view>
             <loader id="lessonsPlanningItemsDl">
                 <query>
                     <![CDATA[select e from guru_LessonsPlanningItem e]]>
@@ -32,10 +34,6 @@
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
             </actions>
-            <columns>
-                <column id="schoolClass"/>
-                <column id="hoursPerWeek"/>
-            </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
@@ -43,6 +41,11 @@
                 <button id="editBtn" action="lessonsPlanningItemsTable.edit"/>
                 <button id="removeBtn" action="lessonsPlanningItemsTable.remove"/>
             </buttonsPanel>
+            <columns>
+                <column id="irTechID"/>
+                <column id="hoursPerWeek"/>
+                <column id="groupOfLearning"/>
+            </columns>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
