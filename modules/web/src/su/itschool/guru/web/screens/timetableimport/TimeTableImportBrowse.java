@@ -6,6 +6,7 @@ import com.haulmont.cuba.gui.components.Button;
 import com.haulmont.cuba.gui.model.CollectionContainer;
 import com.haulmont.cuba.gui.screen.*;
 import com.haulmont.cuba.gui.upload.FileUploadingAPI;
+import su.itschool.guru.entity.LessonsGridType;
 import su.itschool.guru.entity.TimeTableImport;
 
 import javax.inject.Inject;
@@ -25,11 +26,12 @@ public class TimeTableImportBrowse extends StandardLookup<TimeTableImport> {
     private CollectionContainer<TimeTableImport> timeTableImportsDc;
     @Inject
     private ClearDBService clearDBService;
+    @Inject
+    private CollectionContainer<LessonsGridType> lessonsGridTypesDc;
 
     @Subscribe("uploadFileBtn")
     public void onUploadFileBtnClick(Button.ClickEvent event) {
-        importIrTechXMLToDBService.parseIrTechXML(timeTableImportsDc.getItem());
-
+        importIrTechXMLToDBService.parseIrTechXML(timeTableImportsDc.getItem(), lessonsGridTypesDc.getItem());
     }
 
     @Subscribe("clearDBBtn")

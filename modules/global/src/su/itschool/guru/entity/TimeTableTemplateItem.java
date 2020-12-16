@@ -1,75 +1,76 @@
 package su.itschool.guru.entity;
 
 import com.haulmont.cuba.core.entity.StandardEntity;
-import com.haulmont.cuba.core.entity.annotation.OnDelete;
-import com.haulmont.cuba.core.global.DeletePolicy;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Table(name = "GURU_TIME_TABLE_TEMPLATE_ITEM")
 @Entity(name = "guru_TimeTableTemplateItem")
 public class TimeTableTemplateItem extends StandardEntity {
     private static final long serialVersionUID = 3063126557897405154L;
 
-    @OnDelete(DeletePolicy.CASCADE)
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TIME_TABLE_TEMPLATE_ID")
-    @NotNull
-    private TimeTableTemplate timeTableTemplate;
-
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "SUBJECT_ID")
-    private Subject subject;
-
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "GROUP_FOR_LESSON_ID")
     private GroupForLesson groupForLesson;
 
+    @Column(name = "FREE_SUBJECT")
+    private String freeSubject;
+
+    @Column(name = "DAY_OF_WEEK", nullable = false)
     @NotNull
+    private String dayOfWeek;
+
     @Column(name = "TIME_START", nullable = false)
-    private LocalDateTime timeStart;
-
     @NotNull
+    private LocalTime timeStart;
+
     @Column(name = "TIME_END", nullable = false)
-    private LocalDateTime timeEnd;
+    @NotNull
+    private LocalTime timeEnd;
 
-    @Column(name = "IR_TECH_ID", unique = true)
-    private Integer irTechId;
+    @Column(name = "PLANNING_ITEM")
+    private String planningItem;
 
-    public Integer getIrTechId() {
-        return irTechId;
+    public String getFreeSubject() {
+        return freeSubject;
     }
 
-    public void setIrTechId(Integer irTechId) {
-        this.irTechId = irTechId;
+    public void setFreeSubject(String freeSubject) {
+        this.freeSubject = freeSubject;
     }
 
-    public void setTimeStart(LocalDateTime timeStart) {
+    public String getPlanningItem() {
+        return planningItem;
+    }
+
+    public void setPlanningItem(String planningItem) {
+        this.planningItem = planningItem;
+    }
+
+    public String getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    public void setDayOfWeek(String dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
+    }
+
+    public void setTimeStart(LocalTime timeStart) {
         this.timeStart = timeStart;
     }
 
-    public LocalDateTime getTimeStart() {
+    public LocalTime getTimeStart() {
         return timeStart;
     }
 
-    public LocalDateTime getTimeEnd() {
-        return timeEnd;
-    }
-
-    public void setTimeEnd(LocalDateTime timeEnd) {
+    public void setTimeEnd(LocalTime timeEnd) {
         this.timeEnd = timeEnd;
     }
 
-    public Subject getSubject() {
-        return subject;
-    }
-
-    public void setSubject(Subject subject) {
-        this.subject = subject;
+    public LocalTime getTimeEnd() {
+        return timeEnd;
     }
 
     public GroupForLesson getGroupForLesson() {
@@ -80,11 +81,4 @@ public class TimeTableTemplateItem extends StandardEntity {
         this.groupForLesson = groupForLesson;
     }
 
-    public TimeTableTemplate getTimeTableTemplate() {
-        return timeTableTemplate;
-    }
-
-    public void setTimeTableTemplate(TimeTableTemplate timeTableTemplate) {
-        this.timeTableTemplate = timeTableTemplate;
-    }
 }

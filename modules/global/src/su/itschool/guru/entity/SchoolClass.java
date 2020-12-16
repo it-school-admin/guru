@@ -46,9 +46,20 @@ public class SchoolClass extends StandardEntity {
     @Column(name = "BOYS_COUNT")
     private Integer boysCount;
 
+    @Column(name = "SHIFT")
+    private Integer shift;
+
     @Column(name = "IR_TECH_ID", nullable = false)
     @NotNull
     private Integer irTechId;
+
+    public Integer getShift() {
+        return shift;
+    }
+
+    public void setShift(Integer shift) {
+        this.shift = shift;
+    }
 
     public String getClassName() {
         return className;

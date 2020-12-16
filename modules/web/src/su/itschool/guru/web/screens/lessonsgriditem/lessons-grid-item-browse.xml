@@ -1,49 +1,45 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
         xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
-        caption="msg://lessonsGridTypeItemBrowse.caption"
-        focusComponent="lessonsGridTypeItemsTable"
-        messagesPack="su.itschool.guru.web.screens.lessonsgridtypeitem">
+        caption="msg://lessonsGridItemBrowse.caption"
+        focusComponent="lessonsGridItemsTable"
+        messagesPack="su.itschool.guru.web.screens.lessonsgriditem">
     <data readOnly="true">
-        <collection id="lessonsGridTypeItemsDc"
-                    class="su.itschool.guru.entity.LessonsGridTypeItem">
+        <collection id="lessonsGridItemsDc"
+                    class="su.itschool.guru.entity.LessonsGridItem">
             <view extends="_local"/>
-            <loader id="lessonsGridTypeItemsDl">
+            <loader id="lessonsGridItemsDl">
                 <query>
-                    <![CDATA[select e from guru_LessonsGridTypeItem e]]>
+                    <![CDATA[select e from guru_LessonsGridItem e]]>
                 </query>
             </loader>
         </collection>
     </data>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="lessonsGridTypeItemsTable"
+    <layout expand="lessonsGridItemsTable"
             spacing="true">
         <filter id="filter"
-                applyTo="lessonsGridTypeItemsTable"
-                dataLoader="lessonsGridTypeItemsDl">
+                applyTo="lessonsGridItemsTable"
+                dataLoader="lessonsGridItemsDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="lessonsGridTypeItemsTable"
+        <groupTable id="lessonsGridItemsTable"
                     width="100%"
-                    dataContainer="lessonsGridTypeItemsDc">
+                    dataContainer="lessonsGridItemsDc">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="lessonNumber"/>
-                <column id="lessonStartTime"/>
-                <column id="lessonEndTime"/>
-                <column id="gridType"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="lessonsGridTypeItemsTable.create"/>
-                <button id="editBtn" action="lessonsGridTypeItemsTable.edit"/>
-                <button id="removeBtn" action="lessonsGridTypeItemsTable.remove"/>
+                <button id="createBtn" action="lessonsGridItemsTable.create"/>
+                <button id="editBtn" action="lessonsGridItemsTable.edit"/>
+                <button id="removeBtn" action="lessonsGridItemsTable.remove"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

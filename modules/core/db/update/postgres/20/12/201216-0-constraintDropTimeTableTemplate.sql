@@ -1,0 +1,1 @@
+alter table guru_time_table_template_item drop constraint FK_GURU_TIME_TABLE_TEMPLATE_ITEM_ON_TIME_TABLE_TEMPLATE ;

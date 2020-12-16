@@ -1,6 +1,7 @@
 package su.itschool.guru.service;
 
 import com.haulmont.cuba.core.entity.StandardEntity;
+import su.itschool.guru.entity.LessonsGridType;
 import su.itschool.guru.entity.TimeTableImport;
 
 import java.util.List;
@@ -8,5 +9,5 @@ import java.util.List;
 public interface ImportIrTechXMLToDBService {
     String NAME = "guru_ImportIrTechXMLToDBService";
 
-    List<StandardEntity> parseIrTechXML (TimeTableImport timeTableImport);
+    List<StandardEntity> parseIrTechXML(TimeTableImport timeTableImport, LessonsGridType lessonsGridType);
 }

@@ -15,11 +15,10 @@
         <class>su.itschool.guru.entity.Lesson</class>
         <class>su.itschool.guru.entity.LessonsGridType</class>
         <class>su.itschool.guru.entity.LessonsGridForClassPerDayOfWeek</class>
-        <class>su.itschool.guru.entity.LessonsGridTypeItem</class>
-        <class>su.itschool.guru.entity.TimeTableTemplate</class>
         <class>su.itschool.guru.entity.TimeTableTemplateItem</class>
         <class>su.itschool.guru.entity.TimeTableImport</class>
         <class>su.itschool.guru.entity.Room</class>
         <class>su.itschool.guru.entity.Block</class>
+        <class>su.itschool.guru.entity.LessonsGridItem</class>
     </persistence-unit>
 </persistence>

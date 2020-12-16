@@ -3,7 +3,9 @@ package su.itschool.guru.entity;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Table(name = "GURU_LESSONS_GRID")
@@ -17,9 +19,27 @@ public class LessonsGridType extends StandardEntity {
     private String lessonsGridTypeName;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "ORGANIZATION_ID")
-    private EducationalOrganization organization;
+    @Column(name = "DEFAULT_LESSON_TIME", nullable = false)
+    private Integer defaultLessonTime;
+
+    @Column(name = "SHIFT")
+    private Integer shift;
+
+    public Integer getShift() {
+        return shift;
+    }
+
+    public void setShift(Integer shift) {
+        this.shift = shift;
+    }
+
+    public Integer getDefaultLessonTime() {
+        return defaultLessonTime;
+    }
+
+    public void setDefaultLessonTime(Integer defaultLessonTime) {
+        this.defaultLessonTime = defaultLessonTime;
+    }
 
     public String getLessonsGridTypeName() {
         return lessonsGridTypeName;
@@ -29,11 +49,4 @@ public class LessonsGridType extends StandardEntity {
         this.lessonsGridTypeName = lessonsGridTypeName;
     }
 
-    public EducationalOrganization getOrganization() {
-        return organization;
-    }
-
-    public void setOrganization(EducationalOrganization organization) {
-        this.organization = organization;
-    }
 }

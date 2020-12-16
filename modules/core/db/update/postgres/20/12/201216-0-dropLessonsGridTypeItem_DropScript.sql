@@ -1,0 +1,1 @@
+drop table if exists GURU_LESSONS_GRID_TYPE_ITEM__U23650 cascade ;

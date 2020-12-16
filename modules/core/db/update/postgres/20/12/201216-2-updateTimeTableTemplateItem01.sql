@@ -1,0 +1,3 @@
+alter table GURU_TIME_TABLE_TEMPLATE_ITEM rename column subject_id to subject_id__u77567 ;
+alter table GURU_TIME_TABLE_TEMPLATE_ITEM drop constraint FK_GURU_TIME_TABLE_TEMPLATE_ITEM_ON_SUBJECT ;
+drop index IDX_GURU_TIME_TABLE_TEMPLATE_ITEM_ON_SUBJECT ;

@@ -1,0 +1,1 @@
+alter table guru_time_table_template rename to GURU_TIME_TABLE_TEMPLATE__U80924 ;

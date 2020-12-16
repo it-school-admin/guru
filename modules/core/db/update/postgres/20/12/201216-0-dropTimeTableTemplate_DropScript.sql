@@ -1,0 +1,1 @@
+drop table if exists GURU_TIME_TABLE_TEMPLATE__U80924 cascade ;

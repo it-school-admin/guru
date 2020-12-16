@@ -32,12 +32,13 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
     private EntitiesByIrTechIdFinderService finderService;
 
     @Override
-    public List<StandardEntity> parseIrTechXML(TimeTableImport timeTableImport) {
+    public List<StandardEntity> parseIrTechXML(TimeTableImport timeTableImport, LessonsGridType lessonsGridType) {
 
         List<StandardEntity> result = new ArrayList<>();
         try {
             Element rootElement = getDocumentElementByXMLText(timeTableImport.getImportedXMLData());
 
+            addLessonsGridItems(result, rootElement, lessonsGridType);
             addSubjects(result, rootElement);
             addTeachers(result, rootElement);
             addRooms(result, rootElement);
@@ -52,6 +53,11 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
             throw new RuntimeException(e);
         }
         return null;
+    }
+
+    private void addLessonsGridItems(List<StandardEntity> result, Element rootElement, LessonsGridType lessonsGridType) {
+        result.addAll(createChildEntities(rootElement, "LessonTimes", new LessonsGridItemsImportExecutor(LessonsGridItem.class, finderService, dataManager, lessonsGridType)));
+
     }
 
     private void addClassesAndGroupsAndPlanningItems(List<StandardEntity> result, Element rootElement) {
