@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://weekDayEdit.caption"
+        focusComponent="form"
+        messagesPack="su.itschool.guru.web.screens.weekday">
+    <data>
+        <instance id="weekDayDc"
+                  class="su.itschool.guru.entity.WeekDay">
+            <view extends="_local"/>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="weekDayDc">
+            <column width="350px">
+                <textField id="dayNumberField" property="dayNumber"/>
+                <textField id="dayNameField" property="dayName"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

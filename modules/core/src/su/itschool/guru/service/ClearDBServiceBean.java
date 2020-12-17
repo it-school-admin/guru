@@ -14,6 +14,7 @@ public class ClearDBServiceBean implements ClearDBService {
     @Override
     public void clearDB() {
         persistence.callInTransaction(tr->{
+            persistence.getEntityManager().createNativeQuery("DELETE FROM GURU_TIME_TABLE_TEMPLATE_ITEM;").executeUpdate();
             persistence.getEntityManager().createNativeQuery("DELETE FROM GURU_LESSONS_PLANNING_ITEM;").executeUpdate();
             persistence.getEntityManager().createNativeQuery("DELETE FROM GURU_LESSONS_GRID_ITEM;").executeUpdate();
             persistence.getEntityManager().createNativeQuery("DELETE FROM GURU_GROUP_FOR_LESSON;").executeUpdate();

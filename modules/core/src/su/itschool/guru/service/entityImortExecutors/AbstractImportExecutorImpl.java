@@ -41,7 +41,16 @@ public abstract class AbstractImportExecutorImpl<T extends StandardEntity> imple
 
 
     protected final String getStringAttributeValue(Node entityInformation, String fieldName) {
-        return entityInformation.getAttributes().getNamedItem(fieldName).getNodeValue();
+        //TODO
+        Node attributeNode = entityInformation.getAttributes().getNamedItem(fieldName);
+        if (attributeNode != null)
+        {
+            return entityInformation.getAttributes().getNamedItem(fieldName).getNodeValue();
+        }
+        else
+        {
+            return "";
+        }
     }
 
     protected final Integer getIntegerAttributeValue(Node entityInformation, String fieldName) {

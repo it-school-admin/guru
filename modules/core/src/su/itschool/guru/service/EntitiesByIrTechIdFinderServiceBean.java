@@ -2,10 +2,7 @@ package su.itschool.guru.service;
 
 import com.haulmont.cuba.core.global.DataManager;
 import org.springframework.stereotype.Service;
-import su.itschool.guru.entity.GroupForLesson;
-import su.itschool.guru.entity.SchoolClass;
-import su.itschool.guru.entity.Subject;
-import su.itschool.guru.entity.Teacher;
+import su.itschool.guru.entity.*;
 
 import javax.inject.Inject;
 
@@ -93,6 +90,81 @@ public class EntitiesByIrTechIdFinderServiceBean implements EntitiesByIrTechIdFi
                     one();
 
             return groupForLesson;
+        } catch (Exception e) {
+            //TODO
+            return null;
+        }
+    }
+
+    @Override
+    public LessonsGridItem getLessonGridItemByIrTechId(LessonsGridType lessonsGridType, Integer lessonTimeId) {
+        try {
+            LessonsGridItem lessonsGridItem = dataManager.
+                    load(LessonsGridItem.class).
+                    query("select gi from guru_LessonsGridItem as gi " +
+                            "WHERE " +
+                            "gi.gridType = :lessonsGridType " +
+                            "AND gi.irTechId = :irTechId").
+                    parameter("lessonsGridType", lessonsGridType).
+                    parameter("irTechId", lessonTimeId).
+                    one();
+
+            return lessonsGridItem;
+        } catch (Exception e) {
+            //TODO
+            return null;
+        }
+    }
+
+    @Override
+    public LessonsPlanningItem getPlanningItemByIrTechId(Integer irTechId) {
+        try {
+            LessonsPlanningItem lessonsPlanningItem = dataManager.
+                    load(LessonsPlanningItem.class).
+                    viewProperties("groupOfLearning").
+                    query("select pi from guru_LessonsPlanningItem as pi " +
+                            "WHERE " +
+                            "pi.irTechID = :irTechId").
+                    parameter("irTechId", irTechId).
+                    one();
+
+            return lessonsPlanningItem;
+        } catch (Exception e) {
+            //TODO
+            return null;
+        }
+    }
+
+    @Override
+    public Room getRoomByIrTechId(Integer irTechId) {
+        try {
+            Room room = dataManager.
+                    load(Room.class).
+                    query("select rm from guru_Room as rm " +
+                            "WHERE " +
+                            "rm.irTechId = :irTechId").
+                    parameter("irTechId", irTechId).
+                    one();
+
+            return room;
+        } catch (Exception e) {
+            //TODO
+            return null;
+        }
+    }
+
+    @Override
+    public WeekDay getWeekDay(Integer dayNumber) {
+        try {
+            WeekDay weekDay = dataManager.
+                    load(WeekDay.class).
+                    query("select wd from guru_WeekDay as wd " +
+                            "WHERE " +
+                            "wd.dayNumber = :dayNumber").
+                    parameter("dayNumber", dayNumber).
+                    one();
+
+            return weekDay;
         } catch (Exception e) {
             //TODO
             return null;

@@ -7,7 +7,12 @@
     <data readOnly="true">
         <collection id="timeTableTemplateItemsDc"
                     class="su.itschool.guru.entity.TimeTableTemplateItem">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="room" view="_minimal"/>
+                <property name="groupForLesson" view="_minimal"/>
+                <property name="planningItem" view="_minimal"/>
+                <property name="dayOfWeek" view="_minimal"/>
+            </view>
             <loader id="timeTableTemplateItemsDl">
                 <query>
                     <![CDATA[select e from guru_TimeTableTemplateItem e]]>
@@ -33,8 +38,13 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
+                <column id="groupForLesson"/>
+                <column id="freeSubject"/>
                 <column id="timeStart"/>
                 <column id="timeEnd"/>
+                <column id="room"/>
+                <column id="planningItem"/>
+                <column id="dayOfWeek"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

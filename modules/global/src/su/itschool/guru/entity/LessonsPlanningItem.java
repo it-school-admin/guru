@@ -1,5 +1,6 @@
 package su.itschool.guru.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
@@ -7,6 +8,7 @@ import javax.validation.constraints.NotNull;
 
 @Table(name = "GURU_LESSONS_PLANNING_ITEM")
 @Entity(name = "guru_LessonsPlanningItem")
+@NamePattern("%s %s|groupOfLearning,hoursPerWeek")
 public class LessonsPlanningItem extends StandardEntity {
     private static final long serialVersionUID = 3761661617055118840L;
 

@@ -1,6 +1,8 @@
 package su.itschool.guru.entity;
 
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.OnDelete;
+import com.haulmont.cuba.core.global.DeletePolicy;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -18,9 +20,10 @@ public class TimeTableTemplateItem extends StandardEntity {
     @Column(name = "FREE_SUBJECT")
     private String freeSubject;
 
-    @Column(name = "DAY_OF_WEEK", nullable = false)
     @NotNull
-    private String dayOfWeek;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "DAY_OF_WEEK_ID")
+    private WeekDay dayOfWeek;
 
     @Column(name = "TIME_START", nullable = false)
     @NotNull
@@ -30,8 +33,38 @@ public class TimeTableTemplateItem extends StandardEntity {
     @NotNull
     private LocalTime timeEnd;
 
-    @Column(name = "PLANNING_ITEM")
-    private String planningItem;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ROOM_ID")
+    private Room room;
+
+    @JoinColumn(name = "PLANNING_ITEM_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @OnDelete(DeletePolicy.CASCADE)
+    private LessonsPlanningItem planningItem;
+
+    public WeekDay getDayOfWeek() {
+        return dayOfWeek;
+    }
+
+    public void setDayOfWeek(WeekDay dayOfWeek) {
+        this.dayOfWeek = dayOfWeek;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
+    }
+
+    public void setPlanningItem(LessonsPlanningItem planningItem) {
+        this.planningItem = planningItem;
+    }
+
+    public LessonsPlanningItem getPlanningItem() {
+        return planningItem;
+    }
 
     public String getFreeSubject() {
         return freeSubject;
@@ -39,22 +72,6 @@ public class TimeTableTemplateItem extends StandardEntity {
 
     public void setFreeSubject(String freeSubject) {
         this.freeSubject = freeSubject;
-    }
-
-    public String getPlanningItem() {
-        return planningItem;
-    }
-
-    public void setPlanningItem(String planningItem) {
-        this.planningItem = planningItem;
-    }
-
-    public String getDayOfWeek() {
-        return dayOfWeek;
-    }
-
-    public void setDayOfWeek(String dayOfWeek) {
-        this.dayOfWeek = dayOfWeek;
     }
 
     public void setTimeStart(LocalTime timeStart) {

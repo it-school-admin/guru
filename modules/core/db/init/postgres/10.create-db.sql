@@ -263,10 +263,11 @@ create table GURU_TIME_TABLE_TEMPLATE_ITEM (
     --
     GROUP_FOR_LESSON_ID uuid,
     FREE_SUBJECT varchar(255),
-    DAY_OF_WEEK varchar(255) not null,
+    DAY_OF_WEEK_ID uuid not null,
     TIME_START time not null,
     TIME_END time not null,
-    PLANNING_ITEM varchar(255),
+    ROOM_ID uuid,
+    PLANNING_ITEM_ID uuid,
     --
     primary key (ID)
 )^
@@ -347,3 +348,20 @@ create table GURU_LESSONS_GRID_ITEM (
     primary key (ID)
 )^
 -- end GURU_LESSONS_GRID_ITEM
+-- begin GURU_WEEK_DAY
+create table GURU_WEEK_DAY (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    DAY_NUMBER integer not null,
+    DAY_NAME varchar(255) not null,
+    --
+    primary key (ID)
+)^
+-- end GURU_WEEK_DAY

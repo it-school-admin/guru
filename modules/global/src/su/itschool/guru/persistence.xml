@@ -20,5 +20,6 @@
         <class>su.itschool.guru.entity.Room</class>
         <class>su.itschool.guru.entity.Block</class>
         <class>su.itschool.guru.entity.LessonsGridItem</class>
+        <class>su.itschool.guru.entity.WeekDay</class>
     </persistence-unit>
 </persistence>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://weekDayBrowse.caption"
+        focusComponent="weekDaysTable"
+        messagesPack="su.itschool.guru.web.screens.weekday">
+    <data readOnly="true">
+        <collection id="weekDaysDc"
+                    class="su.itschool.guru.entity.WeekDay">
+            <view extends="_local"/>
+            <loader id="weekDaysDl">
+                <query>
+                    <![CDATA[select e from guru_WeekDay e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="weekDaysTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="weekDaysTable"
+                dataLoader="weekDaysDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="weekDaysTable"
+                    width="100%"
+                    dataContainer="weekDaysDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="dayNumber"/>
+                <column id="dayName"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="weekDaysTable.create"/>
+                <button id="editBtn" action="weekDaysTable.edit"/>
+                <button id="removeBtn" action="weekDaysTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

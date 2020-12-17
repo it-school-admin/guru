@@ -43,6 +43,7 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
             addTeachers(result, rootElement);
             addRooms(result, rootElement);
             addClassesAndGroupsAndPlanningItems(result, rootElement);
+            addLessonsToTimeTableTemplate(result, rootElement, lessonsGridType);
 
 
         } catch (ParserConfigurationException e) {
@@ -53,6 +54,52 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
             throw new RuntimeException(e);
         }
         return null;
+    }
+
+    private void addLessonsToTimeTableTemplate(List<StandardEntity> result, Element rootElement, LessonsGridType lessonsGridType) {
+        Node timeTableNode = getFirstChildNodeByName(rootElement, "TimeTable");
+        Node weekNode = getFirstChildNodeByName(timeTableNode, "Week");
+        if(weekNode.getNodeType() != Node.ELEMENT_NODE)
+        {
+            //TODO hardcode!!!!!!
+            weekNode = timeTableNode.getChildNodes().item(1);
+        }
+        NodeList dayNodes = weekNode.getChildNodes();
+
+
+        for(int i = 0; i < dayNodes.getLength(); i++) {
+            Node dayNode = dayNodes.item(i);
+            if(dayNode.getNodeType()==Node.ELEMENT_NODE){
+                Integer day = Integer.valueOf(dayNode.getAttributes().getNamedItem("id").getNodeValue());
+                NodeList lessonNoNodes = dayNode.getChildNodes();
+                for(int j = 0; j < lessonNoNodes.getLength(); j++) {
+                    Node lessonNoNode = lessonNoNodes.item(j);
+                    if(lessonNoNode.getNodeType()==Node.ELEMENT_NODE){
+                        Integer lessonTimeId = Integer.valueOf(lessonNoNode.getAttributes().getNamedItem("timeId").getNodeValue());
+
+                        LessonsGridItem lessonGridItem = finderService.getLessonGridItemByIrTechId(lessonsGridType, lessonTimeId);
+                        TimeTableItemImportExecutor timeTableItemImportExecutor = new TimeTableItemImportExecutor(TimeTableTemplateItem.class, finderService, dataManager, day, lessonGridItem);
+
+
+                        NodeList lessonNodes = lessonNoNode.getChildNodes();
+                        for(int k = 0; k < lessonNodes.getLength(); k++) {
+                            Node lessonNode = lessonNodes.item(k);
+                            if(lessonNode.getNodeType()==Node.ELEMENT_NODE){
+                                result.add(timeTableItemImportExecutor.execute(null, null, lessonNode));
+                            }
+
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+
     }
 
     private void addLessonsGridItems(List<StandardEntity> result, Element rootElement, LessonsGridType lessonsGridType) {
@@ -103,7 +150,6 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
             Node item = childNodes.item(i);
             if(item.getNodeType()==Node.ELEMENT_NODE){
                 Node currentNode = childNodes.item(i);
-                //TODO
                 StandardEntity createdSchoolClass = schoolClassImportExecutor.execute(null, null, currentNode);
                 result.add(createdSchoolClass);
                 result.addAll(createChildEntities(currentNode, createdSchoolClass, mainGroupsForLessonsExecutor));
@@ -132,6 +178,10 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
 
     private Node getFirstChildNodeByName(Element rootElement, String nodeName) {
         return rootElement.getElementsByTagName(nodeName).item(0);
+    }
+
+    private Node getFirstChildNodeByName(Node rootNode, String nodeName) {
+        return rootNode.getChildNodes().item(0);
     }
 
     private Element getDocumentElementByXMLText(String xmlDataAsString) throws ParserConfigurationException, SAXException, IOException {
