@@ -7,10 +7,24 @@
     <data readOnly="true">
         <collection id="lessonsDc"
                     class="su.itschool.guru.entity.Lesson">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="room" view="_minimal"/>
+                <property name="studyGroup" view="_minimal"/>
+                <property name="planningItem" view="_minimal"/>
+                <property name="subjectOnTheFly" view="_minimal"/>
+                <property name="teacherOnTheFly" view="_minimal"/>
+            </view>
             <loader id="lessonsDl">
                 <query>
                     <![CDATA[select e from guru_Lesson e]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="weeksDc" class="su.itschool.guru.entity.Week">
+            <view extends="_local"/>
+            <loader id="weeksDl">
+                <query>
+                    <![CDATA[select e from guru_Week e]]>
                 </query>
             </loader>
         </collection>
@@ -19,6 +33,13 @@
                 width="800"/>
     <layout expand="lessonsTable"
             spacing="true">
+        <groupTable id="weeksTable" height="100px" width="200px" dataContainer="weeksDc">
+            <columns>
+                <column id="weekNumber"/>
+                <column id="startDate"/>
+                <column id="endDate"/>
+            </columns>
+        </groupTable>
         <filter id="filter"
                 applyTo="lessonsTable"
                 dataLoader="lessonsDl">
@@ -33,8 +54,17 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
+                <column id="planningItem"/>
+                <column id="studyGroup"/>
                 <column id="startTime"/>
                 <column id="endTime"/>
+                <column id="isDistant"/>
+                <column id="room"/>
+                <column id="topicOfTheLesson"/>
+                <column id="toolsDescription"/>
+                <column id="subjectOnTheFly"/>
+                <column id="teacherOnTheFly"/>
+                <column id="homeTaskDescription"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
@@ -42,6 +72,7 @@
                 <button id="createBtn" action="lessonsTable.create"/>
                 <button id="editBtn" action="lessonsTable.edit"/>
                 <button id="removeBtn" action="lessonsTable.remove"/>
+                <button id="loadFromTemplate" caption="msg://loadFromTemplate.caption"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

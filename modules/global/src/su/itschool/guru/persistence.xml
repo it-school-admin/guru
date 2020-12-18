@@ -11,7 +11,7 @@
         <class>su.itschool.guru.entity.LessonsPlanningItem</class>
         <class>su.itschool.guru.entity.GroupForLesson</class>
         <class>su.itschool.guru.entity.EducationalPeriod</class>
-        <class>su.itschool.guru.entity.EductaionalYear</class>
+        <class>su.itschool.guru.entity.EducationalYear</class>
         <class>su.itschool.guru.entity.Lesson</class>
         <class>su.itschool.guru.entity.LessonsGridType</class>
         <class>su.itschool.guru.entity.LessonsGridForClassPerDayOfWeek</class>
@@ -21,5 +21,6 @@
         <class>su.itschool.guru.entity.Block</class>
         <class>su.itschool.guru.entity.LessonsGridItem</class>
         <class>su.itschool.guru.entity.WeekDay</class>
+        <class>su.itschool.guru.entity.Week</class>
     </persistence-unit>
 </persistence>

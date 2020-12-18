@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
-        caption="msg://eductaionalYearEdit.caption"
+        caption="msg://educationalYearEdit.caption"
         focusComponent="form"
-        messagesPack="su.itschool.guru.web.screens.eductaionalyear">
+        messagesPack="su.itschool.guru.web.screens.educationalyear">
     <data>
-        <instance id="eductaionalYearDc"
-                  class="su.itschool.guru.entity.EductaionalYear">
+        <instance id="educationalYearDc"
+                  class="su.itschool.guru.entity.EducationalYear">
             <view extends="_local"/>
             <loader/>
         </instance>
@@ -13,7 +13,7 @@
     <dialogMode height="600"
                 width="800"/>
     <layout expand="editActions" spacing="true">
-        <form id="form" dataContainer="eductaionalYearDc">
+        <form id="form" dataContainer="educationalYearDc">
             <column width="350px">
                 <textField id="nameField" property="name"/>
                 <dateField id="startDateField" property="startDate"/>

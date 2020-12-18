@@ -6,7 +6,13 @@
     <data>
         <instance id="lessonDc"
                   class="su.itschool.guru.entity.Lesson">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="room" view="_minimal"/>
+                <property name="studyGroup" view="_minimal"/>
+                <property name="planningItem" view="_minimal"/>
+                <property name="subjectOnTheFly" view="_minimal"/>
+                <property name="teacherOnTheFly" view="_minimal"/>
+            </view>
             <loader/>
         </instance>
     </data>
@@ -17,6 +23,15 @@
             <column width="350px">
                 <textField id="startTimeField" property="startTime"/>
                 <textField id="endTimeField" property="endTime"/>
+                <checkBox id="isDistantField" property="isDistant"/>
+                <pickerField id="roomField" property="room"/>
+                <textArea rows="5" id="topicOfTheLessonField" property="topicOfTheLesson"/>
+                <textArea rows="5" id="toolsDescriptionField" property="toolsDescription"/>
+                <pickerField id="studyGroupField" property="studyGroup"/>
+                <pickerField id="planningItemField" property="planningItem"/>
+                <pickerField id="subjectOnTheFlyField" property="subjectOnTheFly"/>
+                <pickerField id="teacherOnTheFlyField" property="teacherOnTheFly"/>
+                <textArea rows="5" id="homeTaskDesriptionField" property="homeTaskDescription"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

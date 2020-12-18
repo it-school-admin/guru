@@ -1,0 +1,1 @@
+drop table if exists GURU_EDUCTAIONAL_YEAR__U20149 cascade ;

@@ -91,11 +91,16 @@ create table GURU_LESSON (
     DELETED_BY varchar(50),
     --
     STUDY_GROUP_ID uuid not null,
+    START_TIME timestamp not null,
+    END_TIME timestamp not null,
+    SUBJECT_ON_THE_FLY_ID uuid,
+    TEACHER_ON_THE_FLY_ID uuid,
     IS_DISTANT boolean not null,
-    SUBJECT_ID uuid,
-    TEACHER_ID uuid,
-    START_TIME varchar(255) not null,
-    END_TIME varchar(255) not null,
+    PLANNING_ITEM_ID uuid,
+    ROOM_ID uuid,
+    TOPIC_OF_THE_LESSON text,
+    TOOLS_DESCRIPTION text,
+    HOME_TASK_DESCRIPTION text,
     --
     primary key (ID)
 )^
@@ -152,24 +157,7 @@ create table GURU_CLASS_LEVEL (
     primary key (ID)
 )^
 -- end GURU_CLASS_LEVEL
--- begin GURU_EDUCTAIONAL_YEAR
-create table GURU_EDUCTAIONAL_YEAR (
-    ID uuid,
-    VERSION integer not null,
-    CREATE_TS timestamp,
-    CREATED_BY varchar(50),
-    UPDATE_TS timestamp,
-    UPDATED_BY varchar(50),
-    DELETE_TS timestamp,
-    DELETED_BY varchar(50),
-    --
-    NAME varchar(255) not null,
-    START_DATE timestamp not null,
-    END_DATE timestamp not null,
-    --
-    primary key (ID)
-)^
--- end GURU_EDUCTAIONAL_YEAR
+
 -- begin GURU_SCHOOL
 create table GURU_SCHOOL (
     ID uuid,
@@ -262,7 +250,6 @@ create table GURU_TIME_TABLE_TEMPLATE_ITEM (
     DELETED_BY varchar(50),
     --
     GROUP_FOR_LESSON_ID uuid,
-    FREE_SUBJECT varchar(255),
     DAY_OF_WEEK_ID uuid not null,
     TIME_START time not null,
     TIME_END time not null,
@@ -365,3 +352,39 @@ create table GURU_WEEK_DAY (
     primary key (ID)
 )^
 -- end GURU_WEEK_DAY
+-- begin GURU_EDUCATIONAL_YEAR
+create table GURU_EDUCATIONAL_YEAR (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    NAME varchar(255) not null,
+    START_DATE date not null,
+    END_DATE date not null,
+    --
+    primary key (ID)
+)^
+-- end GURU_EDUCATIONAL_YEAR
+-- begin GURU_WEEK
+create table GURU_WEEK (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    WEEK_NUMBER integer,
+    START_DATE date not null,
+    END_DATE date not null,
+    --
+    primary key (ID)
+)^
+-- end GURU_WEEK

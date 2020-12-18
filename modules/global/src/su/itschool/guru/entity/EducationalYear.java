@@ -7,40 +7,40 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
-@Table(name = "GURU_EDUCTAIONAL_YEAR")
-@Entity(name = "guru_EductaionalYear")
+@Table(name = "GURU_EDUCATIONAL_YEAR")
+@Entity(name = "guru_EducationalYear")
 @NamePattern("%s|name")
-public class EductaionalYear extends StandardEntity {
+public class EducationalYear extends StandardEntity {
     private static final long serialVersionUID = -613892533999516565L;
 
     @Column(name = "NAME", nullable = false, unique = true)
     @NotNull
     private String name;
 
-    @NotNull
     @Column(name = "START_DATE", nullable = false)
-    private LocalDateTime startDate;
-
     @NotNull
+    private LocalDate startDate;
+
     @Column(name = "END_DATE", nullable = false)
-    private LocalDateTime endDate;
+    @NotNull
+    private LocalDate endDate;
 
-    public LocalDateTime getEndDate() {
-        return endDate;
+    public void setStartDate(LocalDate startDate) {
+        this.startDate = startDate;
     }
 
-    public void setEndDate(LocalDateTime endDate) {
-        this.endDate = endDate;
-    }
-
-    public LocalDateTime getStartDate() {
+    public LocalDate getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(LocalDateTime startDate) {
-        this.startDate = startDate;
+    public void setEndDate(LocalDate endDate) {
+        this.endDate = endDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
     }
 
     public String getName() {

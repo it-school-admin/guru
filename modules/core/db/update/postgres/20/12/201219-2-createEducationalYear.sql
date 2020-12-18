@@ -1,0 +1,1 @@
+create unique index IDX_GURU_EDUCATIONAL_YEAR_UK_NAME on GURU_EDUCATIONAL_YEAR (NAME) where DELETE_TS is null ;

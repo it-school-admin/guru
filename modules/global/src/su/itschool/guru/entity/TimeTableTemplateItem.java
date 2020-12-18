@@ -17,9 +17,6 @@ public class TimeTableTemplateItem extends StandardEntity {
     @JoinColumn(name = "GROUP_FOR_LESSON_ID")
     private GroupForLesson groupForLesson;
 
-    @Column(name = "FREE_SUBJECT")
-    private String freeSubject;
-
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "DAY_OF_WEEK_ID")
@@ -64,14 +61,6 @@ public class TimeTableTemplateItem extends StandardEntity {
 
     public LessonsPlanningItem getPlanningItem() {
         return planningItem;
-    }
-
-    public String getFreeSubject() {
-        return freeSubject;
-    }
-
-    public void setFreeSubject(String freeSubject) {
-        this.freeSubject = freeSubject;
     }
 
     public void setTimeStart(LocalTime timeStart) {

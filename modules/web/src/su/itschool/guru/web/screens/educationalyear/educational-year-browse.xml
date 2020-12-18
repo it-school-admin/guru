@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
         xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
-        caption="msg://eductaionalYearBrowse.caption"
-        focusComponent="eductaionalYearsTable"
-        messagesPack="su.itschool.guru.web.screens.eductaionalyear">
+        caption="msg://educationalYearBrowse.caption"
+        focusComponent="educationalYearsTable"
+        messagesPack="su.itschool.guru.web.screens.educationalyear">
     <data readOnly="true">
-        <collection id="eductaionalYearsDc"
-                    class="su.itschool.guru.entity.EductaionalYear">
+        <collection id="educationalYearsDc"
+                    class="su.itschool.guru.entity.EducationalYear">
             <view extends="_local"/>
-            <loader id="eductaionalYearsDl">
+            <loader id="educationalYearsDl">
                 <query>
-                    <![CDATA[select e from guru_EductaionalYear e]]>
+                    <![CDATA[select e from guru_EducationalYear e]]>
                 </query>
             </loader>
         </collection>
     </data>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="eductaionalYearsTable"
+    <layout expand="educationalYearsTable"
             spacing="true">
         <filter id="filter"
-                applyTo="eductaionalYearsTable"
-                dataLoader="eductaionalYearsDl">
+                applyTo="educationalYearsTable"
+                dataLoader="educationalYearsDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="eductaionalYearsTable"
+        <groupTable id="educationalYearsTable"
                     width="100%"
-                    dataContainer="eductaionalYearsDc">
+                    dataContainer="educationalYearsDc">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
@@ -40,9 +40,9 @@
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="eductaionalYearsTable.create"/>
-                <button id="editBtn" action="eductaionalYearsTable.edit"/>
-                <button id="removeBtn" action="eductaionalYearsTable.remove"/>
+                <button id="createBtn" action="educationalYearsTable.create"/>
+                <button id="editBtn" action="educationalYearsTable.edit"/>
+                <button id="removeBtn" action="educationalYearsTable.remove"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

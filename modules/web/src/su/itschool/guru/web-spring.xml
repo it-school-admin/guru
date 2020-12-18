@@ -16,6 +16,9 @@
                 <entry key="guru_EntitiesByIrTechIdFinderService"
                        value="su.itschool.guru.service.EntitiesByIrTechIdFinderService"/>
                 <entry key="guru_ClearDBService" value="su.itschool.guru.service.ClearDBService"/>
+                <entry key="guru_CopyTimeTableForWeekFromTemplateService"
+                       value="su.itschool.guru.service.CopyTimeTableForWeekFromTemplateService"/>
+                <entry key="guru_FillingWeeksService" value="su.itschool.guru.service.FillingWeeksService"/>
             </map>
         </property>
     </bean>

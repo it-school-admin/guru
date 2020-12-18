@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://weekBrowse.caption"
+        focusComponent="weeksTable"
+        messagesPack="su.itschool.guru.web.screens.week">
+    <data readOnly="true">
+        <collection id="weeksDc"
+                    class="su.itschool.guru.entity.Week">
+            <view extends="_local"/>
+            <loader id="weeksDl">
+                <query>
+                    <![CDATA[select e from guru_Week e]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="educationalYearsDc" class="su.itschool.guru.entity.EducationalYear">
+            <view extends="_local"/>
+            <loader id="educationalYearsDl">
+                <query>
+                    <![CDATA[select e from guru_EducationalYear e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="weeksTable"
+            spacing="true">
+        <groupTable id="educationalYearsTable" height="100px" width="200px" dataContainer="educationalYearsDc">
+            <columns>
+                <column id="name"/>
+                <column id="startDate"/>
+                <column id="endDate"/>
+            </columns>
+        </groupTable>
+        <filter id="filter"
+                applyTo="weeksTable"
+                dataLoader="weeksDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="weeksTable"
+                    width="100%"
+                    dataContainer="weeksDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="weekNumber"/>
+                <column id="startDate"/>
+                <column id="endDate"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="weeksTable.create"/>
+                <button id="editBtn" action="weeksTable.edit"/>
+                <button id="removeBtn" action="weeksTable.remove"/>
+                <button id="fillWeeksBtn" caption="msg://fillWeeksBtn.caption"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

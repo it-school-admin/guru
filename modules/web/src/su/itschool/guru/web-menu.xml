@@ -15,5 +15,7 @@
         <item screen="guru_TimeTableImport.browse" caption="mainMsg://menu_config.guru_TimeTableImport.browse"/>
         <item screen="guru_LessonsGridItem.browse" caption="mainMsg://menu_config.guru_LessonsGridItem.browse"/>
         <item screen="guru_WeekDay.browse" caption="mainMsg://menu_config.guru_WeekDay.browse"/>
+        <item screen="guru_Week.browse" caption="mainMsg://menu_config.guru_Week.browse"/>
+        <item screen="guru_EducationalYear.browse" caption="mainMsg://menu_config.guru_EducationalYear.browse"/>
     </menu>
 </menu-config>
