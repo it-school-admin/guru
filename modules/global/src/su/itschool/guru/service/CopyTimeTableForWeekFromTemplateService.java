@@ -6,4 +6,8 @@ public interface CopyTimeTableForWeekFromTemplateService {
     String NAME = "guru_CopyTimeTableForWeekFromTemplateService";
 
     void copyTimeTableForWeekFromTemplate(Week week, Boolean isDistant);
+
+    void clearAllWeeks();
+
+    void clearWeek(Week selectedWeek);
 }

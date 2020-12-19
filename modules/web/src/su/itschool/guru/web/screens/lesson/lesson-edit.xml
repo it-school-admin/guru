@@ -12,6 +12,7 @@
                 <property name="planningItem" view="_minimal"/>
                 <property name="subjectOnTheFly" view="_minimal"/>
                 <property name="teacherOnTheFly" view="_minimal"/>
+                <property name="week" view="_minimal"/>
             </view>
             <loader/>
         </instance>
@@ -32,6 +33,8 @@
                 <pickerField id="subjectOnTheFlyField" property="subjectOnTheFly"/>
                 <pickerField id="teacherOnTheFlyField" property="teacherOnTheFly"/>
                 <textArea rows="5" id="homeTaskDesriptionField" property="homeTaskDescription"/>
+                <textField id="captionForCalendarField" property="captionForCalendar"/>
+                <pickerField id="weekField" property="week"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

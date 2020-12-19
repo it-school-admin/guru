@@ -18,6 +18,10 @@ public class Lesson extends StandardEntity {
     @JoinColumn(name = "STUDY_GROUP_ID")
     private GroupForLesson studyGroup;
 
+    @Column(name = "CAPTION_FOR_CALENDAR", nullable = false)
+    @NotNull
+    private String captionForCalendar;
+
     @Column(name = "START_TIME", nullable = false)
     @NotNull
     private LocalDateTime startTime;
@@ -42,6 +46,11 @@ public class Lesson extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private LessonsPlanningItem planningItem;
 
+    @JoinColumn(name = "WEEK_ID")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @NotNull
+    private Week week;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ROOM_ID")
     private Room room;
@@ -57,6 +66,22 @@ public class Lesson extends StandardEntity {
     @Lob
     @Column(name = "HOME_TASK_DESCRIPTION")
     private String homeTaskDescription;
+
+    public String getCaptionForCalendar() {
+        return captionForCalendar;
+    }
+
+    public void setCaptionForCalendar(String captionForCalendar) {
+        this.captionForCalendar = captionForCalendar;
+    }
+
+    public void setWeek(Week week) {
+        this.week = week;
+    }
+
+    public Week getWeek() {
+        return week;
+    }
 
     public String getHomeTaskDescription() {
         return homeTaskDescription;

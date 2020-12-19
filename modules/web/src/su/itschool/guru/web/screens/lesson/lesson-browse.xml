@@ -13,6 +13,7 @@
                 <property name="planningItem" view="_minimal"/>
                 <property name="subjectOnTheFly" view="_minimal"/>
                 <property name="teacherOnTheFly" view="_minimal"/>
+                <property name="week" view="_minimal"/>
             </view>
             <loader id="lessonsDl">
                 <query>
@@ -31,9 +32,9 @@
     </data>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="lessonsTable"
-            spacing="true">
-        <groupTable id="weeksTable" height="100px" width="200px" dataContainer="weeksDc">
+    <layout
+            spacing="true" expand="lessonsTabSheet">
+        <groupTable id="weeksTable" height="100px" width="100%" dataContainer="weeksDc" align="TOP_RIGHT">
             <columns>
                 <column id="weekNumber"/>
                 <column id="startDate"/>
@@ -45,36 +46,51 @@
                 dataLoader="lessonsDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="lessonsTable"
-                    width="100%"
-                    dataContainer="lessonsDc">
-            <actions>
-                <action id="create" type="create"/>
-                <action id="edit" type="edit"/>
-                <action id="remove" type="remove"/>
-            </actions>
-            <columns>
-                <column id="planningItem"/>
-                <column id="studyGroup"/>
-                <column id="startTime"/>
-                <column id="endTime"/>
-                <column id="isDistant"/>
-                <column id="room"/>
-                <column id="topicOfTheLesson"/>
-                <column id="toolsDescription"/>
-                <column id="subjectOnTheFly"/>
-                <column id="teacherOnTheFly"/>
-                <column id="homeTaskDescription"/>
-            </columns>
-            <rowsCount/>
-            <buttonsPanel id="buttonsPanel"
-                          alwaysVisible="true">
-                <button id="createBtn" action="lessonsTable.create"/>
-                <button id="editBtn" action="lessonsTable.edit"/>
-                <button id="removeBtn" action="lessonsTable.remove"/>
-                <button id="loadFromTemplate" caption="msg://loadFromTemplate.caption"/>
-            </buttonsPanel>
-        </groupTable>
+        <tabSheet id="lessonsTabSheet">
+            <tab id="lessonsCalendarTab" caption="msg://lessonsCalendarTab.caption" margin="true,false,false,false"
+                 spacing="true"
+                 expand="lessonsCalendar">
+                <calendar id="lessonsCalendar" dataContainer="lessonsDc" startDateProperty="startTime"
+                          endDateProperty="endTime" captionProperty="captionForCalendar" firstVisibleHourOfDay="8"
+                          lastVisibleHourOfDay="19"/>
+            </tab>
+            <tab id="lessonListTab" caption="msg://lessonListTab.caption" expand="lessonsTable">
+                <groupTable id="lessonsTable"
+                            width="100%"
+                            dataContainer="lessonsDc">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="remove" type="remove"/>
+                    </actions>
+                    <columns>
+                        <column id="planningItem"/>
+                        <column id="studyGroup"/>
+                        <column id="startTime"/>
+                        <column id="endTime"/>
+                        <column id="isDistant"/>
+                        <column id="room"/>
+                        <column id="topicOfTheLesson"/>
+                        <column id="toolsDescription"/>
+                        <column id="subjectOnTheFly"/>
+                        <column id="teacherOnTheFly"/>
+                        <column id="homeTaskDescription"/>
+                        <column id="captionForCalendar"/>
+                        <column id="week"/>
+                    </columns>
+                    <rowsCount/>
+                    <buttonsPanel id="buttonsPanel"
+                                  alwaysVisible="true">
+                        <button id="createBtn" action="lessonsTable.create"/>
+                        <button id="editBtn" action="lessonsTable.edit"/>
+                        <button id="removeBtn" action="lessonsTable.remove"/>
+                        <button id="loadFromTemplate" caption="msg://loadFromTemplate.caption"/>
+                        <button id="clearWeek" caption="msg://clearWeek.caption"/>
+                        <button id="clearAllWeeks" caption="msg://clearAllWeeks.caption"/>
+                    </buttonsPanel>
+                </groupTable>
+            </tab>
+        </tabSheet>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
