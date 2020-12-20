@@ -25,8 +25,8 @@ public class EntitiesByIrTechIdFinderServiceBean implements EntitiesByIrTechIdFi
         }
         catch (Exception e)
         {
-            //TODO
-            e.printStackTrace();
+            //TODO avoid exception appearing
+           // e.printStackTrace();
             return null;
         }
 

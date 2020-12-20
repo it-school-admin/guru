@@ -52,7 +52,8 @@ public class MainGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecut
                     one();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            //TODO avoid exception appearing
+           // e.printStackTrace();
             return null;
         }
 

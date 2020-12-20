@@ -65,7 +65,6 @@ public class SubGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecuto
     public StandardEntity findEntity(Node rootNode, StandardEntity rootEntity, Node entityInformation) {
         GroupForLesson groupForLesson;
         try {
-
             groupForLesson = getDataManager().
                     load(GroupForLesson.class).
                     query("select gr from guru_GroupForLesson as gr " +
@@ -82,7 +81,8 @@ public class SubGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecuto
                     one();
 
         } catch (Exception e) {
-            e.printStackTrace();
+            //TODO avoid exception appearing
+            //e.printStackTrace();
             return null;
         }
 
