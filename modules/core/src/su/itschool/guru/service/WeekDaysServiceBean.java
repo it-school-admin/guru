@@ -18,7 +18,7 @@ public class WeekDaysServiceBean implements WeekDaysService {
         for(int i = 1; i < weekDayName.length+1; i++) {
             WeekDay weekDay = dataManager.create(WeekDay.class);
             weekDay.setDayNumber(i);
-            weekDay.setDayName(weekDayName[i]);
+            weekDay.setDayName(weekDayName[i-1]);
             dataManager.commit(weekDay);
         }
     }
