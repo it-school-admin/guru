@@ -1,4 +1,33 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
 
+    <view entity="guru_Week" name="week-view-for-lookup" extends="_local">
+        <property name="displayName"/>
+    </view>
+    <view entity="guru_Lesson" name="lesson-view-for-calendar" extends="_minimal">
+        <property name="planningItem" view="_minimal">
+            <property name="groupOfLearning" view="_minimal">
+                <property name="isFullClassGroup"/>
+            </property>
+        </property>
+        <property name="endTime"/>
+        <property name="room" view="_minimal">
+            <property name="roomName"/>
+            <property name="roomBlock" view="_minimal"/>
+        </property>
+        <property name="groupOnTheFly" view="_minimal">
+            <property name="teacher" view="_minimal">
+                <property name="familyNameWithAbbreviation"/>
+            </property>
+        </property>
+        <property name="subjectOnTheFly" view="_minimal"/>
+        <property name="teacherOnTheFly" view="_minimal"/>
+        <property name="isDistant"/>
+        <property name="week" view="_minimal"/>
+        <property name="toolsDescription"/>
+        <property name="homeTaskDescription"/>
+        <property name="captionForCalendar"/>
+        <property name="descriptionForCalendar"/>
+        <property name="topicOfTheLesson"/>
+    </view>
 </views>

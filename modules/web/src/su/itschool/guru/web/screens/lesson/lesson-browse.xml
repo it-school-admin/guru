@@ -6,15 +6,7 @@
         messagesPack="su.itschool.guru.web.screens.lesson">
     <data readOnly="true">
         <collection id="lessonsDc"
-                    class="su.itschool.guru.entity.Lesson">
-            <view extends="_local">
-                <property name="room" view="_minimal"/>
-                <property name="studyGroup" view="_minimal"/>
-                <property name="planningItem" view="_minimal"/>
-                <property name="subjectOnTheFly" view="_minimal"/>
-                <property name="teacherOnTheFly" view="_minimal"/>
-                <property name="week" view="_minimal"/>
-            </view>
+                    class="su.itschool.guru.entity.Lesson" view="lesson-view-for-calendar">
             <loader id="lessonsDl">
                 <query>
                     <![CDATA[select e from guru_Lesson e]]>
@@ -39,12 +31,16 @@
                 <column id="weekNumber"/>
                 <column id="startDate"/>
                 <column id="endDate"/>
+                <column id="displayName"/>
             </columns>
         </groupTable>
         <filter id="filter"
                 applyTo="lessonsTable"
                 dataLoader="lessonsDl">
             <properties include=".*"/>
+            <property name="week" caption="Неделя"/>
+            <property name="studyGroup.schoolClass" caption="Класс"/>
+            <property name="studyGroup.subject" caption="Предмет"/>
         </filter>
         <tabSheet id="lessonsTabSheet">
             <tab id="lessonsCalendarTab" caption="msg://lessonsCalendarTab.caption" margin="true,false,false,false"
@@ -52,7 +48,7 @@
                  expand="lessonsCalendar">
                 <calendar id="lessonsCalendar" dataContainer="lessonsDc" startDateProperty="startTime"
                           endDateProperty="endTime" captionProperty="captionForCalendar" firstVisibleHourOfDay="8"
-                          lastVisibleHourOfDay="19"/>
+                          lastVisibleHourOfDay="14" descriptionProperty="captionForCalendar"/>
             </tab>
             <tab id="lessonListTab" caption="msg://lessonListTab.caption" expand="lessonsTable">
                 <groupTable id="lessonsTable"
@@ -65,7 +61,7 @@
                     </actions>
                     <columns>
                         <column id="planningItem"/>
-                        <column id="studyGroup"/>
+                        <column id="groupOnTheFly"/>
                         <column id="startTime"/>
                         <column id="endTime"/>
                         <column id="isDistant"/>
@@ -77,6 +73,7 @@
                         <column id="homeTaskDescription"/>
                         <column id="captionForCalendar"/>
                         <column id="week"/>
+                        <column id="descriptionForCalendar"/>
                     </columns>
                     <rowsCount/>
                     <buttonsPanel id="buttonsPanel"

@@ -1,5 +1,6 @@
 package su.itschool.guru.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
@@ -7,6 +8,7 @@ import javax.validation.constraints.NotNull;
 
 @Table(name = "GURU_ROOM")
 @Entity(name = "guru_Room")
+@NamePattern("%s %s|roomName,roomBlock")
 public class Room extends StandardEntity {
     private static final long serialVersionUID = -5861697168919518406L;
 

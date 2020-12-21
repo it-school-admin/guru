@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://scheduleForTeachers.caption"
+        messagesPack="su.itschool.guru.web.screens.lesson">
+    <data>
+        <collection id="lessonsDc" class="su.itschool.guru.entity.Lesson">
+            <view extends="_local"/>
+            <loader id="lessonsDl">
+                <query>
+                    <![CDATA[select e from guru_Lesson e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout>
+        <calendar/>
+    </layout>
+</window>

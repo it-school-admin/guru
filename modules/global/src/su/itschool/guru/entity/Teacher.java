@@ -1,11 +1,13 @@
 package su.itschool.guru.entity;
 
+import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
@@ -73,4 +75,11 @@ public class Teacher extends StandardEntity {
     public void setTeacherName(String teacherName) {
         this.teacherName = teacherName;
     }
+
+    @Transient
+    @MetaProperty(related = {"teacherName", "teacherSecondName", "teacherFamilyName"})
+    public String getFamilyNameWithAbbreviation(){
+        return teacherFamilyName + " " + teacherName.charAt(0)+"."+teacherSecondName.charAt(0)+".";
+    }
+
 }

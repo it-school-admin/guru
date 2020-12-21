@@ -51,6 +51,7 @@
                 <column id="weekNumber"/>
                 <column id="startDate"/>
                 <column id="endDate"/>
+                <column id="displayName"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

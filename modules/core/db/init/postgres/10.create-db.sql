@@ -90,14 +90,13 @@ create table GURU_LESSON (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    STUDY_GROUP_ID uuid not null,
-    CAPTION_FOR_CALENDAR varchar(255) not null,
+    PLANNING_ITEM_ID uuid,
     START_TIME timestamp not null,
     END_TIME timestamp not null,
+    GROUP_ON_THE_FLY_ID uuid,
     SUBJECT_ON_THE_FLY_ID uuid,
     TEACHER_ON_THE_FLY_ID uuid,
     IS_DISTANT boolean not null,
-    PLANNING_ITEM_ID uuid,
     WEEK_ID uuid not null,
     ROOM_ID uuid,
     TOPIC_OF_THE_LESSON text,
@@ -383,7 +382,7 @@ create table GURU_WEEK (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    WEEK_NUMBER integer,
+    WEEK_NUMBER integer not null,
     START_DATE date not null,
     END_DATE date not null,
     --

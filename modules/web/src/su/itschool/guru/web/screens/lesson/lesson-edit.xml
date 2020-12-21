@@ -13,6 +13,7 @@
                 <property name="subjectOnTheFly" view="_minimal"/>
                 <property name="teacherOnTheFly" view="_minimal"/>
                 <property name="week" view="_minimal"/>
+                <property name="groupOnTheFly" view="_minimal"/>
             </view>
             <loader/>
         </instance>
@@ -35,6 +36,8 @@
                 <textArea rows="5" id="homeTaskDesriptionField" property="homeTaskDescription"/>
                 <textField id="captionForCalendarField" property="captionForCalendar"/>
                 <pickerField id="weekField" property="week"/>
+                <textField id="descriptionForCalendarField" property="descriptionForCalendar"/>
+                <pickerField id="groupOnTheFlyField" property="groupOnTheFly"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

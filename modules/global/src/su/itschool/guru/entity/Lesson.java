@@ -1,5 +1,6 @@
 package su.itschool.guru.entity;
 
+import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
@@ -13,14 +14,9 @@ import java.time.LocalDateTime;
 public class Lesson extends StandardEntity {
     private static final long serialVersionUID = 5311904021082586722L;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "STUDY_GROUP_ID")
-    private GroupForLesson studyGroup;
-
-    @Column(name = "CAPTION_FOR_CALENDAR", nullable = false)
-    @NotNull
-    private String captionForCalendar;
+    @JoinColumn(name = "PLANNING_ITEM_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private LessonsPlanningItem planningItem;
 
     @Column(name = "START_TIME", nullable = false)
     @NotNull
@@ -29,6 +25,10 @@ public class Lesson extends StandardEntity {
     @Column(name = "END_TIME", nullable = false)
     @NotNull
     private LocalDateTime endTime;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "GROUP_ON_THE_FLY_ID")
+    private GroupForLesson groupOnTheFly;
 
     @JoinColumn(name = "SUBJECT_ON_THE_FLY_ID")
     @ManyToOne(fetch = FetchType.LAZY)
@@ -41,10 +41,6 @@ public class Lesson extends StandardEntity {
     @NotNull
     @Column(name = "IS_DISTANT", nullable = false)
     private Boolean isDistant = false;
-
-    @JoinColumn(name = "PLANNING_ITEM_ID")
-    @ManyToOne(fetch = FetchType.LAZY)
-    private LessonsPlanningItem planningItem;
 
     @JoinColumn(name = "WEEK_ID")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -67,12 +63,12 @@ public class Lesson extends StandardEntity {
     @Column(name = "HOME_TASK_DESCRIPTION")
     private String homeTaskDescription;
 
-    public String getCaptionForCalendar() {
-        return captionForCalendar;
+    public GroupForLesson getGroupOnTheFly() {
+        return groupOnTheFly;
     }
 
-    public void setCaptionForCalendar(String captionForCalendar) {
-        this.captionForCalendar = captionForCalendar;
+    public void setGroupOnTheFly(GroupForLesson groupOnTheFly) {
+        this.groupOnTheFly = groupOnTheFly;
     }
 
     public void setWeek(Week week) {
@@ -163,11 +159,75 @@ public class Lesson extends StandardEntity {
         this.isDistant = isDistant;
     }
 
-    public GroupForLesson getStudyGroup() {
-        return studyGroup;
+    @Transient
+    @MetaProperty(related = {"planningItem"})
+    public String getCaptionForCalendar(){
+        return calculateCaptionForCalendarEvent();
     }
 
-    public void setStudyGroup(GroupForLesson studyGroup) {
-        this.studyGroup = studyGroup;
+    @Transient
+    @MetaProperty(related = {"isDistant", "room"})
+    public String getDescriptionForCalendar(){
+        return calculateDescriptionForCalendarEvent();
     }
+
+    private String calculateDescriptionForCalendarEvent() {
+        String result ="";
+        if(isDistant)
+        {
+            result = "Дистанционный";
+        }
+        else
+        {
+            result = "Очный, " + room.getRoomName();
+        }
+        if(planningItem != null)
+        {
+            result = result + " " + planningItem.getGroupOfLearning().getTeacher().getFamilyNameWithAbbreviation();
+        }
+        return result;
+    }
+
+    private String calculateCaptionForCalendarEvent() {
+        String result = "";
+        if(planningItem != null)
+        {
+            GroupForLesson groupOfLearning = planningItem.getGroupOfLearning();
+            if(groupOfLearning.getIsFullClassGroup())
+            {
+                result = groupOfLearning.getSchoolClass().getClassName() +
+                        " " +
+                        groupOfLearning.getSubject().getSubjectName();
+
+            }
+            else
+            {
+                result = groupOfLearning.getSchoolClass().getClassName() +
+                        " " +
+                        groupOfLearning.getSubject().getSubjectName() +
+                        " " +
+                        groupOfLearning.getSubGroupName();
+            }
+
+            result = result + " " + planningItem.getGroupOfLearning().getTeacher().getFamilyNameWithAbbreviation();
+
+            if(isDistant)
+            {
+                result = result + " дистанционный";
+            }
+            else
+            {
+                result = result + " очный,";
+                if(room != null)
+                {
+                    result = result +  room.getRoomName();
+                }
+            }
+
+        }
+
+        return result;
+
+    }
+
 }

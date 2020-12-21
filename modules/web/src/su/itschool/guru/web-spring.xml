@@ -20,6 +20,7 @@
                        value="su.itschool.guru.service.CopyTimeTableForWeekFromTemplateService"/>
                 <entry key="guru_FillingWeeksService" value="su.itschool.guru.service.FillingWeeksService"/>
                 <entry key="guru_WeekDaysService" value="su.itschool.guru.service.WeekDaysService"/>
+                <entry key="guru_CalendarService" value="su.itschool.guru.service.CalendarService"/>
             </map>
         </property>
     </bean>

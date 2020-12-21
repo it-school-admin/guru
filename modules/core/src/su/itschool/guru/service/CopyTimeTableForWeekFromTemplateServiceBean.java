@@ -25,12 +25,6 @@ public class CopyTimeTableForWeekFromTemplateServiceBean implements CopyTimeTabl
                 .load(TimeTableTemplateItem.class)
                 .query("select ti from guru_TimeTableTemplateItem as ti")
                 .viewProperties("groupForLesson",
-                        "groupForLesson.schoolClass",
-                        "groupForLesson.schoolClass.className",
-                        "groupForLesson.subject",
-                        "groupForLesson.subject.subjectName",
-                        "groupForLesson.subGroupName",
-                        "groupForLesson.isFullClassGroup",
                         "planningItem",
                         "dayOfWeek",
                         "timeStart",
@@ -42,38 +36,17 @@ public class CopyTimeTableForWeekFromTemplateServiceBean implements CopyTimeTabl
         for (TimeTableTemplateItem templateItem:templateItems)
         {
             Lesson lesson = dataManager.create(Lesson.class);
-            lesson.setStudyGroup(templateItem.getGroupForLesson());
             lesson.setPlanningItem(templateItem.getPlanningItem());
             lesson.setStartTime(getDateWithTime(templateItem.getDayOfWeek(), week, templateItem.getTimeStart()));
             lesson.setEndTime(getDateWithTime(templateItem.getDayOfWeek(), week, templateItem.getTimeEnd()));
             lesson.setIsDistant(isDistant);
             lesson.setRoom(templateItem.getRoom());
             lesson.setWeek(week);
-            //TODO subgroups
-            lesson.setCaptionForCalendar(getCaptionForCalendar(templateItem.getGroupForLesson()));
-            dataManager.commit(lesson);
+           dataManager.commit(lesson);
         }
 
     }
 
-    private String getCaptionForCalendar(GroupForLesson group) {
-        if(group.getIsFullClassGroup())
-        {
-            return group.getSchoolClass().getClassName() +
-                " " +
-                group.getSubject().getSubjectName();
-
-        }
-        else
-        {
-            return group.getSchoolClass().getClassName() +
-                " " +
-                group.getSubject().getSubjectName() +
-                " " +
-                group.getSubGroupName();
-        }
-
-    }
 
     @Override
     public void clearAllWeeks() {
