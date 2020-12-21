@@ -48,7 +48,8 @@
                  expand="lessonsCalendar">
                 <calendar id="lessonsCalendar" dataContainer="lessonsDc" startDateProperty="startTime"
                           endDateProperty="endTime" captionProperty="captionForCalendar" firstVisibleHourOfDay="8"
-                          lastVisibleHourOfDay="14" descriptionProperty="captionForCalendar"/>
+                          lastVisibleHourOfDay="14" descriptionProperty="captionForCalendar"
+                          navigationButtonsVisible="true"/>
             </tab>
             <tab id="lessonListTab" caption="msg://lessonListTab.caption" expand="lessonsTable">
                 <groupTable id="lessonsTable"
