@@ -221,9 +221,9 @@ public class Lesson extends StandardEntity {
             if (isDistant) {
                 result = result + " дистанционный";
             } else {
-                result = result + " очный,";
+                result = result + " очный";
                 if (room != null) {
-                    result = result + room.getRoomName();
+                    result = result + ", "+room.getRoomName();
                 }
             }
 
