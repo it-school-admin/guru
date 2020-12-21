@@ -49,7 +49,7 @@
                 <calendar id="lessonsCalendar" dataContainer="lessonsDc" startDateProperty="startTime"
                           endDateProperty="endTime" captionProperty="captionForCalendar" firstVisibleHourOfDay="8"
                           lastVisibleHourOfDay="14" descriptionProperty="captionForCalendar"
-                          navigationButtonsVisible="true"/>
+                          navigationButtonsVisible="true" stylenameProperty="styleForCalendar"/>
             </tab>
             <tab id="lessonListTab" caption="msg://lessonListTab.caption" expand="lessonsTable">
                 <groupTable id="lessonsTable"
@@ -75,6 +75,7 @@
                         <column id="captionForCalendar"/>
                         <column id="week"/>
                         <column id="descriptionForCalendar"/>
+                        <column id="styleForCalendar"/>
                     </columns>
                     <rowsCount/>
                     <buttonsPanel id="buttonsPanel"

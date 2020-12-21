@@ -29,5 +29,6 @@
         <property name="captionForCalendar"/>
         <property name="descriptionForCalendar"/>
         <property name="topicOfTheLesson"/>
+        <property name="styleForCalendar"/>
     </view>
 </views>

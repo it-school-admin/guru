@@ -5,16 +5,7 @@
         messagesPack="su.itschool.guru.web.screens.lesson">
     <data>
         <instance id="lessonDc"
-                  class="su.itschool.guru.entity.Lesson">
-            <view extends="_local">
-                <property name="room" view="_minimal"/>
-                <property name="studyGroup" view="_minimal"/>
-                <property name="planningItem" view="_minimal"/>
-                <property name="subjectOnTheFly" view="_minimal"/>
-                <property name="teacherOnTheFly" view="_minimal"/>
-                <property name="week" view="_minimal"/>
-                <property name="groupOnTheFly" view="_minimal"/>
-            </view>
+                  class="su.itschool.guru.entity.Lesson" view="lesson-view-for-calendar">
             <loader/>
         </instance>
     </data>
@@ -29,7 +20,6 @@
                 <pickerField id="roomField" property="room"/>
                 <textArea rows="5" id="topicOfTheLessonField" property="topicOfTheLesson"/>
                 <textArea rows="5" id="toolsDescriptionField" property="toolsDescription"/>
-                <pickerField id="studyGroupField" property="studyGroup"/>
                 <pickerField id="planningItemField" property="planningItem"/>
                 <pickerField id="subjectOnTheFlyField" property="subjectOnTheFly"/>
                 <pickerField id="teacherOnTheFlyField" property="teacherOnTheFly"/>
@@ -38,6 +28,7 @@
                 <pickerField id="weekField" property="week"/>
                 <textField id="descriptionForCalendarField" property="descriptionForCalendar"/>
                 <pickerField id="groupOnTheFlyField" property="groupOnTheFly"/>
+                <textField id="styleForCalendarField" property="styleForCalendar"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

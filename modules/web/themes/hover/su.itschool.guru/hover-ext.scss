@@ -1,4 +1,14 @@
 /* Define your theme modifications inside next mixin */
 @mixin su_itschool_guru-hover-ext {
 
+.v-calendar-event.v-calendar-event-event-green .v-calendar-event-caption{
+  background-color: #c8f4c9;
+  color: #00e026;
+}
+
+.v-calendar-event.v-calendar-event-event-blue .v-calendar-event-caption{
+  background-color: #d6f1f9;
+  color: #00ace0;
+}
+
 }

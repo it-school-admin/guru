@@ -160,29 +160,40 @@ public class Lesson extends StandardEntity {
     }
 
     @Transient
-    @MetaProperty(related = {"planningItem"})
-    public String getCaptionForCalendar(){
+    @MetaProperty(related = {"planningItem", "isDistant"})
+    public String getCaptionForCalendar() {
         return calculateCaptionForCalendarEvent();
     }
 
     @Transient
     @MetaProperty(related = {"isDistant", "room"})
-    public String getDescriptionForCalendar(){
+    public String getDescriptionForCalendar() {
         return calculateDescriptionForCalendarEvent();
     }
 
+    @Transient
+    @MetaProperty(related = {"isDistant"})
+    public String getStyleForCalendar() {
+        if (isDistant) {
+            return "event-green";
+
+        } else {
+            return "event-blue";
+        }
+    }
+
     private String calculateDescriptionForCalendarEvent() {
-        String result ="";
-        if(isDistant)
-        {
+        String result = "";
+        if (isDistant) {
             result = "Дистанционный";
+        } else {
+            result = "Очный";
+            if(room != null)
+            {
+                result = result + ", " + room.getRoomName();
+            }
         }
-        else
-        {
-            result = "Очный, " + room.getRoomName();
-        }
-        if(planningItem != null)
-        {
+        if (planningItem != null) {
             result = result + " " + planningItem.getGroupOfLearning().getTeacher().getFamilyNameWithAbbreviation();
         }
         return result;
@@ -190,18 +201,14 @@ public class Lesson extends StandardEntity {
 
     private String calculateCaptionForCalendarEvent() {
         String result = "";
-        if(planningItem != null)
-        {
+        if (planningItem != null) {
             GroupForLesson groupOfLearning = planningItem.getGroupOfLearning();
-            if(groupOfLearning.getIsFullClassGroup())
-            {
+            if (groupOfLearning.getIsFullClassGroup()) {
                 result = groupOfLearning.getSchoolClass().getClassName() +
                         " " +
                         groupOfLearning.getSubject().getSubjectName();
 
-            }
-            else
-            {
+            } else {
                 result = groupOfLearning.getSchoolClass().getClassName() +
                         " " +
                         groupOfLearning.getSubject().getSubjectName() +
@@ -211,16 +218,12 @@ public class Lesson extends StandardEntity {
 
             result = result + " " + planningItem.getGroupOfLearning().getTeacher().getFamilyNameWithAbbreviation();
 
-            if(isDistant)
-            {
+            if (isDistant) {
                 result = result + " дистанционный";
-            }
-            else
-            {
+            } else {
                 result = result + " очный,";
-                if(room != null)
-                {
-                    result = result +  room.getRoomName();
+                if (room != null) {
+                    result = result + room.getRoomName();
                 }
             }
 

@@ -1,0 +1,11 @@
+@import "halo-defaults";
+@import "su.itschool.guru/halo-ext-defaults";
+@import "app-components";
+@import "su.itschool.guru/halo-ext";
+
+.halo {
+  // include auto-generated app components SCSS
+  @include app_components;
+
+  @include su_itschool_guru-halo-ext;
+}

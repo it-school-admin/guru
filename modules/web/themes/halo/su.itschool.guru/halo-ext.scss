@@ -1,0 +1,14 @@
+/* Define your theme modifications inside next mixin */
+@mixin su_itschool_guru-halo-ext {
+
+.v-calendar-event.event-green {
+  background-color: #c8f4c9;
+  color: #00e026;
+}
+
+.v-calendar-event.event-blue {
+  background-color: #d6f1f9;
+  color: #00ace0;
+}
+
+}
