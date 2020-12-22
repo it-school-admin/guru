@@ -22,5 +22,7 @@
         <class>su.itschool.guru.entity.LessonsGridItem</class>
         <class>su.itschool.guru.entity.WeekDay</class>
         <class>su.itschool.guru.entity.Week</class>
+        <class>su.itschool.guru.entity.Holiday</class>
+        <class>su.itschool.guru.entity.HolidayDate</class>
     </persistence-unit>
 </persistence>

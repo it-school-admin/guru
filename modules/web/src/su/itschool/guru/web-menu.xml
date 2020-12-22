@@ -18,5 +18,8 @@
         <item screen="guru_Week.browse" caption="mainMsg://menu_config.guru_Week.browse"/>
         <item screen="guru_EducationalYear.browse" caption="mainMsg://menu_config.guru_EducationalYear.browse"/>
         <item screen="guru_ScheduleForTeachers" caption="mainMsg://menu_config.guru_ScheduleForTeachers"/>
+        <item screen="guru_EducationalPeriods.browse" caption="mainMsg://menu_config.guru_EducationalPeriods.browse"/>
+        <item screen="guru_Holiday.browse" caption="mainMsg://menu_config.guru_Holiday.browse"/>
+        <item screen="guru_HolidayDate.browse" caption="mainMsg://menu_config.guru_HolidayDate.browse"/>
     </menu>
 </menu-config>

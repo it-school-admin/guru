@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://holidayDateBrowse.caption"
+        focusComponent="holidayDatesTable"
+        messagesPack="su.itschool.guru.web.screens.holidaydate">
+    <data readOnly="true">
+        <collection id="holidayDatesDc"
+                    class="su.itschool.guru.entity.HolidayDate">
+            <view extends="_local"/>
+            <loader id="holidayDatesDl">
+                <query>
+                    <![CDATA[select e from guru_HolidayDate e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="holidayDatesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="holidayDatesTable"
+                dataLoader="holidayDatesDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="holidayDatesTable"
+                    width="100%"
+                    dataContainer="holidayDatesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="holidayDate"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="holidayDatesTable.create"/>
+                <button id="editBtn" action="holidayDatesTable.edit"/>
+                <button id="removeBtn" action="holidayDatesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

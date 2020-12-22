@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://holidayBrowse.caption"
+        focusComponent="holidaysTable"
+        messagesPack="su.itschool.guru.web.screens.holiday">
+    <data readOnly="true">
+        <collection id="holidaysDc"
+                    class="su.itschool.guru.entity.Holiday">
+            <view extends="_local"/>
+            <loader id="holidaysDl">
+                <query>
+                    <![CDATA[select e from guru_Holiday e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="holidaysTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="holidaysTable"
+                dataLoader="holidaysDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="holidaysTable"
+                    width="100%"
+                    dataContainer="holidaysDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="holidayName"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="holidaysTable.create"/>
+                <button id="editBtn" action="holidaysTable.edit"/>
+                <button id="removeBtn" action="holidaysTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>
