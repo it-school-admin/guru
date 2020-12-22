@@ -1,25 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
     <menu id="application-guru" insertBefore="administration" caption="mainMsg://menu_config.application-guru">
-        <item screen="guru_School.browse" caption="mainMsg://menu_config.guru_School.browse"/>
-        <item screen="guru_Teacher.browse" caption="mainMsg://menu_config.guru_Teacher.browse"/>
-        <item screen="guru_SchoolClass.browse" caption="mainMsg://menu_config.guru_SchoolClass.browse"/>
-        <item screen="guru_Subject.browse" caption="mainMsg://menu_config.guru_Subject.browse"/>
-        <item screen="guru_Room.browse" caption="mainMsg://menu_config.guru_Room.browse"/>
-        <item screen="guru_GroupForLesson.browse" caption="mainMsg://menu_config.guru_GroupForLesson.browse"/>
-        <item screen="guru_LessonsPlanningItem.browse" caption="mainMsg://menu_config.guru_LessonsPlanningItem.browse"/>
-        <item screen="guru_Lesson.browse" caption="mainMsg://menu_config.guru_Lesson.browse"/>
-        <item screen="guru_LessonsGrid.browse" caption="mainMsg://menu_config.guru_LessonsGrid.browse"/>
-        <item screen="guru_TimeTableTemplateItem.browse"
-              caption="mainMsg://menu_config.guru_TimeTableTemplateItem.browse"/>
-        <item screen="guru_TimeTableImport.browse" caption="mainMsg://menu_config.guru_TimeTableImport.browse"/>
-        <item screen="guru_LessonsGridItem.browse" caption="mainMsg://menu_config.guru_LessonsGridItem.browse"/>
-        <item screen="guru_WeekDay.browse" caption="mainMsg://menu_config.guru_WeekDay.browse"/>
-        <item screen="guru_Week.browse" caption="mainMsg://menu_config.guru_Week.browse"/>
-        <item screen="guru_EducationalYear.browse" caption="mainMsg://menu_config.guru_EducationalYear.browse"/>
-        <item screen="guru_ScheduleForTeachers" caption="mainMsg://menu_config.guru_ScheduleForTeachers"/>
-        <item screen="guru_EducationalPeriods.browse" caption="mainMsg://menu_config.guru_EducationalPeriods.browse"/>
-        <item screen="guru_Holiday.browse" caption="mainMsg://menu_config.guru_Holiday.browse"/>
-        <item screen="guru_HolidayDate.browse" caption="mainMsg://menu_config.guru_HolidayDate.browse"/>
+        <menu id="work-on-schedule" caption="mainMsg://menu_config.work-on-schedule">
+            <item screen="guru_Lesson.browse" caption="mainMsg://menu_config.guru_Lesson.browse"/>
+            <item screen="guru_ScheduleForTeachers" caption="mainMsg://menu_config.guru_ScheduleForTeachers"/>
+            <item screen="guru_TimeTableTemplateItem.browse"
+                  caption="mainMsg://menu_config.guru_TimeTableTemplateItem.browse"/>
+            <item screen="guru_LessonsPlanningItem.browse"
+                  caption="mainMsg://menu_config.guru_LessonsPlanningItem.browse"/>
+            <item screen="guru_TimeTableImport.browse" caption="mainMsg://menu_config.guru_TimeTableImport.browse"/>
+        </menu>
+        <menu id="planning" caption="mainMsg://menu_config.planning">
+            <item screen="guru_LessonsGridItem.browse" caption="mainMsg://menu_config.guru_LessonsGridItem.browse"/>
+            <item screen="guru_LessonsGrid.browse" caption="mainMsg://menu_config.guru_LessonsGrid.browse"/>
+            <item screen="guru_GroupForLesson.browse" caption="mainMsg://menu_config.guru_GroupForLesson.browse"/>
+        </menu>
+        <menu id="school" caption="mainMsg://menu_config.school">
+            <item screen="guru_Room.browse" caption="mainMsg://menu_config.guru_Room.browse"/>
+            <item screen="guru_Subject.browse" caption="mainMsg://menu_config.guru_Subject.browse"/>
+            <item screen="guru_SchoolClass.browse" caption="mainMsg://menu_config.guru_SchoolClass.browse"/>
+            <item screen="guru_Teacher.browse" caption="mainMsg://menu_config.guru_Teacher.browse"/>
+            <item screen="guru_School.browse" caption="mainMsg://menu_config.guru_School.browse"/>
+        </menu>
+        <menu id="guides" caption="mainMsg://menu_config.guides">
+            <item screen="guru_EducationalYear.browse" caption="mainMsg://menu_config.guru_EducationalYear.browse"/>
+            <item screen="guru_EducationalPeriods.browse"
+                  caption="mainMsg://menu_config.guru_EducationalPeriods.browse"/>
+            <item screen="guru_Week.browse" caption="mainMsg://menu_config.guru_Week.browse"/>
+            <item screen="guru_WeekDay.browse" caption="mainMsg://menu_config.guru_WeekDay.browse"/>
+            <item screen="guru_Holiday.browse" caption="mainMsg://menu_config.guru_Holiday.browse"/>
+            <item screen="guru_HolidayDate.browse" caption="mainMsg://menu_config.guru_HolidayDate.browse"/>
+        </menu>
     </menu>
 </menu-config>
