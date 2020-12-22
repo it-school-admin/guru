@@ -6,14 +6,14 @@
             <item screen="guru_ScheduleForTeachers" caption="mainMsg://menu_config.guru_ScheduleForTeachers"/>
             <item screen="guru_TimeTableTemplateItem.browse"
                   caption="mainMsg://menu_config.guru_TimeTableTemplateItem.browse"/>
-            <item screen="guru_LessonsPlanningItem.browse"
-                  caption="mainMsg://menu_config.guru_LessonsPlanningItem.browse"/>
             <item screen="guru_TimeTableImport.browse" caption="mainMsg://menu_config.guru_TimeTableImport.browse"/>
         </menu>
         <menu id="planning" caption="mainMsg://menu_config.planning">
             <item screen="guru_LessonsGridItem.browse" caption="mainMsg://menu_config.guru_LessonsGridItem.browse"/>
             <item screen="guru_LessonsGrid.browse" caption="mainMsg://menu_config.guru_LessonsGrid.browse"/>
             <item screen="guru_GroupForLesson.browse" caption="mainMsg://menu_config.guru_GroupForLesson.browse"/>
+            <item screen="guru_LessonsPlanningItem.browse"
+                  caption="mainMsg://menu_config.guru_LessonsPlanningItem.browse"/>
         </menu>
         <menu id="school" caption="mainMsg://menu_config.school">
             <item screen="guru_Room.browse" caption="mainMsg://menu_config.guru_Room.browse"/>
