@@ -94,7 +94,7 @@ create table GURU_LESSON (
     --
     PLANNING_ITEM_ID uuid,
     START_TIME timestamp not null,
-    END_TIME timestamp not null,
+    DURATION integer not null,
     GROUP_ON_THE_FLY_ID uuid,
     SUBJECT_ON_THE_FLY_ID uuid,
     TEACHER_ON_THE_FLY_ID uuid,

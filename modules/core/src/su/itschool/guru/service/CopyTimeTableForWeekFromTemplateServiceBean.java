@@ -11,6 +11,9 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.List;
 
+import static su.itschool.guru.service.SettingsProviderService.DISTANT_LESSON_DEFAULT_DURATION;
+import static su.itschool.guru.service.SettingsProviderService.FULL_TIME_LESSON_DEFAULT_DURATION;
+
 @Service(CopyTimeTableForWeekFromTemplateService.NAME)
 public class CopyTimeTableForWeekFromTemplateServiceBean implements CopyTimeTableForWeekFromTemplateService {
 
@@ -18,6 +21,8 @@ public class CopyTimeTableForWeekFromTemplateServiceBean implements CopyTimeTabl
     private DataManager dataManager;
     @Inject
     private Persistence persistence;
+    @Inject
+    private SettingsProviderService settingsProviderService;
 
     @Override
     public void copyTimeTableForWeekFromTemplate(Week week, Boolean isDistant) {
@@ -37,8 +42,17 @@ public class CopyTimeTableForWeekFromTemplateServiceBean implements CopyTimeTabl
         {
             Lesson lesson = dataManager.create(Lesson.class);
             lesson.setPlanningItem(templateItem.getPlanningItem());
+
+            //TODO
             lesson.setStartTime(getDateWithTime(templateItem.getDayOfWeek(), week, templateItem.getTimeStart()));
-            lesson.setEndTime(getDateWithTime(templateItem.getDayOfWeek(), week, templateItem.getTimeEnd()));
+            if(isDistant)
+            {
+                lesson.setDuration(settingsProviderService.getIntegerParameter(DISTANT_LESSON_DEFAULT_DURATION));
+            }
+            else
+            {
+                lesson.setDuration(settingsProviderService.getIntegerParameter(FULL_TIME_LESSON_DEFAULT_DURATION));
+            }
             lesson.setIsDistant(isDistant);
             lesson.setRoom(templateItem.getRoom());
             lesson.setWeek(week);

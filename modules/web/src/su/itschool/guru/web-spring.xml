@@ -21,6 +21,7 @@
                 <entry key="guru_FillingWeeksService" value="su.itschool.guru.service.FillingWeeksService"/>
                 <entry key="guru_WeekDaysService" value="su.itschool.guru.service.WeekDaysService"/>
                 <entry key="guru_CalendarService" value="su.itschool.guru.service.CalendarService"/>
+                <entry key="guru_SettingsProviderService" value="su.itschool.guru.service.SettingsProviderService"/>
             </map>
         </property>
     </bean>

@@ -6,6 +6,7 @@ import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
 import java.time.LocalDateTime;
 
 @Table(name = "GURU_LESSON")
@@ -22,9 +23,10 @@ public class Lesson extends StandardEntity {
     @NotNull
     private LocalDateTime startTime;
 
-    @Column(name = "END_TIME", nullable = false)
     @NotNull
-    private LocalDateTime endTime;
+    @Column(name = "DURATION", nullable = false)
+    @Positive(message = "{msg://guru_Lesson.duration.validation.Positive}")
+    private Integer duration;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "GROUP_ON_THE_FLY_ID")
@@ -62,6 +64,14 @@ public class Lesson extends StandardEntity {
     @Lob
     @Column(name = "HOME_TASK_DESCRIPTION")
     private String homeTaskDescription;
+
+    public Integer getDuration() {
+        return duration;
+    }
+
+    public void setDuration(Integer duration) {
+        this.duration = duration;
+    }
 
     public GroupForLesson getGroupOnTheFly() {
         return groupOnTheFly;
@@ -143,14 +153,6 @@ public class Lesson extends StandardEntity {
         return startTime;
     }
 
-    public void setEndTime(LocalDateTime endTime) {
-        this.endTime = endTime;
-    }
-
-    public LocalDateTime getEndTime() {
-        return endTime;
-    }
-
     public Boolean getIsDistant() {
         return isDistant;
     }
@@ -180,6 +182,12 @@ public class Lesson extends StandardEntity {
         } else {
             return "event-blue";
         }
+    }
+
+    @Transient
+    @MetaProperty(related = {"startTime", "duration"})
+    public LocalDateTime getEndTime() {
+        return startTime.plusMinutes(duration);
     }
 
     private String calculateDescriptionForCalendarEvent() {
