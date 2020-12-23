@@ -44,7 +44,7 @@ public class CopyTimeTableForWeekFromTemplateServiceBean implements CopyTimeTabl
             lesson.setPlanningItem(templateItem.getPlanningItem());
 
             //TODO
-            lesson.setStartTime(getDateWithTime(templateItem.getDayOfWeek(), week, templateItem.getTimeStart()));
+          //  lesson.setStartTime(getDateWithTime(templateItem.getDayOfWeek(), week, templateItem.getTimeStart()));
             if(isDistant)
             {
                 lesson.setDuration(settingsProviderService.getIntegerParameter(DISTANT_LESSON_DEFAULT_DURATION));

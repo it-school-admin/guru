@@ -18,13 +18,13 @@ import javax.xml.parsers.ParserConfigurationException;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 //TODO very bad code. Rewrite all!!!
 @Service(ImportIrTechXMLToDBService.NAME)
 public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBService {
+
+
 
     @Inject
     private DataManager dataManager;
@@ -38,12 +38,14 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
         try {
             Element rootElement = getDocumentElementByXMLText(timeTableImport.getImportedXMLData());
 
-            addLessonsGridItems(result, rootElement, lessonsGridType);
+          //  addLessonsGridItems(result, rootElement, lessonsGridType);
+            Map<Integer, Integer> lessonIDtoNumberMap =  fillLessonsIDsMap(rootElement);
+
             addSubjects(result, rootElement);
             addTeachers(result, rootElement);
             addRooms(result, rootElement);
             addClassesAndGroupsAndPlanningItems(result, rootElement);
-            addLessonsToTimeTableTemplate(result, rootElement, lessonsGridType);
+            addLessonsToTimeTableTemplate(result, rootElement, lessonIDtoNumberMap);
 
 
         } catch (ParserConfigurationException e) {
@@ -56,7 +58,28 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
         return null;
     }
 
-    private void addLessonsToTimeTableTemplate(List<StandardEntity> result, Element rootElement, LessonsGridType lessonsGridType) {
+    private Map<Integer, Integer> fillLessonsIDsMap(Element rootElement) {
+
+        Map<Integer, Integer> lessonIDtoNumberMap = new HashMap<Integer, Integer>();
+        Node rootElementCollectionNode = getFirstChildNodeByName(rootElement, "LessonTimes");
+
+        NodeList childNodes = rootElementCollectionNode.getChildNodes();
+        for(int i = 0; i < childNodes.getLength(); i++) {
+            Node item = childNodes.item(i);
+            if(item.getNodeType()==Node.ELEMENT_NODE){
+                lessonIDtoNumberMap.put(
+                        Integer.parseInt(item.getAttributes().getNamedItem("id").getNodeValue()),
+                        Integer.parseInt(item.getAttributes().getNamedItem("number").getNodeValue())
+                );
+            }
+
+        }
+
+        return lessonIDtoNumberMap;
+
+    }
+
+    private void addLessonsToTimeTableTemplate(List<StandardEntity> result, Element rootElement, Map<Integer, Integer> lessonIDtoNumberMap) {
         Node timeTableNode = getFirstChildNodeByName(rootElement, "TimeTable");
         Node weekNode = getFirstChildNodeByName(timeTableNode, "Week");
         if(weekNode.getNodeType() != Node.ELEMENT_NODE)
@@ -76,9 +99,9 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
                     Node lessonNoNode = lessonNoNodes.item(j);
                     if(lessonNoNode.getNodeType()==Node.ELEMENT_NODE){
                         Integer lessonTimeId = Integer.valueOf(lessonNoNode.getAttributes().getNamedItem("timeId").getNodeValue());
+                        Integer lessonNumber = lessonIDtoNumberMap.get(lessonTimeId);
 
-                        LessonsGridItem lessonGridItem = finderService.getLessonGridItemByIrTechId(lessonsGridType, lessonTimeId);
-                        TimeTableItemImportExecutor timeTableItemImportExecutor = new TimeTableItemImportExecutor(TimeTableTemplateItem.class, finderService, dataManager, day, lessonGridItem);
+                        TimeTableItemImportExecutor timeTableItemImportExecutor = new TimeTableItemImportExecutor(TimeTableTemplateItem.class, finderService, dataManager, day, lessonNumber);
 
 
                         NodeList lessonNodes = lessonNoNode.getChildNodes();

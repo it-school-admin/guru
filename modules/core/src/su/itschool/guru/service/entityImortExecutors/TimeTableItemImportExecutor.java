@@ -8,14 +8,16 @@ import su.itschool.guru.entity.LessonsPlanningItem;
 import su.itschool.guru.entity.TimeTableTemplateItem;
 import su.itschool.guru.service.EntitiesByIrTechIdFinderService;
 
+import java.util.Map;
+
 public class TimeTableItemImportExecutor extends AbstractImportExecutorImpl{
     private final Integer day;
-    private final LessonsGridItem lessonGridItem;
+    private final Integer lessonNumber;
 
-    public TimeTableItemImportExecutor(Class entityClass, EntitiesByIrTechIdFinderService entitiesByIrTechIdFinderService, DataManager dataManager, Integer day, LessonsGridItem lessonGridItem) {
+    public TimeTableItemImportExecutor(Class entityClass, EntitiesByIrTechIdFinderService entitiesByIrTechIdFinderService, DataManager dataManager, Integer day, Integer lessonNumber) {
         super(entityClass, entitiesByIrTechIdFinderService, dataManager);
         this.day = day;
-        this.lessonGridItem = lessonGridItem;
+        this.lessonNumber = lessonNumber;
     }
 
     @Override
@@ -30,8 +32,7 @@ public class TimeTableItemImportExecutor extends AbstractImportExecutorImpl{
         {
             timeTableTemplateItem.setRoom(getFinderService().getRoomByIrTechId(Integer.valueOf(roomId)));
         }
-        timeTableTemplateItem.setTimeStart(lessonGridItem.getLessonStartTime());
-        timeTableTemplateItem.setTimeEnd(lessonGridItem.getLessonEndTime());
+        timeTableTemplateItem.setNumberOfLesson(lessonNumber);
         return timeTableTemplateItem;
     }
 

@@ -23,13 +23,13 @@ public class LessonsGridItemsImportExecutor extends AbstractImportExecutorImpl {
     protected StandardEntity setEntityFields(StandardEntity entity, Node entityInformation, Node rootNode, StandardEntity rootEntity) {
         LessonsGridItem lessonsGridItem = (LessonsGridItem) entity;
         lessonsGridItem.setGridType(lessonsGridType);
-        lessonsGridItem.setIrTechId(getIntegerAttributeValue(entityInformation, "id"));
-        lessonsGridItem.setIrTechShift(getIntegerAttributeValue(entityInformation,"sm"));
+     //   lessonsGridItem.setIrTechId(getIntegerAttributeValue(entityInformation, "id"));
+       // lessonsGridItem.setIrTechShift(getIntegerAttributeValue(entityInformation,"sm"));
 
         //TODO
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("H:mm");
         lessonsGridItem.setLessonStartTime(LocalTime.parse(getStringAttributeValue(entityInformation,"starttime"), timeFormatter));
-        lessonsGridItem.setLessonEndTime(LocalTime.parse(getStringAttributeValue(entityInformation,"endtime"), timeFormatter));
+       // lessonsGridItem.setLessonEndTime(LocalTime.parse(getStringAttributeValue(entityInformation,"endtime"), timeFormatter));
         return entity;
     }
 

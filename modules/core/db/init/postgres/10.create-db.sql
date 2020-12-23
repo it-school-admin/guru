@@ -254,8 +254,7 @@ create table GURU_TIME_TABLE_TEMPLATE_ITEM (
     --
     GROUP_FOR_LESSON_ID uuid,
     DAY_OF_WEEK_ID uuid not null,
-    TIME_START time not null,
-    TIME_END time not null,
+    NUMBER_OF_LESSON integer not null,
     ROOM_ID uuid,
     PLANNING_ITEM_ID uuid,
     --
@@ -330,10 +329,8 @@ create table GURU_LESSONS_GRID_ITEM (
     DELETED_BY varchar(50),
     --
     GRID_TYPE_ID uuid not null,
+    LESSON_NUMBER integer not null,
     LESSON_START_TIME time not null,
-    LESSON_END_TIME time not null,
-    IR_TECH_SHIFT integer,
-    IR_TECH_ID integer,
     --
     primary key (ID)
 )^

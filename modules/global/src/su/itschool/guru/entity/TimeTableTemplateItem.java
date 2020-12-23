@@ -6,7 +6,6 @@ import com.haulmont.cuba.core.global.DeletePolicy;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.time.LocalTime;
 
 @Table(name = "GURU_TIME_TABLE_TEMPLATE_ITEM")
 @Entity(name = "guru_TimeTableTemplateItem")
@@ -22,13 +21,9 @@ public class TimeTableTemplateItem extends StandardEntity {
     @JoinColumn(name = "DAY_OF_WEEK_ID")
     private WeekDay dayOfWeek;
 
-    @Column(name = "TIME_START", nullable = false)
     @NotNull
-    private LocalTime timeStart;
-
-    @Column(name = "TIME_END", nullable = false)
-    @NotNull
-    private LocalTime timeEnd;
+    @Column(name = "NUMBER_OF_LESSON", nullable = false)
+    private Integer numberOfLesson;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ROOM_ID")
@@ -38,6 +33,14 @@ public class TimeTableTemplateItem extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(DeletePolicy.CASCADE)
     private LessonsPlanningItem planningItem;
+
+    public Integer getNumberOfLesson() {
+        return numberOfLesson;
+    }
+
+    public void setNumberOfLesson(Integer numberOfLesson) {
+        this.numberOfLesson = numberOfLesson;
+    }
 
     public WeekDay getDayOfWeek() {
         return dayOfWeek;
@@ -61,22 +64,6 @@ public class TimeTableTemplateItem extends StandardEntity {
 
     public LessonsPlanningItem getPlanningItem() {
         return planningItem;
-    }
-
-    public void setTimeStart(LocalTime timeStart) {
-        this.timeStart = timeStart;
-    }
-
-    public LocalTime getTimeStart() {
-        return timeStart;
-    }
-
-    public void setTimeEnd(LocalTime timeEnd) {
-        this.timeEnd = timeEnd;
-    }
-
-    public LocalTime getTimeEnd() {
-        return timeEnd;
     }
 
     public GroupForLesson getGroupForLesson() {

@@ -16,34 +16,20 @@ public class LessonsGridItem extends StandardEntity {
     @JoinColumn(name = "GRID_TYPE_ID")
     private LessonsGridType gridType;
 
+    @NotNull
+    @Column(name = "LESSON_NUMBER", nullable = false)
+    private Integer lessonNumber;
+
     @Column(name = "LESSON_START_TIME", nullable = false)
     @NotNull
     private LocalTime lessonStartTime;
 
-    @NotNull
-    @Column(name = "LESSON_END_TIME", nullable = false)
-    private LocalTime lessonEndTime;
-
-    @Column(name = "IR_TECH_SHIFT")
-    private Integer irTechShift;
-
-    @Column(name = "IR_TECH_ID")
-    private Integer irTechId;
-
-    public Integer getIrTechId() {
-        return irTechId;
+    public Integer getLessonNumber() {
+        return lessonNumber;
     }
 
-    public void setIrTechId(Integer irTechId) {
-        this.irTechId = irTechId;
-    }
-
-    public void setIrTechShift(Integer irTechShift) {
-        this.irTechShift = irTechShift;
-    }
-
-    public Integer getIrTechShift() {
-        return irTechShift;
+    public void setLessonNumber(Integer lessonNumber) {
+        this.lessonNumber = lessonNumber;
     }
 
     public void setLessonStartTime(LocalTime lessonStartTime) {
@@ -52,14 +38,6 @@ public class LessonsGridItem extends StandardEntity {
 
     public LocalTime getLessonStartTime() {
         return lessonStartTime;
-    }
-
-    public LocalTime getLessonEndTime() {
-        return lessonEndTime;
-    }
-
-    public void setLessonEndTime(LocalTime lessonEndTime) {
-        this.lessonEndTime = lessonEndTime;
     }
 
     public LessonsGridType getGridType() {
