@@ -1,0 +1,4 @@
+alter table GURU_TIME_TABLE_TEMPLATE_ITEM rename column day_of_week_id to day_of_week_id__u22144 ;
+alter table GURU_TIME_TABLE_TEMPLATE_ITEM alter column day_of_week_id__u22144 drop not null ;
+alter table GURU_TIME_TABLE_TEMPLATE_ITEM drop constraint FK_GURU_TIME_TABLE_TEMPLATE_ITEM_ON_DAY_OF_WEEK ;
+drop index IDX_GURU_TIME_TABLE_TEMPLATE_ITEM_ON_DAY_OF_WEEK ;

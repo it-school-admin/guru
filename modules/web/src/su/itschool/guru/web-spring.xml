@@ -19,7 +19,6 @@
                 <entry key="guru_CopyTimeTableForWeekFromTemplateService"
                        value="su.itschool.guru.service.CopyTimeTableForWeekFromTemplateService"/>
                 <entry key="guru_FillingWeeksService" value="su.itschool.guru.service.FillingWeeksService"/>
-                <entry key="guru_WeekDaysService" value="su.itschool.guru.service.WeekDaysService"/>
                 <entry key="guru_SettingsProviderService" value="su.itschool.guru.service.SettingsProviderService"/>
                 <entry key="guru_LessonTimeByLessonsGridCalculatorService"
                        value="su.itschool.guru.service.LessonTimeByLessonsGridCalculatorService"/>

@@ -17,6 +17,4 @@ public interface EntitiesByIrTechIdFinderService {
     LessonsPlanningItem getPlanningItemByIrTechId(Integer irTechId);
 
     Room getRoomByIrTechId(Integer irTechId);
-
-    WeekDay getWeekDay(Integer dayNumber);
 }

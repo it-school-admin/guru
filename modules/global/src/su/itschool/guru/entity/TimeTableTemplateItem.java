@@ -3,6 +3,7 @@ package su.itschool.guru.entity;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.entity.annotation.OnDelete;
 import com.haulmont.cuba.core.global.DeletePolicy;
+import su.itschool.guru.entity.enums.WeekDay;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -12,15 +13,6 @@ import javax.validation.constraints.NotNull;
 public class TimeTableTemplateItem extends StandardEntity {
     private static final long serialVersionUID = 3063126557897405154L;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "GROUP_FOR_LESSON_ID")
-    private GroupForLesson groupForLesson;
-
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "DAY_OF_WEEK_ID")
-    private WeekDay dayOfWeek;
-
     @NotNull
     @Column(name = "NUMBER_OF_LESSON", nullable = false)
     private Integer numberOfLesson;
@@ -29,10 +21,22 @@ public class TimeTableTemplateItem extends StandardEntity {
     @JoinColumn(name = "ROOM_ID")
     private Room room;
 
+    @NotNull
+    @Column(name = "WEEK_DAY", nullable = false)
+    private Integer weekDay;
+
     @JoinColumn(name = "PLANNING_ITEM_ID")
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(DeletePolicy.CASCADE)
     private LessonsPlanningItem planningItem;
+
+    public WeekDay getWeekDay() {
+        return weekDay == null ? null : WeekDay.fromId(weekDay);
+    }
+
+    public void setWeekDay(WeekDay weekDay) {
+        this.weekDay = weekDay == null ? null : weekDay.getId();
+    }
 
     public Integer getNumberOfLesson() {
         return numberOfLesson;
@@ -40,14 +44,6 @@ public class TimeTableTemplateItem extends StandardEntity {
 
     public void setNumberOfLesson(Integer numberOfLesson) {
         this.numberOfLesson = numberOfLesson;
-    }
-
-    public WeekDay getDayOfWeek() {
-        return dayOfWeek;
-    }
-
-    public void setDayOfWeek(WeekDay dayOfWeek) {
-        this.dayOfWeek = dayOfWeek;
     }
 
     public Room getRoom() {
@@ -64,14 +60,6 @@ public class TimeTableTemplateItem extends StandardEntity {
 
     public LessonsPlanningItem getPlanningItem() {
         return planningItem;
-    }
-
-    public GroupForLesson getGroupForLesson() {
-        return groupForLesson;
-    }
-
-    public void setGroupForLesson(GroupForLesson groupForLesson) {
-        this.groupForLesson = groupForLesson;
     }
 
 }

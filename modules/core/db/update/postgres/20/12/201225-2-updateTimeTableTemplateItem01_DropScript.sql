@@ -1,0 +1,1 @@
+alter table GURU_TIME_TABLE_TEMPLATE_ITEM drop column GROUP_FOR_LESSON_ID__U35940 cascade ;

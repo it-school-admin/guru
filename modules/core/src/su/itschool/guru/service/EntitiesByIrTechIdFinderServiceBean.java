@@ -152,22 +152,4 @@ public class EntitiesByIrTechIdFinderServiceBean implements EntitiesByIrTechIdFi
             return null;
         }
     }
-
-    @Override
-    public WeekDay getWeekDay(Integer dayNumber) {
-        try {
-            WeekDay weekDay = dataManager.
-                    load(WeekDay.class).
-                    query("select wd from guru_WeekDay as wd " +
-                            "WHERE " +
-                            "wd.dayNumber = :dayNumber").
-                    parameter("dayNumber", dayNumber).
-                    one();
-
-            return weekDay;
-        } catch (Exception e) {
-            //TODO
-            return null;
-        }
-    }
 }

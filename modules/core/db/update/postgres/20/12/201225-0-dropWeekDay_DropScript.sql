@@ -1,0 +1,1 @@
+drop table if exists GURU_WEEK_DAY__U14473 cascade ;

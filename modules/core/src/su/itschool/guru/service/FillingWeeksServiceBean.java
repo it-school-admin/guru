@@ -28,6 +28,7 @@ public class FillingWeeksServiceBean implements FillingWeeksService {
             week.setWeekNumber(weekNumber);
             week.setStartDate(weekStartDate);
             week.setEndDate(weekStartDate.plusDays(6));
+            week.setEducationalYear(educationalYear);
             dataManager.commit(week);
             weekStartDate = weekStartDate.plusWeeks(1);
         }

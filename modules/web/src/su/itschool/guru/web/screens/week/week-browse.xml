@@ -7,7 +7,9 @@
     <data readOnly="true">
         <collection id="weeksDc"
                     class="su.itschool.guru.entity.Week">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="educationalYear" view="_minimal"/>
+            </view>
             <loader id="weeksDl">
                 <query>
                     <![CDATA[select e from guru_Week e]]>
@@ -48,10 +50,11 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
+                <column id="displayName"/>
                 <column id="weekNumber"/>
+                <column id="educationalYear"/>
                 <column id="startDate"/>
                 <column id="endDate"/>
-                <column id="displayName"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

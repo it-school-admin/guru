@@ -3,6 +3,7 @@ package su.itschool.guru.service;
 import com.haulmont.cuba.core.global.DataManager;
 import org.springframework.stereotype.Service;
 import su.itschool.guru.entity.*;
+import su.itschool.guru.entity.enums.WeekDay;
 
 import javax.inject.Inject;
 import java.time.LocalDate;
@@ -18,9 +19,9 @@ public class LessonTimeByLessonsGridCalculatorServiceBean implements LessonTimeB
     @Override
     public LocalDateTime calculateStartTimeOfLesson(TimeTableTemplateItem templateItem, Week week) {
         LessonsGridItem lessonsGridItem = findLessonsGridItemByNumber(
-                templateItem.getGroupForLesson().getSchoolClass().getMainLessonsGridType(),
+                templateItem.getPlanningItem().getGroupOfLearning().getSchoolClass().getMainLessonsGridType(),
                 templateItem.getNumberOfLesson());
-        return getDateWithTime(templateItem.getDayOfWeek(), week, lessonsGridItem.getLessonStartTime());
+        return getDateWithTime(templateItem.getWeekDay(), week, lessonsGridItem.getLessonStartTime());
     }
 
     private LessonsGridItem findLessonsGridItemByNumber(LessonsGridType mainLessonsGridType, Integer numberOfLesson) {
@@ -47,6 +48,6 @@ public class LessonTimeByLessonsGridCalculatorServiceBean implements LessonTimeB
     }
 
     private LocalDate getDate(Week week, WeekDay dayOfWeek) {
-        return week.getStartDate().plusDays(dayOfWeek.getDayNumber()-1);
+        return week.getStartDate().plusDays(dayOfWeek.getId()-1);
     }
 }

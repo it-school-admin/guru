@@ -4,17 +4,14 @@ import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Table(name = "GURU_WEEK")
 @Entity(name = "guru_Week")
-@NamePattern("%s %s %s|weekNumber,startDate,endDate")
+@NamePattern("%s|displayName")
 public class Week extends StandardEntity {
     private static final long serialVersionUID = 2276194155440254937L;
 
@@ -29,6 +26,19 @@ public class Week extends StandardEntity {
     @NotNull
     @Column(name = "END_DATE", nullable = false)
     private LocalDate endDate;
+
+    @NotNull
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "EDUCATIONAL_YEAR_ID")
+    private EducationalYear educationalYear;
+
+    public EducationalYear getEducationalYear() {
+        return educationalYear;
+    }
+
+    public void setEducationalYear(EducationalYear educationalYear) {
+        this.educationalYear = educationalYear;
+    }
 
     public LocalDate getEndDate() {
         return endDate;
