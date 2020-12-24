@@ -23,6 +23,8 @@ public class CopyTimeTableForWeekFromTemplateServiceBean implements CopyTimeTabl
     private Persistence persistence;
     @Inject
     private SettingsProviderService settingsProviderService;
+    @Inject
+    private LessonTimeByLessonsGridCalculatorService lessonTimeByLessonsGridCalculatorService;
 
     @Override
     public void copyTimeTableForWeekFromTemplate(Week week, Boolean isDistant) {
@@ -44,7 +46,7 @@ public class CopyTimeTableForWeekFromTemplateServiceBean implements CopyTimeTabl
             lesson.setPlanningItem(templateItem.getPlanningItem());
 
             //TODO
-          //  lesson.setStartTime(getDateWithTime(templateItem.getDayOfWeek(), week, templateItem.getTimeStart()));
+            lesson.setStartTime(lessonTimeByLessonsGridCalculatorService.calculateStartTimeOfLesson(templateItem, week));
             if(isDistant)
             {
                 lesson.setDuration(settingsProviderService.getIntegerParameter(DISTANT_LESSON_DEFAULT_DURATION));
@@ -78,13 +80,5 @@ public class CopyTimeTableForWeekFromTemplateServiceBean implements CopyTimeTabl
             return null;
         });*/
 
-    }
-
-    private LocalDateTime getDateWithTime(WeekDay dayOfWeek, Week week, LocalTime time) {
-        return LocalDateTime.of(getDate(week, dayOfWeek), time);
-    }
-
-    private LocalDate getDate(Week week, WeekDay dayOfWeek) {
-        return week.getStartDate().plusDays(dayOfWeek.getDayNumber()-1);
     }
 }

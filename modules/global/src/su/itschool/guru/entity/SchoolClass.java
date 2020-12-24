@@ -6,6 +6,7 @@ import com.haulmont.cuba.core.entity.StandardEntity;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.PositiveOrZero;
 
 @Table(name = "GURU_SCHOOL_CLASS")
 @Entity(name = "guru_SchoolClass")
@@ -41,17 +42,31 @@ public class SchoolClass extends StandardEntity {
     private Integer studentCount;
 
     @Column(name = "GIRLS_COUNT")
+    @PositiveOrZero
     private Integer girlsCount;
 
     @Column(name = "BOYS_COUNT")
+    @PositiveOrZero
     private Integer boysCount;
 
     @Column(name = "SHIFT")
     private Integer shift;
 
+    @NotNull
+    @Column(name = "IS_IN_DISTANT", nullable = false)
+    private Boolean isInDistant = false;
+
     @Column(name = "IR_TECH_ID", nullable = false)
     @NotNull
     private Integer irTechId;
+
+    public Boolean getIsInDistant() {
+        return isInDistant;
+    }
+
+    public void setIsInDistant(Boolean isInDistant) {
+        this.isInDistant = isInDistant;
+    }
 
     public Integer getShift() {
         return shift;

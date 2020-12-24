@@ -39,6 +39,7 @@ create table GURU_SCHOOL_CLASS (
     GIRLS_COUNT integer,
     BOYS_COUNT integer,
     SHIFT integer,
+    IS_IN_DISTANT boolean not null,
     IR_TECH_ID integer not null,
     --
     primary key (ID)

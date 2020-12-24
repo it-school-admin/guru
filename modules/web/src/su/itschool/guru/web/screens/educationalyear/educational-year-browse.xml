@@ -32,11 +32,6 @@
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
             </actions>
-            <columns>
-                <column id="name"/>
-                <column id="startDate"/>
-                <column id="endDate"/>
-            </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
@@ -44,6 +39,11 @@
                 <button id="editBtn" action="educationalYearsTable.edit"/>
                 <button id="removeBtn" action="educationalYearsTable.remove"/>
             </buttonsPanel>
+            <columns>
+                <column id="name"/>
+                <column id="startDate"/>
+                <column id="endDate"/>
+            </columns>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
