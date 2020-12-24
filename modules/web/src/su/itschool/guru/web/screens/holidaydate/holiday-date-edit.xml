@@ -6,7 +6,9 @@
     <data>
         <instance id="holidayDateDc"
                   class="su.itschool.guru.entity.HolidayDate">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="holiday" view="_minimal"/>
+            </view>
             <loader/>
         </instance>
     </data>
@@ -15,7 +17,9 @@
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="holidayDateDc">
             <column width="350px">
+                <pickerField id="holidayField" property="holiday"/>
                 <dateField id="holidayDateField" property="holidayDate"/>
+                <lookupField id="dateChangeTypeField" property="dateChangeType"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

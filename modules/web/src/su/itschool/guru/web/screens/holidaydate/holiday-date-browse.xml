@@ -7,7 +7,9 @@
     <data readOnly="true">
         <collection id="holidayDatesDc"
                     class="su.itschool.guru.entity.HolidayDate">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="holiday" view="_minimal"/>
+            </view>
             <loader id="holidayDatesDl">
                 <query>
                     <![CDATA[select e from guru_HolidayDate e]]>
@@ -32,9 +34,6 @@
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
             </actions>
-            <columns>
-                <column id="holidayDate"/>
-            </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
@@ -42,6 +41,11 @@
                 <button id="editBtn" action="holidayDatesTable.edit"/>
                 <button id="removeBtn" action="holidayDatesTable.remove"/>
             </buttonsPanel>
+            <columns>
+                <column id="holiday"/>
+                <column id="holidayDate"/>
+                <column id="dateChangeType"/>
+            </columns>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>

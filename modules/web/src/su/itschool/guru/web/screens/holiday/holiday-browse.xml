@@ -32,9 +32,6 @@
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
             </actions>
-            <columns>
-                <column id="holidayName"/>
-            </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
@@ -42,6 +39,9 @@
                 <button id="editBtn" action="holidaysTable.edit"/>
                 <button id="removeBtn" action="holidaysTable.remove"/>
             </buttonsPanel>
+            <columns>
+                <column id="holidayName"/>
+            </columns>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
