@@ -24,5 +24,6 @@
         <class>su.itschool.guru.entity.HolidayDate</class>
         <class>su.itschool.guru.entity.EducationalPeriod</class>
         <class>su.itschool.guru.entity.AcademicHolidays</class>
+        <class>su.itschool.guru.entity.enums.GuruSettings</class>
     </persistence-unit>
 </persistence>
