@@ -20,6 +20,7 @@
                 <pickerField id="holidayField" property="holiday"/>
                 <dateField id="holidayDateField" property="holidayDate"/>
                 <lookupField id="dateChangeTypeField" property="dateChangeType"/>
+                <dateField id="transferLessonsFromField" property="transferLessonsFrom"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

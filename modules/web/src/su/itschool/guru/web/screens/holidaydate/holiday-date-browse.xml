@@ -45,6 +45,7 @@
                 <column id="holiday"/>
                 <column id="holidayDate"/>
                 <column id="dateChangeType"/>
+                <column id="transferLessonsFrom"/>
             </columns>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

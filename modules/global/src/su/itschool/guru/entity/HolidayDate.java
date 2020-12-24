@@ -27,6 +27,17 @@ public class HolidayDate extends StandardEntity {
     @Column(name = "DATE_CHANGE_TYPE", nullable = false)
     private Integer dateChangeType;
 
+    @Column(name = "TRANSFER_LESSONS_FROM")
+    private LocalDate transferLessonsFrom;
+
+    public void setTransferLessonsFrom(LocalDate transferLessonsFrom) {
+        this.transferLessonsFrom = transferLessonsFrom;
+    }
+
+    public LocalDate getTransferLessonsFrom() {
+        return transferLessonsFrom;
+    }
+
     public HolidayDateChangeType getDateChangeType() {
         return dateChangeType == null ? null : HolidayDateChangeType.fromId(dateChangeType);
     }
