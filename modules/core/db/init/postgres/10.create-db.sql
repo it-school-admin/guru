@@ -383,6 +383,7 @@ create table GURU_HOLIDAY_DATE (
     HOLIDAY_ID uuid not null,
     HOLIDAY_DATE date not null,
     DATE_CHANGE_TYPE integer not null,
+    TRANSFER_LESSONS_FROM date,
     --
     primary key (ID)
 )^
@@ -425,3 +426,26 @@ create table GURU_ACADEMIC_HOLIDAYS (
     primary key (ID)
 )^
 -- end GURU_ACADEMIC_HOLIDAYS
+-- begin GURU_GURU_SETTINGS
+create table GURU_GURU_SETTINGS (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    SETTING_KEY varchar(255) not null,
+    STRING_VALUE varchar(255),
+    INTEGER_VALUE integer,
+    DATE_VALUE date,
+    TIME_VALUE time,
+    DATE_TIME_VALUE timestamp,
+    TEXT_VALUE text,
+    OBJECT_VALUE uuid,
+    --
+    primary key (ID)
+)^
+-- end GURU_GURU_SETTINGS
