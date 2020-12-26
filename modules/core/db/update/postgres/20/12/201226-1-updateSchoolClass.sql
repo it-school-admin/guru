@@ -1,0 +1,1 @@
+drop index IDX_GURU_SCHOOL_CLASS_UK_CLASS_NAME ;

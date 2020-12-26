@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://schoolClassMappingBrowse.caption"
+        focusComponent="schoolClassMappingsTable"
+        messagesPack="su.itschool.guru.web.screens.schoolclassmapping">
+    <data readOnly="true">
+        <collection id="schoolClassMappingsDc"
+                    class="su.itschool.guru.entity.SchoolClassMapping">
+            <view extends="_local">
+                <property name="thirdPartySystem" view="_minimal"/>
+                <property name="schoolClass" view="_minimal"/>
+            </view>
+            <loader id="schoolClassMappingsDl">
+                <query>
+                    <![CDATA[select e from guru_SchoolClassMapping e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="schoolClassMappingsTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="schoolClassMappingsTable"
+                dataLoader="schoolClassMappingsDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="schoolClassMappingsTable"
+                    width="100%"
+                    dataContainer="schoolClassMappingsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="schoolClass"/>
+                <column id="outerId"/>
+                <column id="thirdPartySystem"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="schoolClassMappingsTable.create"/>
+                <button id="editBtn" action="schoolClassMappingsTable.edit"/>
+                <button id="removeBtn" action="schoolClassMappingsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

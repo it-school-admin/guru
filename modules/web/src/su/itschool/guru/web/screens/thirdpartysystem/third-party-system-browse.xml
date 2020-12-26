@@ -1,46 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
         xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
-        caption="msg://classLetterBrowse.caption"
-        focusComponent="classLettersTable"
-        messagesPack="su.itschool.guru.web.screens.classletter">
+        caption="msg://thirdPartySystemBrowse.caption"
+        focusComponent="thirdPartySystemsTable"
+        messagesPack="su.itschool.guru.web.screens.thirdpartysystem">
     <data readOnly="true">
-        <collection id="classLettersDc"
-                    class="su.itschool.guru.entity.ClassLetter">
+        <collection id="thirdPartySystemsDc"
+                    class="su.itschool.guru.entity.ThirdPartySystem">
             <view extends="_local"/>
-            <loader id="classLettersDl">
+            <loader id="thirdPartySystemsDl">
                 <query>
-                    <![CDATA[select e from guru_ClassLetter e]]>
+                    <![CDATA[select e from guru_ThirdPartySystem e]]>
                 </query>
             </loader>
         </collection>
     </data>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="classLettersTable"
+    <layout expand="thirdPartySystemsTable"
             spacing="true">
         <filter id="filter"
-                applyTo="classLettersTable"
-                dataLoader="classLettersDl">
+                applyTo="thirdPartySystemsTable"
+                dataLoader="thirdPartySystemsDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="classLettersTable"
+        <groupTable id="thirdPartySystemsTable"
                     width="100%"
-                    dataContainer="classLettersDc">
+                    dataContainer="thirdPartySystemsDc">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="letter"/>
+                <column id="systemName"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="classLettersTable.create"/>
-                <button id="editBtn" action="classLettersTable.edit"/>
-                <button id="removeBtn" action="classLettersTable.remove"/>
+                <button id="createBtn" action="thirdPartySystemsTable.create"/>
+                <button id="editBtn" action="thirdPartySystemsTable.edit"/>
+                <button id="removeBtn" action="thirdPartySystemsTable.remove"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

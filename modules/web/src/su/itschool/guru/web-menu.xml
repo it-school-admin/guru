@@ -23,12 +23,17 @@
             <item screen="guru_School.browse" caption="mainMsg://menu_config.guru_School.browse"/>
         </menu>
         <menu id="guides" caption="mainMsg://menu_config.guides">
-            <item screen="guru_EducationalYear.browse" caption="mainMsg://menu_config.guru_EducationalYear.browse"/>
+            <item screen="guru_EdSchoolClassImportExecutorucationalYear.browse" caption="mainMsg://menu_config.guru_EducationalYear.browse"/>
             <item screen="guru_EducationalPeriod.browse" caption="mainMsg://menu_config.guru_EducationalPeriod.browse"/>
             <item screen="guru_AcademicHolidays.browse" caption="mainMsg://menu_config.guru_AcademicHolidays.browse"/>
             <item screen="guru_Holiday.browse" caption="mainMsg://menu_config.guru_Holiday.browse"/>
             <item screen="guru_HolidayDate.browse" caption="mainMsg://menu_config.guru_HolidayDate.browse"/>
             <item screen="guru_Week.browse" caption="mainMsg://menu_config.guru_Week.browse"/>
+        </menu>
+        <menu id="importData" caption="mainMsg://menu_config.null">
+            <item screen="guru_ThirdPartySystem.browse" caption="mainMsg://menu_config.guru_ThirdPartySystem.browse"/>
+            <item screen="guru_SchoolClassMapping.browse"
+                  caption="mainMsg://menu_config.guru_SchoolClassMapping.browse"/>
         </menu>
     </menu>
 </menu-config>

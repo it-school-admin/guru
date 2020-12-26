@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
-        caption="msg://classLetterEdit.caption"
+        caption="msg://thirdPartySystemEdit.caption"
         focusComponent="form"
-        messagesPack="su.itschool.guru.web.screens.classletter">
+        messagesPack="su.itschool.guru.web.screens.thirdpartysystem">
     <data>
-        <instance id="classLetterDc"
-                  class="su.itschool.guru.entity.ClassLetter">
+        <instance id="thirdPartySystemDc"
+                  class="su.itschool.guru.entity.ThirdPartySystem">
             <view extends="_local"/>
             <loader/>
         </instance>
@@ -13,9 +13,9 @@
     <dialogMode height="600"
                 width="800"/>
     <layout expand="editActions" spacing="true">
-        <form id="form" dataContainer="classLetterDc">
+        <form id="form" dataContainer="thirdPartySystemDc">
             <column width="350px">
-                <textField id="letterField" property="letter"/>
+                <textField id="systemNameField" property="systemName"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

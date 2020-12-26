@@ -27,7 +27,8 @@ public class LessonPlanningItemImportExecutor extends AbstractImportExecutorImpl
     private GroupForLesson findGroup(Node entityInformation, SchoolClass schoolClass) {
         if (isFullClassGroup(entityInformation))
         {
-            return getFinderService().findMainLearningGroup(schoolClass.getIrTechId(), getIntegerAttributeValue(entityInformation, "sid"));
+            return null;
+           // return getFinderService().findMainLearningGroup(schoolClass.getIrTechId(), getIntegerAttributeValue(entityInformation, "sid"));
         }
         else
         {

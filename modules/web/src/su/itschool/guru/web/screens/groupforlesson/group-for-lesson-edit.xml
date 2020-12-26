@@ -20,31 +20,20 @@
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="groupForLessonDc">
             <column width="350px">
-                <textField id="subGroupNameField" property="subGroupName"/>
-                <pickerField id="schoolClassField" property="schoolClass">
-                    <actions>
-                        <action id="lookup" type="picker_lookup"/>
-                        <action id="clear" type="picker_clear"/>
-                    </actions>
-                </pickerField>
-                <pickerField id="subjectField" property="subject">
-                    <actions>
-                        <action id="lookup" type="picker_lookup"/>
-                        <action id="clear" type="picker_clear"/>
-                    </actions>
-                </pickerField>
-                <pickerField id="teacherField" property="teacher">
-                    <actions>
-                        <action id="lookup" type="picker_lookup"/>
-                        <action id="clear" type="picker_clear"/>
-                    </actions>
-                </pickerField>
-                <checkBox id="isFullClassGroupField" property="isFullClassGroup"/>
+                <pickerField id="teacherField" property="teacher"/>
+                <textField id="groupNameField" property="groupName"/>
                 <textField id="groupIrTechNameField" property="groupIrTechName"/>
-                <textField id="groupEmailField" property="groupEmail"/>
+                <checkBox id="isRootClassGroupField" property="isRootClassGroup"/>
+                <checkBox id="isSubjectGroupField" property="isSubjectGroup"/>
                 <textField id="groupTeamsTeamField" property="groupTeamsTeam"/>
+                <pickerField id="schoolClassField" property="schoolClass"/>
+                <textField id="groupEmailField" property="groupEmail"/>
                 <pickerField id="parentGroupField" property="parentGroup"/>
-                <textField id="irTechCountStudentField" property="irTechCountStudent"/>
+                <pickerField id="subjectField" property="subject"/>
+                <textField id="groupIrTechIdField" property="groupIrTechId"/>
+                <checkBox id="isFullClassGroupField" property="isFullClassGroup"/>
+                <textField id="countStudentField" property="countStudent"/>
+                <textField id="ownNameField" property="ownName"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

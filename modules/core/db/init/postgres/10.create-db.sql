@@ -29,38 +29,18 @@ create table GURU_SCHOOL_CLASS (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    CLASS_NAME varchar(255) not null,
     CLASS_LEVEL integer not null,
+    CLASS_LETTER char not null,
     CLASS_EMAIL varchar(255),
     MAIN_LESSONS_GRID_TYPE_ID uuid,
-    MAIN_TEACHER_ID uuid,
-    DESCRIPTION varchar(255),
+    MAIN_TEACHER_ID uuid not null,
     STUDENT_COUNT integer,
-    GIRLS_COUNT integer,
-    BOYS_COUNT integer,
     SHIFT integer,
     IS_IN_DISTANT boolean not null,
-    IR_TECH_ID integer not null,
     --
     primary key (ID)
 )^
 -- end GURU_SCHOOL_CLASS
--- begin GURU_CLASS_LETTER
-create table GURU_CLASS_LETTER (
-    ID uuid,
-    VERSION integer not null,
-    CREATE_TS timestamp,
-    CREATED_BY varchar(50),
-    UPDATE_TS timestamp,
-    UPDATED_BY varchar(50),
-    DELETE_TS timestamp,
-    DELETED_BY varchar(50),
-    --
-    LETTER char not null,
-    --
-    primary key (ID)
-)^
--- end GURU_CLASS_LETTER
 
 -- begin GURU_LESSON
 create table GURU_LESSON (
@@ -125,22 +105,6 @@ create table GURU_LESSONS_GRID (
     primary key (ID)
 )^
 -- end GURU_LESSONS_GRID
--- begin GURU_CLASS_LEVEL
-create table GURU_CLASS_LEVEL (
-    ID uuid,
-    VERSION integer not null,
-    CREATE_TS timestamp,
-    CREATED_BY varchar(50),
-    UPDATE_TS timestamp,
-    UPDATED_BY varchar(50),
-    DELETE_TS timestamp,
-    DELETED_BY varchar(50),
-    --
-    LEVEL_ integer not null,
-    --
-    primary key (ID)
-)^
--- end GURU_CLASS_LEVEL
 
 -- begin GURU_SCHOOL
 create table GURU_SCHOOL (
@@ -449,3 +413,37 @@ create table GURU_GURU_SETTINGS (
     primary key (ID)
 )^
 -- end GURU_GURU_SETTINGS
+-- begin GURU_SCHOOL_CLASS_MAPPING
+create table GURU_SCHOOL_CLASS_MAPPING (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    SCHOOL_CLASS_ID uuid not null,
+    THIRD_PARTY_SYSTEM_ID uuid not null,
+    OUTER_ID integer not null,
+    --
+    primary key (ID)
+)^
+-- end GURU_SCHOOL_CLASS_MAPPING
+-- begin GURU_THIRD_PARTY_SYSTEM
+create table GURU_THIRD_PARTY_SYSTEM (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    SYSTEM_NAME varchar(255) not null,
+    --
+    primary key (ID)
+)^
+-- end GURU_THIRD_PARTY_SYSTEM

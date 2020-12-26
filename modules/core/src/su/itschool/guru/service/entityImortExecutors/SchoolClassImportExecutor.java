@@ -16,12 +16,10 @@ public class SchoolClassImportExecutor extends AbstractImportExecutorImpl {
     protected StandardEntity setEntityFields(StandardEntity entity, Node entityInformation, Node rootNode, StandardEntity rootEntity) {
         //			<class id="927307" name="1А" grade="1" studcnt="27" boys="8" girls="19">
         SchoolClass schoolClass = (SchoolClass) entity;
-        schoolClass.setIrTechId(getIntegerAttributeValue(entityInformation, "id"));
+        //schoolClass.setIrTechId(getIntegerAttributeValue(entityInformation, "id"));
         schoolClass.setClassLevel(getIntegerAttributeValue(entityInformation, "grade"));
-        schoolClass.setClassName(getStringAttributeValue(entityInformation, "name"));
+        //schoolClass.setClassName(getStringAttributeValue(entityInformation, "name"));
         schoolClass.setStudentCount(getIntegerAttributeValue(entityInformation, "studcnt"));
-        schoolClass.setBoysCount(getIntegerAttributeValue(entityInformation, "boys"));
-        schoolClass.setGirlsCount(getIntegerAttributeValue(entityInformation, "girls"));
 
         return schoolClass;
     }

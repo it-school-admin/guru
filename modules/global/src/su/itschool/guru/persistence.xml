@@ -4,9 +4,7 @@
 
         <class>su.itschool.guru.entity.Teacher</class>
         <class>su.itschool.guru.entity.SchoolClass</class>
-        <class>su.itschool.guru.entity.ClassLetter</class>
         <class>su.itschool.guru.entity.EducationalOrganization</class>
-        <class>su.itschool.guru.entity.ClassLevel</class>
         <class>su.itschool.guru.entity.Subject</class>
         <class>su.itschool.guru.entity.LessonsPlanningItem</class>
         <class>su.itschool.guru.entity.GroupForLesson</class>
@@ -25,5 +23,7 @@
         <class>su.itschool.guru.entity.EducationalPeriod</class>
         <class>su.itschool.guru.entity.AcademicHolidays</class>
         <class>su.itschool.guru.entity.enums.GuruSettings</class>
+        <class>su.itschool.guru.entity.SchoolClassMapping</class>
+        <class>su.itschool.guru.entity.ThirdPartySystem</class>
     </persistence-unit>
 </persistence>

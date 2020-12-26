@@ -34,7 +34,7 @@ public class SubGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecuto
         Integer subjectIrTechId = getIntegerAttributeValue(entityInformation, "sid");
         subGroup.setSubject(getFinderService().findSubjectByIrTechId(subjectIrTechId));
         subGroup.setTeacher(getFinderService().findTeacherByIrTechId(getIntegerAttributeValue(entityInformation, "tid")));
-        subGroup.setParentGroup(getFinderService().findMainLearningGroup(schoolClass.getIrTechId(), subjectIrTechId));
+      //  subGroup.setParentGroup(getFinderService().findMainLearningGroup(schoolClass.getIrTechId(), subjectIrTechId));
 
         return subGroup;
     }
@@ -65,7 +65,7 @@ public class SubGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecuto
     public StandardEntity findEntity(Node rootNode, StandardEntity rootEntity, Node entityInformation) {
         GroupForLesson groupForLesson;
         try {
-            groupForLesson = getDataManager().
+        /*    groupForLesson = getDataManager().
                     load(GroupForLesson.class).
                     query("select gr from guru_GroupForLesson as gr " +
                             "JOIN gr.schoolClass cl " +
@@ -78,15 +78,16 @@ public class SubGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecuto
                     parameter("classIrTechId", ((SchoolClass)rootEntity).getIrTechId()).
                     parameter("groupIrTechId", getIntegerAttributeValue(entityInformation, "groupid")).
                     parameter("subjectIrTechId", getIntegerAttributeValue(entityInformation, "sid")).
-                    one();
+                    one();*/
 
         } catch (Exception e) {
             //TODO avoid exception appearing
             //e.printStackTrace();
             return null;
         }
+        return null;
 
-        return groupForLesson;
+        //return groupForLesson;
     }
 
     public boolean needToBeCreated(Node entityInformation)

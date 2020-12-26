@@ -21,20 +21,20 @@ public class SchoolClassEntityListener implements AfterInsertEntityListener<Scho
 
     @Override
     public void onAfterInsert(SchoolClass entity, Connection connection) {
-        GroupForLesson rootClassGroup = dataManager.create(GroupForLesson.class);
+/*        GroupForLesson rootClassGroup = dataManager.create(GroupForLesson.class);
         rootClassGroup.setSchoolClass(entity);
-        dataManager.commit(rootClassGroup);
+        dataManager.commit(rootClassGroup);*/
     }
 
     @Override
     public void onBeforeDelete(SchoolClass entity, EntityManager entityManager) {
-        persistence.callInTransaction(tr->{
+/*        persistence.callInTransaction(tr->{
             persistence
                     .getEntityManager()
                     .createNativeQuery("DELETE FROM GURU_GROUP_FOR_LESSON WHERE SCHOOL_CLASS_ID="+entity.getId().toString()+";")
                     .executeUpdate();
             //TODO
             return null;
-        });
+        });*/
     }
 }

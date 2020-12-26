@@ -1,0 +1,1 @@
+drop table if exists GURU_CLASS_LEVEL__U86436 cascade ;

@@ -39,7 +39,7 @@ public class MainGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecut
         GroupForLesson groupForLesson;
         try {
 
-            groupForLesson = getDataManager().
+         /*   groupForLesson = getDataManager().
                     load(GroupForLesson.class).
                     query("select gr from guru_GroupForLesson as gr " +
                             "JOIN gr.schoolClass cl " +
@@ -50,14 +50,15 @@ public class MainGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecut
                             "AND sub.irTechId = :subjectIrTechId").
                     parameter("classIrTechId", ((SchoolClass)rootEntity).getIrTechId()).
                     parameter("subjectIrTechId", getIntegerAttributeValue(entityInformation, "sid")).
-                    one();
+                    one();*/
 
         } catch (Exception e) {
             //TODO avoid exception appearing
            // e.printStackTrace();
             return null;
         }
+        return null;
 
-        return groupForLesson;
+       // return groupForLesson;
     }
 }
