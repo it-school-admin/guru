@@ -1,6 +1,5 @@
 package su.itschool.guru.listeners;
 
-import com.haulmont.cuba.core.Persistence;
 import com.haulmont.cuba.core.app.events.EntityChangedEvent;
 import com.haulmont.cuba.core.entity.contracts.Id;
 import com.haulmont.cuba.core.global.DataManager;
