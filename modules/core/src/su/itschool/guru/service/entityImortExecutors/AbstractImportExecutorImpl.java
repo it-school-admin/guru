@@ -3,20 +3,20 @@ package su.itschool.guru.service.entityImortExecutors;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.global.DataManager;
 import org.w3c.dom.Node;
-import su.itschool.guru.service.EntitiesByIrTechIdFinderService;
+import su.itschool.guru.service.IrTechImportFinderService;
 
 public abstract class AbstractImportExecutorImpl<T extends StandardEntity> implements EntityImportExecutor{
 
     private Class<T> entityClass;
-    private final EntitiesByIrTechIdFinderService entitiesByIrTechIdFinderService;
+    private final IrTechImportFinderService irTechImportFinderService;
     private final DataManager dataManager;
 
     public AbstractImportExecutorImpl(Class<T> entityClass,
-                                      EntitiesByIrTechIdFinderService entitiesByIrTechIdFinderService,
+                                      IrTechImportFinderService irTechImportFinderService,
                                       DataManager dataManager){
 
         this.entityClass = entityClass;
-        this.entitiesByIrTechIdFinderService = entitiesByIrTechIdFinderService;
+        this.irTechImportFinderService = irTechImportFinderService;
         this.dataManager = dataManager;
     }
 
@@ -57,8 +57,8 @@ public abstract class AbstractImportExecutorImpl<T extends StandardEntity> imple
         return Integer.valueOf(entityInformation.getAttributes().getNamedItem(fieldName).getNodeValue());
     }
 
-    public EntitiesByIrTechIdFinderService getFinderService() {
-        return entitiesByIrTechIdFinderService;
+    public IrTechImportFinderService getFinderService() {
+        return irTechImportFinderService;
     }
 
     public boolean needToBeCreated(Node entityInformation)

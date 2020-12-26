@@ -6,8 +6,8 @@ import su.itschool.guru.entity.*;
 
 import javax.inject.Inject;
 
-@Service(EntitiesByIrTechIdFinderService.NAME)
-public class EntitiesByIrTechIdFinderServiceBean implements EntitiesByIrTechIdFinderService {
+@Service(IrTechImportFinderService.NAME)
+public class IrTechImportFinderServiceBean implements IrTechImportFinderService {
 
     @Inject
     private DataManager dataManager;
@@ -29,7 +29,6 @@ public class EntitiesByIrTechIdFinderServiceBean implements EntitiesByIrTechIdFi
            // e.printStackTrace();
             return null;
         }
-
     }
 
     @Override
@@ -151,5 +150,21 @@ public class EntitiesByIrTechIdFinderServiceBean implements EntitiesByIrTechIdFi
             //TODO
             return null;
         }
+    }
+
+    @Override
+    public GroupForLesson findRootGroupByClass(SchoolClass schoolClass) {
+        GroupForLesson group = dataManager
+                .load(GroupForLesson.class)
+                .query("select gp from guru_GroupForLesson as gp" +
+                        " where gp.schoolClass=:schoolClass" +
+                        " and gp.parentGroup = null")
+                .parameter("schoolClass", schoolClass)
+                .one();
+        if(group!= null)
+            return group;
+
+        //TODO
+        throw new RuntimeException();
     }
 }

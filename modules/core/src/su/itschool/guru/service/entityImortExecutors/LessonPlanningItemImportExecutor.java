@@ -6,12 +6,12 @@ import org.w3c.dom.Node;
 import su.itschool.guru.entity.GroupForLesson;
 import su.itschool.guru.entity.LessonsPlanningItem;
 import su.itschool.guru.entity.SchoolClass;
-import su.itschool.guru.service.EntitiesByIrTechIdFinderService;
+import su.itschool.guru.service.IrTechImportFinderService;
 
 public class LessonPlanningItemImportExecutor extends AbstractImportExecutorImpl {
 //		<csg id="4867135" tid="1322890" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" hrsweek="3" studcnt="13"/>
-    public LessonPlanningItemImportExecutor(Class entityClass, EntitiesByIrTechIdFinderService entitiesByIrTechIdFinderService, DataManager dataManager) {
-        super(entityClass, entitiesByIrTechIdFinderService, dataManager);
+    public LessonPlanningItemImportExecutor(Class entityClass, IrTechImportFinderService irTechImportFinderService, DataManager dataManager) {
+        super(entityClass, irTechImportFinderService, dataManager);
     }
 
     @Override

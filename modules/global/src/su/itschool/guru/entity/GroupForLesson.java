@@ -1,5 +1,6 @@
 package su.itschool.guru.entity;
 
+import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
@@ -9,7 +10,7 @@ import javax.validation.constraints.NotNull;
 
 @Table(name = "GURU_GROUP_FOR_LESSON")
 @Entity(name = "guru_GroupForLesson")
-@NamePattern("%s %s %s %s|schoolClass,subject,subGroupName,teacher")
+@NamePattern("%s|groupName")
 public class GroupForLesson extends StandardEntity {
     private static final long serialVersionUID = 5929795659783061502L;
 
@@ -18,10 +19,6 @@ public class GroupForLesson extends StandardEntity {
     @JoinColumn(name = "SCHOOL_CLASS_ID")
     private SchoolClass schoolClass;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "SUBJECT_ID")
-    private Subject subject;
-
     @Column(name = "IS_FULL_CLASS_GROUP")
     private Boolean isFullClassGroup;
 
@@ -29,8 +26,12 @@ public class GroupForLesson extends StandardEntity {
     @JoinColumn(name = "PARENT_GROUP_ID")
     private GroupForLesson parentGroup;
 
-    @Column(name = "SUB_GROUP_NAME")
-    private String subGroupName;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "SUBJECT_ID")
+    private Subject subject;
+
+    @Column(name = "OWN_NAME")
+    private String ownName;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "TEACHER_ID")
@@ -46,18 +47,26 @@ public class GroupForLesson extends StandardEntity {
     @Column(name = "GROUP_IR_TECH_ID")
     private Integer groupIrTechId;
 
-    @Column(name = "IR_TECH_COUNT_STUDENT")
-    private Integer irTechCountStudent;
+    @Column(name = "COUNT_STUDENT")
+    private Integer countStudent;
 
     @Column(name = "GROUP_IR_TECH_NAME")
     private String groupIrTechName;
 
-    public Integer getIrTechCountStudent() {
-        return irTechCountStudent;
+    public Integer getCountStudent() {
+        return countStudent;
     }
 
-    public void setIrTechCountStudent(Integer irTechCountStudent) {
-        this.irTechCountStudent = irTechCountStudent;
+    public void setCountStudent(Integer countStudent) {
+        this.countStudent = countStudent;
+    }
+
+    public String getOwnName() {
+        return ownName;
+    }
+
+    public void setOwnName(String ownName) {
+        this.ownName = ownName;
     }
 
     public void setGroupIrTechId(Integer groupIrTechId) {
@@ -66,14 +75,6 @@ public class GroupForLesson extends StandardEntity {
 
     public Integer getGroupIrTechId() {
         return groupIrTechId;
-    }
-
-    public String getSubGroupName() {
-        return subGroupName;
-    }
-
-    public void setSubGroupName(String subGroupName) {
-        this.subGroupName = subGroupName;
     }
 
     public String getGroupTeamsTeam() {
@@ -140,4 +141,37 @@ public class GroupForLesson extends StandardEntity {
         this.schoolClass = schoolClass;
     }
 
+    @Transient
+    @MetaProperty(related = {"parentGroup"})
+    public Boolean getIsRootClassGroup()
+    {
+        return parentGroup==null;
+    }
+
+    @Transient
+    @MetaProperty(related = {"subject"})
+    public Boolean getIsSubjectGroup()
+    {
+        return subject!=null;
+    }
+
+    @Transient
+    @MetaProperty(related = {"schoolClass", "subject", "ownName"})
+    public String getGroupName()
+    {
+        if(getIsRootClassGroup())
+        {
+            return schoolClass.getClassName();
+        }
+        if(getIsSubjectGroup())
+        {
+            return schoolClass.getClassName() + "/" + subject.getSubjectName();
+        }
+        if(!isFullClassGroup && getIsSubjectGroup())
+        {
+            return schoolClass.getClassName() + "/" + subject.getSubjectName() + "/" + ownName;
+        }
+        //TODO give exception name
+        throw new RuntimeException();
+    }
 }

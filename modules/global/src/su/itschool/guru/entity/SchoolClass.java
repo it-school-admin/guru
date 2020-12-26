@@ -2,15 +2,19 @@ package su.itschool.guru.entity;
 
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.Listeners;
+import com.haulmont.cuba.core.entity.annotation.PublishEntityChangedEvents;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
 
+@PublishEntityChangedEvents
 @Table(name = "GURU_SCHOOL_CLASS")
 @Entity(name = "guru_SchoolClass")
 @NamePattern("%s|className")
+@Listeners("guru_SchoolClassEntityListener")
 public class SchoolClass extends StandardEntity {
     private static final long serialVersionUID = 6151984380717443318L;
 

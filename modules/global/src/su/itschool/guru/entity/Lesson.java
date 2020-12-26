@@ -221,7 +221,7 @@ public class Lesson extends StandardEntity {
                         " " +
                         groupOfLearning.getSubject().getSubjectName() +
                         " " +
-                        groupOfLearning.getSubGroupName();
+                        groupOfLearning.getOwnName();
             }
 
             result = result + " " + planningItem.getGroupOfLearning().getTeacher().getFamilyNameWithAbbreviation();

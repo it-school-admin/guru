@@ -207,15 +207,15 @@ create table GURU_GROUP_FOR_LESSON (
     DELETED_BY varchar(50),
     --
     SCHOOL_CLASS_ID uuid not null,
-    SUBJECT_ID uuid,
     IS_FULL_CLASS_GROUP boolean,
     PARENT_GROUP_ID uuid,
-    SUB_GROUP_NAME varchar(255),
+    SUBJECT_ID uuid,
+    OWN_NAME varchar(255),
     TEACHER_ID uuid,
     GROUP_EMAIL varchar(255),
     GROUP_TEAMS_TEAM varchar(255),
     GROUP_IR_TECH_ID integer,
-    IR_TECH_COUNT_STUDENT integer,
+    COUNT_STUDENT integer,
     GROUP_IR_TECH_NAME varchar(255),
     --
     primary key (ID)

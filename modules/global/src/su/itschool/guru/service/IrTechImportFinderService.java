@@ -2,9 +2,9 @@ package su.itschool.guru.service;
 
 import su.itschool.guru.entity.*;
 
-public interface EntitiesByIrTechIdFinderService {
-    String NAME = "guru_EntitiesByIrTechIdFinderService";
-    public Teacher findTeacherByIrTechId(Integer irTechId);
+public interface IrTechImportFinderService {
+    String NAME = "guru_IrTechImportFinderService";
+    Teacher findTeacherByIrTechId(Integer irTechId);
 
     Subject findSubjectByIrTechId(Integer irTechId);
 
@@ -17,4 +17,6 @@ public interface EntitiesByIrTechIdFinderService {
     LessonsPlanningItem getPlanningItemByIrTechId(Integer irTechId);
 
     Room getRoomByIrTechId(Integer irTechId);
+
+    GroupForLesson findRootGroupByClass(SchoolClass schoolClass);
 }

@@ -4,13 +4,13 @@ import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.global.DataManager;
 import org.w3c.dom.Node;
 import su.itschool.guru.entity.Subject;
-import su.itschool.guru.service.EntitiesByIrTechIdFinderService;
+import su.itschool.guru.service.IrTechImportFinderService;
 
 public class SubjectImportExecutor<Teacher> extends AbstractImportExecutorImpl {
 
 
-    public SubjectImportExecutor(Class entityClass, EntitiesByIrTechIdFinderService entitiesByIrTechIdFinderService, DataManager dataManager) {
-        super(entityClass, entitiesByIrTechIdFinderService, dataManager);
+    public SubjectImportExecutor(Class entityClass, IrTechImportFinderService irTechImportFinderService, DataManager dataManager) {
+        super(entityClass, irTechImportFinderService, dataManager);
     }
 
     @Override

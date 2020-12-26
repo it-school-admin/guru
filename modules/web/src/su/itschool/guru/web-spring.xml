@@ -14,7 +14,7 @@
                 <entry key="guru_ImportIrTechXMLToDBService"
                        value="su.itschool.guru.service.ImportIrTechXMLToDBService"/>
                 <entry key="guru_EntitiesByIrTechIdFinderService"
-                       value="su.itschool.guru.service.EntitiesByIrTechIdFinderService"/>
+                       value="su.itschool.guru.service.IrTechImportFinderService"/>
                 <entry key="guru_ClearDBService" value="su.itschool.guru.service.ClearDBService"/>
                 <entry key="guru_CopyTimeTableForWeekFromTemplateService"
                        value="su.itschool.guru.service.CopyTimeTableForWeekFromTemplateService"/>

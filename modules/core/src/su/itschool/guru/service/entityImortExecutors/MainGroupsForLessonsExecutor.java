@@ -5,7 +5,7 @@ import com.haulmont.cuba.core.global.DataManager;
 import org.w3c.dom.Node;
 import su.itschool.guru.entity.GroupForLesson;
 import su.itschool.guru.entity.SchoolClass;
-import su.itschool.guru.service.EntitiesByIrTechIdFinderService;
+import su.itschool.guru.service.IrTechImportFinderService;
 
 
 public class MainGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecutor {
@@ -15,14 +15,15 @@ public class MainGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecut
             <csg id="4826784" tid="1251021" sid="85831" name="Математика" groupid="" parentsubjectid="" hrsweek="5" studcnt="0"/>
 
      */
-    public MainGroupsForLessonsExecutor(Class entityClass, EntitiesByIrTechIdFinderService entitiesByIrTechIdFinderService, DataManager dataManager) {
-        super(entityClass, entitiesByIrTechIdFinderService, dataManager);
+    public MainGroupsForLessonsExecutor(Class entityClass, IrTechImportFinderService irTechImportFinderService, DataManager dataManager) {
+        super(entityClass, irTechImportFinderService, dataManager);
     }
 
     @Override
     protected StandardEntity setEntityFields(StandardEntity entity, Node entityInformation, Node rootNode, StandardEntity rootEntity) {
         GroupForLesson groupForLesson = (GroupForLesson) entity;
         SchoolClass schoolClass = (SchoolClass) rootEntity;
+        groupForLesson.setParentGroup(getFinderService().findRootGroupByClass(schoolClass));
         groupForLesson.setSchoolClass(schoolClass);
         groupForLesson.setIsFullClassGroup(true);
         groupForLesson.setSubject(getFinderService().findSubjectByIrTechId(getIntegerAttributeValue(entityInformation, "sid")));

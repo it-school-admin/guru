@@ -29,7 +29,7 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
     @Inject
     private DataManager dataManager;
     @Inject
-    private EntitiesByIrTechIdFinderService finderService;
+    private IrTechImportFinderService finderService;
 
     @Override
     public List<StandardEntity> parseIrTechXML(TimeTableImport timeTableImport, LessonsGridType lessonsGridType) {

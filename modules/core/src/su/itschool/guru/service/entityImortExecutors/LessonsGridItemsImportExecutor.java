@@ -5,7 +5,7 @@ import com.haulmont.cuba.core.global.DataManager;
 import org.w3c.dom.Node;
 import su.itschool.guru.entity.LessonsGridItem;
 import su.itschool.guru.entity.LessonsGridType;
-import su.itschool.guru.service.EntitiesByIrTechIdFinderService;
+import su.itschool.guru.service.IrTechImportFinderService;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
@@ -14,7 +14,7 @@ public class LessonsGridItemsImportExecutor extends AbstractImportExecutorImpl {
     private final LessonsGridType lessonsGridType;
 //		<LessonTime id="1" starttime="8:00" endtime="8:40" sm="1" number="1" />
 
-    public LessonsGridItemsImportExecutor(Class<LessonsGridItem> lessonsGridItem, EntitiesByIrTechIdFinderService finderService, DataManager dataManager, LessonsGridType lessonsGridType) {
+    public LessonsGridItemsImportExecutor(Class<LessonsGridItem> lessonsGridItem, IrTechImportFinderService finderService, DataManager dataManager, LessonsGridType lessonsGridType) {
         super(lessonsGridItem, finderService, dataManager);
         this.lessonsGridType = lessonsGridType;
     }

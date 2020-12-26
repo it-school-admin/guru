@@ -5,13 +5,13 @@ import com.haulmont.cuba.core.global.DataManager;
 import org.w3c.dom.Node;
 import su.itschool.guru.entity.GroupForLesson;
 import su.itschool.guru.entity.SchoolClass;
-import su.itschool.guru.service.EntitiesByIrTechIdFinderService;
+import su.itschool.guru.service.IrTechImportFinderService;
 
 public class SubGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecutor {
 //		<csg id="4866912" tid="1322890" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" hrsweek="2" studcnt="13"/>
 
-    public SubGroupsForLessonsExecutor(Class entityClass, EntitiesByIrTechIdFinderService entitiesByIrTechIdFinderService, DataManager dataManager) {
-        super(entityClass, entitiesByIrTechIdFinderService, dataManager);
+    public SubGroupsForLessonsExecutor(Class entityClass, IrTechImportFinderService irTechImportFinderService, DataManager dataManager) {
+        super(entityClass, irTechImportFinderService, dataManager);
     }
 
     @Override
@@ -19,14 +19,14 @@ public class SubGroupsForLessonsExecutor extends AbstractGroupsForLessonsExecuto
         SchoolClass schoolClass = (SchoolClass) rootEntity;
         GroupForLesson subGroup = (GroupForLesson) entity;
         subGroup.setSchoolClass(schoolClass);
-        subGroup.setIrTechCountStudent(getIntegerAttributeValue(entityInformation, "studcnt"));
+        subGroup.setCountStudent(getIntegerAttributeValue(entityInformation, "studcnt"));
         if(schoolClass.getClassLevel()<10)
         {
-            subGroup.setSubGroupName(getSubGroupNameFromIrTechSubGroupName(getStringAttributeValue(entityInformation, "name")));
+            subGroup.setOwnName(getSubGroupNameFromIrTechSubGroupName(getStringAttributeValue(entityInformation, "name")));
         }
         else
         {
-            subGroup.setSubGroupName(getStringAttributeValue(entityInformation, "name"));
+            subGroup.setOwnName(getStringAttributeValue(entityInformation, "name"));
         }
         subGroup.setGroupIrTechName(getStringAttributeValue(entityInformation, "name"));
         subGroup.setGroupIrTechId(getIntegerAttributeValue(entityInformation, "groupid"));

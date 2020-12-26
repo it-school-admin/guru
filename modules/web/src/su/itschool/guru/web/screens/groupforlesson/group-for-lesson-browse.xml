@@ -62,8 +62,8 @@
                 </groupTable>
             </tab>
             <tab id="groupsTreeTab" caption="msg://groupsTreeTab.caption" margin="true,false,false,false" spacing="true"
-                 expand="groupForLessonsTable1">
-                <treeTable id="groupForLessonsTable1" height="100px" width="200px" dataContainer="groupForLessonsDc"
+                 expand="groupForLessonsTreeTable">
+                <treeTable id="groupForLessonsTreeTable" height="100px" width="100%" dataContainer="groupForLessonsDc"
                            hierarchyProperty="parentGroup">
                     <columns>
                         <column id="schoolClass"/>
