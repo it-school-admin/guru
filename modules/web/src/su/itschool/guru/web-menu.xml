@@ -7,6 +7,8 @@
             <item screen="guru_TimeTableTemplateItem.browse"
                   caption="mainMsg://menu_config.guru_TimeTableTemplateItem.browse"/>
             <item screen="guru_TimeTableImport.browse" caption="mainMsg://menu_config.guru_TimeTableImport.browse"/>
+            <item screen="guru_Lesson.browse-for-dispatcher"
+                  caption="mainMsg://menu_config.guru_Lesson.browse-for-dispatcher"/>
         </menu>
         <menu id="planning" caption="mainMsg://menu_config.planning">
             <item screen="guru_LessonsGridItem.browse" caption="mainMsg://menu_config.guru_LessonsGridItem.browse"/>

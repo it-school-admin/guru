@@ -17,7 +17,8 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
         try {
             Teacher teacher = dataManager.
                     load(Teacher.class).
-                    query("SELECT t FROM guru_Teacher t WHERE t.irTechId = :irTechId").
+                    query("SELECT t FROM guru_Teacher t" +
+                            " WHERE t.irTechId = :irTechId").
                     parameter("irTechId", irTechId).
                     one();
 
