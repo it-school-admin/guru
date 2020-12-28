@@ -67,7 +67,7 @@
                 <button id="createBtn" action="lessonsTable.create"/>
                 <button id="editBtn" action="lessonsTable.edit"/>
                 <button id="removeBtn" action="lessonsTable.remove"/>
-                <button id="ImportBtn"/>
+                <button id="ImportBtn" caption="msg://ImportBtn.caption"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
