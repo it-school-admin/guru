@@ -1,0 +1,2495 @@
+<?xml version="1.0" encoding="windows-1251" ?>
+	<TimeTableExchange xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="TimeTableWeek.xsd">
+	
+	<LessonTimes>
+	
+		<LessonTime id="1" starttime="8:00" endtime="8:40" sm="1" number="1" /> 
+		<LessonTime id="2" starttime="8:45" endtime="9:25" sm="1" number="2" /> 
+		<LessonTime id="3" starttime="9:35" endtime="10:15" sm="1" number="3" /> 
+		<LessonTime id="4" starttime="10:25" endtime="11:05" sm="1" number="4" /> 
+		<LessonTime id="5" starttime="11:25" endtime="12:05" sm="1" number="5" /> 
+		<LessonTime id="6" starttime="12:10" endtime="12:50" sm="1" number="6" /> 
+		<LessonTime id="7" starttime="13:20" endtime="14:00" sm="1" number="7" /> 
+		<LessonTime id="8" starttime="13:20" endtime="14:00" sm="2" number="1" /> 
+		<LessonTime id="9" starttime="14:10" endtime="14:50" sm="2" number="2" /> 
+		<LessonTime id="10" starttime="15:00" endtime="15:40" sm="2" number="3" /> 
+		<LessonTime id="11" starttime="15:50" endtime="16:30" sm="2" number="4" /> 
+		<LessonTime id="12" starttime="16:35" endtime="17:15" sm="2" number="5" /> 
+		<LessonTime id="13" starttime="17:20" endtime="18:00" sm="2" number="6" /> 
+	</LessonTimes>
+
+		<teachers>
+	
+		<teacher tid="1296030" firstname="Александр" middlename="Васильевич" lastname="Городков"/>
+		<teacher tid="3543910" firstname="Алена" middlename="Андреевна" lastname="Котмышева"/>
+		<teacher tid="1333034" firstname="Анна" middlename="Владимировна" lastname="Мигунова"/>
+		<teacher tid="1337081" firstname="Анна" middlename="Валерьевна" lastname="Кузьмина"/>
+		<teacher tid="1267155" firstname="Анна" middlename="Михайловна" lastname="Шульгина"/>
+		<teacher tid="1251047" firstname="Анна" middlename="Александровна" lastname="Бочарова"/>
+		<teacher tid="1337083" firstname="Валентина" middlename="Николаевна" lastname="Снегова"/>
+		<teacher tid="1289115" firstname="Вера" middlename="Анатольевна" lastname="Панфилова"/>
+		<teacher tid="1326017" firstname="Виктория" middlename="Ивановна" lastname="Давыдова"/>
+		<teacher tid="1286020" firstname="Галина" middlename="Ивановна" lastname="Павлова"/>
+		<teacher tid="1251037" firstname="Галина" middlename="Николаевна" lastname="Инкина"/>
+		<teacher tid="1251000" firstname="Галина" middlename="Васильевна" lastname="Антонова"/>
+		<teacher tid="1251015" firstname="Галина" middlename="Ивановна" lastname="Бугранова"/>
+		<teacher tid="1251021" firstname="Галина" middlename="Александровна" lastname="Галкина"/>
+		<teacher tid="1251058" firstname="Елена" middlename="Юрьевна" lastname="Павлова"/>
+		<teacher tid="1251067" firstname="Елена" middlename="Ивановна" lastname="Распанамарева"/>
+		<teacher tid="1251079" firstname="Елена" middlename="Владимировна" lastname="Сорокина"/>
+		<teacher tid="1251090" firstname="Елена" middlename="Валентиновна" lastname="Чиликина"/>
+		<teacher tid="1333033" firstname="Илиса" middlename="Ильгамовна" lastname="Идрисова"/>
+		<teacher tid="1279263" firstname="Ирина" middlename="Вячеславовна" lastname="Синеглазова"/>
+		<teacher tid="1251031" firstname="Лариса" middlename="Алексеевна" lastname="Ерендеева"/>
+		<teacher tid="1286016" firstname="Лилия" middlename="Равильевна" lastname="Гаязова"/>
+		<teacher tid="1281337" firstname="Марина" middlename="Алексеевна" lastname="Потапова"/>
+		<teacher tid="3511894" firstname="Марина" middlename="Александровна" lastname="Куркина"/>
+		<teacher tid="1322890" firstname="Наталья" middlename="Сергеевна" lastname="Дятчина"/>
+		<teacher tid="1273210" firstname="Наталья" middlename="Викторовна" lastname="Иванякова"/>
+		<teacher tid="1251020" firstname="Наталья" middlename="Анатольевна" lastname="Власова"/>
+		<teacher tid="1251080" firstname="Наталья" middlename="Александровна" lastname="Сулейманова"/>
+		<teacher tid="1273208" firstname="Николай" middlename="Александрович" lastname="Бодяжин"/>
+		<teacher tid="1251043" firstname="Оксана" middlename="Викторовна" lastname="Кузнецова"/>
+		<teacher tid="1251085" firstname="Ольга" middlename="Викторовна" lastname="Трунилова"/>
+		<teacher tid="1286017" firstname="Ольга" middlename="Геннадьевна" lastname="Молянова"/>
+		<teacher tid="1291547" firstname="Павел" middlename="Владимирович" lastname="Александров"/>
+		<teacher tid="1327411" firstname="Руфия" middlename="Фаиковна" lastname="Субеева"/>
+		<teacher tid="1251009" firstname="Сажида" middlename="Магадиевна" lastname="Бакиева"/>
+		<teacher tid="1307548" firstname="Светлана" middlename="Фаритовна" lastname="Зарипова"/>
+		<teacher tid="1251012" firstname="Тамара" middlename="Ивановна" lastname="Бойкина"/>
+		<teacher tid="1251004" firstname="Татьяна" middlename="Геннадиевна" lastname="Архирейская"/>
+		<teacher tid="1251023" firstname="Татьяна" middlename="Анатольевна" lastname="Гафиатулина"/>
+		<teacher tid="1251025" firstname="Татьяна" middlename="Александровна" lastname="Гудкова"/>
+		<teacher tid="1251018" firstname="Татьяна" middlename="Викторовна" lastname="Вагизова"/>
+		<teacher tid="1251036" firstname="Татьяна" middlename="Ивановна" lastname="Имаева"/>
+		<teacher tid="1278096" firstname="Татьяна" middlename="Юрьевна" lastname="Волоскова"/>
+		<teacher tid="1279262" firstname="Татьяна" middlename="Александровна" lastname="Степанова"/>
+		<teacher tid="1279264" firstname="Татьяна" middlename="Николаевна" lastname="Малкина"/>
+		<teacher tid="1251087" firstname="Юлия" middlename="Петровна" lastname="Убакова"/>
+		</teachers>
+	
+	<subjects>
+		<subject sid="92764" name="Астрономия" abbr="Астр">
+			<teacher tid="1251004" />
+			<teacher tid="1251036" /></subject>
+		<subject sid="85820" name="Биология" abbr="Биол.">
+			<teacher tid="1251017" />
+			<teacher tid="1251032" />
+			<teacher tid="1267153" />
+			<teacher tid="1273210" /></subject>
+		<subject sid="294679" name="Введение в право(ВНД)" abbr="Введение в право(ВНД)">
+			<teacher tid="1251009" />
+			<teacher tid="1273208" />
+			<teacher tid="1279264" /></subject>
+		<subject sid="92566" name="ВНД_Занимательные опыты по физике" abbr="ВНД_Занимательные опыты по физике">
+			<teacher tid="1251036" /></subject>
+		<subject sid="85821" name="География" abbr="Геогр.">
+			<teacher tid="1251012" />
+			<teacher tid="1251036" /></subject>
+		<subject sid="85825" name="Изобразительное искусство" abbr="ИЗО">
+			<teacher tid="1251015" /></subject>
+		<subject sid="282687" name="Индивидуальный проект" abbr="Индивидуальный проект">
+			<teacher tid="1279263" /></subject>
+		<subject sid="89298" name="Иностранный язык (Английский язык)" abbr="Англ.язык">
+			<teacher tid="1251050" />
+			<teacher tid="1251087" />
+			<teacher tid="1267155" />
+			<teacher tid="1286017" />
+			<teacher tid="1307551" />
+			<teacher tid="1322666" />
+			<teacher tid="1322890" />
+			<teacher tid="1327110" />
+			<teacher tid="1327411" /></subject>
+		<subject sid="92870" name="Иностранный язык (Немецкий язык)" abbr="Нем.язык">
+			<teacher tid="1251087" />
+			<teacher tid="1267155" />
+			<teacher tid="1322890" /></subject>
+		<subject sid="85830" name="Информатика" abbr="ИКТ">
+			<teacher tid="1250997" />
+			<teacher tid="1251031" />
+			<teacher tid="1251053" />
+			<teacher tid="1251058" />
+			<teacher tid="1251067" />
+			<teacher tid="1251071" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1273212" />
+			<teacher tid="1286018" /></subject>
+		<subject sid="85832" name="История России. Всеобщая история" abbr="Ист.">
+			<teacher tid="1251009" />
+			<teacher tid="1251048" />
+			<teacher tid="1251086" />
+			<teacher tid="1273208" />
+			<teacher tid="1273209" />
+			<teacher tid="1279264" /></subject>
+		<subject sid="88072" name="Кружок &quot;Азбука добра&quot;" abbr="Кр. &quot;Азбука добра&quot;">
+			<teacher tid="1251021" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1279262" />
+			<teacher tid="1286016" />
+			<teacher tid="1306006" />
+			<teacher tid="1307550" />
+			<teacher tid="1326017" />
+			<teacher tid="3543910" /></subject>
+		<subject sid="293455" name="Кружок &quot;Белая ладья&quot;" abbr="Кр. &quot;Белая ладья&quot;">
+			<teacher tid="1273208" /></subject>
+		<subject sid="293454" name="Кружок &quot;Волшебный карандаш&quot;" abbr="Кр. &quot;Волшебный карандаш&quot;">
+			<teacher tid="1251015" /></subject>
+		<subject sid="88077" name="Кружок &quot;Воспитание сказкой&quot;" abbr="Кр. &quot;Воспитание сказкой&quot;">
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1273212" />
+			<teacher tid="1279262" />
+			<teacher tid="1286016" />
+			<teacher tid="1326017" /></subject>
+		<subject sid="88086" name="Кружок &quot;Инфознайка&quot;" abbr="Кружок &quot;Инфознайка&quot;">
+			<teacher tid="1251021" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251058" />
+			<teacher tid="1251067" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1273212" />
+			<teacher tid="1279262" />
+			<teacher tid="1286018" />
+			<teacher tid="1326017" />
+			<teacher tid="1337081" /></subject>
+		<subject sid="94317" name="Кружок &quot;История Самарского края&quot;" abbr="Кр. &quot;История Самарского края&quot;">
+			<teacher tid="1251009" />
+			<teacher tid="1273208" />
+			<teacher tid="1279264" /></subject>
+		<subject sid="88078" name="Кружок &quot;Мои проекты&quot;" abbr="Кр. &quot;Мои проекты&quot;">
+			<teacher tid="1251021" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1273212" />
+			<teacher tid="1279262" />
+			<teacher tid="1286016" />
+			<teacher tid="1307550" />
+			<teacher tid="1326017" />
+			<teacher tid="1333032" />
+			<teacher tid="1333033" />
+			<teacher tid="1337081" /></subject>
+		<subject sid="88079" name="Кружок &quot;Наглядная геометрия&quot;" abbr="Кр. &quot;Наг. геом.&quot;">
+			<teacher tid="1251021" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1273212" />
+			<teacher tid="1279262" />
+			<teacher tid="1286016" />
+			<teacher tid="1326017" />
+			<teacher tid="1337081" /></subject>
+		<subject sid="88081" name="Кружок &quot;Образ и мысль&quot;" abbr="Кр. &quot;Образ и мысль&quot;">
+			<teacher tid="1251021" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251079" />
+			<teacher tid="1251090" />
+			<teacher tid="1279262" /></subject>
+		<subject sid="88092" name="Кружок &quot;Основы православной культуры&quot;" abbr="Кр. &quot;Основы православной культуры&quot;">
+			<teacher tid="1251023" />
+			<teacher tid="1251043" /></subject>
+		<subject sid="92521" name="Кружок &quot;Открытие себя&quot;" abbr="Кр. &quot;Открытие себя&quot;">
+			<teacher tid="1251004" />
+			<teacher tid="1251025" />
+			<teacher tid="1251081" />
+			<teacher tid="1251085" />
+			<teacher tid="1267155" />
+			<teacher tid="1279264" />
+			<teacher tid="1281337" />
+			<teacher tid="1289115" />
+			<teacher tid="1307547" /></subject>
+		<subject sid="293457" name="Кружок &quot;Патриот&quot;" abbr="Кр. &quot;Патриот&quot;">
+			<teacher tid="1281337" /></subject>
+		<subject sid="88080" name="Кружок &quot;Почитайка&quot;" abbr="Кр. &quot;Почитайка&quot;">
+			<teacher tid="1251021" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1273212" />
+			<teacher tid="1279262" />
+			<teacher tid="1286016" />
+			<teacher tid="1307550" />
+			<teacher tid="1326017" />
+			<teacher tid="1333032" />
+			<teacher tid="1333033" />
+			<teacher tid="1337081" /></subject>
+		<subject sid="293453" name="Кружок &quot;Проба пера&quot;" abbr="Кр. &quot;Проба пера&quot;">
+			<teacher tid="1251025" /></subject>
+		<subject sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" abbr="Функциональная грамотность">
+			<teacher tid="1251004" />
+			<teacher tid="1251018" />
+			<teacher tid="1251021" />
+			<teacher tid="1251025" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251085" />
+			<teacher tid="1278096" />
+			<teacher tid="1279262" />
+			<teacher tid="1279263" />
+			<teacher tid="1279264" />
+			<teacher tid="1289115" />
+			<teacher tid="1307547" />
+			<teacher tid="1307548" />
+			<teacher tid="1326017" /></subject>
+		<subject sid="293456" name="Кружок &quot;Решение текстовых задач&quot;" abbr="Кр. &quot;Решение текстовых задач&quot;">
+			<teacher tid="1251018" /></subject>
+		<subject sid="294511" name="Кружок &quot;Русского географического общества&quot;" abbr="Кружок &quot;Русского географического общества&quot;">
+			<teacher tid="1251036" />
+			<teacher tid="1291547" /></subject>
+		<subject sid="88083" name="Кружок &quot;Умелые руки&quot;" abbr="Кружок &quot;Умелые руки&quot;">
+			<teacher tid="1251021" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1279262" />
+			<teacher tid="1286016" />
+			<teacher tid="1307550" />
+			<teacher tid="1326017" />
+			<teacher tid="1333032" />
+			<teacher tid="1337081" />
+			<teacher tid="3543910" /></subject>
+		<subject sid="92798" name="Кружок &quot;Умелые ручки&quot;" abbr="Кр. &quot;Умелые ручки&quot;">
+			<teacher tid="1251058" /></subject>
+		<subject sid="87591" name="Кружок &quot;Умники и умницы&quot;" abbr="Кр. &quot;Умники и умницы&quot;">
+			<teacher tid="1250997" />
+			<teacher tid="1251021" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1273212" />
+			<teacher tid="1279262" />
+			<teacher tid="1286016" />
+			<teacher tid="1307550" />
+			<teacher tid="1326017" />
+			<teacher tid="1333032" />
+			<teacher tid="1333033" />
+			<teacher tid="1337081" />
+			<teacher tid="3543910" /></subject>
+		<subject sid="293446" name="Кружок &quot;Юнармейцы&quot;" abbr="Кр. &quot;Юнармейцы&quot;">
+			<teacher tid="1281337" /></subject>
+		<subject sid="294509" name="Кружок &quot;Юный астроном&quot;" abbr="Кружок &quot;Юный астроном&quot;">
+			<teacher tid="1251004" />
+			<teacher tid="1251036" /></subject>
+		<subject sid="92553" name="Кружок «Волшебный пластилин»" abbr="Кружок «Волшебный пластилин»">
+			<teacher tid="1251021" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251058" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1279262" />
+			<teacher tid="1286016" />
+			<teacher tid="1307550" />
+			<teacher tid="1326017" />
+			<teacher tid="1333033" />
+			<teacher tid="1337081" />
+			<teacher tid="3543910" /></subject>
+		<subject sid="92556" name="Кружок «Оригами»" abbr="Кр. «Оригами»">
+			<teacher tid="1251021" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1279262" />
+			<teacher tid="1286016" />
+			<teacher tid="1326017" />
+			<teacher tid="1337081" />
+			<teacher tid="3543910" /></subject>
+		<subject sid="85839" name="Литература" abbr="Лит-ра">
+			<teacher tid="1251010" />
+			<teacher tid="1251025" />
+			<teacher tid="1251030" />
+			<teacher tid="1251074" />
+			<teacher tid="1251080" />
+			<teacher tid="1251085" />
+			<teacher tid="1307547" />
+			<teacher tid="1307548" />
+			<teacher tid="1326017" /></subject>
+		<subject sid="94319" name="Литературная гостиная(ВНД)" abbr="Литературная гостиная(ВНД)">
+			<teacher tid="1251085" /></subject>
+		<subject sid="86802" name="Литературное чтение" abbr="Лит.чтен.">
+			<teacher tid="1250997" />
+			<teacher tid="1251016" />
+			<teacher tid="1251021" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1273212" />
+			<teacher tid="1279262" />
+			<teacher tid="1286016" />
+			<teacher tid="1307550" />
+			<teacher tid="1326017" />
+			<teacher tid="1332620" />
+			<teacher tid="1332622" />
+			<teacher tid="1333032" />
+			<teacher tid="1333033" />
+			<teacher tid="1337081" />
+			<teacher tid="3543910" /></subject>
+		<subject sid="85831" name="Математика" abbr="Матем.">
+			<teacher tid="1250997" />
+			<teacher tid="1251000" />
+			<teacher tid="1251003" />
+			<teacher tid="1251004" />
+			<teacher tid="1251016" />
+			<teacher tid="1251018" />
+			<teacher tid="1251021" />
+			<teacher tid="1251026" />
+			<teacher tid="1251031" />
+			<teacher tid="1251042" />
+			<teacher tid="1251047" />
+			<teacher tid="1251050" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1251091" />
+			<teacher tid="1273212" />
+			<teacher tid="1278096" />
+			<teacher tid="1279262" />
+			<teacher tid="1286016" />
+			<teacher tid="1286020" />
+			<teacher tid="1289115" />
+			<teacher tid="1307550" />
+			<teacher tid="1326017" />
+			<teacher tid="1332620" />
+			<teacher tid="1332622" />
+			<teacher tid="1333032" />
+			<teacher tid="1333033" />
+			<teacher tid="1337081" />
+			<teacher tid="1337082" />
+			<teacher tid="1337083" />
+			<teacher tid="3543910" /></subject>
+		<subject sid="92569" name="Математический практикум(ВНД)" abbr="Математический практикум(ВНД)">
+			<teacher tid="1278096" /></subject>
+		<subject sid="85827" name="Музыка" abbr="Муз.">
+			<teacher tid="1251043" /></subject>
+		<subject sid="294680" name="Нравственные основы семейной жизни(ВНД)" abbr="Нравственные основы семейной жизни(ВНД)">
+			<teacher tid="1251023" /></subject>
+		<subject sid="86821" name="Обществознание" abbr="Обществ.">
+			<teacher tid="1251009" />
+			<teacher tid="1251048" />
+			<teacher tid="1251086" />
+			<teacher tid="1273208" />
+			<teacher tid="1273209" />
+			<teacher tid="1279264" /></subject>
+		<subject sid="86803" name="Окружающий мир" abbr="Окр. мир">
+			<teacher tid="1250997" />
+			<teacher tid="1251016" />
+			<teacher tid="1251021" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251050" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1273212" />
+			<teacher tid="1279262" />
+			<teacher tid="1286016" />
+			<teacher tid="1307550" />
+			<teacher tid="1326017" />
+			<teacher tid="1332620" />
+			<teacher tid="1332622" />
+			<teacher tid="1333032" />
+			<teacher tid="1333033" />
+			<teacher tid="1337081" />
+			<teacher tid="3543910" /></subject>
+		<subject sid="85836" name="Основы безопасности жизнедеятельности" abbr="ОБЖ">
+			<teacher tid="1251057" />
+			<teacher tid="1273208" />
+			<teacher tid="1281337" /></subject>
+		<subject sid="87684" name="Основы духовно-нравственной культуры" abbr="ОДНК">
+			<teacher tid="1251090" />
+			<teacher tid="1279264" /></subject>
+		<subject sid="87567" name="Основы религиозных культур и светской этики" abbr="ОРКСЭ">
+			<teacher tid="1251031" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251090" />
+			<teacher tid="1273212" />
+			<teacher tid="1279264" /></subject>
+		<subject sid="86823" name="Право" abbr="Право">
+			<teacher tid="1251009" />
+			<teacher tid="1251048" />
+			<teacher tid="1273208" />
+			<teacher tid="1279264" /></subject>
+		<subject sid="92567" name="Практикум по английскому языку(ВНД)" abbr="Практикум по английскому языку(ВНД)">
+			<teacher tid="1322890" />
+			<teacher tid="1327411" /></subject>
+		<subject sid="89295" name="Предпрофильный курс по иностранному языку(ППК)" abbr="Предпроф.курс (ин.яз.)">
+			<teacher tid="1267155" />
+			<teacher tid="1307551" />
+			<teacher tid="1322890" /></subject>
+		<subject sid="282531" name="Предпрофильный курс по обществознанию(ОПК)" abbr="Предпрофильный курс _обществознание">
+			<teacher tid="1251009" />
+			<teacher tid="1273208" />
+			<teacher tid="1279264" /></subject>
+		<subject sid="87049" name="Предпрофильный курс по русскому языку(ППК)" abbr="пк.рус.яз.">
+			<teacher tid="1251010" />
+			<teacher tid="1251025" />
+			<teacher tid="1251030" />
+			<teacher tid="1251074" />
+			<teacher tid="1251080" />
+			<teacher tid="1251085" />
+			<teacher tid="1307547" /></subject>
+		<subject sid="295004" name="Предпрофильный курс по физике(ППК)" abbr="Предпрофильный курс по физике(ППК)">
+			<teacher tid="1251004" />
+			<teacher tid="1251036" /></subject>
+		<subject sid="93769" name="Рассказы по истории Самарского края" abbr="История">
+			<teacher tid="1251031" /></subject>
+		<subject sid="285087" name="Родной язык (русский)" abbr="Родной язык (русский)">
+			<teacher tid="1251021" />
+			<teacher tid="1251025" />
+			<teacher tid="1251047" />
+			<teacher tid="1251080" />
+			<teacher tid="1251085" />
+			<teacher tid="1279262" />
+			<teacher tid="1307548" />
+			<teacher tid="1326017" /></subject>
+		<subject sid="85841" name="Русский язык" abbr="Рус.яз.">
+			<teacher tid="1250997" />
+			<teacher tid="1251010" />
+			<teacher tid="1251016" />
+			<teacher tid="1251021" />
+			<teacher tid="1251025" />
+			<teacher tid="1251030" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251058" />
+			<teacher tid="1251074" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251085" />
+			<teacher tid="1251090" />
+			<teacher tid="1273212" />
+			<teacher tid="1279262" />
+			<teacher tid="1286016" />
+			<teacher tid="1307547" />
+			<teacher tid="1307548" />
+			<teacher tid="1307550" />
+			<teacher tid="1326017" />
+			<teacher tid="1332620" />
+			<teacher tid="1332622" />
+			<teacher tid="1333032" />
+			<teacher tid="1333033" />
+			<teacher tid="1337081" />
+			<teacher tid="3543910" /></subject>
+		<subject sid="88090" name="Секция &quot;Спортивные игры&quot;" abbr="Секция &quot;Спортивные игры&quot;">
+			<teacher tid="1251019" />
+			<teacher tid="1251037" />
+			<teacher tid="1281337" />
+			<teacher tid="1333034" /></subject>
+		<subject sid="94321" name="Создаем школьный сайт в интернете(ВНД)" abbr="Создаем школьный сайт в интернете(ВНД)">
+			<teacher tid="1251067" /></subject>
+		<subject sid="85834" name="Технология" abbr="Техн.">
+			<teacher tid="1250997" />
+			<teacher tid="1251015" />
+			<teacher tid="1251016" />
+			<teacher tid="1251020" />
+			<teacher tid="1251021" />
+			<teacher tid="1251022" />
+			<teacher tid="1251023" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251057" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1273212" />
+			<teacher tid="1279262" />
+			<teacher tid="1286016" />
+			<teacher tid="1307550" />
+			<teacher tid="1326017" />
+			<teacher tid="1332620" />
+			<teacher tid="1332622" />
+			<teacher tid="1333032" />
+			<teacher tid="1333033" />
+			<teacher tid="1337081" />
+			<teacher tid="3543910" /></subject>
+		<subject sid="85823" name="Физика" abbr="Физ.">
+			<teacher tid="1251004" />
+			<teacher tid="1251036" /></subject>
+		<subject sid="94322" name="Физика и техника(ВНД)" abbr="Физика и техника(ВНД)">
+			<teacher tid="1251004" />
+			<teacher tid="1251036" /></subject>
+		<subject sid="85837" name="Физическая культура" abbr="Физ-ра">
+			<teacher tid="1250997" />
+			<teacher tid="1250999" />
+			<teacher tid="1251019" />
+			<teacher tid="1251021" />
+			<teacher tid="1251031" />
+			<teacher tid="1251037" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1273212" />
+			<teacher tid="1281337" />
+			<teacher tid="1288975" />
+			<teacher tid="1307549" />
+			<teacher tid="1332621" />
+			<teacher tid="1333034" /></subject>
+		<subject sid="293431" name="Финансовая грамотность" abbr="фин.гр.">
+			<teacher tid="1251021" />
+			<teacher tid="1251031" />
+			<teacher tid="1251047" />
+			<teacher tid="1251058" />
+			<teacher tid="1251079" />
+			<teacher tid="1251080" />
+			<teacher tid="1251090" />
+			<teacher tid="1279262" />
+			<teacher tid="1326017" />
+			<teacher tid="1337081" />
+			<teacher tid="3543910" /></subject>
+		<subject sid="85824" name="Химия" abbr="Хим.">
+			<teacher tid="1251032" />
+			<teacher tid="1273210" />
+			<teacher tid="1279263" /></subject>
+		<subject sid="94320" name="Цифровая гигиена(ВНД)" abbr="Цифровая гигиена(ВНД)">
+			<teacher tid="1251067" />
+			<teacher tid="1337082" />
+			<teacher tid="1337083" /></subject>
+		<subject sid="87278" name="Элективный курс биология" abbr="Эл/к. биол">
+			<teacher tid="1273210" /></subject>
+		<subject sid="86857" name="Элективный курс иностр.язык" abbr="эл/к анг.я">
+			<teacher tid="1251059" />
+			<teacher tid="1267155" />
+			<teacher tid="1307551" />
+			<teacher tid="1327110" /></subject>
+		<subject sid="87212" name="Элективный курс информатика" abbr="Эл/к инф.">
+			<teacher tid="1251053" />
+			<teacher tid="1251067" />
+			<teacher tid="1286018" /></subject>
+		<subject sid="87211" name="Элективный курс история" abbr="Эл/к ист.">
+			<teacher tid="1251009" />
+			<teacher tid="1251048" />
+			<teacher tid="1273208" />
+			<teacher tid="1279264" /></subject>
+		<subject sid="86855" name="Элективный курс математика" abbr="Эл/к матем">
+			<teacher tid="1251000" />
+			<teacher tid="1251003" />
+			<teacher tid="1251018" />
+			<teacher tid="1251026" />
+			<teacher tid="1251091" />
+			<teacher tid="1286020" />
+			<teacher tid="1289115" /></subject>
+		<subject sid="86858" name="Элективный курс обществознание" abbr="Эл/к общес">
+			<teacher tid="1251009" />
+			<teacher tid="1251048" />
+			<teacher tid="1273208" />
+			<teacher tid="1279264" /></subject>
+		<subject sid="86856" name="Элективный курс русский язык" abbr="Эл/к рус.">
+			<teacher tid="1251010" />
+			<teacher tid="1251025" />
+			<teacher tid="1251030" />
+			<teacher tid="1251080" />
+			<teacher tid="1251085" />
+			<teacher tid="1307547" /></subject>
+		<subject sid="86826" name="Элективный курс физика" abbr="Эл/к физ.">
+			<teacher tid="1251004" />
+			<teacher tid="1251036" /></subject>
+		<subject sid="87050" name="Элективный курс химия" abbr="Эл/к хим">
+			<teacher tid="1251032" />
+			<teacher tid="1279263" />
+			</subject>
+	</subjects>
+		<Rooms>
+	
+		<room id="53207" name="2" seats="30" floor="1"/>
+		<room id="53244" name="22" seats="32" floor="1"/>
+		<room id="53245" name="23" seats="32" floor="1"/>
+		<room id="53246" name="24" seats="32" floor="1"/>
+		<room id="53247" name="25" seats="32" floor="1"/>
+		<room id="53417" name="28" seats="32" floor="1"/>
+		<room id="53418" name="29" seats="30" floor="1"/>
+		<room id="53473" name="30" seats="30" floor="1"/>
+		<room id="53474" name="31" seats="30" floor="1"/>
+		<room id="53227" name="спортзал" seats="40" floor="1"/>
+		<room id="53276" name="спортзал 2" seats="40" floor="1"/>
+		<room id="53226" name="тех\дев" seats="20" floor="1"/>
+		<room id="53225" name="тех\мал" seats="20" floor="1"/>
+		<room id="53414" name="26" seats="30" floor="2"/>
+		<room id="53416" name="27" seats="30" floor="2"/>
+		<room id="53206" name="3" seats="13" floor="2"/>
+		<room id="53475" name="32" seats="30" floor="2"/>
+		<room id="53476" name="33" seats="30" floor="2"/>
+		<room id="53208" name="4" seats="30" floor="2"/>
+		<room id="53209" name="5" seats="30" floor="2"/>
+		<room id="53210" name="6" seats="30" floor="2"/>
+		<room id="53211" name="7" seats="30" floor="2"/>
+		<room id="53277" name="ино. каб." seats="30" floor="2"/>
+		<room id="53212" name="10" seats="32" floor="3"/>
+		<room id="53213" name="11" seats="30" floor="3"/>
+		<room id="53214" name="12" seats="30" floor="3"/>
+		<room id="53215" name="13" seats="30" floor="3"/>
+		<room id="53216" name="14" seats="30" floor="3"/>
+		<room id="53217" name="15" seats="16" floor="3"/>
+		<room id="53218" name="16" seats="30" floor="3"/>
+		<room id="53223" name="17" seats="18" floor="4"/>
+		<room id="53222" name="19" seats="32" floor="4"/>
+		<room id="53224" name="21" seats="18" floor="4"/>
+		<room id="53221" name="ритмика" seats="32" floor="4"/>
+		<room id="53219" name="физика" seats="32" floor="4"/>
+		<room id="53220" name="химия" seats="32" floor="4"/>
+		</Rooms>
+	
+	<Plan>
+			<class id="927307" name="1А" grade="1" studcnt="27" boys="8" girls="19"> 
+		<csg id="4743510" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4743511" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4743515" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251080" hrsweek="5" studcnt="0"/>
+		<csg id="4743516" sid="86802" name="Литературное чтение" groupid="" parentsubjectid="" tid="1251080" hrsweek="4" studcnt="0"/>
+		<csg id="4743512" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1251080" hrsweek="4" studcnt="0"/>
+		<csg id="4743517" sid="86803" name="Окружающий мир" groupid="" parentsubjectid="" tid="1251080" hrsweek="2" studcnt="0"/>
+		<csg id="4743519" sid="88072" name="Кружок &quot;Азбука добра&quot;" groupid="" parentsubjectid="" tid="1251080" hrsweek="1" studcnt="0"/>
+		<csg id="4743518" sid="87591" name="Кружок &quot;Умники и умницы&quot;" groupid="" parentsubjectid="" tid="1251080" hrsweek="1" studcnt="0"/>
+		<csg id="4743513" sid="85834" name="Технология" groupid="" parentsubjectid="" tid="1251080" hrsweek="1" studcnt="0"/>
+		<csg id="4743514" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1281337" hrsweek="3" studcnt="0"/>
+			</class>
+			<class id="927308" name="1Б" grade="1" studcnt="24" boys="11" girls="13"> 
+		<csg id="4743521" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4743522" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4743525" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1281337" hrsweek="3" studcnt="0"/>
+		<csg id="4743526" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="3543910" hrsweek="5" studcnt="0"/>
+		<csg id="4743527" sid="86802" name="Литературное чтение" groupid="" parentsubjectid="" tid="3543910" hrsweek="4" studcnt="0"/>
+		<csg id="4743523" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="3543910" hrsweek="4" studcnt="0"/>
+		<csg id="4743528" sid="86803" name="Окружающий мир" groupid="" parentsubjectid="" tid="3543910" hrsweek="2" studcnt="0"/>
+		<csg id="4743530" sid="88072" name="Кружок &quot;Азбука добра&quot;" groupid="" parentsubjectid="" tid="3543910" hrsweek="1" studcnt="0"/>
+		<csg id="4743529" sid="87591" name="Кружок &quot;Умники и умницы&quot;" groupid="" parentsubjectid="" tid="3543910" hrsweek="1" studcnt="0"/>
+		<csg id="4743524" sid="85834" name="Технология" groupid="" parentsubjectid="" tid="3543910" hrsweek="1" studcnt="0"/>
+			</class>
+			<class id="927309" name="1В" grade="1" studcnt="25" boys="15" girls="10"> 
+		<csg id="4743533" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4743534" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4743538" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1286016" hrsweek="5" studcnt="0"/>
+		<csg id="4743539" sid="86802" name="Литературное чтение" groupid="" parentsubjectid="" tid="1286016" hrsweek="4" studcnt="0"/>
+		<csg id="4743535" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1286016" hrsweek="4" studcnt="0"/>
+		<csg id="4743540" sid="86803" name="Окружающий мир" groupid="" parentsubjectid="" tid="1286016" hrsweek="2" studcnt="0"/>
+		<csg id="4743542" sid="88072" name="Кружок &quot;Азбука добра&quot;" groupid="" parentsubjectid="" tid="1286016" hrsweek="1" studcnt="0"/>
+		<csg id="4743541" sid="87591" name="Кружок &quot;Умники и умницы&quot;" groupid="" parentsubjectid="" tid="1286016" hrsweek="1" studcnt="0"/>
+		<csg id="4743536" sid="85834" name="Технология" groupid="" parentsubjectid="" tid="1286016" hrsweek="1" studcnt="0"/>
+		<csg id="4743537" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1333034" hrsweek="3" studcnt="0"/>
+			</class>
+			<class id="913934" name="2А" grade="2" studcnt="26" boys="15" girls="11"> 
+		<csg id="4826768" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4826769" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4929093" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1251087" hrsweek="2" studcnt="13"/>
+		<csg id="4826770" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1279262" hrsweek="5" studcnt="0"/>
+		<csg id="4826774" sid="86802" name="Литературное чтение" groupid="" parentsubjectid="" tid="1279262" hrsweek="4" studcnt="0"/>
+		<csg id="4826773" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1279262" hrsweek="3" studcnt="0"/>
+		<csg id="4826775" sid="86803" name="Окружающий мир" groupid="" parentsubjectid="" tid="1279262" hrsweek="2" studcnt="0"/>
+		<csg id="5013102" sid="88072" name="Кружок &quot;Азбука добра&quot;" groupid="" parentsubjectid="" tid="1279262" hrsweek="1" studcnt="0"/>
+		<csg id="5013103" sid="88086" name="Кружок &quot;Инфознайка&quot;" groupid="" parentsubjectid="" tid="1279262" hrsweek="1" studcnt="0"/>
+		<csg id="4826777" sid="88078" name="Кружок &quot;Мои проекты&quot;" groupid="" parentsubjectid="" tid="1279262" hrsweek="1" studcnt="0"/>
+		<csg id="4826778" sid="88079" name="Кружок &quot;Наглядная геометрия&quot;" groupid="" parentsubjectid="" tid="1279262" hrsweek="1" studcnt="0"/>
+		<csg id="5013104" sid="92556" name="Кружок «Оригами»" groupid="" parentsubjectid="" tid="1279262" hrsweek="1" studcnt="0"/>
+		<csg id="4928876" sid="285087" name="Родной язык (русский)" groupid="" parentsubjectid="" tid="1279262" hrsweek="1" studcnt="0"/>
+		<csg id="4826771" sid="85834" name="Технология" groupid="" parentsubjectid="" tid="1279262" hrsweek="1" studcnt="0"/>
+		<csg id="4826772" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1281337" hrsweek="3" studcnt="0"/>
+		<csg id="4866912" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1322890" hrsweek="2" studcnt="13"/>
+			</class>
+			<class id="913935" name="2Б" grade="2" studcnt="25" boys="12" girls="13"> 
+		<csg id="4826782" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4826784" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1251021" hrsweek="5" studcnt="0"/>
+		<csg id="4826788" sid="86802" name="Литературное чтение" groupid="" parentsubjectid="" tid="1251021" hrsweek="4" studcnt="0"/>
+		<csg id="4826787" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251021" hrsweek="3" studcnt="0"/>
+		<csg id="4826789" sid="86803" name="Окружающий мир" groupid="" parentsubjectid="" tid="1251021" hrsweek="2" studcnt="0"/>
+		<csg id="4991916" sid="88072" name="Кружок &quot;Азбука добра&quot;" groupid="" parentsubjectid="" tid="1251021" hrsweek="1" studcnt="0"/>
+		<csg id="4826791" sid="88078" name="Кружок &quot;Мои проекты&quot;" groupid="" parentsubjectid="" tid="1251021" hrsweek="1" studcnt="0"/>
+		<csg id="4991917" sid="88080" name="Кружок &quot;Почитайка&quot;" groupid="" parentsubjectid="" tid="1251021" hrsweek="1" studcnt="0"/>
+		<csg id="4826794" sid="88083" name="Кружок &quot;Умелые руки&quot;" groupid="" parentsubjectid="" tid="1251021" hrsweek="1" studcnt="0"/>
+		<csg id="4826790" sid="87591" name="Кружок &quot;Умники и умницы&quot;" groupid="" parentsubjectid="" tid="1251021" hrsweek="1" studcnt="0"/>
+		<csg id="4928877" sid="285087" name="Родной язык (русский)" groupid="" parentsubjectid="" tid="1251021" hrsweek="1" studcnt="0"/>
+		<csg id="4826785" sid="85834" name="Технология" groupid="" parentsubjectid="" tid="1251021" hrsweek="1" studcnt="0"/>
+		<csg id="4826783" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4826795" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1322890" hrsweek="2" studcnt="12"/>
+		<csg id="4949193" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1327411" hrsweek="2" studcnt="13"/>
+		<csg id="4826786" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1333034" hrsweek="3" studcnt="0"/>
+			</class>
+			<class id="913936" name="2В" grade="2" studcnt="25" boys="17" girls="8"> 
+		<csg id="4826796" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4826797" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4826798" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1251047" hrsweek="5" studcnt="0"/>
+		<csg id="4826802" sid="86802" name="Литературное чтение" groupid="" parentsubjectid="" tid="1251047" hrsweek="4" studcnt="0"/>
+		<csg id="4826801" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251047" hrsweek="3" studcnt="0"/>
+		<csg id="4826803" sid="86803" name="Окружающий мир" groupid="" parentsubjectid="" tid="1251047" hrsweek="2" studcnt="0"/>
+		<csg id="4826805" sid="88078" name="Кружок &quot;Мои проекты&quot;" groupid="" parentsubjectid="" tid="1251047" hrsweek="1" studcnt="0"/>
+		<csg id="5039672" sid="88080" name="Кружок &quot;Почитайка&quot;" groupid="" parentsubjectid="" tid="1251047" hrsweek="1" studcnt="0"/>
+		<csg id="4826808" sid="88083" name="Кружок &quot;Умелые руки&quot;" groupid="" parentsubjectid="" tid="1251047" hrsweek="1" studcnt="0"/>
+		<csg id="4826804" sid="87591" name="Кружок &quot;Умники и умницы&quot;" groupid="" parentsubjectid="" tid="1251047" hrsweek="1" studcnt="0"/>
+		<csg id="5039673" sid="92553" name="Кружок «Волшебный пластилин»" groupid="" parentsubjectid="" tid="1251047" hrsweek="1" studcnt="0"/>
+		<csg id="4928878" sid="285087" name="Родной язык (русский)" groupid="" parentsubjectid="" tid="1251047" hrsweek="1" studcnt="0"/>
+		<csg id="4826799" sid="85834" name="Технология" groupid="" parentsubjectid="" tid="1251047" hrsweek="1" studcnt="0"/>
+		<csg id="4952536" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1251087" hrsweek="2" studcnt="12"/>
+		<csg id="4826800" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1281337" hrsweek="3" studcnt="0"/>
+		<csg id="4826809" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1322890" hrsweek="2" studcnt="13"/>
+			</class>
+			<class id="913937" name="3А" grade="3" studcnt="26" boys="12" girls="14"> 
+		<csg id="4826810" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4826811" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4826826" sid="92798" name="Кружок &quot;Умелые ручки&quot;" groupid="" parentsubjectid="" tid="1251058" hrsweek="1" studcnt="0"/>
+		<csg id="4826824" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1251087" hrsweek="2" studcnt="13"/>
+		<csg id="4826812" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1251090" hrsweek="5" studcnt="0"/>
+		<csg id="4826816" sid="86802" name="Литературное чтение" groupid="" parentsubjectid="" tid="1251090" hrsweek="4" studcnt="0"/>
+		<csg id="4826815" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251090" hrsweek="4" studcnt="0"/>
+		<csg id="4826817" sid="86803" name="Окружающий мир" groupid="" parentsubjectid="" tid="1251090" hrsweek="2" studcnt="0"/>
+		<csg id="4826820" sid="88078" name="Кружок &quot;Мои проекты&quot;" groupid="" parentsubjectid="" tid="1251090" hrsweek="1" studcnt="0"/>
+		<csg id="4826821" sid="88079" name="Кружок &quot;Наглядная геометрия&quot;" groupid="" parentsubjectid="" tid="1251090" hrsweek="1" studcnt="0"/>
+		<csg id="5039704" sid="88081" name="Кружок &quot;Образ и мысль&quot;" groupid="" parentsubjectid="" tid="1251090" hrsweek="1" studcnt="0"/>
+		<csg id="5075602" sid="88083" name="Кружок &quot;Умелые руки&quot;" groupid="" parentsubjectid="" tid="1251090" hrsweek="1" studcnt="0"/>
+		<csg id="4826818" sid="87591" name="Кружок &quot;Умники и умницы&quot;" groupid="" parentsubjectid="" tid="1251090" hrsweek="1" studcnt="0"/>
+		<csg id="4826813" sid="85834" name="Технология" groupid="" parentsubjectid="" tid="1251090" hrsweek="1" studcnt="0"/>
+		<csg id="4826814" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1281337" hrsweek="3" studcnt="0"/>
+		<csg id="4952656" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1327411" hrsweek="2" studcnt="13"/>
+			</class>
+			<class id="913938" name="3Б" grade="3" studcnt="26" boys="11" girls="15"> 
+		<csg id="4826828" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4826829" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4826844" sid="92798" name="Кружок &quot;Умелые ручки&quot;" groupid="" parentsubjectid="" tid="1251058" hrsweek="1" studcnt="0"/>
+		<csg id="4826830" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1251079" hrsweek="5" studcnt="0"/>
+		<csg id="4826834" sid="86802" name="Литературное чтение" groupid="" parentsubjectid="" tid="1251079" hrsweek="4" studcnt="0"/>
+		<csg id="4826833" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251079" hrsweek="4" studcnt="0"/>
+		<csg id="4826835" sid="86803" name="Окружающий мир" groupid="" parentsubjectid="" tid="1251079" hrsweek="2" studcnt="0"/>
+		<csg id="4826837" sid="88077" name="Кружок &quot;Воспитание сказкой&quot;" groupid="" parentsubjectid="" tid="1251079" hrsweek="1" studcnt="0"/>
+		<csg id="4826838" sid="88078" name="Кружок &quot;Мои проекты&quot;" groupid="" parentsubjectid="" tid="1251079" hrsweek="1" studcnt="0"/>
+		<csg id="4826839" sid="88079" name="Кружок &quot;Наглядная геометрия&quot;" groupid="" parentsubjectid="" tid="1251079" hrsweek="1" studcnt="0"/>
+		<csg id="5075603" sid="88083" name="Кружок &quot;Умелые руки&quot;" groupid="" parentsubjectid="" tid="1251079" hrsweek="1" studcnt="0"/>
+		<csg id="4826836" sid="87591" name="Кружок &quot;Умники и умницы&quot;" groupid="" parentsubjectid="" tid="1251079" hrsweek="1" studcnt="0"/>
+		<csg id="4826831" sid="85834" name="Технология" groupid="" parentsubjectid="" tid="1251079" hrsweek="1" studcnt="0"/>
+		<csg id="4826842" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1322890" hrsweek="2" studcnt="13"/>
+		<csg id="4952679" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1327411" hrsweek="2" studcnt="13"/>
+		<csg id="4826832" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1333034" hrsweek="3" studcnt="0"/>
+			</class>
+			<class id="913939" name="3В" grade="3" studcnt="21" boys="8" girls="13"> 
+		<csg id="4826846" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4826847" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4826862" sid="92798" name="Кружок &quot;Умелые ручки&quot;" groupid="" parentsubjectid="" tid="1251058" hrsweek="1" studcnt="0"/>
+		<csg id="4826860" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1322890" hrsweek="2" studcnt="10"/>
+		<csg id="4826855" sid="88077" name="Кружок &quot;Воспитание сказкой&quot;" groupid="" parentsubjectid="" tid="1326017" hrsweek="1" studcnt="0"/>
+		<csg id="4953086" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1327411" hrsweek="2" studcnt="11"/>
+		<csg id="4826850" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1333034" hrsweek="3" studcnt="0"/>
+		<csg id="4826848" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1337081" hrsweek="5" studcnt="0"/>
+		<csg id="4826852" sid="86802" name="Литературное чтение" groupid="" parentsubjectid="" tid="1337081" hrsweek="4" studcnt="0"/>
+		<csg id="4826851" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1337081" hrsweek="4" studcnt="0"/>
+		<csg id="4826853" sid="86803" name="Окружающий мир" groupid="" parentsubjectid="" tid="1337081" hrsweek="2" studcnt="0"/>
+		<csg id="4826856" sid="88078" name="Кружок &quot;Мои проекты&quot;" groupid="" parentsubjectid="" tid="1337081" hrsweek="1" studcnt="0"/>
+		<csg id="4826857" sid="88079" name="Кружок &quot;Наглядная геометрия&quot;" groupid="" parentsubjectid="" tid="1337081" hrsweek="1" studcnt="0"/>
+		<csg id="5075604" sid="88083" name="Кружок &quot;Умелые руки&quot;" groupid="" parentsubjectid="" tid="1337081" hrsweek="1" studcnt="0"/>
+		<csg id="4826854" sid="87591" name="Кружок &quot;Умники и умницы&quot;" groupid="" parentsubjectid="" tid="1337081" hrsweek="1" studcnt="0"/>
+		<csg id="4826849" sid="85834" name="Технология" groupid="" parentsubjectid="" tid="1337081" hrsweek="1" studcnt="0"/>
+			</class>
+			<class id="913940" name="4А" grade="4" studcnt="25" boys="11" girls="14"> 
+		<csg id="4826864" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4826866" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1251031" hrsweek="5" studcnt="0"/>
+		<csg id="4826869" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251031" hrsweek="4" studcnt="0"/>
+		<csg id="4826870" sid="86802" name="Литературное чтение" groupid="" parentsubjectid="" tid="1251031" hrsweek="3" studcnt="0"/>
+		<csg id="4826871" sid="86803" name="Окружающий мир" groupid="" parentsubjectid="" tid="1251031" hrsweek="2" studcnt="0"/>
+		<csg id="4826874" sid="88078" name="Кружок &quot;Мои проекты&quot;" groupid="" parentsubjectid="" tid="1251031" hrsweek="1" studcnt="0"/>
+		<csg id="4826877" sid="88083" name="Кружок &quot;Умелые руки&quot;" groupid="" parentsubjectid="" tid="1251031" hrsweek="1" studcnt="0"/>
+		<csg id="5039745" sid="87591" name="Кружок &quot;Умники и умницы&quot;" groupid="" parentsubjectid="" tid="1251031" hrsweek="1" studcnt="0"/>
+		<csg id="4826882" sid="93769" name="Рассказы по истории Самарского края" groupid="" parentsubjectid="" tid="1251031" hrsweek="1" studcnt="0"/>
+		<csg id="4826867" sid="85834" name="Технология" groupid="" parentsubjectid="" tid="1251031" hrsweek="1" studcnt="0"/>
+		<csg id="5072588" sid="293431" name="Финансовая грамотность" groupid="" parentsubjectid="" tid="1251031" hrsweek="1" studcnt="0"/>
+		<csg id="4826865" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4826879" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1251087" hrsweek="2" studcnt="13"/>
+		<csg id="4826872" sid="87567" name="Основы религиозных культур и светской этики" groupid="" parentsubjectid="" tid="1251090" hrsweek="1" studcnt="0"/>
+		<csg id="4826868" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1281337" hrsweek="3" studcnt="0"/>
+		<csg id="4953089" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1327411" hrsweek="2" studcnt="12"/>
+			</class>
+			<class id="913941" name="4Б" grade="4" studcnt="27" boys="14" girls="13"> 
+		<csg id="4826883" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4826901" sid="93769" name="Рассказы по истории Самарского края" groupid="" parentsubjectid="" tid="1251031" hrsweek="1" studcnt="0"/>
+		<csg id="4826884" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4826885" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1251058" hrsweek="5" studcnt="0"/>
+		<csg id="4826888" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251058" hrsweek="4" studcnt="0"/>
+		<csg id="4826889" sid="86802" name="Литературное чтение" groupid="" parentsubjectid="" tid="1251058" hrsweek="3" studcnt="0"/>
+		<csg id="4826890" sid="86803" name="Окружающий мир" groupid="" parentsubjectid="" tid="1251058" hrsweek="2" studcnt="0"/>
+		<csg id="4826893" sid="88078" name="Кружок &quot;Мои проекты&quot;" groupid="" parentsubjectid="" tid="1251058" hrsweek="1" studcnt="0"/>
+		<csg id="4826896" sid="88083" name="Кружок &quot;Умелые руки&quot;" groupid="" parentsubjectid="" tid="1251058" hrsweek="1" studcnt="0"/>
+		<csg id="5039747" sid="87591" name="Кружок &quot;Умники и умницы&quot;" groupid="" parentsubjectid="" tid="1251058" hrsweek="1" studcnt="0"/>
+		<csg id="4826886" sid="85834" name="Технология" groupid="" parentsubjectid="" tid="1251058" hrsweek="1" studcnt="0"/>
+		<csg id="5072589" sid="293431" name="Финансовая грамотность" groupid="" parentsubjectid="" tid="1251058" hrsweek="1" studcnt="0"/>
+		<csg id="4953098" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1251087" hrsweek="2" studcnt="14"/>
+		<csg id="4826891" sid="87567" name="Основы религиозных культур и светской этики" groupid="" parentsubjectid="" tid="1251090" hrsweek="1" studcnt="0"/>
+		<csg id="4826887" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1281337" hrsweek="3" studcnt="0"/>
+		<csg id="4826898" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1327411" hrsweek="2" studcnt="13"/>
+			</class>
+			<class id="913942" name="4В" grade="4" studcnt="17" boys="7" girls="10"> 
+		<csg id="4826902" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4826920" sid="93769" name="Рассказы по истории Самарского края" groupid="" parentsubjectid="" tid="1251031" hrsweek="1" studcnt="0"/>
+		<csg id="4826903" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4826910" sid="87567" name="Основы религиозных культур и светской этики" groupid="" parentsubjectid="" tid="1251090" hrsweek="1" studcnt="0"/>
+		<csg id="4826904" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1326017" hrsweek="5" studcnt="0"/>
+		<csg id="4826907" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1326017" hrsweek="4" studcnt="0"/>
+		<csg id="4826908" sid="86802" name="Литературное чтение" groupid="" parentsubjectid="" tid="1326017" hrsweek="3" studcnt="0"/>
+		<csg id="4826909" sid="86803" name="Окружающий мир" groupid="" parentsubjectid="" tid="1326017" hrsweek="2" studcnt="0"/>
+		<csg id="4826912" sid="88078" name="Кружок &quot;Мои проекты&quot;" groupid="" parentsubjectid="" tid="1326017" hrsweek="1" studcnt="0"/>
+		<csg id="4826915" sid="88083" name="Кружок &quot;Умелые руки&quot;" groupid="" parentsubjectid="" tid="1326017" hrsweek="1" studcnt="0"/>
+		<csg id="5039749" sid="87591" name="Кружок &quot;Умники и умницы&quot;" groupid="" parentsubjectid="" tid="1326017" hrsweek="1" studcnt="0"/>
+		<csg id="4826905" sid="85834" name="Технология" groupid="" parentsubjectid="" tid="1326017" hrsweek="1" studcnt="0"/>
+		<csg id="5072590" sid="293431" name="Финансовая грамотность" groupid="" parentsubjectid="" tid="1326017" hrsweek="1" studcnt="0"/>
+		<csg id="4826917" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)" groupid="" parentsubjectid="60699" tid="1327411" hrsweek="2" studcnt="0"/>
+		<csg id="4826906" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1333034" hrsweek="3" studcnt="0"/>
+			</class>
+			<class id="913943" name="5А" grade="5" studcnt="30" boys="16" girls="14"> 
+		<csg id="4866917" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1251004" hrsweek="6" studcnt="0"/>
+		<csg id="4866928" sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" groupid="" parentsubjectid="" tid="1251004" hrsweek="1" studcnt="0"/>
+		<csg id="4866918" sid="85832" name="История России. Всеобщая история" groupid="" parentsubjectid="" tid="1251009" hrsweek="2" studcnt="0"/>
+		<csg id="4866914" sid="85821" name="География" groupid="" parentsubjectid="" tid="1251012" hrsweek="1" studcnt="0"/>
+		<csg id="4866919" sid="85834" name="Технология/д" groupid="80636" parentsubjectid="" tid="1251015" hrsweek="2" studcnt="14"/>
+		<csg id="4866915" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4955333" sid="85834" name="Технология/м" groupid="80635" parentsubjectid="" tid="1251023" hrsweek="2" studcnt="16"/>
+		<csg id="4866916" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4866922" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251080" hrsweek="6" studcnt="0"/>
+		<csg id="4866921" sid="85839" name="Литература" groupid="" parentsubjectid="" tid="1251080" hrsweek="3" studcnt="0"/>
+		<csg id="4932452" sid="285087" name="Родной язык (русский)" groupid="" parentsubjectid="" tid="1251080" hrsweek="1" studcnt="0"/>
+		<csg id="4866927" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1251087" hrsweek="3" studcnt="16"/>
+		<csg id="4866924" sid="87684" name="Основы духовно-нравственной культуры" groupid="" parentsubjectid="" tid="1251090" hrsweek="1" studcnt="0"/>
+		<csg id="4955343" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1267155" hrsweek="3" studcnt="14"/>
+		<csg id="4866913" sid="85820" name="Биология" groupid="" parentsubjectid="" tid="1273210" hrsweek="1" studcnt="0"/>
+		<csg id="5040332" sid="293446" name="Кружок &quot;Юнармейцы&quot;" groupid="" parentsubjectid="" tid="1281337" hrsweek="1" studcnt="0"/>
+		<csg id="4866920" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1333034" hrsweek="3" studcnt="0"/>
+		<csg id="4866925" sid="88090" name="Секция &quot;Спортивные игры&quot;" groupid="" parentsubjectid="" tid="1333034" hrsweek="1" studcnt="0"/>
+			</class>
+			<class id="913944" name="5Б" grade="5" studcnt="20" boys="11" girls="9"> 
+		<csg id="4866935" sid="85832" name="История России. Всеобщая история" groupid="" parentsubjectid="" tid="1251009" hrsweek="2" studcnt="0"/>
+		<csg id="4866931" sid="85821" name="География" groupid="" parentsubjectid="" tid="1251012" hrsweek="1" studcnt="0"/>
+		<csg id="4866936" sid="85834" name="Технология/д" groupid="80636" parentsubjectid="" tid="1251015" hrsweek="2" studcnt="9"/>
+		<csg id="4866932" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4866934" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1251018" hrsweek="6" studcnt="0"/>
+		<csg id="4866945" sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" groupid="" parentsubjectid="" tid="1251018" hrsweek="1" studcnt="0"/>
+		<csg id="4955395" sid="85834" name="Технология/м" groupid="80635" parentsubjectid="" tid="1251023" hrsweek="2" studcnt="11"/>
+		<csg id="4866933" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4866939" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251085" hrsweek="6" studcnt="0"/>
+		<csg id="4866938" sid="85839" name="Литература" groupid="" parentsubjectid="" tid="1251085" hrsweek="3" studcnt="0"/>
+		<csg id="4932453" sid="285087" name="Родной язык (русский)" groupid="" parentsubjectid="" tid="1251085" hrsweek="1" studcnt="0"/>
+		<csg id="4866944" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)" groupid="" parentsubjectid="60699" tid="1251087" hrsweek="3" studcnt="0"/>
+		<csg id="4866941" sid="87684" name="Основы духовно-нравственной культуры" groupid="" parentsubjectid="" tid="1251090" hrsweek="1" studcnt="0"/>
+		<csg id="4866930" sid="85820" name="Биология" groupid="" parentsubjectid="" tid="1273210" hrsweek="1" studcnt="0"/>
+		<csg id="5040333" sid="293446" name="Кружок &quot;Юнармейцы&quot;" groupid="" parentsubjectid="" tid="1281337" hrsweek="1" studcnt="0"/>
+		<csg id="4866937" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1333034" hrsweek="3" studcnt="0"/>
+		<csg id="4866942" sid="88090" name="Секция &quot;Спортивные игры&quot;" groupid="" parentsubjectid="" tid="1333034" hrsweek="1" studcnt="0"/>
+			</class>
+			<class id="913945" name="5В" grade="5" studcnt="21" boys="13" girls="8"> 
+		<csg id="4866952" sid="85832" name="История России. Всеобщая история" groupid="" parentsubjectid="" tid="1251009" hrsweek="2" studcnt="0"/>
+		<csg id="4866948" sid="85821" name="География" groupid="" parentsubjectid="" tid="1251012" hrsweek="1" studcnt="0"/>
+		<csg id="4955451" sid="85834" name="Технология/д" groupid="80636" parentsubjectid="" tid="1251015" hrsweek="2" studcnt="8"/>
+		<csg id="4866949" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4866951" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1251018" hrsweek="6" studcnt="0"/>
+		<csg id="4866962" sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" groupid="" parentsubjectid="" tid="1251018" hrsweek="1" studcnt="0"/>
+		<csg id="4866953" sid="85834" name="Технология/м" groupid="80635" parentsubjectid="" tid="1251023" hrsweek="2" studcnt="13"/>
+		<csg id="4866954" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1251037" hrsweek="3" studcnt="0"/>
+		<csg id="4866959" sid="88090" name="Секция &quot;Спортивные игры&quot;" groupid="" parentsubjectid="" tid="1251037" hrsweek="1" studcnt="0"/>
+		<csg id="4866960" sid="88092" name="Кружок &quot;Основы православной культуры&quot;" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4866950" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4866958" sid="87684" name="Основы духовно-нравственной культуры" groupid="" parentsubjectid="" tid="1251090" hrsweek="1" studcnt="0"/>
+		<csg id="4866947" sid="85820" name="Биология" groupid="" parentsubjectid="" tid="1273210" hrsweek="1" studcnt="0"/>
+		<csg id="4866956" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1326017" hrsweek="6" studcnt="0"/>
+		<csg id="4866955" sid="85839" name="Литература" groupid="" parentsubjectid="" tid="1326017" hrsweek="3" studcnt="0"/>
+		<csg id="4932454" sid="285087" name="Родной язык (русский)" groupid="" parentsubjectid="" tid="1326017" hrsweek="1" studcnt="0"/>
+		<csg id="4866961" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)" groupid="" parentsubjectid="60699" tid="1327411" hrsweek="3" studcnt="0"/>
+			</class>
+			<class id="913946" name="6А" grade="6" studcnt="25" boys="8" girls="17"> 
+		<csg id="4866965" sid="85821" name="География" groupid="" parentsubjectid="" tid="1251012" hrsweek="1" studcnt="0"/>
+		<csg id="4866971" sid="85834" name="Технология/д" groupid="80636" parentsubjectid="" tid="1251015" hrsweek="2" studcnt="17"/>
+		<csg id="4866966" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4955472" sid="85834" name="Технология/м" groupid="80635" parentsubjectid="" tid="1251023" hrsweek="2" studcnt="8"/>
+		<csg id="4866974" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251025" hrsweek="7" studcnt="0"/>
+		<csg id="4866973" sid="85839" name="Литература" groupid="" parentsubjectid="" tid="1251025" hrsweek="3" studcnt="0"/>
+		<csg id="5040544" sid="293453" name="Кружок &quot;Проба пера&quot;" groupid="" parentsubjectid="" tid="1251025" hrsweek="1" studcnt="0"/>
+		<csg id="4866967" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4866968" sid="85830" name="Информатика/1 гр." groupid="80685" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="17"/>
+		<csg id="4963275" sid="85830" name="Информатика/2 гр." groupid="80637" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="8"/>
+		<csg id="4866970" sid="85832" name="История России. Всеобщая история" groupid="" parentsubjectid="" tid="1273208" hrsweek="2" studcnt="0"/>
+		<csg id="4866975" sid="86821" name="Обществознание" groupid="" parentsubjectid="" tid="1273208" hrsweek="1" studcnt="0"/>
+		<csg id="4866964" sid="85820" name="Биология" groupid="" parentsubjectid="" tid="1273210" hrsweek="1" studcnt="0"/>
+		<csg id="4866969" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1278096" hrsweek="6" studcnt="0"/>
+		<csg id="4866978" sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" groupid="" parentsubjectid="" tid="1278096" hrsweek="1" studcnt="0"/>
+		<csg id="4866977" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1322890" hrsweek="3" studcnt="12"/>
+		<csg id="4955475" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1327411" hrsweek="3" studcnt="13"/>
+		<csg id="4866972" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1333034" hrsweek="3" studcnt="0"/>
+		<csg id="4866976" sid="88090" name="Секция &quot;Спортивные игры&quot;" groupid="" parentsubjectid="" tid="1333034" hrsweek="1" studcnt="0"/>
+			</class>
+			<class id="913947" name="6Б" grade="6" studcnt="25" boys="8" girls="17"> 
+		<csg id="4866982" sid="85821" name="География" groupid="" parentsubjectid="" tid="1251012" hrsweek="1" studcnt="0"/>
+		<csg id="4866988" sid="85834" name="Технология/д" groupid="80636" parentsubjectid="" tid="1251015" hrsweek="2" studcnt="17"/>
+		<csg id="4866983" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="5040545" sid="293454" name="Кружок &quot;Волшебный карандаш&quot;" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4955487" sid="85834" name="Технология/м" groupid="80635" parentsubjectid="" tid="1251023" hrsweek="2" studcnt="8"/>
+		<csg id="4866991" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251025" hrsweek="7" studcnt="0"/>
+		<csg id="4866990" sid="85839" name="Литература" groupid="" parentsubjectid="" tid="1251025" hrsweek="3" studcnt="0"/>
+		<csg id="4866984" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4866985" sid="85830" name="Информатика/1 гр." groupid="80685" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="17"/>
+		<csg id="4963277" sid="85830" name="Информатика/2 гр." groupid="80637" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="8"/>
+		<csg id="4955495" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1251087" hrsweek="3" studcnt="12"/>
+		<csg id="4866981" sid="85820" name="Биология" groupid="" parentsubjectid="" tid="1273210" hrsweek="1" studcnt="0"/>
+		<csg id="4866986" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1278096" hrsweek="6" studcnt="0"/>
+		<csg id="4866995" sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" groupid="" parentsubjectid="" tid="1278096" hrsweek="1" studcnt="0"/>
+		<csg id="4866987" sid="85832" name="История России. Всеобщая история" groupid="" parentsubjectid="" tid="1279264" hrsweek="2" studcnt="0"/>
+		<csg id="4866992" sid="86821" name="Обществознание" groupid="" parentsubjectid="" tid="1279264" hrsweek="1" studcnt="0"/>
+		<csg id="4866994" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1327411" hrsweek="3" studcnt="13"/>
+		<csg id="4866989" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1333034" hrsweek="3" studcnt="0"/>
+		<csg id="4866993" sid="88090" name="Секция &quot;Спортивные игры&quot;" groupid="" parentsubjectid="" tid="1333034" hrsweek="1" studcnt="0"/>
+			</class>
+			<class id="913948" name="6В" grade="6" studcnt="24" boys="13" girls="11"> 
+		<csg id="4866999" sid="85821" name="География" groupid="" parentsubjectid="" tid="1251012" hrsweek="1" studcnt="0"/>
+		<csg id="4867000" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4867005" sid="85834" name="Технология/д" groupid="80636" parentsubjectid="" tid="1251023" hrsweek="2" studcnt="11"/>
+		<csg id="4957977" sid="85834" name="Технология/м" groupid="80635" parentsubjectid="" tid="1251023" hrsweek="2" studcnt="13"/>
+		<csg id="4867006" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1251037" hrsweek="3" studcnt="0"/>
+		<csg id="4867010" sid="88090" name="Секция &quot;Спортивные игры&quot;" groupid="" parentsubjectid="" tid="1251037" hrsweek="1" studcnt="0"/>
+		<csg id="4867001" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4867002" sid="85830" name="Информатика/1 гр." groupid="80685" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="11"/>
+		<csg id="4963405" sid="85830" name="Информатика/2 гр." groupid="80637" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="13"/>
+		<csg id="4867008" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251080" hrsweek="7" studcnt="0"/>
+		<csg id="4867007" sid="85839" name="Литература" groupid="" parentsubjectid="" tid="1251080" hrsweek="3" studcnt="0"/>
+		<csg id="4867011" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1251087" hrsweek="3" studcnt="12"/>
+		<csg id="4867004" sid="85832" name="История России. Всеобщая история" groupid="" parentsubjectid="" tid="1273208" hrsweek="2" studcnt="0"/>
+		<csg id="5040546" sid="293455" name="Кружок &quot;Белая ладья&quot;" groupid="" parentsubjectid="" tid="1273208" hrsweek="1" studcnt="0"/>
+		<csg id="4867009" sid="86821" name="Обществознание" groupid="" parentsubjectid="" tid="1273208" hrsweek="1" studcnt="0"/>
+		<csg id="4866998" sid="85820" name="Биология" groupid="" parentsubjectid="" tid="1273210" hrsweek="1" studcnt="0"/>
+		<csg id="4867003" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1278096" hrsweek="6" studcnt="0"/>
+		<csg id="4867012" sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" groupid="" parentsubjectid="" tid="1278096" hrsweek="1" studcnt="0"/>
+		<csg id="4956267" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1327411" hrsweek="3" studcnt="12"/>
+			</class>
+			<class id="913949" name="7А" grade="7" studcnt="32" boys="16" girls="16"> 
+		<csg id="4867017" sid="85823" name="Физика" groupid="" parentsubjectid="" tid="1251004" hrsweek="3" studcnt="0"/>
+		<csg id="4867016" sid="85821" name="География" groupid="" parentsubjectid="" tid="1251012" hrsweek="2" studcnt="0"/>
+		<csg id="4867023" sid="85834" name="Технология/д" groupid="80636" parentsubjectid="" tid="1251015" hrsweek="2" studcnt="16"/>
+		<csg id="4867018" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4867021" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1251018" hrsweek="7" studcnt="0"/>
+		<csg id="4867030" sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" groupid="" parentsubjectid="" tid="1251018" hrsweek="1" studcnt="0"/>
+		<csg id="5040644" sid="293456" name="Кружок &quot;Решение текстовых задач&quot;" groupid="" parentsubjectid="" tid="1251018" hrsweek="1" studcnt="0"/>
+		<csg id="4956270" sid="85834" name="Технология/м" groupid="80635" parentsubjectid="" tid="1251023" hrsweek="2" studcnt="16"/>
+		<csg id="4867024" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1251037" hrsweek="3" studcnt="0"/>
+		<csg id="4867019" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4867020" sid="85830" name="Информатика/1 гр." groupid="80685" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="16"/>
+		<csg id="4963426" sid="85830" name="Информатика/2 гр." groupid="80637" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="16"/>
+		<csg id="4867026" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251080" hrsweek="5" studcnt="0"/>
+		<csg id="4867025" sid="85839" name="Литература" groupid="" parentsubjectid="" tid="1251080" hrsweek="2" studcnt="0"/>
+		<csg id="4867022" sid="85832" name="История России. Всеобщая история" groupid="" parentsubjectid="" tid="1273208" hrsweek="2" studcnt="0"/>
+		<csg id="4867032" sid="94317" name="Кружок &quot;История Самарского края&quot;" groupid="" parentsubjectid="" tid="1273208" hrsweek="1" studcnt="0"/>
+		<csg id="4867027" sid="86821" name="Обществознание" groupid="" parentsubjectid="" tid="1273208" hrsweek="1" studcnt="0"/>
+		<csg id="4867015" sid="85820" name="Биология" groupid="" parentsubjectid="" tid="1273210" hrsweek="2" studcnt="0"/>
+		<csg id="4956271" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1322890" hrsweek="3" studcnt="16"/>
+		<csg id="4867029" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1327411" hrsweek="3" studcnt="16"/>
+			</class>
+			<class id="913950" name="7Б" grade="7" studcnt="19" boys="17" girls="2"> 
+		<csg id="4867035" sid="85821" name="География" groupid="" parentsubjectid="" tid="1251012" hrsweek="2" studcnt="0"/>
+		<csg id="4867037" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4867042" sid="85834" name="Технология/д" groupid="80636" parentsubjectid="" tid="1251023" hrsweek="2" studcnt="2"/>
+		<csg id="4958000" sid="85834" name="Технология/м" groupid="80635" parentsubjectid="" tid="1251023" hrsweek="2" studcnt="17"/>
+		<csg id="5067802" sid="294509" name="Кружок &quot;Юный астроном&quot;" groupid="" parentsubjectid="" tid="1251036" hrsweek="2" studcnt="0"/>
+		<csg id="4867036" sid="85823" name="Физика" groupid="" parentsubjectid="" tid="1251036" hrsweek="2" studcnt="0"/>
+		<csg id="4867043" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1251037" hrsweek="3" studcnt="0"/>
+		<csg id="4867038" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4867039" sid="85830" name="Информатика" groupid="" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="0"/>
+		<csg id="4867041" sid="85832" name="История России. Всеобщая история" groupid="" parentsubjectid="" tid="1273208" hrsweek="2" studcnt="0"/>
+		<csg id="4867051" sid="94317" name="Кружок &quot;История Самарского края&quot;" groupid="" parentsubjectid="" tid="1273208" hrsweek="1" studcnt="0"/>
+		<csg id="4867046" sid="86821" name="Обществознание" groupid="" parentsubjectid="" tid="1273208" hrsweek="1" studcnt="0"/>
+		<csg id="4867034" sid="85820" name="Биология" groupid="" parentsubjectid="" tid="1273210" hrsweek="2" studcnt="0"/>
+		<csg id="4867040" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1278096" hrsweek="6" studcnt="0"/>
+		<csg id="4867049" sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" groupid="" parentsubjectid="" tid="1278096" hrsweek="1" studcnt="0"/>
+		<csg id="5067794" sid="92569" name="Математический практикум(ВНД)" groupid="" parentsubjectid="" tid="1278096" hrsweek="1" studcnt="0"/>
+		<csg id="4867048" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)" groupid="" parentsubjectid="60699" tid="1322890" hrsweek="3" studcnt="0"/>
+		<csg id="5067793" sid="92567" name="Практикум по английскому языку(ВНД)" groupid="" parentsubjectid="" tid="1322890" hrsweek="1" studcnt="0"/>
+		<csg id="4867045" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1326017" hrsweek="5" studcnt="0"/>
+		<csg id="4867044" sid="85839" name="Литература" groupid="" parentsubjectid="" tid="1326017" hrsweek="2" studcnt="0"/>
+			</class>
+			<class id="913951" name="8А" grade="8" studcnt="23" boys="7" girls="16"> 
+		<csg id="4867055" sid="85823" name="Физика" groupid="" parentsubjectid="" tid="1251004" hrsweek="2" studcnt="0"/>
+		<csg id="4867054" sid="85821" name="География" groupid="" parentsubjectid="" tid="1251012" hrsweek="2" studcnt="0"/>
+		<csg id="4867057" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4958042" sid="85834" name="Технология/д" groupid="80636" parentsubjectid="" tid="1251023" hrsweek="1" studcnt="16"/>
+		<csg id="4867062" sid="85834" name="Технология/м" groupid="80635" parentsubjectid="" tid="1251023" hrsweek="1" studcnt="7"/>
+		<csg id="5067827" sid="294511" name="Кружок &quot;Русского географического общества&quot;" groupid="" parentsubjectid="" tid="1251036" hrsweek="1" studcnt="0"/>
+		<csg id="4867058" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4867059" sid="85830" name="Информатика" groupid="" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="0"/>
+		<csg id="4867066" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251085" hrsweek="4" studcnt="0"/>
+		<csg id="4867065" sid="85839" name="Литература" groupid="" parentsubjectid="" tid="1251085" hrsweek="2" studcnt="0"/>
+		<csg id="4956284" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1251087" hrsweek="3" studcnt="10"/>
+		<csg id="4867069" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1267155" hrsweek="3" studcnt="13"/>
+		<csg id="4867061" sid="85832" name="История России. Всеобщая история" groupid="" parentsubjectid="" tid="1273208" hrsweek="2" studcnt="0"/>
+		<csg id="4867073" sid="94317" name="Кружок &quot;История Самарского края&quot;" groupid="" parentsubjectid="" tid="1273208" hrsweek="1" studcnt="0"/>
+		<csg id="4867067" sid="86821" name="Обществознание" groupid="" parentsubjectid="" tid="1273208" hrsweek="1" studcnt="0"/>
+		<csg id="4867053" sid="85820" name="Биология" groupid="" parentsubjectid="" tid="1273210" hrsweek="2" studcnt="0"/>
+		<csg id="4867060" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1278096" hrsweek="6" studcnt="0"/>
+		<csg id="4867071" sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" groupid="" parentsubjectid="" tid="1278096" hrsweek="1" studcnt="0"/>
+		<csg id="4867056" sid="85824" name="Химия" groupid="" parentsubjectid="" tid="1279263" hrsweek="2" studcnt="0"/>
+		<csg id="4867063" sid="85836" name="Основы безопасности жизнедеятельности" groupid="" parentsubjectid="" tid="1281337" hrsweek="1" studcnt="0"/>
+		<csg id="4867064" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1333034" hrsweek="3" studcnt="0"/>
+		<csg id="4867075" sid="94320" name="Цифровая гигиена(ВНД)" groupid="" parentsubjectid="" tid="1337083" hrsweek="1" studcnt="0"/>
+			</class>
+			<class id="913952" name="8Б" grade="8" studcnt="30" boys="9" girls="21"> 
+		<csg id="4867078" sid="85823" name="Физика" groupid="" parentsubjectid="" tid="1251004" hrsweek="3" studcnt="0"/>
+		<csg id="4867084" sid="85832" name="История России. Всеобщая история" groupid="" parentsubjectid="" tid="1251009" hrsweek="2" studcnt="0"/>
+		<csg id="4867096" sid="94317" name="Кружок &quot;История Самарского края&quot;" groupid="" parentsubjectid="" tid="1251009" hrsweek="1" studcnt="0"/>
+		<csg id="4867090" sid="86821" name="Обществознание" groupid="" parentsubjectid="" tid="1251009" hrsweek="1" studcnt="0"/>
+		<csg id="4867077" sid="85821" name="География" groupid="" parentsubjectid="" tid="1251012" hrsweek="2" studcnt="0"/>
+		<csg id="4867080" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4958062" sid="85834" name="Технология/д" groupid="80636" parentsubjectid="" tid="1251023" hrsweek="1" studcnt="21"/>
+		<csg id="4867085" sid="85834" name="Технология/м" groupid="80635" parentsubjectid="" tid="1251023" hrsweek="1" studcnt="9"/>
+		<csg id="4867081" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4867082" sid="85830" name="Информатика/1 гр." groupid="80685" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="15"/>
+		<csg id="4963450" sid="85830" name="Информатика/2 гр." groupid="80637" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="15"/>
+		<csg id="4867089" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251085" hrsweek="3" studcnt="0"/>
+		<csg id="4867088" sid="85839" name="Литература" groupid="" parentsubjectid="" tid="1251085" hrsweek="2" studcnt="0"/>
+		<csg id="4956299" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1251087" hrsweek="3" studcnt="16"/>
+		<csg id="4867092" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1267155" hrsweek="3" studcnt="14"/>
+		<csg id="4867076" sid="85820" name="Биология" groupid="" parentsubjectid="" tid="1273210" hrsweek="2" studcnt="0"/>
+		<csg id="4867079" sid="85824" name="Химия" groupid="" parentsubjectid="" tid="1279263" hrsweek="3" studcnt="0"/>
+		<csg id="5067807" sid="293457" name="Кружок &quot;Патриот&quot;" groupid="" parentsubjectid="" tid="1281337" hrsweek="1" studcnt="0"/>
+		<csg id="4867086" sid="85836" name="Основы безопасности жизнедеятельности" groupid="" parentsubjectid="" tid="1281337" hrsweek="1" studcnt="0"/>
+		<csg id="4867083" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1289115" hrsweek="7" studcnt="0"/>
+		<csg id="5040678" sid="92521" name="Кружок &quot;Открытие себя&quot;" groupid="" parentsubjectid="" tid="1289115" hrsweek="2" studcnt="0"/>
+		<csg id="4867094" sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" groupid="" parentsubjectid="" tid="1289115" hrsweek="1" studcnt="0"/>
+		<csg id="4867087" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1333034" hrsweek="3" studcnt="0"/>
+		<csg id="4867098" sid="94320" name="Цифровая гигиена(ВНД)" groupid="" parentsubjectid="" tid="1337083" hrsweek="1" studcnt="0"/>
+			</class>
+			<class id="913953" name="8В" grade="8" studcnt="18" boys="7" girls="11"> 
+		<csg id="4867100" sid="85821" name="География" groupid="" parentsubjectid="" tid="1251012" hrsweek="2" studcnt="0"/>
+		<csg id="4867103" sid="85825" name="Изобразительное искусство" groupid="" parentsubjectid="" tid="1251015" hrsweek="1" studcnt="0"/>
+		<csg id="4958083" sid="85834" name="Технология/д" groupid="80636" parentsubjectid="" tid="1251023" hrsweek="1" studcnt="11"/>
+		<csg id="4867108" sid="85834" name="Технология/м" groupid="80635" parentsubjectid="" tid="1251023" hrsweek="1" studcnt="7"/>
+		<csg id="5067839" sid="294509" name="Кружок &quot;Юный астроном&quot;" groupid="" parentsubjectid="" tid="1251036" hrsweek="2" studcnt="0"/>
+		<csg id="4867101" sid="85823" name="Физика" groupid="" parentsubjectid="" tid="1251036" hrsweek="2" studcnt="0"/>
+		<csg id="5067837" sid="92566" name="ВНД_Занимательные опыты по физике" groupid="" parentsubjectid="" tid="1251036" hrsweek="1" studcnt="0"/>
+		<csg id="4867110" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1251037" hrsweek="3" studcnt="0"/>
+		<csg id="4867104" sid="85827" name="Музыка" groupid="" parentsubjectid="" tid="1251043" hrsweek="1" studcnt="0"/>
+		<csg id="4867105" sid="85830" name="Информатика" groupid="" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="0"/>
+		<csg id="4867112" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251080" hrsweek="4" studcnt="0"/>
+		<csg id="4867111" sid="85839" name="Литература" groupid="" parentsubjectid="" tid="1251080" hrsweek="2" studcnt="0"/>
+		<csg id="4867107" sid="85832" name="История России. Всеобщая история" groupid="" parentsubjectid="" tid="1273208" hrsweek="2" studcnt="0"/>
+		<csg id="4867119" sid="94317" name="Кружок &quot;История Самарского края&quot;" groupid="" parentsubjectid="" tid="1273208" hrsweek="1" studcnt="0"/>
+		<csg id="4867113" sid="86821" name="Обществознание" groupid="" parentsubjectid="" tid="1273208" hrsweek="1" studcnt="0"/>
+		<csg id="4867099" sid="85820" name="Биология" groupid="" parentsubjectid="" tid="1273210" hrsweek="2" studcnt="0"/>
+		<csg id="4867106" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1278096" hrsweek="6" studcnt="0"/>
+		<csg id="4867117" sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" groupid="" parentsubjectid="" tid="1278096" hrsweek="1" studcnt="0"/>
+		<csg id="5067838" sid="92569" name="Математический практикум(ВНД)" groupid="" parentsubjectid="" tid="1278096" hrsweek="1" studcnt="0"/>
+		<csg id="4867102" sid="85824" name="Химия" groupid="" parentsubjectid="" tid="1279263" hrsweek="2" studcnt="0"/>
+		<csg id="4867109" sid="85836" name="Основы безопасности жизнедеятельности" groupid="" parentsubjectid="" tid="1281337" hrsweek="1" studcnt="0"/>
+		<csg id="4867115" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)" groupid="" parentsubjectid="60699" tid="1322890" hrsweek="3" studcnt="0"/>
+		<csg id="4867121" sid="94320" name="Цифровая гигиена(ВНД)" groupid="" parentsubjectid="" tid="1337083" hrsweek="1" studcnt="0"/>
+			</class>
+			<class id="913954" name="9А" grade="9" studcnt="27" boys="3" girls="24"> 
+		<csg id="4867124" sid="85823" name="Физика" groupid="" parentsubjectid="" tid="1251004" hrsweek="3" studcnt="0"/>
+		<csg id="4867128" sid="85832" name="История России. Всеобщая история" groupid="" parentsubjectid="" tid="1251009" hrsweek="3" studcnt="0"/>
+		<csg id="4867137" sid="94317" name="Кружок &quot;История Самарского края&quot;" groupid="" parentsubjectid="" tid="1251009" hrsweek="1" studcnt="0"/>
+		<csg id="4867133" sid="86821" name="Обществознание" groupid="" parentsubjectid="" tid="1251009" hrsweek="1" studcnt="0"/>
+		<csg id="5079254" sid="282531" name="Предпрофильный курс по обществознанию(ОПК)" groupid="" parentsubjectid="" tid="1251009" hrsweek="1" studcnt="0"/>
+		<csg id="4867123" sid="85821" name="География" groupid="" parentsubjectid="" tid="1251012" hrsweek="2" studcnt="0"/>
+		<csg id="4867130" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1251037" hrsweek="3" studcnt="0"/>
+		<csg id="4867134" sid="88090" name="Секция &quot;Спортивные игры&quot;" groupid="" parentsubjectid="" tid="1251037" hrsweek="2" studcnt="0"/>
+		<csg id="4867126" sid="85830" name="Информатика/1 гр." groupid="80685" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="14"/>
+		<csg id="4963479" sid="85830" name="Информатика/2 гр." groupid="80637" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="13"/>
+		<csg id="4867132" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251085" hrsweek="4" studcnt="0"/>
+		<csg id="4867131" sid="85839" name="Литература" groupid="" parentsubjectid="" tid="1251085" hrsweek="3" studcnt="0"/>
+		<csg id="5067868" sid="94319" name="Литературная гостиная(ВНД)" groupid="" parentsubjectid="" tid="1251085" hrsweek="1" studcnt="0"/>
+		<csg id="5079253" sid="87049" name="Предпрофильный курс по русскому языку(ППК)" groupid="" parentsubjectid="" tid="1251085" hrsweek="1" studcnt="0"/>
+		<csg id="4956318" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.2 под" groupid="81492" parentsubjectid="60699" tid="1267155" hrsweek="3" studcnt="10"/>
+		<csg id="4936527" sid="92870" name="Иностранный язык/Иностранный язык (Немецкий язык)" groupid="" parentsubjectid="60699" tid="1267155" hrsweek="3" studcnt="0"/>
+		<csg id="4867122" sid="85820" name="Биология" groupid="" parentsubjectid="" tid="1273210" hrsweek="2" studcnt="0"/>
+		<csg id="4867127" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1278096" hrsweek="6" studcnt="0"/>
+		<csg id="4867136" sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" groupid="" parentsubjectid="" tid="1278096" hrsweek="1" studcnt="0"/>
+		<csg id="4867125" sid="85824" name="Химия" groupid="" parentsubjectid="" tid="1279263" hrsweek="2" studcnt="0"/>
+		<csg id="4867129" sid="85836" name="Основы безопасности жизнедеятельности" groupid="" parentsubjectid="" tid="1281337" hrsweek="1" studcnt="0"/>
+		<csg id="4867135" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)/англ.1 под" groupid="81491" parentsubjectid="60699" tid="1322890" hrsweek="3" studcnt="13"/>
+			</class>
+			<class id="913955" name="9Б" grade="9" studcnt="27" boys="16" girls="11"> 
+		<csg id="4867142" sid="85823" name="Физика" groupid="" parentsubjectid="" tid="1251004" hrsweek="4" studcnt="0"/>
+		<csg id="5067871" sid="94322" name="Физика и техника(ВНД)" groupid="" parentsubjectid="" tid="1251004" hrsweek="1" studcnt="0"/>
+		<csg id="4867146" sid="85832" name="История России. Всеобщая история" groupid="" parentsubjectid="" tid="1251009" hrsweek="3" studcnt="0"/>
+		<csg id="4867155" sid="94317" name="Кружок &quot;История Самарского края&quot;" groupid="" parentsubjectid="" tid="1251009" hrsweek="1" studcnt="0"/>
+		<csg id="4867151" sid="86821" name="Обществознание" groupid="" parentsubjectid="" tid="1251009" hrsweek="1" studcnt="0"/>
+		<csg id="4867141" sid="85821" name="География" groupid="" parentsubjectid="" tid="1251012" hrsweek="2" studcnt="0"/>
+		<csg id="4867144" sid="85830" name="Информатика/1 гр." groupid="80685" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="13"/>
+		<csg id="4963482" sid="85830" name="Информатика/2 гр." groupid="80637" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="14"/>
+		<csg id="5067870" sid="94321" name="Создаем школьный сайт в интернете(ВНД)" groupid="" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="0"/>
+		<csg id="4867149" sid="85839" name="Литература" groupid="" parentsubjectid="" tid="1251085" hrsweek="3" studcnt="0"/>
+		<csg id="4867150" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251085" hrsweek="3" studcnt="0"/>
+		<csg id="4936528" sid="92870" name="Иностранный язык/Иностранный язык (Немецкий язык)" groupid="" parentsubjectid="60699" tid="1267155" hrsweek="3" studcnt="0"/>
+		<csg id="4867140" sid="85820" name="Биология" groupid="" parentsubjectid="" tid="1273210" hrsweek="2" studcnt="0"/>
+		<csg id="4867143" sid="85824" name="Химия" groupid="" parentsubjectid="" tid="1279263" hrsweek="3" studcnt="0"/>
+		<csg id="4867148" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1281337" hrsweek="3" studcnt="0"/>
+		<csg id="5067872" sid="293457" name="Кружок &quot;Патриот&quot;" groupid="" parentsubjectid="" tid="1281337" hrsweek="1" studcnt="0"/>
+		<csg id="4867147" sid="85836" name="Основы безопасности жизнедеятельности" groupid="" parentsubjectid="" tid="1281337" hrsweek="1" studcnt="0"/>
+		<csg id="4867145" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1289115" hrsweek="7" studcnt="0"/>
+		<csg id="4867154" sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" groupid="" parentsubjectid="" tid="1289115" hrsweek="1" studcnt="0"/>
+		<csg id="4867153" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)" groupid="" parentsubjectid="60699" tid="1322890" hrsweek="3" studcnt="0"/>
+			</class>
+			<class id="913956" name="9В" grade="9" studcnt="15" boys="11" girls="4"> 
+		<csg id="4867159" sid="85821" name="География" groupid="" parentsubjectid="" tid="1251012" hrsweek="2" studcnt="0"/>
+		<csg id="4867160" sid="85823" name="Физика" groupid="" parentsubjectid="" tid="1251036" hrsweek="3" studcnt="0"/>
+		<csg id="5067906" sid="294509" name="Кружок &quot;Юный астроном&quot;" groupid="" parentsubjectid="" tid="1251036" hrsweek="2" studcnt="0"/>
+		<csg id="5079256" sid="295004" name="Предпрофильный курс по физике(ППК)" groupid="" parentsubjectid="" tid="1251036" hrsweek="1" studcnt="0"/>
+		<csg id="4867166" sid="85837" name="Физическая культура" groupid="" parentsubjectid="" tid="1251037" hrsweek="3" studcnt="0"/>
+		<csg id="4867162" sid="85830" name="Информатика" groupid="" parentsubjectid="" tid="1251067" hrsweek="1" studcnt="0"/>
+		<csg id="4867168" sid="85841" name="Русский язык" groupid="" parentsubjectid="" tid="1251085" hrsweek="4" studcnt="0"/>
+		<csg id="4867167" sid="85839" name="Литература" groupid="" parentsubjectid="" tid="1251085" hrsweek="3" studcnt="0"/>
+		<csg id="4867164" sid="85832" name="История России. Всеобщая история" groupid="" parentsubjectid="" tid="1273208" hrsweek="3" studcnt="0"/>
+		<csg id="5072456" sid="294679" name="Введение в право(ВНД)" groupid="" parentsubjectid="" tid="1273208" hrsweek="1" studcnt="0"/>
+		<csg id="4867173" sid="94317" name="Кружок &quot;История Самарского края&quot;" groupid="" parentsubjectid="" tid="1273208" hrsweek="1" studcnt="0"/>
+		<csg id="4867169" sid="86821" name="Обществознание" groupid="" parentsubjectid="" tid="1273208" hrsweek="1" studcnt="0"/>
+		<csg id="4867158" sid="85820" name="Биология" groupid="" parentsubjectid="" tid="1273210" hrsweek="2" studcnt="0"/>
+		<csg id="4867163" sid="85831" name="Математика" groupid="" parentsubjectid="" tid="1278096" hrsweek="6" studcnt="0"/>
+		<csg id="4867172" sid="94312" name="Кружок &quot;Развитие функциональной грамотности&quot;" groupid="" parentsubjectid="" tid="1278096" hrsweek="1" studcnt="0"/>
+		<csg id="5067905" sid="92569" name="Математический практикум(ВНД)" groupid="" parentsubjectid="" tid="1278096" hrsweek="1" studcnt="0"/>
+		<csg id="4867161" sid="85824" name="Химия" groupid="" parentsubjectid="" tid="1279263" hrsweek="2" studcnt="0"/>
+		<csg id="4867165" sid="85836" name="Основы безопасности жизнедеятельности" groupid="" parentsubjectid="" tid="1281337" hrsweek="1" studcnt="0"/>
+		<csg id="4867171" sid="89298" name="Иностранный язык/Иностранный язык (Английский язык)" groupid="" parentsubjectid="60699" tid="1322890" hrsweek="3" studcnt="0"/>
+		<csg id="5079255" sid="89295" name="Предпрофильный курс по иностранному языку(ППК)" groupid="" parentsubjectid="" tid="1322890" hrsweek="1" studcnt="0"/>
+			</class>
+				<class id="927320" name="10А" grade="10" studcnt="10" boys="1" girls="9"> 
+
+					<csg id="5079239" tid="1279263" name="Индивидуальный проект/10АБ" sid="282687" studcnt="36" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963529" tid="1267155" name="Иностранный язык/Иностранный язык (Английский язык)/У" sid="89298" studcnt="10" hrsweek="6" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4962941" tid="1279264" name="История России. Всеобщая история/У" sid="85832" studcnt="10" hrsweek="4" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4974049" tid="1251025" name="Литература/Б" sid="85839" studcnt="36" hrsweek="3" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963526" tid="1289115" name="Математика/Б" sid="85831" studcnt="10" hrsweek="5" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5072494" tid="1251023" name="Нравственные основы семейной жизни(ВНД)/10А" sid="294680" studcnt="10" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963550" tid="1273208" name="Обществознание/Б" sid="86821" studcnt="12" hrsweek="2" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4743553" tid="1281337" name="Основы безопасности жизнедеятельности/10" sid="85836" studcnt="36" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963551" tid="1279264" name="Право/У" sid="86823" studcnt="10" hrsweek="2" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963527" tid="1251025" name="Родной язык (русский)/Б" sid="285087" studcnt="36" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4974038" tid="1251025" name="Русский язык/10АБ-У" sid="85841" studcnt="36" hrsweek="3" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4743547" tid="1251036" name="Физика/Б" sid="85823" studcnt="10" hrsweek="2" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4743554" tid="1251037" name="Физическая культура/10А" sid="85837" studcnt="10" hrsweek="3" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5069686" tid="1267155" name="Элективный курс иностр.язык/10АБ11А" sid="86857" studcnt="24" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5069689" tid="1279264" name="Элективный курс история/10А11А" sid="87211" studcnt="15" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5069687" tid="1279264" name="Элективный курс обществознание/10АБ11А" sid="86858" studcnt="19" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5069664" tid="1251025" name="Элективный курс русский язык/10А" sid="86856" studcnt="10" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+				</class>
+				<class id="927321" name="10Б" grade="10" studcnt="26" boys="17" girls="9"> 
+
+					<csg id="4743567" tid="1267155" name="Иностранный язык/Иностранный язык (Английский язык)/10Б-Б1" sid="89298" studcnt="13" hrsweek="3" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5048163" tid="1251087" name="Иностранный язык/Иностранный язык (Английский язык)/10Б-Б2" sid="89298" studcnt="13" hrsweek="3" parentsubjectid="1" groupid="2" /> 
+
+					<csg id="4743550" tid="1251067" name="Информатика/Б1" sid="85830" studcnt="12" hrsweek="2" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5038917" tid="1251067" name="Информатика/Б2" sid="85830" studcnt="12" hrsweek="2" parentsubjectid="1" groupid="2" /> 
+
+					<csg id="4743551" tid="1273208" name="История России. Всеобщая история/Б" sid="85832" studcnt="26" hrsweek="2" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963532" tid="1289115" name="Математика/У" sid="85831" studcnt="26" hrsweek="8" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5072512" tid="1251023" name="Нравственные основы семейной жизни(ВНД)/10Б" sid="294680" studcnt="26" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963531" tid="1251004" name="Физика/У" sid="85823" studcnt="26" hrsweek="5" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5081332" tid="1251037" name="Физическая культура/10Б" sid="85837" studcnt="26" hrsweek="3" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4743548" tid="1279263" name="Химия/Б" sid="85824" studcnt="26" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5101447" tid="1251067" name="Элективный курс информатика/10Б" sid="87212" studcnt="15" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5069663" tid="1289115" name="Элективный курс математика/10Б" sid="86855" studcnt="26" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5072539" tid="1251025" name="Элективный курс русский язык/10Б" sid="86856" studcnt="26" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5069662" tid="1251004" name="Элективный курс физика/10Б" sid="86826" studcnt="26" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+				</class>
+				<class id="913957" name="11А" grade="11" studcnt="16" boys="5" girls="11"> 
+
+					<csg id="4963541" tid="1251004" name="Астрономия/11А" sid="92764" studcnt="16" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963568" tid="1273210" name="Биология/У" sid="85820" studcnt="6" hrsweek="3" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5079240" tid="1279263" name="Индивидуальный проект/11А" sid="282687" studcnt="16" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963563" tid="1267155" name="Иностранный язык/Иностранный язык (Английский язык)/11А-Б" sid="89298" studcnt="5" hrsweek="3" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963543" tid="1267155" name="Иностранный язык/Иностранный язык (Английский язык)/11А-У" sid="89298" studcnt="9" hrsweek="6" parentsubjectid="1" groupid="2" /> 
+
+					<csg id="4963567" tid="1267155" name="Иностранный язык/Иностранный язык (Немецкий язык)/Б" sid="92870" studcnt="4" hrsweek="3" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4993677" tid="1267155" name="Иностранный язык/Иностранный язык (Немецкий язык)/У" sid="92870" studcnt="1" hrsweek="6" parentsubjectid="1" groupid="2" /> 
+
+					<csg id="4963538" tid="1251067" name="Информатика/11А" sid="85830" studcnt="16" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963562" tid="1273208" name="История России. Всеобщая история/Б" sid="85832" studcnt="30" hrsweek="2" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963547" tid="1279264" name="История России. Всеобщая история/У" sid="85832" studcnt="10" hrsweek="4" parentsubjectid="1" groupid="2" /> 
+
+					<csg id="4963540" tid="1251025" name="Литература/11А" sid="85839" studcnt="16" hrsweek="3" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963539" tid="1289115" name="Математика/Б" sid="85831" studcnt="10" hrsweek="4" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963565" tid="1289115" name="Математика/У" sid="85831" studcnt="30" hrsweek="8" parentsubjectid="1" groupid="2" /> 
+
+					<csg id="5072506" tid="1251023" name="Нравственные основы семейной жизни(ВНД)/11А" sid="294680" studcnt="16" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963546" tid="1279264" name="Обществознание/Б" sid="86821" studcnt="16" hrsweek="2" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963554" tid="1281337" name="Основы безопасности жизнедеятельности/11А" sid="85836" studcnt="16" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963548" tid="1279264" name="Право/У" sid="86823" studcnt="10" hrsweek="2" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4979780" tid="1251025" name="Родной язык (русский)/11А" sid="285087" studcnt="16" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963566" tid="1251025" name="Русский язык/11А-Б" sid="85841" studcnt="6" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963542" tid="1251025" name="Русский язык/11А-У" sid="85841" studcnt="10" hrsweek="3" parentsubjectid="1" groupid="2" /> 
+
+					<csg id="4963536" tid="1251036" name="Физика/Б" sid="85823" studcnt="16" hrsweek="2" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963555" tid="1251037" name="Физическая культура/11А" sid="85837" studcnt="16" hrsweek="3" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963537" tid="1279263" name="Химия/11А-Б" sid="85824" studcnt="10" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963569" tid="1279263" name="Химия/У" sid="85824" studcnt="6" hrsweek="3" parentsubjectid="1" groupid="2" /> 
+
+					<csg id="5069691" tid="1273210" name="Элективный курс биология/11А" sid="87278" studcnt="5" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5069684" tid="1289115" name="Элективный курс математика/11АБ" sid="86855" studcnt="26" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5069685" tid="1251025" name="Элективный курс русский язык/11АБ" sid="86856" studcnt="21" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5069683" tid="1251004" name="Элективный курс физика/11АБ" sid="86826" studcnt="24" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5069688" tid="1279263" name="Элективный курс химия/11А" sid="87050" studcnt="6" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+				</class>
+				<class id="913958" name="11Б" grade="11" studcnt="24" boys="19" girls="5"> 
+
+					<csg id="4993608" tid="1251004" name="Астрономия/11Б" sid="92764" studcnt="24" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963561" tid="1273210" name="Биология/Б" sid="85820" studcnt="24" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5079249" tid="1279263" name="Индивидуальный проект/11Б" sid="282687" studcnt="24" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4974047" tid="1267155" name="Иностранный язык/Иностранный язык (Английский язык)/11Б-Б" sid="89298" studcnt="21" hrsweek="3" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4993557" tid="1251067" name="Информатика/11Б-1" sid="85830" studcnt="12" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4993560" tid="1251067" name="Информатика/11Б-2" sid="85830" studcnt="12" hrsweek="1" parentsubjectid="1" groupid="2" /> 
+
+					<csg id="4995502" tid="1251025" name="Литература/11Б" sid="85839" studcnt="24" hrsweek="3" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5072515" tid="1251023" name="Нравственные основы семейной жизни(ВНД)/11Б" sid="294680" studcnt="24" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4995526" tid="1281337" name="Основы безопасности жизнедеятельности/11Б" sid="85836" studcnt="24" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4993541" tid="1251025" name="Родной язык (русский)/11Б" sid="285087" studcnt="24" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4995463" tid="1251025" name="Русский язык/11Б-У" sid="85841" studcnt="24" hrsweek="3" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4963564" tid="1251004" name="Физика/У" sid="85823" studcnt="24" hrsweek="5" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="4995521" tid="1251037" name="Физическая культура/11Б" sid="85837" studcnt="24" hrsweek="3" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5068816" tid="1279263" name="Химия/11Б-Б" sid="85824" studcnt="24" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+
+					<csg id="5101481" tid="1251067" name="Элективный курс информатика/11Б" sid="87212" studcnt="6" hrsweek="1" parentsubjectid="1" groupid="1" /> 
+				</class>
+	</Plan>
+	<TimeTable>
+		<Week id="1" name="Неделя 14.12.2020 - 20.12.2020">
+		
+				<Day id="1" name="понедельник" wd="2" >
+					<Lesson timeId="1">
+			<csg id="4826774"/>
+			<csg id="4826795"/>
+			<csg id="4949193"/>
+			<csg id="4826832"/>
+			<csg id="4743538"/>
+			<csg id="4826801"/>
+			<csg id="4826851"/>
+			<csg id="4866917"/>
+			<csg id="4866939"/>
+			<csg id="4866951"/>
+			<csg id="4867018"/>
+			<csg id="4867043"/>
+			<csg id="4867053"/>
+			<csg id="4867077"/>
+			<csg id="4867101"/>
+			<csg id="4867127"/>
+			<csg id="4867143"/>
+			<csg id="4867168"/>
+			<csg id="4963565"/>
+			<csg id="4963547"/>
+			<csg id="4743567"/>
+			<csg id="5048163"/>
+			<csg id="5069664"/>
+			<csg id="4743527" roomid="53207"/>
+			<csg id="4826812" roomid="53209"/>
+			<csg id="4743514" roomid="53227"/></Lesson>
+					<Lesson timeId="2">
+			<csg id="4826784"/>
+			<csg id="4826832"/>
+			<csg id="4743539"/>
+			<csg id="4826798"/>
+			<csg id="4826860"/>
+			<csg id="4953086"/>
+			<csg id="4866927"/>
+			<csg id="4955343"/>
+			<csg id="4866934"/>
+			<csg id="4866955"/>
+			<csg id="4867016"/>
+			<csg id="4867045"/>
+			<csg id="4867066"/>
+			<csg id="4867076"/>
+			<csg id="4867110"/>
+			<csg id="4867127"/>
+			<csg id="4867142"/>
+			<csg id="4867160"/>
+			<csg id="4963565"/>
+			<csg id="4963547"/>
+			<csg id="4974038"/>
+			<csg id="4743526" roomid="53207"/>
+			<csg id="4826815" roomid="53209"/>
+			<csg id="4743515" roomid="53210"/>
+			<csg id="4826770" roomid="53211"/></Lesson>
+					<Lesson timeId="3">
+			<csg id="4928877"/>
+			<csg id="4826842"/>
+			<csg id="4952679"/>
+			<csg id="4743535"/>
+			<csg id="4826800"/>
+			<csg id="4826850"/>
+			<csg id="4866919"/>
+			<csg id="4955333"/>
+			<csg id="4866944"/>
+			<csg id="4866956"/>
+			<csg id="4867021"/>
+			<csg id="4867036"/>
+			<csg id="4867060"/>
+			<csg id="4867089"/>
+			<csg id="4867112"/>
+			<csg id="4867124"/>
+			<csg id="4867166"/>
+			<csg id="4963526"/>
+			<csg id="4963538"/>
+			<csg id="4995502"/>
+			<csg id="4963532"/>
+			<csg id="4993677"/>
+			<csg id="4743523" roomid="53207"/>
+			<csg id="4826816" roomid="53209"/>
+			<csg id="4743512" roomid="53210"/>
+			<csg id="4826773" roomid="53211"/></Lesson>
+					<Lesson timeId="4">
+			<csg id="4826788"/>
+			<csg id="4826830"/>
+			<csg id="4743537"/>
+			<csg id="4826802"/>
+			<csg id="4826848"/>
+			<csg id="4866919"/>
+			<csg id="4955333"/>
+			<csg id="4866930"/>
+			<csg id="4866952"/>
+			<csg id="4867021"/>
+			<csg id="4867035"/>
+			<csg id="4867060"/>
+			<csg id="4867078"/>
+			<csg id="4867102"/>
+			<csg id="4867131"/>
+			<csg id="4867144"/>
+			<csg id="4867167"/>
+			<csg id="4963526"/>
+			<csg id="4963563"/>
+			<csg id="4963543"/>
+			<csg id="4995463"/>
+			<csg id="4963532"/>
+			<csg id="4866961"/>
+			<csg id="4963567"/>
+			<csg id="4993677"/>
+			<csg id="4743516" roomid="53210"/>
+			<csg id="4866912" roomid="53211"/>
+			<csg id="4826814" roomid="53227"/>
+			<csg id="4743525" roomid="53227"/>
+			<csg id="4929093" roomid="53277"/></Lesson>
+					<Lesson timeId="5">
+			<csg id="4826790"/>
+			<csg id="4826833"/>
+			<csg id="4743541"/>
+			<csg id="4826805"/>
+			<csg id="4826852"/>
+			<csg id="4866924"/>
+			<csg id="4866936"/>
+			<csg id="4955451"/>
+			<csg id="4866953"/>
+			<csg id="4867015"/>
+			<csg id="4867044"/>
+			<csg id="4867055"/>
+			<csg id="4867083"/>
+			<csg id="4867100"/>
+			<csg id="4867128"/>
+			<csg id="4867153"/>
+			<csg id="4867161"/>
+			<csg id="4974049"/>
+			<csg id="4963562"/>
+			<csg id="4963536"/>
+			<csg id="5039745"/>
+			<csg id="4743529" roomid="53207"/>
+			<csg id="4826824" roomid="53209"/>
+			<csg id="4826772" roomid="53227"/>
+			<csg id="4952656" roomid="53277"/></Lesson>
+					<Lesson timeId="6">
+			<csg id="4826791"/>
+			<csg id="4826837"/>
+			<csg id="4826856"/>
+			<csg id="4866922"/>
+			<csg id="4866936"/>
+			<csg id="4955395"/>
+			<csg id="4955451"/>
+			<csg id="4867017"/>
+			<csg id="4956284"/>
+			<csg id="4867083"/>
+			<csg id="4867111"/>
+			<csg id="4867126"/>
+			<csg id="4956318"/>
+			<csg id="4867148"/>
+			<csg id="4867159"/>
+			<csg id="4743548"/>
+			<csg id="4963543"/>
+			<csg id="4963568"/>
+			<csg id="4963529"/>
+			<csg id="5069685"/>
+			<csg id="5039745"/>
+			<csg id="5039749"/>
+			<csg id="5067794"/>
+			<csg id="4867024"/>
+			<csg id="5039704" roomid="53209"/></Lesson>
+					<Lesson timeId="7">
+			<csg id="4963482"/>
+			<csg id="4963543"/>
+			<csg id="4867096"/>
+			<csg id="4866942"/>
+			<csg id="4867071"/>
+			<csg id="5079255"/>
+			<csg id="5069663"/>
+			<csg id="5067905"/></Lesson>
+					<Lesson timeId="8">
+			<csg id="4826889"/>
+			<csg id="4826908"/>
+			<csg id="4866967"/>
+			<csg id="4866994"/>
+			<csg id="4955495"/>
+			<csg id="5067868"/>
+			<csg id="4826866" roomid="53208"/></Lesson>
+					<Lesson timeId="9">
+			<csg id="4826885"/>
+			<csg id="4826907"/>
+			<csg id="4866964"/>
+			<csg id="4866984"/>
+			<csg id="4867011"/>
+			<csg id="4956267"/>
+			<csg id="5067870"/>
+			<csg id="4979780"/>
+			<csg id="4826869" roomid="53208"/></Lesson>
+					<Lesson timeId="10">
+			<csg id="4826884"/>
+			<csg id="4826917"/>
+			<csg id="4866972"/>
+			<csg id="4867008"/>
+			<csg id="4826870" roomid="53208"/></Lesson>
+					<Lesson timeId="11">
+			<csg id="4826886"/>
+			<csg id="4826903"/>
+			<csg id="4866969"/>
+			<csg id="4866991"/>
+			<csg id="4867007"/>
+			<csg id="4826867" roomid="53208"/></Lesson>
+					<Lesson timeId="12">
+			<csg id="4826901"/>
+			<csg id="4826904"/>
+			<csg id="4866974"/>
+			<csg id="4866989"/>
+			<csg id="4867003"/>
+			<csg id="4826865" roomid="53208"/></Lesson>
+					<Lesson timeId="13">
+			<csg id="4866973"/>
+			<csg id="4866986"/>
+			<csg id="4867001"/></Lesson></Day>
+				<Day id="2" name="вторник" wd="3" >
+					<Lesson timeId="1">
+			<csg id="4826774"/>
+			<csg id="4826787"/>
+			<csg id="4826828"/>
+			<csg id="4743538"/>
+			<csg id="4826803"/>
+			<csg id="4826848"/>
+			<csg id="4866917"/>
+			<csg id="4866939"/>
+			<csg id="4866953"/>
+			<csg id="4867021"/>
+			<csg id="4867048"/>
+			<csg id="4867053"/>
+			<csg id="4867077"/>
+			<csg id="4867112"/>
+			<csg id="4867130"/>
+			<csg id="4867146"/>
+			<csg id="4867163"/>
+			<csg id="4963550"/>
+			<csg id="4743550"/>
+			<csg id="4963565"/>
+			<csg id="4963548"/>
+			<csg id="4743527" roomid="53207"/>
+			<csg id="4826815" roomid="53209"/>
+			<csg id="4743515" roomid="53210"/></Lesson>
+					<Lesson timeId="2">
+			<csg id="4826784"/>
+			<csg id="4826833"/>
+			<csg id="4743535"/>
+			<csg id="4826801"/>
+			<csg id="4826846"/>
+			<csg id="4866920"/>
+			<csg id="4866938"/>
+			<csg id="4866956"/>
+			<csg id="4867021"/>
+			<csg id="4867045"/>
+			<csg id="4867054"/>
+			<csg id="4867084"/>
+			<csg id="4867115"/>
+			<csg id="4867122"/>
+			<csg id="4867142"/>
+			<csg id="4867163"/>
+			<csg id="4963550"/>
+			<csg id="4743550"/>
+			<csg id="4963565"/>
+			<csg id="4963548"/>
+			<csg id="4743526" roomid="53207"/>
+			<csg id="4826812" roomid="53209"/>
+			<csg id="4743512" roomid="53210"/>
+			<csg id="4826773" roomid="53211"/></Lesson>
+					<Lesson timeId="3">
+			<csg id="4826782"/>
+			<csg id="4826830"/>
+			<csg id="4743540"/>
+			<csg id="4826798"/>
+			<csg id="4826851"/>
+			<csg id="4866920"/>
+			<csg id="4866935"/>
+			<csg id="4932454"/>
+			<csg id="4867020"/>
+			<csg id="4867029"/>
+			<csg id="4867044"/>
+			<csg id="4867067"/>
+			<csg id="4867078"/>
+			<csg id="4867106"/>
+			<csg id="4867123"/>
+			<csg id="4867149"/>
+			<csg id="4867171"/>
+			<csg id="4963526"/>
+			<csg id="4963566"/>
+			<csg id="4963542"/>
+			<csg id="4995521"/>
+			<csg id="4963532"/>
+			<csg id="4743523" roomid="53207"/>
+			<csg id="4826817" roomid="53209"/>
+			<csg id="4743513" roomid="53210"/>
+			<csg id="4826770" roomid="53211"/></Lesson>
+					<Lesson timeId="4">
+			<csg id="4826789"/>
+			<csg id="4826834"/>
+			<csg id="4743533"/>
+			<csg id="4826802"/>
+			<csg id="4826852"/>
+			<csg id="4866918"/>
+			<csg id="4866937"/>
+			<csg id="4866951"/>
+			<csg id="4867017"/>
+			<csg id="4867034"/>
+			<csg id="4867059"/>
+			<csg id="4867088"/>
+			<csg id="4867106"/>
+			<csg id="4867129"/>
+			<csg id="4867145"/>
+			<csg id="4867168"/>
+			<csg id="4963540"/>
+			<csg id="4995521"/>
+			<csg id="4743567"/>
+			<csg id="5048163"/>
+			<csg id="4743528" roomid="53207"/>
+			<csg id="4826813" roomid="53209"/>
+			<csg id="4743517" roomid="53210"/>
+			<csg id="4826771" roomid="53211"/></Lesson>
+					<Lesson timeId="5">
+			<csg id="4826788"/>
+			<csg id="4826836"/>
+			<csg id="4826809"/>
+			<csg id="4952536"/>
+			<csg id="4826853"/>
+			<csg id="4866915"/>
+			<csg id="4955395"/>
+			<csg id="4867022"/>
+			<csg id="4867040"/>
+			<csg id="4867064"/>
+			<csg id="4867083"/>
+			<csg id="4867099"/>
+			<csg id="4867132"/>
+			<csg id="4867148"/>
+			<csg id="4867168"/>
+			<csg id="4974049"/>
+			<csg id="4974047"/>
+			<csg id="4963536"/>
+			<csg id="4867024"/>
+			<csg id="4866945"/>
+			<csg id="4826826" roomid="53209"/>
+			<csg id="4743518" roomid="53210"/>
+			<csg id="4826775" roomid="53211"/></Lesson>
+					<Lesson timeId="6">
+			<csg id="4826854"/>
+			<csg id="4866921"/>
+			<csg id="4866962"/>
+			<csg id="4963426"/>
+			<csg id="4956271"/>
+			<csg id="4867040"/>
+			<csg id="4867064"/>
+			<csg id="4867092"/>
+			<csg id="4956299"/>
+			<csg id="4867112"/>
+			<csg id="4867132"/>
+			<csg id="4867148"/>
+			<csg id="4867158"/>
+			<csg id="4743547"/>
+			<csg id="4963564"/>
+			<csg id="4963537"/>
+			<csg id="4963532"/>
+			<csg id="5069689"/>
+			<csg id="5072589"/>
+			<csg id="5072590"/>
+			<csg id="4866960"/>
+			<csg id="4991916"/>
+			<csg id="5039673"/>
+			<csg id="4826818" roomid="53209"/></Lesson>
+					<Lesson timeId="7">
+			<csg id="4867085"/>
+			<csg id="4963479"/>
+			<csg id="4867135"/>
+			<csg id="5069684"/>
+			<csg id="4867094"/>
+			<csg id="5067871"/>
+			<csg id="5072539"/>
+			<csg id="5067838"/>
+			<csg id="5069687"/>
+			<csg id="4867119"/></Lesson>
+					<Lesson timeId="8">
+			<csg id="4826885"/>
+			<csg id="4826906"/>
+			<csg id="4866977"/>
+			<csg id="4955475"/>
+			<csg id="4866987"/>
+			<csg id="4867003"/>
+			<csg id="4826869" roomid="53208"/></Lesson>
+					<Lesson timeId="9">
+			<csg id="4826888"/>
+			<csg id="4826906"/>
+			<csg id="4866974"/>
+			<csg id="4866994"/>
+			<csg id="4955495"/>
+			<csg id="4867003"/>
+			<csg id="5069688"/>
+			<csg id="4993541"/>
+			<csg id="4826866" roomid="53208"/></Lesson>
+					<Lesson timeId="10">
+			<csg id="4826887"/>
+			<csg id="4826908"/>
+			<csg id="4866969"/>
+			<csg id="4866991"/>
+			<csg id="4867011"/>
+			<csg id="4956267"/>
+			<csg id="4826871" roomid="53208"/></Lesson>
+					<Lesson timeId="11">
+			<csg id="4826898"/>
+			<csg id="4953098"/>
+			<csg id="4826907"/>
+			<csg id="4866969"/>
+			<csg id="4866990"/>
+			<csg id="4867008"/>
+			<csg id="4826868" roomid="53227"/></Lesson>
+					<Lesson timeId="12">
+			<csg id="4826889"/>
+			<csg id="4826904"/>
+			<csg id="4866974"/>
+			<csg id="4866986"/>
+			<csg id="4867004"/>
+			<csg id="4826879" roomid="53208"/>
+			<csg id="4953089" roomid="53277"/></Lesson>
+					<Lesson timeId="13">
+			<csg id="4866970"/>
+			<csg id="4866986"/>
+			<csg id="4826874" roomid="53208"/></Lesson></Day>
+				<Day id="3" name="среда" wd="4" >
+					<Lesson timeId="1">
+			<csg id="4826774"/>
+			<csg id="4826787"/>
+			<csg id="4826842"/>
+			<csg id="4952679"/>
+			<csg id="4743538"/>
+			<csg id="4826800"/>
+			<csg id="4826850"/>
+			<csg id="4866917"/>
+			<csg id="4866939"/>
+			<csg id="4866951"/>
+			<csg id="4867026"/>
+			<csg id="4867042"/>
+			<csg id="4958000"/>
+			<csg id="4867060"/>
+			<csg id="4867076"/>
+			<csg id="4867110"/>
+			<csg id="4867125"/>
+			<csg id="4867145"/>
+			<csg id="4867164"/>
+			<csg id="4993557"/>
+			<csg id="4963546"/>
+			<csg id="4743567"/>
+			<csg id="5048163"/>
+			<csg id="4743527" roomid="53207"/>
+			<csg id="4826812" roomid="53209"/>
+			<csg id="4743515" roomid="53210"/></Lesson>
+					<Lesson timeId="2">
+			<csg id="4826795"/>
+			<csg id="4949193"/>
+			<csg id="4826830"/>
+			<csg id="4743539"/>
+			<csg id="4826802"/>
+			<csg id="4826850"/>
+			<csg id="4866922"/>
+			<csg id="4866944"/>
+			<csg id="4866951"/>
+			<csg id="4867025"/>
+			<csg id="4867042"/>
+			<csg id="4958000"/>
+			<csg id="4867060"/>
+			<csg id="4867079"/>
+			<csg id="4867107"/>
+			<csg id="4867131"/>
+			<csg id="4867145"/>
+			<csg id="4867166"/>
+			<csg id="4962941"/>
+			<csg id="4963531"/>
+			<csg id="4993560"/>
+			<csg id="4963563"/>
+			<csg id="4963543"/>
+			<csg id="4963567"/>
+			<csg id="4993677"/>
+			<csg id="4743526" roomid="53207"/>
+			<csg id="4826815" roomid="53209"/>
+			<csg id="4826770" roomid="53211"/>
+			<csg id="4743514" roomid="53227"/></Lesson>
+					<Lesson timeId="3">
+			<csg id="4826786"/>
+			<csg id="4826833"/>
+			<csg id="4743535"/>
+			<csg id="4826801"/>
+			<csg id="4826860"/>
+			<csg id="4953086"/>
+			<csg id="4866927"/>
+			<csg id="4955343"/>
+			<csg id="4866934"/>
+			<csg id="4866948"/>
+			<csg id="4867043"/>
+			<csg id="4867056"/>
+			<csg id="4867083"/>
+			<csg id="4867108"/>
+			<csg id="4867127"/>
+			<csg id="4867149"/>
+			<csg id="4867169"/>
+			<csg id="4963531"/>
+			<csg id="4963561"/>
+			<csg id="4963546"/>
+			<csg id="4867032"/>
+			<csg id="4826816" roomid="53209"/>
+			<csg id="4743512" roomid="53210"/>
+			<csg id="4928876" roomid="53211"/>
+			<csg id="4743525" roomid="53227"/></Lesson>
+					<Lesson timeId="4">
+			<csg id="4826784"/>
+			<csg id="4826834"/>
+			<csg id="4743537"/>
+			<csg id="4826798"/>
+			<csg id="4826848"/>
+			<csg id="4866934"/>
+			<csg id="4866947"/>
+			<csg id="4867016"/>
+			<csg id="4867046"/>
+			<csg id="4867065"/>
+			<csg id="4867083"/>
+			<csg id="4958083"/>
+			<csg id="4867127"/>
+			<csg id="4867143"/>
+			<csg id="4867167"/>
+			<csg id="4743554"/>
+			<csg id="4963563"/>
+			<csg id="4963543"/>
+			<csg id="4963564"/>
+			<csg id="5081332"/>
+			<csg id="4866925"/>
+			<csg id="4963567"/>
+			<csg id="4993677"/>
+			<csg id="4743523" roomid="53207"/>
+			<csg id="4743516" roomid="53210"/>
+			<csg id="4866912" roomid="53211"/>
+			<csg id="4826814" roomid="53227"/>
+			<csg id="4929093" roomid="53277"/></Lesson>
+					<Lesson timeId="5">
+			<csg id="4826788"/>
+			<csg id="4826835"/>
+			<csg id="4743536"/>
+			<csg id="4826804"/>
+			<csg id="4826855"/>
+			<csg id="4866913"/>
+			<csg id="4866941"/>
+			<csg id="4866956"/>
+			<csg id="4867021"/>
+			<csg id="4867041"/>
+			<csg id="4867075"/>
+			<csg id="4867089"/>
+			<csg id="4867112"/>
+			<csg id="4867135"/>
+			<csg id="4956318"/>
+			<csg id="4867141"/>
+			<csg id="4867160"/>
+			<csg id="4743554"/>
+			<csg id="4963539"/>
+			<csg id="4963564"/>
+			<csg id="4963569"/>
+			<csg id="5081332"/>
+			<csg id="4743530" roomid="53207"/>
+			<csg id="4826824" roomid="53209"/>
+			<csg id="4743519" roomid="53210"/>
+			<csg id="4826772" roomid="53227"/>
+			<csg id="4952656" roomid="53277"/></Lesson>
+					<Lesson timeId="6">
+			<csg id="4826794"/>
+			<csg id="4826838"/>
+			<csg id="4826808"/>
+			<csg id="4866922"/>
+			<csg id="4866955"/>
+			<csg id="4867021"/>
+			<csg id="4867045"/>
+			<csg id="4867069"/>
+			<csg id="4956284"/>
+			<csg id="4867092"/>
+			<csg id="4867087"/>
+			<csg id="4867113"/>
+			<csg id="4867130"/>
+			<csg id="4867153"/>
+			<csg id="4963539"/>
+			<csg id="4993608"/>
+			<csg id="4963569"/>
+			<csg id="4974038"/>
+			<csg id="5079256"/>
+			<csg id="4932453"/>
+			<csg id="4826820" roomid="53209"/>
+			<csg id="4826778" roomid="53211"/></Lesson>
+					<Lesson timeId="7">
+			<csg id="4958042"/>
+			<csg id="4958062"/>
+			<csg id="4867130"/>
+			<csg id="4867140"/>
+			<csg id="4993541"/>
+			<csg id="4963541"/>
+			<csg id="4963529"/>
+			<csg id="4867049"/></Lesson>
+					<Lesson timeId="8">
+			<csg id="4826888"/>
+			<csg id="4826910"/>
+			<csg id="4866966"/>
+			<csg id="4866992"/>
+			<csg id="4867011"/>
+			<csg id="4956267"/>
+			<csg id="4826866" roomid="53208"/></Lesson>
+					<Lesson timeId="9">
+			<csg id="4826891"/>
+			<csg id="4826909"/>
+			<csg id="4866973"/>
+			<csg id="4866983"/>
+			<csg id="4867008"/>
+			<csg id="4867136"/>
+			<csg id="4826869" roomid="53208"/></Lesson>
+					<Lesson timeId="10">
+			<csg id="4826885"/>
+			<csg id="4826902"/>
+			<csg id="4866974"/>
+			<csg id="4866991"/>
+			<csg id="4867003"/>
+			<csg id="4826870" roomid="53208"/></Lesson>
+					<Lesson timeId="11">
+			<csg id="4826883"/>
+			<csg id="4826907"/>
+			<csg id="4866972"/>
+			<csg id="4866986"/>
+			<csg id="4867008"/>
+			<csg id="4826872" roomid="53208"/></Lesson>
+					<Lesson timeId="12">
+			<csg id="4826890"/>
+			<csg id="4826904"/>
+			<csg id="4866969"/>
+			<csg id="4866989"/>
+			<csg id="4867009"/>
+			<csg id="4826864" roomid="53208"/></Lesson>
+					<Lesson timeId="13">
+			<csg id="4826893"/>
+			<csg id="4826912"/>
+			<csg id="4866975"/>
+			<csg id="4866990"/>
+			<csg id="4867000"/>
+			<csg id="4826877" roomid="53208"/></Lesson></Day>
+				<Day id="4" name="четверг" wd="5" >
+					<Lesson timeId="1">
+			<csg id="4826784"/>
+			<csg id="4826829"/>
+			<csg id="4743538"/>
+			<csg id="4928878"/>
+			<csg id="4826852"/>
+			<csg id="4866917"/>
+			<csg id="4866937"/>
+			<csg id="4866951"/>
+			<csg id="4867026"/>
+			<csg id="4867051"/>
+			<csg id="4867062"/>
+			<csg id="4867079"/>
+			<csg id="4867115"/>
+			<csg id="4867150"/>
+			<csg id="4867163"/>
+			<csg id="4743553"/>
+			<csg id="4963565"/>
+			<csg id="4963547"/>
+			<csg id="4743523" roomid="53207"/>
+			<csg id="4826815" roomid="53209"/>
+			<csg id="4743510" roomid="53210"/>
+			<csg id="4826775" roomid="53211"/></Lesson>
+					<Lesson timeId="2">
+			<csg id="4826787"/>
+			<csg id="4826833"/>
+			<csg id="4743539"/>
+			<csg id="4826798"/>
+			<csg id="4826847"/>
+			<csg id="4866920"/>
+			<csg id="4866934"/>
+			<csg id="4866956"/>
+			<csg id="4867025"/>
+			<csg id="4867040"/>
+			<csg id="4867056"/>
+			<csg id="4867084"/>
+			<csg id="4867119"/>
+			<csg id="4867123"/>
+			<csg id="4867150"/>
+			<csg id="4867171"/>
+			<csg id="4743547"/>
+			<csg id="4963531"/>
+			<csg id="4963565"/>
+			<csg id="4963547"/>
+			<csg id="4963529"/>
+			<csg id="4743521" roomid="53207"/>
+			<csg id="4826812" roomid="53209"/>
+			<csg id="4743515" roomid="53210"/>
+			<csg id="4826773" roomid="53211"/></Lesson>
+					<Lesson timeId="3">
+			<csg id="4826783"/>
+			<csg id="4826830"/>
+			<csg id="4743540"/>
+			<csg id="4826796"/>
+			<csg id="4826848"/>
+			<csg id="4866931"/>
+			<csg id="4866956"/>
+			<csg id="4867048"/>
+			<csg id="4867066"/>
+			<csg id="4867087"/>
+			<csg id="4867106"/>
+			<csg id="4867128"/>
+			<csg id="4867142"/>
+			<csg id="4867173"/>
+			<csg id="4963526"/>
+			<csg id="4963542"/>
+			<csg id="4995526"/>
+			<csg id="4963532"/>
+			<csg id="5040644"/>
+			<csg id="4743526" roomid="53207"/>
+			<csg id="4826816" roomid="53209"/>
+			<csg id="4743512" roomid="53210"/>
+			<csg id="4826770" roomid="53211"/></Lesson>
+					<Lesson timeId="4">
+			<csg id="4826789"/>
+			<csg id="4826834"/>
+			<csg id="4743534"/>
+			<csg id="4826803"/>
+			<csg id="4826851"/>
+			<csg id="4866914"/>
+			<csg id="4866934"/>
+			<csg id="4867036"/>
+			<csg id="4867066"/>
+			<csg id="4867087"/>
+			<csg id="4867106"/>
+			<csg id="4867124"/>
+			<csg id="4867145"/>
+			<csg id="4867167"/>
+			<csg id="4743551"/>
+			<csg id="4963554"/>
+			<csg id="5068816"/>
+			<csg id="4963529"/>
+			<csg id="4743528" roomid="53207"/>
+			<csg id="4826821" roomid="53209"/>
+			<csg id="4743516" roomid="53210"/>
+			<csg id="4826768" roomid="53211"/></Lesson>
+					<Lesson timeId="5">
+			<csg id="4826831"/>
+			<csg id="4743542"/>
+			<csg id="4826809"/>
+			<csg id="4952536"/>
+			<csg id="4826849"/>
+			<csg id="4866921"/>
+			<csg id="4866922"/>
+			<csg id="4866933"/>
+			<csg id="4866954"/>
+			<csg id="4867017"/>
+			<csg id="4867045"/>
+			<csg id="4867054"/>
+			<csg id="4867083"/>
+			<csg id="4867101"/>
+			<csg id="4867132"/>
+			<csg id="4867146"/>
+			<csg id="4867163"/>
+			<csg id="4974047"/>
+			<csg id="4963540"/>
+			<csg id="5079239"/>
+			<csg id="4991917"/>
+			<csg id="4826810" roomid="53209"/>
+			<csg id="4743517" roomid="53210"/></Lesson>
+					<Lesson timeId="6">
+			<csg id="4826844"/>
+			<csg id="4826862"/>
+			<csg id="4866916"/>
+			<csg id="4866939"/>
+			<csg id="4866954"/>
+			<csg id="4867029"/>
+			<csg id="4956271"/>
+			<csg id="4867040"/>
+			<csg id="4867055"/>
+			<csg id="4956299"/>
+			<csg id="4867111"/>
+			<csg id="4867137"/>
+			<csg id="4867145"/>
+			<csg id="4867160"/>
+			<csg id="4962941"/>
+			<csg id="4743551"/>
+			<csg id="4995502"/>
+			<csg id="5079240"/>
+			<csg id="4866978"/>
+			<csg id="5039672"/>
+			<csg id="4826896"/>
+			<csg id="4867134"/>
+			<csg id="4866961"/></Lesson>
+					<Lesson timeId="7">
+			<csg id="4867155"/>
+			<csg id="4963543"/>
+			<csg id="4995463"/>
+			<csg id="4963569"/>
+			<csg id="4963532"/>
+			<csg id="4867098"/>
+			<csg id="5079253"/>
+			<csg id="4993677"/>
+			<csg id="4867030"/></Lesson>
+					<Lesson timeId="8">
+			<csg id="4826888"/>
+			<csg id="4826908"/>
+			<csg id="4955472"/>
+			<csg id="4866968"/>
+			<csg id="4955487"/>
+			<csg id="4867008"/>
+			<csg id="4826866" roomid="53208"/></Lesson>
+					<Lesson timeId="9">
+			<csg id="4826885"/>
+			<csg id="4826907"/>
+			<csg id="4866977"/>
+			<csg id="4955475"/>
+			<csg id="4866991"/>
+			<csg id="4957977"/>
+			<csg id="4867002"/>
+			<csg id="5069683"/>
+			<csg id="5072494"/>
+			<csg id="4963527"/>
+			<csg id="4867134"/>
+			<csg id="4826868" roomid="53227"/></Lesson>
+					<Lesson timeId="10">
+			<csg id="4826887"/>
+			<csg id="4826904"/>
+			<csg id="4866974"/>
+			<csg id="4866994"/>
+			<csg id="4955495"/>
+			<csg id="4867005"/>
+			<csg id="4963405"/>
+			<csg id="4826871" roomid="53208"/></Lesson>
+					<Lesson timeId="11">
+			<csg id="4826898"/>
+			<csg id="4953098"/>
+			<csg id="4826905"/>
+			<csg id="4866972"/>
+			<csg id="4866985"/>
+			<csg id="4867003"/>
+			<csg id="4826869" roomid="53208"/></Lesson>
+					<Lesson timeId="12">
+			<csg id="4826889"/>
+			<csg id="4826920"/>
+			<csg id="4866971"/>
+			<csg id="4963275"/>
+			<csg id="4866986"/>
+			<csg id="4867006"/>
+			<csg id="4826879" roomid="53208"/>
+			<csg id="4953089" roomid="53277"/></Lesson>
+					<Lesson timeId="13">
+			<csg id="4826915"/>
+			<csg id="4866969"/>
+			<csg id="4866988"/>
+			<csg id="4963277"/>
+			<csg id="4867006"/>
+			<csg id="4866995"/>
+			<csg id="4866993"/></Lesson></Day>
+				<Day id="5" name="пятница" wd="6" >
+					<Lesson timeId="1">
+			<csg id="4826774"/>
+			<csg id="4826786"/>
+			<csg id="4826830"/>
+			<csg id="4743538"/>
+			<csg id="4826802"/>
+			<csg id="4826853"/>
+			<csg id="4866917"/>
+			<csg id="4866939"/>
+			<csg id="4866956"/>
+			<csg id="4867022"/>
+			<csg id="4867048"/>
+			<csg id="4867057"/>
+			<csg id="4867090"/>
+			<csg id="4867106"/>
+			<csg id="4867143"/>
+			<csg id="4867166"/>
+			<csg id="4963551"/>
+			<csg id="5038917"/>
+			<csg id="4963539"/>
+			<csg id="4974047"/>
+			<csg id="4963562"/>
+			<csg id="4826812" roomid="53209"/>
+			<csg id="4743511" roomid="53210"/>
+			<csg id="4743525" roomid="53227"/></Lesson>
+					<Lesson timeId="2">
+			<csg id="4826786"/>
+			<csg id="4826834"/>
+			<csg id="4743535"/>
+			<csg id="4826800"/>
+			<csg id="4826848"/>
+			<csg id="4866927"/>
+			<csg id="4955343"/>
+			<csg id="4866938"/>
+			<csg id="4866955"/>
+			<csg id="4867021"/>
+			<csg id="4867040"/>
+			<csg id="4867061"/>
+			<csg id="4867080"/>
+			<csg id="4867110"/>
+			<csg id="4867125"/>
+			<csg id="4867151"/>
+			<csg id="4867171"/>
+			<csg id="4963551"/>
+			<csg id="5038917"/>
+			<csg id="4963539"/>
+			<csg id="4963564"/>
+			<csg id="4963568"/>
+			<csg id="4743522" roomid="53207"/>
+			<csg id="4826816" roomid="53209"/>
+			<csg id="4743515" roomid="53210"/>
+			<csg id="4826770" roomid="53211"/></Lesson>
+					<Lesson timeId="3">
+			<csg id="4826784"/>
+			<csg id="4826832"/>
+			<csg id="4743539"/>
+			<csg id="4826797"/>
+			<csg id="4826852"/>
+			<csg id="4866922"/>
+			<csg id="4866935"/>
+			<csg id="4867026"/>
+			<csg id="4867043"/>
+			<csg id="4867069"/>
+			<csg id="4956284"/>
+			<csg id="4867079"/>
+			<csg id="4867115"/>
+			<csg id="4867122"/>
+			<csg id="4867150"/>
+			<csg id="4867163"/>
+			<csg id="4963526"/>
+			<csg id="4963564"/>
+			<csg id="4963542"/>
+			<csg id="4963532"/>
+			<csg id="4866961"/>
+			<csg id="4743526" roomid="53207"/>
+			<csg id="4826817" roomid="53209"/>
+			<csg id="4826777" roomid="53211"/>
+			<csg id="4743514" roomid="53227"/></Lesson>
+					<Lesson timeId="4">
+			<csg id="4826788"/>
+			<csg id="4826835"/>
+			<csg id="4743537"/>
+			<csg id="4826798"/>
+			<csg id="4826851"/>
+			<csg id="4866918"/>
+			<csg id="4866932"/>
+			<csg id="4866951"/>
+			<csg id="4867029"/>
+			<csg id="4956271"/>
+			<csg id="4867060"/>
+			<csg id="4867092"/>
+			<csg id="4956299"/>
+			<csg id="4867107"/>
+			<csg id="4867132"/>
+			<csg id="4867145"/>
+			<csg id="4867158"/>
+			<csg id="4962941"/>
+			<csg id="4963531"/>
+			<csg id="4963555"/>
+			<csg id="4995463"/>
+			<csg id="5072588"/>
+			<csg id="4743527" roomid="53207"/>
+			<csg id="4826811" roomid="53209"/>
+			<csg id="4743516" roomid="53210"/>
+			<csg id="4826772" roomid="53227"/></Lesson>
+					<Lesson timeId="5">
+			<csg id="4826785"/>
+			<csg id="4826839"/>
+			<csg id="4826799"/>
+			<csg id="4826857"/>
+			<csg id="4866934"/>
+			<csg id="4866952"/>
+			<csg id="4867023"/>
+			<csg id="4956270"/>
+			<csg id="4867034"/>
+			<csg id="4867066"/>
+			<csg id="4867082"/>
+			<csg id="4867102"/>
+			<csg id="4867135"/>
+			<csg id="4956318"/>
+			<csg id="4867145"/>
+			<csg id="4867164"/>
+			<csg id="4962941"/>
+			<csg id="4963531"/>
+			<csg id="4995502"/>
+			<csg id="4963555"/>
+			<csg id="4866928"/>
+			<csg id="5039747"/>
+			<csg id="4743524" roomid="53207"/>
+			<csg id="4826769" roomid="53211"/>
+			<csg id="4826814" roomid="53227"/></Lesson>
+					<Lesson timeId="6">
+			<csg id="4866944"/>
+			<csg id="4866958"/>
+			<csg id="4867023"/>
+			<csg id="4956270"/>
+			<csg id="4867041"/>
+			<csg id="4867064"/>
+			<csg id="4867089"/>
+			<csg id="4867099"/>
+			<csg id="4867127"/>
+			<csg id="4867153"/>
+			<csg id="4936528"/>
+			<csg id="4867161"/>
+			<csg id="5072515"/>
+			<csg id="4974038"/>
+			<csg id="4932452"/>
+			<csg id="5072506"/></Lesson>
+					<Lesson timeId="7">
+			<csg id="4867069"/>
+			<csg id="4963450"/>
+			<csg id="4936527"/>
+			<csg id="4936528"/>
+			<csg id="5079254"/>
+			<csg id="5079249"/>
+			<csg id="5069686"/>
+			<csg id="4866959"/>
+			<csg id="5069662"/>
+			<csg id="4867121"/></Lesson>
+					<Lesson timeId="8">
+			<csg id="4826888"/>
+			<csg id="4826909"/>
+			<csg id="4866977"/>
+			<csg id="4955475"/>
+			<csg id="4866987"/>
+			<csg id="4867008"/>
+			<csg id="4936527"/>
+			<csg id="4826870" roomid="53208"/></Lesson>
+					<Lesson timeId="9">
+			<csg id="4826887"/>
+			<csg id="4826917"/>
+			<csg id="4866971"/>
+			<csg id="4866991"/>
+			<csg id="4867007"/>
+			<csg id="5101447"/>
+			<csg id="5101481"/>
+			<csg id="5069691"/>
+			<csg id="4826866" roomid="53208"/></Lesson>
+					<Lesson timeId="10">
+			<csg id="4826885"/>
+			<csg id="4826904"/>
+			<csg id="4955472"/>
+			<csg id="4866988"/>
+			<csg id="4955487"/>
+			<csg id="4867006"/>
+			<csg id="4826868" roomid="53227"/></Lesson>
+					<Lesson timeId="11">
+			<csg id="4826890"/>
+			<csg id="4826906"/>
+			<csg id="4866974"/>
+			<csg id="4866991"/>
+			<csg id="4866999"/></Lesson>
+					<Lesson timeId="12">
+			<csg id="4866965"/>
+			<csg id="4866989"/>
+			<csg id="4867004"/>
+			<csg id="4826882" roomid="53208"/></Lesson>
+					<Lesson timeId="13">
+			<csg id="4866970"/>
+			<csg id="4866982"/>
+			<csg id="4957977"/>
+			<csg id="5040546"/></Lesson></Day>
+				<Day id="6" name="суббота" wd="7" >
+					<Lesson timeId="1">
+			<csg id="4866917"/>
+			<csg id="4866939"/>
+			<csg id="4866969"/>
+			<csg id="4866991"/>
+			<csg id="4866998"/>
+			<csg id="4867008"/>
+			<csg id="4867015"/>
+			<csg id="4867040"/>
+			<csg id="4867061"/>
+			<csg id="4867081"/>
+			<csg id="4867105"/>
+			<csg id="4867133"/>
+			<csg id="4867141"/>
+			<csg id="4867165"/>
+			<csg id="4743554"/>
+			<csg id="4963565"/>
+			<csg id="5081332"/></Lesson>
+					<Lesson timeId="2">
+			<csg id="4866922"/>
+			<csg id="4866938"/>
+			<csg id="4866954"/>
+			<csg id="4866974"/>
+			<csg id="4866981"/>
+			<csg id="4866990"/>
+			<csg id="4867003"/>
+			<csg id="4867027"/>
+			<csg id="4867038"/>
+			<csg id="4867060"/>
+			<csg id="4867078"/>
+			<csg id="4867100"/>
+			<csg id="4867128"/>
+			<csg id="4867140"/>
+			<csg id="4867162"/>
+			<csg id="4963565"/>
+			<csg id="5072512"/></Lesson>
+					<Lesson timeId="3">
+			<csg id="4866921"/>
+			<csg id="4866937"/>
+			<csg id="4866950"/>
+			<csg id="4866973"/>
+			<csg id="4866986"/>
+			<csg id="4867005"/>
+			<csg id="4867026"/>
+			<csg id="4867039"/>
+			<csg id="4867063"/>
+			<csg id="4867088"/>
+			<csg id="4867103"/>
+			<csg id="4867127"/>
+			<csg id="4867142"/>
+			<csg id="4867159"/>
+			<csg id="4963562"/>
+			<csg id="4963555"/>
+			<csg id="4963532"/>
+			<csg id="4963529"/></Lesson>
+					<Lesson timeId="4">
+			<csg id="4866949"/>
+			<csg id="4867007"/>
+			<csg id="4867026"/>
+			<csg id="4867035"/>
+			<csg id="4867065"/>
+			<csg id="4867086"/>
+			<csg id="4867104"/>
+			<csg id="4867124"/>
+			<csg id="4867146"/>
+			<csg id="4867164"/>
+			<csg id="4974049"/>
+			<csg id="4963568"/>
+			<csg id="4995521"/>
+			<csg id="4955395"/>
+			<csg id="4866976"/>
+			<csg id="5040545"/>
+			<csg id="4993677"/></Lesson>
+					<Lesson timeId="5">
+			<csg id="4867037"/>
+			<csg id="4867058"/>
+			<csg id="4867083"/>
+			<csg id="4867106"/>
+			<csg id="4867131"/>
+			<csg id="4867147"/>
+			<csg id="4867168"/>
+			<csg id="4963540"/>
+			<csg id="4963529"/>
+			<csg id="4867024"/></Lesson>
+					<Lesson timeId="6">
+			<csg id="4867019"/>
+			<csg id="4867045"/>
+			<csg id="4867109"/>
+			<csg id="4936527"/>
+			<csg id="4867149"/>
+			<csg id="4867163"/>
+			<csg id="5040544"/>
+			<csg id="4867010"/>
+			<csg id="4867073"/></Lesson>
+					<Lesson timeId="7">
+			<csg id="4936528"/></Lesson></Day>
+		</Week>
+	</TimeTable>
+
+</TimeTableExchange>
