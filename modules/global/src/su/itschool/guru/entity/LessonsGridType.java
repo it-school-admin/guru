@@ -11,6 +11,7 @@ import javax.validation.constraints.NotNull;
 @Table(name = "GURU_LESSONS_GRID")
 @Entity(name = "guru_LessonsGrid")
 @NamePattern("%s|lessonsGridTypeName")
+//todo rename to LessonsGrid
 public class LessonsGridType extends StandardEntity {
     private static final long serialVersionUID = 2345773260521548188L;
 
