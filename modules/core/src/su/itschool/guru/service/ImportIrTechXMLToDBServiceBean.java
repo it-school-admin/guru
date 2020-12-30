@@ -23,9 +23,6 @@ import java.util.*;
 //TODO very bad code. Rewrite all!!!
 @Service(ImportIrTechXMLToDBService.NAME)
 public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBService {
-
-
-
     @Inject
     private DataManager dataManager;
     @Inject

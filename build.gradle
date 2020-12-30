@@ -1,5 +1,5 @@
 buildscript {
-    ext.cubaVersion = '7.2.10'
+    ext.cubaVersion = '7.2.11'
     repositories {
         maven {
             url 'https://dl.bintray.com/cuba-platform/main'
@@ -47,6 +47,7 @@ configure([globalModule, coreModule, webModule]) {
         testCompile('org.junit.jupiter:junit-jupiter-api:5.5.2')
         testCompile('org.junit.jupiter:junit-jupiter-engine:5.5.2')
         testCompile('org.junit.vintage:junit-vintage-engine:5.5.2')
+        testCompile('org.mockito:mockito-core:2.+')
     }
 
     task sourceJar(type: Jar) {
