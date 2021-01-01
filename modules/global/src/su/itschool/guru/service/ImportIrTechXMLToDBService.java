@@ -10,4 +10,6 @@ public interface ImportIrTechXMLToDBService {
     String NAME = "guru_ImportIrTechXMLToDBService";
 
     List<StandardEntity> parseIrTechXML(TimeTableImport timeTableImport, LessonsGridType lessonsGridType);
+
+    void importData(ImportSettings importSettings);
 }

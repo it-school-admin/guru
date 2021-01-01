@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://irtechImportFirstDialog.caption"
+        messagesPack="su.itschool.guru.web.screens.importdialogs.irtechdialogs">
+    <data>
+        <collection id="lessonsGridTypesDc" class="su.itschool.guru.entity.LessonsGridType">
+            <view extends="_local"/>
+            <loader id="lessonsGridTypesDl">
+                <query>
+                    <![CDATA[select e from guru_LessonsGrid e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout spacing="true">
+        <upload id="importedFileField" clearButtonCaption="msg://upload.clearButtonCaption" showFileName="true" showClearButton="true"
+                uploadButtonCaption="msg://upload.uploadButtonCaption" caption="msg://importedFile.caption"/>
+        <checkBox id="importLessonsGrid" caption="msg://checkBox.caption"/>
+        <lookupPickerField id="lessonsGrid" caption="msg://lessonsGrid.caption" optionsContainer="lessonsGridTypesDc"/>
+        <checkBox id="importSubjects" caption="msg://importSubjects.caption"/>
+        <checkBox id="importTeachers" caption="msg://importTeachers.caption"/>
+        <checkBox id="importRooms" caption="msg://importRooms.caption"/>
+        <checkBox id="importClasses" caption="msg://importClasses.caption"/>
+        <checkBox id="importStudyPlan" caption="msg://importStudyPlan.caption"/>
+        <textField id="timeTableTemplateNameField" caption="msg://timeTableTemplateNameField.caption"/>
+        <buttonsPanel>
+            <button id="submitBtn" caption="msg://button.caption"/>
+            <button id="cancelBtn" caption="msg://button.caption_1"/>
+        </buttonsPanel>
+    </layout>
+</window>

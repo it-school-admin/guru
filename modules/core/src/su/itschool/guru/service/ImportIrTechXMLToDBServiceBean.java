@@ -55,6 +55,11 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
         return null;
     }
 
+    @Override
+    public void importData(ImportSettings importSettings) {
+
+    }
+
     private Map<Integer, Integer> fillLessonsIDsMap(Element rootElement) {
 
         Map<Integer, Integer> lessonIDtoNumberMap = new HashMap<Integer, Integer>();

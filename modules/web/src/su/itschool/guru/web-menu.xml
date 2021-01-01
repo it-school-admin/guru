@@ -25,7 +25,6 @@
             <item screen="guru_School.browse" caption="mainMsg://menu_config.guru_School.browse"/>
         </menu>
         <menu id="guides" caption="mainMsg://menu_config.guides">
-            <item screen="guru_EdSchoolClassImportExecutorucationalYear.browse" caption="mainMsg://menu_config.guru_EducationalYear.browse"/>
             <item screen="guru_EducationalPeriod.browse" caption="mainMsg://menu_config.guru_EducationalPeriod.browse"/>
             <item screen="guru_AcademicHolidays.browse" caption="mainMsg://menu_config.guru_AcademicHolidays.browse"/>
             <item screen="guru_Holiday.browse" caption="mainMsg://menu_config.guru_Holiday.browse"/>
