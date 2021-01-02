@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://irtechFileImportDialog.caption"
+        messagesPack="su.itschool.guru.web.screens.importdialogs.irtechdialogs">
+    <layout>
+        <upload id="importedFileField" clearButtonCaption="msg://upload.clearButtonCaption" showFileName="true" showClearButton="true"
+                uploadButtonCaption="msg://upload.uploadButtonCaption" caption="msg://importedFile.caption"/>
+        <buttonsPanel>
+            <button id="submitBtn" caption="msg://button.caption"/>
+            <button id="cancelBtn" caption="msg://button.caption_1"/>
+        </buttonsPanel>
+    </layout>
+</window>

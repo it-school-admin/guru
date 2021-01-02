@@ -5,6 +5,7 @@ import com.haulmont.cuba.gui.screen.CloseAction;
 import com.haulmont.cuba.gui.screen.Screen;
 import su.itschool.guru.service.ImportIrTechXMLToDBService;
 import su.itschool.guru.service.ImportSettings;
+import su.itschool.guru.web.screens.importdialogs.irtechdialogs.IrtechImportFirstDialog;
 import su.itschool.guru.web.screens.importdialogs.irtechdialogs.IrtechImportSecondDialog;
 
 import static com.haulmont.cuba.gui.screen.OpenMode.DIALOG;
@@ -60,13 +61,55 @@ public class IrTechImportSettingsProvider {
     }
 
     public void startImport() {
+        askToLoadFile();
 
-        Screen irtechImportFirstDialog = screens.create("guru_IrtechImportFirstDialog", DIALOG);
+/*        Screen irtechImportFirstDialog = screens.create("guru_IrtechImportFirstDialog", DIALOG);
 
         irtechImportFirstDialog.addAfterCloseListener(afterCloseEvent -> {
             CloseAction closeAction = afterCloseEvent.getCloseAction();
 
             if(closeAction instanceof IrTechImportSettingsProvider.IrTechImportAction)
+            {
+                IrTechImportAction importAction = (IrTechImportAction) closeAction;
+                if(importAction.getActionResult() == SUBMITTED)
+                {
+                    askAboutSchoolClassesAndImportIfNeed(importAction.getImportSettings());
+                }
+            }
+
+        });
+        irtechImportFirstDialog.show();*/
+    }
+
+    private void askToLoadFile() {
+        Screen irtechFileImportDialog = screens.create("guru_IrtechFileImportDialog", DIALOG);
+
+        irtechFileImportDialog.addAfterCloseListener(afterCloseEvent -> {
+            CloseAction closeAction = afterCloseEvent.getCloseAction();
+
+            if(closeAction instanceof IrTechImportSettingsProvider.IrTechImportAction)
+            {
+                IrTechImportAction importAction = (IrTechImportAction) closeAction;
+                if(importAction.getActionResult() == SUBMITTED)
+                {
+
+                    askAboutMainSettings(importAction.getImportSettings());
+                }
+            }
+
+        });
+        irtechFileImportDialog.show();
+    }
+
+    private void askAboutMainSettings(ImportSettings importSettings) {
+        IrtechImportFirstDialog irtechImportFirstDialog = (IrtechImportFirstDialog) screens.create("guru_IrtechImportFirstDialog", DIALOG);
+
+        irtechImportFirstDialog.setImportSettings(importSettings);
+
+        irtechImportFirstDialog.addAfterCloseListener(afterCloseEvent -> {
+            CloseAction closeAction = afterCloseEvent.getCloseAction();
+
+            if(closeAction instanceof IrTechImportAction)
             {
                 IrTechImportAction importAction = (IrTechImportAction) closeAction;
                 if(importAction.getActionResult() == SUBMITTED)

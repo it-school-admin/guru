@@ -13,8 +13,6 @@
         </collection>
     </data>
     <layout spacing="true">
-        <upload id="importedFileField" clearButtonCaption="msg://upload.clearButtonCaption" showFileName="true" showClearButton="true"
-                uploadButtonCaption="msg://upload.uploadButtonCaption" caption="msg://importedFile.caption"/>
         <checkBox id="importLessonsGrid" caption="msg://checkBox.caption"/>
         <lookupPickerField id="lessonsGrid" caption="msg://lessonsGrid.caption" optionsContainer="lessonsGridTypesDc"/>
         <checkBox id="importSubjects" caption="msg://importSubjects.caption"/>
