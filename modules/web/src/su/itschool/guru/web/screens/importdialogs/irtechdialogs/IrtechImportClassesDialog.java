@@ -1,5 +1,6 @@
 package su.itschool.guru.web.screens.importdialogs.irtechdialogs;
 
+import com.haulmont.cuba.gui.Dialogs;
 import com.haulmont.cuba.gui.UiComponents;
 import com.haulmont.cuba.gui.components.*;
 import com.haulmont.cuba.gui.screen.Screen;
@@ -17,9 +18,9 @@ import java.util.*;
 import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.CANCELLED;
 import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.SUBMITTED;
 
-@UiController("guru_IrtechImportSecondDialog")
-@UiDescriptor("irTech-import-second-dialog.xml")
-public class IrtechImportSecondDialog extends Screen {
+@UiController("guru_IrtechImportClassesDialog")
+@UiDescriptor("irtech-import-classes-dialog.xml")
+public class IrtechImportClassesDialog extends Screen {
     public static final String GRADE_CHECK_BOX_ID_PREFIX = "grade_check_box_";
     private ImportSettings importSettings;
     private IrTechXMLClassesExtractorForDialog irTechXMLClassesExtractorForDialog;
@@ -32,6 +33,9 @@ public class IrtechImportSecondDialog extends Screen {
     private Map<Integer, List<SchoolClassWrapper>> gradesToClassesData = new HashMap();
     private Map<Integer, List<CheckBox>> gradesToClassesCheckBoxes = new HashMap();
     private List<CheckBox> gradeCheckBoxes = new ArrayList();
+    private Set<Integer> selectedClassesIds = new HashSet();
+    @Inject
+    private Dialogs dialogs;
 
     public void setSettingsFromFirstDialog(ImportSettings importSettings) {
         this.importSettings = importSettings;
@@ -39,10 +43,21 @@ public class IrtechImportSecondDialog extends Screen {
 
     @Subscribe("importBtn")
     public void onImportBtnClick(Button.ClickEvent event) {
-        close(new IrTechImportSettingsProvider.IrTechImportAction(SUBMITTED,addClassesToImportSettingsAndReturn()));
+        if(selectedClassesIds.isEmpty())
+        {
+            dialogs.createMessageDialog()
+                    .withCaption("Предупреждение")
+                    .withMessage("Необходимо выбрать хотя бы один класс")
+                    .show();
+        }
+        else
+        {
+            close(new IrTechImportSettingsProvider.IrTechImportAction(SUBMITTED,addClassesToImportSettingsAndReturn()));
+        }
     }
 
     private ImportSettings addClassesToImportSettingsAndReturn() {
+        importSettings.setSelectedClasses(selectedClassesIds);
         return importSettings;
     }
 
@@ -78,7 +93,7 @@ public class IrtechImportSecondDialog extends Screen {
         ComponentContainer container = createRowAndGetContainer(rowNumber, grade);
         for (SchoolClassWrapper classWrapper: classes)
         {
-            CheckBox classCheckBox = createCheckBox(container, classWrapper);
+            CheckBox classCheckBox = createClassCheckBox(container, classWrapper);
             classCheckBoxesMap.put(classWrapper.getClassId(), classCheckBox);
             putToGradesCheckBoxesMap(grade, classCheckBox);
         }
@@ -117,14 +132,6 @@ public class IrtechImportSecondDialog extends Screen {
         return checkBox;
     }
 
-    private Integer getGrade(Component component) {
-        return extractGradeFromId(component.getId());
-    }
-
-    private Integer extractGradeFromId(String checkBoxId) {
-        return Integer.valueOf(checkBoxId.substring(GRADE_CHECK_BOX_ID_PREFIX.length()));
-    }
-
     private ComponentContainer createContainerForCheckBoxes(String name) {
         ComponentContainer container = uiComponents.create(name);
         container.setWidth("100%");
@@ -132,13 +139,20 @@ public class IrtechImportSecondDialog extends Screen {
         return container;
     }
 
-    private CheckBox createCheckBox(ComponentContainer parentContainer, SchoolClassWrapper classWrapper) {
+    private CheckBox createClassCheckBox(ComponentContainer parentContainer, SchoolClassWrapper classWrapper) {
         CheckBox checkBox = uiComponents.create(CheckBox.NAME);
         checkBox.setId("schoolClassCheckBox_"+classWrapper.getClassId().toString());
         checkBox.setCaption(classWrapper.getClassName());
-        checkBox.setVisible(true);
-        checkBox.setEnabled(true);
-        checkBox.setValue(false);
+        checkBox.addValueChangeListener(event->{
+            if(event.getValue())
+            {
+                selectedClassesIds.add(classWrapper.getClassId());
+            }
+            else
+            {
+                selectedClassesIds.remove(classWrapper.getClassId());
+            }
+        });
         parentContainer.add(checkBox);
         return checkBox;
     }

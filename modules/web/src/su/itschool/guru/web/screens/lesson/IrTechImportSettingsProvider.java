@@ -6,7 +6,7 @@ import com.haulmont.cuba.gui.screen.Screen;
 import su.itschool.guru.service.ImportIrTechXMLToDBService;
 import su.itschool.guru.service.ImportSettings;
 import su.itschool.guru.web.screens.importdialogs.irtechdialogs.IrtechImportAdditionalSettingsDialog;
-import su.itschool.guru.web.screens.importdialogs.irtechdialogs.IrtechImportSecondDialog;
+import su.itschool.guru.web.screens.importdialogs.irtechdialogs.IrtechImportClassesDialog;
 
 import static com.haulmont.cuba.gui.screen.OpenMode.DIALOG;
 import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.SUBMITTED;
@@ -15,6 +15,7 @@ public class IrTechImportSettingsProvider {
 
     public static final String IRTECH_FILE_IMPORT_DIALOG_ID = "guru_IrtechFileImportDialog";
     public static final String IRTECH_IMPORT_MAIN_SETTINGS_DIALOG_ID = "guru_IrtechImportAdditionalSettingsDialog";
+    public static final String IRTECH_IMPORT_CLASSES_DIALOG_ID = "guru_IrtechImportClassesDialog";
 
     public enum ResultStatus {SUBMITTED, CANCELLED};
 
@@ -120,11 +121,11 @@ public class IrTechImportSettingsProvider {
     }
 
     private void askAboutSchoolClasses(ImportSettings importSettings) {
-        IrtechImportSecondDialog irtechImportSecondDialog
-                = (IrtechImportSecondDialog) screens.create("guru_IrtechImportSecondDialog", DIALOG);
-        irtechImportSecondDialog.setSettingsFromFirstDialog(importSettings);
-        irtechImportSecondDialog.setIrTechXMLClassesExtractorForDialog(irTechXMLClassesExtractorForDialog);
-        irtechImportSecondDialog.addAfterCloseListener(afterCloseEvent -> {
+        IrtechImportClassesDialog irtechImportClassesDialog
+                = (IrtechImportClassesDialog) screens.create(IRTECH_IMPORT_CLASSES_DIALOG_ID, DIALOG);
+        irtechImportClassesDialog.setSettingsFromFirstDialog(importSettings);
+        irtechImportClassesDialog.setIrTechXMLClassesExtractorForDialog(irTechXMLClassesExtractorForDialog);
+        irtechImportClassesDialog.addAfterCloseListener(afterCloseEvent -> {
             CloseAction closeAction = afterCloseEvent.getCloseAction();
 
             if(closeAction instanceof IrTechImportAction)
@@ -143,7 +144,7 @@ public class IrTechImportSettingsProvider {
                 }
             }
         });
-        irtechImportSecondDialog.show();
+        irtechImportClassesDialog.show();
     }
 
     private void startImportProcess(ImportSettings importSettings) {

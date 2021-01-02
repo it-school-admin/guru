@@ -1,5 +1,6 @@
 package su.itschool.guru.web.screens.importdialogs.irtechdialogs;
 
+import com.haulmont.cuba.gui.Dialogs;
 import com.haulmont.cuba.gui.components.Button;
 import com.haulmont.cuba.gui.components.CheckBox;
 import com.haulmont.cuba.gui.components.FileUploadField;
@@ -14,13 +15,14 @@ import su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider;
 
 import javax.inject.Inject;
 import java.io.File;
+import java.time.LocalDateTime;
 
 import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.CANCELLED;
 import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.SUBMITTED;
 
 @UiController("guru_IrtechFileImportDialog")
-@UiDescriptor("irTech-File-Import-dialog.xml")
-public class IrtechFileImportDialog extends Screen {
+@UiDescriptor("irtech-main-Import-dialog.xml")
+public class IrtechMainImportDialog extends Screen {
     private File importedFile;
 
     @Inject
@@ -35,6 +37,8 @@ public class IrtechFileImportDialog extends Screen {
     private CheckBox importAdditionalData;
     @Inject
     private Button submitBtn;
+    @Inject
+    private Dialogs dialogs;
 
     private ImportSettings createImportSettings() {
         ImportSettings importSettings = new ImportSettings(importedFile,
@@ -65,7 +69,17 @@ public class IrtechFileImportDialog extends Screen {
 
     @Subscribe("submitBtn")
     public void onSubmitBtnClick(Button.ClickEvent event) {
-        close(new IrTechImportSettingsProvider.IrTechImportAction(SUBMITTED,createImportSettings()));
+        if(timeTableTemplateNameField.isEmpty())
+        {
+            dialogs.createMessageDialog()
+                    .withCaption("Предупреждение")
+                    .withMessage("Необходимо указать имя шаблона расписания для загрузки")
+                    .show();
+        }
+        else
+        {
+            close(new IrTechImportSettingsProvider.IrTechImportAction(SUBMITTED,createImportSettings()));
+        }
     }
 
     @Subscribe("cancelBtn")
@@ -76,10 +90,12 @@ public class IrtechFileImportDialog extends Screen {
     @Subscribe
     public void onBeforeShow(BeforeShowEvent event) {
         submitBtn.setEnabled(false);
+        timeTableTemplateNameField.setValue("Шаблон расписания ИрТех " + LocalDateTime.now().toString());
     }
 
     @Subscribe("importedFileField")
     public void onImportedFileFieldBeforeValueClear(FileUploadField.BeforeValueClearEvent event) {
         submitBtn.setEnabled(false);
+        //TODO localize
     }
 }

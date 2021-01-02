@@ -57,6 +57,8 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
 
     @Override
     public void importData(ImportSettings importSettings) {
+        IrTechDataToDbProvider irTechDataToDbProvider = new IrTechDataToDbProvider(importSettings);
+        irTechDataToDbProvider.executeImport();
 
     }
 
