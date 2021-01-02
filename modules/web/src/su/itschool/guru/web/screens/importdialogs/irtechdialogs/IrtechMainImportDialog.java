@@ -74,7 +74,6 @@ public class IrtechMainImportDialog extends Screen {
 
     @Subscribe("importedFileField")
     public void onImportedFileFileUploadSucceed(FileUploadField.FileUploadSucceedEvent event) {
-        processFile();
         submitBtn.setEnabled(true);
     }
 
@@ -107,6 +106,7 @@ public class IrtechMainImportDialog extends Screen {
         }
         else
         {
+            processFile();
             close(new IrTechImportAction(SUBMITTED,createImportSettings(), schoolClassWrappers));
         }
     }
