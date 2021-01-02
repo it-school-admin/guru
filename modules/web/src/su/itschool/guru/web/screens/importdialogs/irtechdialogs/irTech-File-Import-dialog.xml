@@ -2,7 +2,7 @@
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
         caption="msg://irtechFileImportDialog.caption"
         messagesPack="su.itschool.guru.web.screens.importdialogs.irtechdialogs">
-    <layout>
+    <layout spacing="true">
         <upload id="importedFileField" clearButtonCaption="msg://upload.clearButtonCaption" showFileName="true" showClearButton="true"
                 uploadButtonCaption="msg://upload.uploadButtonCaption" caption="msg://importedFile.caption"/>
         <buttonsPanel>
