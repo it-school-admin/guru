@@ -1,14 +1,12 @@
 package su.itschool.guru.service;
 
-import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.global.DataManager;
+import com.haulmont.cuba.core.global.FileLoader;
 import org.springframework.stereotype.Service;
-import su.itschool.guru.entity.*;
-import su.itschool.guru.service.entityImortExecutors.*;
+import su.itschool.guru.service.irtechimport.ImportXMLToPojosConverter;
 import su.itschool.guru.service.irtechimport.IrTechDataToDbProvider;
 
 import javax.inject.Inject;
-import java.io.IOException;
 
 
 //TODO very bad code. Rewrite all!!!
@@ -18,6 +16,8 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
     private DataManager dataManager;
     @Inject
     private IrTechImportFinderService finderService;
+    @Inject
+    private FileLoader fileLoader;
 
 /*    @Override
     public List<StandardEntity> parseIrTechXML(TimeTableImport timeTableImport, LessonsGridType lessonsGridType) {
@@ -48,7 +48,11 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
 
     @Override
     public void importData(ImportSettings importSettings) {
-        IrTechDataToDbProvider irTechDataToDbProvider = new IrTechDataToDbProvider(importSettings, dataManager);
+        IrTechDataToDbProvider irTechDataToDbProvider = new IrTechDataToDbProvider(
+                importSettings,
+                dataManager,
+                new ImportXMLToPojosConverter(),
+                fileLoader);
         irTechDataToDbProvider.executeImport();
     }
 
