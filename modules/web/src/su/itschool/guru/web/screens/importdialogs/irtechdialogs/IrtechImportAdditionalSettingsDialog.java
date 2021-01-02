@@ -5,23 +5,20 @@ import com.haulmont.cuba.gui.screen.*;
 import su.itschool.guru.service.ImportSettings;
 import su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.IrTechImportAction;
 
-import javax.inject.Inject;
-
 
 import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.CANCELLED;
 import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.SUBMITTED;
 
-@UiController("guru_IrtechImportFirstDialog")
+@UiController("guru_IrtechImportAdditionalSettingsDialog")
 //TODO remove using descriptor
-@UiDescriptor("irTech-import-first-dialog.xml")
-public class IrtechImportFirstDialog extends Screen {
+@UiDescriptor("irtech-import-additional-settings-dialog.xml")
+public class IrtechImportAdditionalSettingsDialog extends Screen {
 
 
     private ImportSettings importSettings;
 
     @Subscribe("submitBtn")
     public void onSubmitBtnClick(Button.ClickEvent event) {
-        //importedFile.getFileDescriptor();
         close(new IrTechImportAction(SUBMITTED,fillMainSettingsAndReturn()));
     }
 

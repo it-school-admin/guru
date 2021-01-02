@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
-        caption="msg://irtechImportFirstDialog.caption"
+        caption="msg://irtechImportAdditionalSettingsDialog.caption"
         messagesPack="su.itschool.guru.web.screens.importdialogs.irtechdialogs">
     <data>
         <collection id="lessonsGridTypesDc" class="su.itschool.guru.entity.LessonsGridType">
@@ -20,7 +20,6 @@
         <checkBox id="importRooms" caption="msg://importRooms.caption"/>
         <checkBox id="importClasses" caption="msg://importClasses.caption"/>
         <checkBox id="importStudyPlan" caption="msg://importStudyPlan.caption"/>
-        <textField id="timeTableTemplateNameField" caption="msg://timeTableTemplateNameField.caption"/>
         <buttonsPanel>
             <button id="submitBtn" caption="msg://button.caption"/>
             <button id="cancelBtn" caption="msg://button.caption_1"/>

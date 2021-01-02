@@ -5,13 +5,16 @@ import com.haulmont.cuba.gui.screen.CloseAction;
 import com.haulmont.cuba.gui.screen.Screen;
 import su.itschool.guru.service.ImportIrTechXMLToDBService;
 import su.itschool.guru.service.ImportSettings;
-import su.itschool.guru.web.screens.importdialogs.irtechdialogs.IrtechImportFirstDialog;
+import su.itschool.guru.web.screens.importdialogs.irtechdialogs.IrtechImportAdditionalSettingsDialog;
 import su.itschool.guru.web.screens.importdialogs.irtechdialogs.IrtechImportSecondDialog;
 
 import static com.haulmont.cuba.gui.screen.OpenMode.DIALOG;
 import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.SUBMITTED;
 
 public class IrTechImportSettingsProvider {
+
+    public static final String IRTECH_FILE_IMPORT_DIALOG_ID = "guru_IrtechFileImportDialog";
+    public static final String IRTECH_IMPORT_MAIN_SETTINGS_DIALOG_ID = "guru_IrtechImportAdditionalSettingsDialog";
 
     public enum ResultStatus {SUBMITTED, CANCELLED};
 
@@ -62,27 +65,10 @@ public class IrTechImportSettingsProvider {
 
     public void startImport() {
         askToLoadFile();
-
-/*        Screen irtechImportFirstDialog = screens.create("guru_IrtechImportFirstDialog", DIALOG);
-
-        irtechImportFirstDialog.addAfterCloseListener(afterCloseEvent -> {
-            CloseAction closeAction = afterCloseEvent.getCloseAction();
-
-            if(closeAction instanceof IrTechImportSettingsProvider.IrTechImportAction)
-            {
-                IrTechImportAction importAction = (IrTechImportAction) closeAction;
-                if(importAction.getActionResult() == SUBMITTED)
-                {
-                    askAboutSchoolClassesAndImportIfNeed(importAction.getImportSettings());
-                }
-            }
-
-        });
-        irtechImportFirstDialog.show();*/
-    }
+   }
 
     private void askToLoadFile() {
-        Screen irtechFileImportDialog = screens.create("guru_IrtechFileImportDialog", DIALOG);
+        Screen irtechFileImportDialog = screens.create(IRTECH_FILE_IMPORT_DIALOG_ID, DIALOG);
 
         irtechFileImportDialog.addAfterCloseListener(afterCloseEvent -> {
             CloseAction closeAction = afterCloseEvent.getCloseAction();
@@ -92,8 +78,18 @@ public class IrTechImportSettingsProvider {
                 IrTechImportAction importAction = (IrTechImportAction) closeAction;
                 if(importAction.getActionResult() == SUBMITTED)
                 {
-
-                    askAboutMainSettings(importAction.getImportSettings());
+                    ImportSettings importSettings = importAction.getImportSettings();
+                    if (!importSettings.getImportAllClasses())
+                    {
+                        askAboutSchoolClasses(importSettings);
+                    }
+                    else if(importSettings.getImportAdditionalData())
+                    {
+                        askAboutAdditionalSettings(importSettings);
+                    }
+                    else {
+                        startImportProcess(importSettings);
+                    }
                 }
             }
 
@@ -101,12 +97,13 @@ public class IrTechImportSettingsProvider {
         irtechFileImportDialog.show();
     }
 
-    private void askAboutMainSettings(ImportSettings importSettings) {
-        IrtechImportFirstDialog irtechImportFirstDialog = (IrtechImportFirstDialog) screens.create("guru_IrtechImportFirstDialog", DIALOG);
+    private void askAboutAdditionalSettings(ImportSettings importSettings) {
+        IrtechImportAdditionalSettingsDialog irtechImportAdditionalSettingsDialog
+                = (IrtechImportAdditionalSettingsDialog) screens.create(IRTECH_IMPORT_MAIN_SETTINGS_DIALOG_ID, DIALOG);
 
-        irtechImportFirstDialog.setImportSettings(importSettings);
+        irtechImportAdditionalSettingsDialog.setImportSettings(importSettings);
 
-        irtechImportFirstDialog.addAfterCloseListener(afterCloseEvent -> {
+        irtechImportAdditionalSettingsDialog.addAfterCloseListener(afterCloseEvent -> {
             CloseAction closeAction = afterCloseEvent.getCloseAction();
 
             if(closeAction instanceof IrTechImportAction)
@@ -114,16 +111,17 @@ public class IrTechImportSettingsProvider {
                 IrTechImportAction importAction = (IrTechImportAction) closeAction;
                 if(importAction.getActionResult() == SUBMITTED)
                 {
-                    askAboutSchoolClassesAndImportIfNeed(importAction.getImportSettings());
+                       startImportProcess(importAction.getImportSettings());
                 }
             }
 
         });
-        irtechImportFirstDialog.show();
+        irtechImportAdditionalSettingsDialog.show();
     }
 
-    private void askAboutSchoolClassesAndImportIfNeed(ImportSettings importSettings) {
-        IrtechImportSecondDialog irtechImportSecondDialog = (IrtechImportSecondDialog) screens.create("guru_IrtechImportSecondDialog", DIALOG);
+    private void askAboutSchoolClasses(ImportSettings importSettings) {
+        IrtechImportSecondDialog irtechImportSecondDialog
+                = (IrtechImportSecondDialog) screens.create("guru_IrtechImportSecondDialog", DIALOG);
         irtechImportSecondDialog.setSettingsFromFirstDialog(importSettings);
         irtechImportSecondDialog.setIrTechXMLClassesExtractorForDialog(irTechXMLClassesExtractorForDialog);
         irtechImportSecondDialog.addAfterCloseListener(afterCloseEvent -> {
@@ -134,10 +132,21 @@ public class IrTechImportSettingsProvider {
                 IrTechImportAction importAction = (IrTechImportAction) closeAction;
                 if(importAction.getActionResult() == SUBMITTED)
                 {
-                    importIrTechXMLToDBService.importData(importAction.getImportSettings());
+                    ImportSettings importSettingsFromAction = importAction.getImportSettings();
+                    if(importSettingsFromAction.getImportAdditionalData())
+                    {
+                        askAboutAdditionalSettings(importSettingsFromAction);
+                    }
+                    else {
+                        startImportProcess(importSettingsFromAction);
+                    }
                 }
             }
         });
         irtechImportSecondDialog.show();
+    }
+
+    private void startImportProcess(ImportSettings importSettings) {
+        importIrTechXMLToDBService.importData(importSettings);
     }
 }

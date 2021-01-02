@@ -53,7 +53,7 @@ public class IrtechImportSecondDialog extends Screen {
 
     @Subscribe
     public void onBeforeShow(BeforeShowEvent event) {
-        List<SchoolClassWrapper> schoolClassWrappers = irTechXMLClassesExtractorForDialog.extractSchoolClassesData(importSettings.importedFile);
+        List<SchoolClassWrapper> schoolClassWrappers = irTechXMLClassesExtractorForDialog.extractSchoolClassesData(importSettings.getImportedFile());
         for(SchoolClassWrapper wrapper: schoolClassWrappers)
         {
             Integer grade = wrapper.getGrade();
