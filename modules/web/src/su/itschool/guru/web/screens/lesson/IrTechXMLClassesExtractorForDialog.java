@@ -1,6 +1,5 @@
 package su.itschool.guru.web.screens.lesson;
 
-import com.haulmont.cuba.gui.upload.FileUploadingAPI;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -17,17 +16,11 @@ import java.util.*;
 //TODO the stub
 public class IrTechXMLClassesExtractorForDialog {
 
-    private FileUploadingAPI fileUploadingAPI;
     private List<SchoolClassWrapper> schoolClassesWrappersList = new ArrayList();
 
-    public IrTechXMLClassesExtractorForDialog(FileUploadingAPI fileUploadingAPI) {
-
-        this.fileUploadingAPI = fileUploadingAPI;
-    }
-
-    public List<SchoolClassWrapper> extractSchoolClassesData(File file) {
+    public List<SchoolClassWrapper> extractSchoolClassesData(File importedFile) {
         try {
-            return getClassesData(file);
+            return getClassesData(importedFile);
         } catch (ParserConfigurationException e) {
             throw new RuntimeException(e);
         } catch (IOException e) {

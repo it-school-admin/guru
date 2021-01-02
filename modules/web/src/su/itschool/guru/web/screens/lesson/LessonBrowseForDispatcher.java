@@ -19,15 +19,14 @@ public class LessonBrowseForDispatcher extends StandardLookup<Lesson> {
     @Inject
     private ImportIrTechXMLToDBService importIrTechXMLToDBService;
     @Inject
-    private FileUploadingAPI fileUploadingAPI;
-    @Inject
     private Screens screens;
-    @Inject
-    private Notifications notifications;
 
     @Subscribe("ImportBtn")
     public void onImportBtnClick(Button.ClickEvent event) {
-        new IrTechImportSettingsProvider(screens, importIrTechXMLToDBService, new IrTechXMLClassesExtractorForDialog(fileUploadingAPI)).startImport();
+        new IrTechImportSettingsProvider(screens,
+                importIrTechXMLToDBService,
+                new IrTechXMLClassesExtractorForDialog())
+            .startImport();
     }
 
 

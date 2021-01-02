@@ -31,7 +31,7 @@ public class TimeTableImportBrowse extends StandardLookup<TimeTableImport> {
 
     @Subscribe("uploadFileBtn")
     public void onUploadFileBtnClick(Button.ClickEvent event) {
-        importIrTechXMLToDBService.parseIrTechXML(timeTableImportsDc.getItem(), lessonsGridTypesDc.getItem());
+        //importIrTechXMLToDBService.parseIrTechXML(timeTableImportsDc.getItem(), lessonsGridTypesDc.getItem());
     }
 
     @Subscribe("clearDBBtn")

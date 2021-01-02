@@ -3,22 +3,13 @@ package su.itschool.guru.service;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.global.DataManager;
 import org.springframework.stereotype.Service;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 import su.itschool.guru.entity.*;
 import su.itschool.guru.service.entityImortExecutors.*;
+import su.itschool.guru.service.irtechimport.IrTechDataToDbProvider;
 
 import javax.inject.Inject;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.util.*;
+
 
 //TODO very bad code. Rewrite all!!!
 @Service(ImportIrTechXMLToDBService.NAME)
@@ -28,7 +19,7 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
     @Inject
     private IrTechImportFinderService finderService;
 
-    @Override
+/*    @Override
     public List<StandardEntity> parseIrTechXML(TimeTableImport timeTableImport, LessonsGridType lessonsGridType) {
 
         List<StandardEntity> result = new ArrayList<>();
@@ -53,16 +44,15 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
             throw new RuntimeException(e);
         }
         return null;
-    }
+    }*/
 
     @Override
     public void importData(ImportSettings importSettings) {
-        IrTechDataToDbProvider irTechDataToDbProvider = new IrTechDataToDbProvider(importSettings);
+        IrTechDataToDbProvider irTechDataToDbProvider = new IrTechDataToDbProvider(importSettings, dataManager);
         irTechDataToDbProvider.executeImport();
-
     }
 
-    private Map<Integer, Integer> fillLessonsIDsMap(Element rootElement) {
+ /*   private Map<Integer, Integer> fillLessonsIDsMap(Element rootElement) {
 
         Map<Integer, Integer> lessonIDtoNumberMap = new HashMap<Integer, Integer>();
         Node rootElementCollectionNode = getFirstChildNodeByName(rootElement, "LessonTimes");
@@ -221,6 +211,6 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
 
         Element rootElement = importedXML.getDocumentElement();
         return rootElement;
-    }
+    }*/
 
 }

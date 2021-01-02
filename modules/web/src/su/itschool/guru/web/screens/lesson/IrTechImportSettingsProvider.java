@@ -7,6 +7,11 @@ import su.itschool.guru.service.ImportIrTechXMLToDBService;
 import su.itschool.guru.service.ImportSettings;
 import su.itschool.guru.web.screens.importdialogs.irtechdialogs.IrtechImportAdditionalSettingsDialog;
 import su.itschool.guru.web.screens.importdialogs.irtechdialogs.IrtechImportClassesDialog;
+import su.itschool.guru.web.screens.importdialogs.irtechdialogs.IrtechMainImportDialog;
+import su.itschool.guru.web.screens.lesson.IrTechXMLClassesExtractorForDialog.SchoolClassWrapper;
+
+import java.io.File;
+import java.util.List;
 
 import static com.haulmont.cuba.gui.screen.OpenMode.DIALOG;
 import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.SUBMITTED;
@@ -21,16 +26,25 @@ public class IrTechImportSettingsProvider {
 
     public static class IrTechImportAction implements CloseAction{
 
-        private ResultStatus actionResult;
-        private ImportSettings importSettings;
+        private final ResultStatus actionResult;
+        private final ImportSettings importSettings;
+        private List<SchoolClassWrapper> schoolClassWrappers;
 
         public IrTechImportAction(ResultStatus actionResult, ImportSettings importSettings) {
             this.actionResult = actionResult;
             this.importSettings = importSettings;
         }
 
+
         public IrTechImportAction(ResultStatus actionResult) {
-            this.actionResult = actionResult;
+            this(actionResult, null);
+        }
+
+        public IrTechImportAction(ResultStatus actionResult,
+                                  ImportSettings importSettings,
+                                  List<SchoolClassWrapper> schoolClassWrappers) {
+            this(actionResult, importSettings);
+            this.schoolClassWrappers = schoolClassWrappers;
         }
 
         public ImportSettings getImportSettings() {
@@ -47,6 +61,10 @@ public class IrTechImportSettingsProvider {
 
         public ResultStatus getActionResult() {
             return actionResult;
+        }
+
+        public List<SchoolClassWrapper> getSchoolClassWrappers() {
+            return schoolClassWrappers;
         }
     }
 
@@ -69,7 +87,9 @@ public class IrTechImportSettingsProvider {
    }
 
     private void askToLoadFile() {
-        Screen irtechFileImportDialog = screens.create(IRTECH_FILE_IMPORT_DIALOG_ID, DIALOG);
+        IrtechMainImportDialog irtechFileImportDialog
+                = (IrtechMainImportDialog) screens.create(IRTECH_FILE_IMPORT_DIALOG_ID, DIALOG);
+        irtechFileImportDialog.setIrTechXMLClassesExtractorForDialog(irTechXMLClassesExtractorForDialog);
 
         irtechFileImportDialog.addAfterCloseListener(afterCloseEvent -> {
             CloseAction closeAction = afterCloseEvent.getCloseAction();
@@ -82,7 +102,7 @@ public class IrTechImportSettingsProvider {
                     ImportSettings importSettings = importAction.getImportSettings();
                     if (!importSettings.getImportAllClasses())
                     {
-                        askAboutSchoolClasses(importSettings);
+                        askAboutSchoolClasses(importSettings, importAction.getSchoolClassWrappers());
                     }
                     else if(importSettings.getImportAdditionalData())
                     {
@@ -120,11 +140,11 @@ public class IrTechImportSettingsProvider {
         irtechImportAdditionalSettingsDialog.show();
     }
 
-    private void askAboutSchoolClasses(ImportSettings importSettings) {
+    private void askAboutSchoolClasses(ImportSettings importSettings, List<SchoolClassWrapper> schoolClassWrappers) {
         IrtechImportClassesDialog irtechImportClassesDialog
                 = (IrtechImportClassesDialog) screens.create(IRTECH_IMPORT_CLASSES_DIALOG_ID, DIALOG);
         irtechImportClassesDialog.setSettingsFromFirstDialog(importSettings);
-        irtechImportClassesDialog.setIrTechXMLClassesExtractorForDialog(irTechXMLClassesExtractorForDialog);
+        irtechImportClassesDialog.setSchoolClassWrappers(schoolClassWrappers);
         irtechImportClassesDialog.addAfterCloseListener(afterCloseEvent -> {
             CloseAction closeAction = afterCloseEvent.getCloseAction();
 

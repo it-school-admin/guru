@@ -1,5 +1,6 @@
 package su.itschool.guru.web.screens.importdialogs.irtechdialogs;
 
+import com.haulmont.cuba.core.entity.FileDescriptor;
 import com.haulmont.cuba.gui.Dialogs;
 import com.haulmont.cuba.gui.UiComponents;
 import com.haulmont.cuba.gui.components.*;
@@ -13,6 +14,7 @@ import su.itschool.guru.web.screens.lesson.IrTechXMLClassesExtractorForDialog;
 import su.itschool.guru.web.screens.lesson.IrTechXMLClassesExtractorForDialog.SchoolClassWrapper;
 
 import javax.inject.Inject;
+import java.io.File;
 import java.util.*;
 
 import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.CANCELLED;
@@ -23,7 +25,6 @@ import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.R
 public class IrtechImportClassesDialog extends Screen {
     public static final String GRADE_CHECK_BOX_ID_PREFIX = "grade_check_box_";
     private ImportSettings importSettings;
-    private IrTechXMLClassesExtractorForDialog irTechXMLClassesExtractorForDialog;
     private Map<Integer, CheckBox> classCheckBoxesMap = new HashMap<>();
     @Inject
     private UiComponents uiComponents;
@@ -36,6 +37,7 @@ public class IrtechImportClassesDialog extends Screen {
     private Set<Integer> selectedClassesIds = new HashSet();
     @Inject
     private Dialogs dialogs;
+    private List<SchoolClassWrapper> schoolClassWrappers;
 
     public void setSettingsFromFirstDialog(ImportSettings importSettings) {
         this.importSettings = importSettings;
@@ -68,7 +70,6 @@ public class IrtechImportClassesDialog extends Screen {
 
     @Subscribe
     public void onBeforeShow(BeforeShowEvent event) {
-        List<SchoolClassWrapper> schoolClassWrappers = irTechXMLClassesExtractorForDialog.extractSchoolClassesData(importSettings.getImportedFile());
         for(SchoolClassWrapper wrapper: schoolClassWrappers)
         {
             Integer grade = wrapper.getGrade();
@@ -157,11 +158,6 @@ public class IrtechImportClassesDialog extends Screen {
         return checkBox;
     }
 
-    public void setIrTechXMLClassesExtractorForDialog(IrTechXMLClassesExtractorForDialog irTechXMLClassesExtractorForDialog) {
-
-        this.irTechXMLClassesExtractorForDialog = irTechXMLClassesExtractorForDialog;
-    }
-
     private void setSelectionForGradesCheckBoxes(boolean selected) {
         for(CheckBox gradeSelectionCheckBox: gradeCheckBoxes)
         {
@@ -186,5 +182,10 @@ public class IrtechImportClassesDialog extends Screen {
     public void onUnselectAllClassesClick(Button.ClickEvent event) {
         setSelectionForClassesCheckBoxes(false);
         setSelectionForGradesCheckBoxes(false);
+    }
+
+    public void setSchoolClassWrappers(List<SchoolClassWrapper> schoolClassWrappers) {
+
+        this.schoolClassWrappers = schoolClassWrappers;
     }
 }

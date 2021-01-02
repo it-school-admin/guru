@@ -91,6 +91,7 @@ configure(coreModule) {
         compileOnly(servletApi)
         jdbc(postgres)
         testRuntime(postgres)
+        compile 'org.jdom:jdom2:2.0.6'
     }
 
     task cleanConf(description: 'Cleans up conf directory', type: Delete) {
