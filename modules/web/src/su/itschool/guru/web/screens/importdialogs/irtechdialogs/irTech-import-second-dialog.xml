@@ -2,9 +2,17 @@
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
         caption="msg://irtechImportSecondDialog.caption"
         messagesPack="su.itschool.guru.web.screens.importdialogs.irtechdialogs">
-    <layout spacing="true" expand="classesBox">
-        <checkBox id="selectAllCheckBox" caption="msg://selectAllCheckBox.caption"/>
-        <vbox id="classesBox" spacing="true"/>
+    <layout spacing="true" expand="classesCheckBoxesGrid">
+        <buttonsPanel>
+            <button id="selectAllBtn" caption="msg://selectAllBtn.caption"/>
+            <button id="unselectAllClasses" caption="msg://unselectAllClasses.caption"/>
+        </buttonsPanel>
+        <grid id="classesCheckBoxesGrid" spacing="true">
+            <columns count="2"/>
+            <rows>
+                <row></row>
+            </rows>
+        </grid>
         <buttonsPanel>
             <button id="importBtn" caption="msg://importBtn.caption"/>
             <button id="cancelBtn" caption="msg://cancelBtn.caption"/>

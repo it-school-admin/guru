@@ -94,6 +94,10 @@ public class IrTechXMLClassesExtractorForDialog {
         public String getClassName() {
             return className;
         }
+
+        public Integer getGrade() {
+            return grade;
+        }
     }
 
     private class SchoolClassesComparator implements Comparator<SchoolClassWrapper> {
