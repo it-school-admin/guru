@@ -30,10 +30,13 @@ public class IrTechDataToDbProvider {
         timeTablePojos = importXMLToPojosConverter.importData(getImportedFileAsStream());
         if (importSettings.getImportAdditionalData())
         {
-           // timeTablePojos =
             if(importSettings.getImportLessonsGrid())
             {
-                //importLessonsGrid(timeTablePojos);
+                new LessonsGridImporter(timeTablePojos.firstShiftLessonsTimes,
+                        timeTablePojos.secondShiftLessonsTimes,
+                        importSettings.getLessonsGridForFirstShift(),
+                        dataManager)
+                .importDataToDb();
             }
         }
     }

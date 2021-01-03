@@ -26,7 +26,9 @@ public class IrtechImportAdditionalSettingsDialog extends Screen {
     @Inject
     private CheckBox importLessonsGrid;
     @Inject
-    private LookupPickerField<LessonsGridType> lessonsGridField;
+    private LookupPickerField<LessonsGridType> lessonsGridFieldForFirstShift;
+    @Inject
+    private LookupPickerField<LessonsGridType> lessonsGridFieldForSecondShift;
     @Inject
     private Dialogs dialogs;
 
@@ -47,11 +49,15 @@ public class IrtechImportAdditionalSettingsDialog extends Screen {
     }
 
     private boolean importLessonsGridCheckedButGridTypeIsNotSpecified() {
-        return importLessonsGrid.getValue() && lessonsGridField.getValue() == null;
+        return importLessonsGrid.getValue()
+                && lessonsGridFieldForFirstShift.getValue() == null
+                && lessonsGridFieldForSecondShift.getValue() == null;
     }
 
     private ImportSettings fillMainSettingsAndReturn() {
-        importSettings.setAdditionalData(getImportLessonsGrid());
+        importSettings.setImportLessonsGrid(getImportLessonsGrid());
+        importSettings.setLessonsGridForFirstShift(lessonsGridFieldForFirstShift.getValue());
+        importSettings.setLessonsGridForSecondShift(lessonsGridFieldForSecondShift.getValue());
         return importSettings;
     }
 
@@ -70,6 +76,7 @@ public class IrtechImportAdditionalSettingsDialog extends Screen {
 
     @Subscribe("importLessonsGrid")
     public void onImportLessonsGridValueChange(HasValue.ValueChangeEvent<Boolean> event) {
-        lessonsGridField.setEnabled(event.getValue());
+        lessonsGridFieldForFirstShift.setEnabled(event.getValue());
+        lessonsGridFieldForSecondShift.setEnabled(event.getValue());
     }
 }

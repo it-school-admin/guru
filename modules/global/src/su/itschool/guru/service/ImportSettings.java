@@ -1,6 +1,7 @@
 package su.itschool.guru.service;
 
 import com.haulmont.cuba.core.entity.FileDescriptor;
+import su.itschool.guru.entity.LessonsGridType;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -13,6 +14,8 @@ public class ImportSettings implements Serializable {
     private final Boolean importAdditionalData;
     private Set<Integer> selectedClassesIds = new HashSet();
     private Boolean importLessonsGrid;
+    private LessonsGridType lessonsGridForFirstShift;
+    private LessonsGridType lessonsGridForSecondShift;
 
     public ImportSettings(FileDescriptor fileDescriptor, String scheduleName, Boolean importAllClasses, Boolean importAdditionalData) {
         this.importedFileDescriptor = fileDescriptor;
@@ -34,10 +37,10 @@ public class ImportSettings implements Serializable {
     }
 
     public boolean getImportLessonsGrid() {
-        return false;
+        return importLessonsGrid;
     }
 
-    public void setAdditionalData(Boolean importLessonsGrid) {
+    public void setImportLessonsGrid(Boolean importLessonsGrid) {
 
         this.importLessonsGrid = importLessonsGrid;
     }
@@ -45,5 +48,38 @@ public class ImportSettings implements Serializable {
     public void setSelectedClasses(Set<Integer> selectedClassesIds) {
 
         this.selectedClassesIds = selectedClassesIds;
+    }
+
+    public void setLessonsGridForFirstShift(LessonsGridType lessonsGrid) {
+
+        this.lessonsGridForFirstShift = lessonsGrid;
+    }
+
+    public LessonsGridType getLessonsGridForFirstShift() {
+        if (importLessonsGrid)
+        {
+            return lessonsGridForFirstShift;
+        }
+        else
+        {
+            //TODO message
+            throw new IllegalStateException();
+        }
+    }
+
+    public LessonsGridType getLessonsGridForSecondShift() {
+        if (importLessonsGrid)
+        {
+            return lessonsGridForSecondShift;
+        }
+        else
+        {
+            //TODO message
+            throw new IllegalStateException();
+        }
+    }
+
+    public void setLessonsGridForSecondShift(LessonsGridType lessonsGrid) {
+        lessonsGridForSecondShift = lessonsGrid;
     }
 }
