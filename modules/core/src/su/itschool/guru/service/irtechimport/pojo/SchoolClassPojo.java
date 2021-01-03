@@ -3,9 +3,9 @@ package su.itschool.guru.service.irtechimport.pojo;
 import org.jdom2.Element;
 
 public class SchoolClassPojo extends AbstractPojoWithId {
-    public Integer grade;
-    public Character letter;
-    public Integer countOfStudents;
+    public final Integer grade;
+    public final Character letter;
+    public final Integer countOfStudents;
 
     public SchoolClassPojo(Element classElement) {
         setIrTechId(classElement, "id");

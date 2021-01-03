@@ -3,7 +3,7 @@ package su.itschool.guru.service.irtechimport.pojo;
 import org.jdom2.Element;
 
 public class RootSubjectPojo extends AbstractPojoWithId{
-    public String name;
+    public final String name;
 
     public RootSubjectPojo(Element planItemElement) {
         setIrTechId(planItemElement, "parentsubjectid");

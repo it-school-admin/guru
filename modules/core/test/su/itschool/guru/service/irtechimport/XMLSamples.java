@@ -1,7 +1,7 @@
 package su.itschool.guru.service.irtechimport;
 
 public class XMLSamples {
-    static public final String INPUT_DATA_LESSONS = "<TimeTableExchange xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"TimeTableWeek.xsd\">\n" +
+    static public final String INPUT_DATA_LESSONS_TIMES = "<TimeTableExchange xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"TimeTableWeek.xsd\">\n" +
             "\t<LessonTimes>\n" +
             "\t\n" +
             "\t\t<LessonTime id=\"1\" starttime=\"8:00\" endtime=\"8:40\" sm=\"1\" number=\"1\" /> \n" +
@@ -22,6 +22,7 @@ public class XMLSamples {
             "\t<subjects/>\n" +
             "\t<Rooms/>\t\n" +
             "\t<Plan/>\n" +
+            "\t</TimeTable>\n" +
             "</TimeTableExchange>";
 
     static public final String INPUT_DATA_TEACHERS = "<TimeTableExchange>\n" +
@@ -35,6 +36,7 @@ public class XMLSamples {
             "\t<subjects/>\n" +
             "\t<Rooms/>\t\n" +
             "\t<Plan/>\n" +
+            "\t</TimeTable>\n" +
             "</TimeTableExchange>";
 
     static public final String INPUT_DATA_SUBJECTS = "<TimeTableExchange>\n" +
@@ -58,6 +60,7 @@ public class XMLSamples {
             "\t</subjects>\t\n" +
             "\t<Rooms/>\t\n" +
             "\t<Plan/>\n" +
+            "\t</TimeTable>\n" +
             "</TimeTableExchange>";
 
     static public final String INPUT_DATA_ROOMS = "<TimeTableExchange>\n" +
@@ -74,6 +77,7 @@ public class XMLSamples {
             "\t\t<room id=\"53418\" name=\"29\" seats=\"30\" floor=\"1\"/>\n" +
             "\t</Rooms>\t\n" +
             "\t<Plan/>\n" +
+            "\t</TimeTable>\n" +
             "</TimeTableExchange>";
 
     public static final String FOREIGN_LANGUAGE_SUBJECT_ID = "60699";
@@ -194,6 +198,7 @@ public class XMLSamples {
             "\n" +
             "\n" +
             "\t</Plan>\t\n" +
+            "\t</TimeTable>\n" +
             "</TimeTableExchange>";
 
     static public final String INPUT_DATA_1_9_CLASS_WITH_GROUPS = "<TimeTableExchange>\n" +
@@ -221,6 +226,127 @@ public class XMLSamples {
             "\t\t\t<csg id=\"4866989\" sid=\"85837\" name=\"Физическая культура\" groupid=\"\" parentsubjectid=\"\" tid=\"1333034\" hrsweek=\"3\" studcnt=\"0\"/>\n" +
             "\t\t</class>\t\n" +
             "\t</Plan>\t\n" +
+            "\t</TimeTable>\n" +
             "</TimeTableExchange>";
 
+    static public final String INPUT_DATA_10_11_CLASS_WITH_GROUPS = "<TimeTableExchange>\n" +
+            "\t<LessonTimes/>\n" +
+            "\t<teachers/>\n" +
+            "\t<subjects/>\n" +
+            "\t<Rooms/>\n" +
+            "\t<Plan>\n" +
+            "\t\t<class id=\"927320\" name=\"10А\" grade=\"10\" studcnt=\"10\" boys=\"1\" girls=\"9\"> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5079239\" tid=\"1279263\" name=\"Индивидуальный проект/10АБ\" sid=\"282687\" studcnt=\"36\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4963529\" tid=\"1267155\" name=\"Иностранный язык/Иностранный язык (Английский язык)/У\" sid=\"89298\" studcnt=\"10\" hrsweek=\"6\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4962941\" tid=\"1279264\" name=\"История России. Всеобщая история/У\" sid=\"85832\" studcnt=\"10\" hrsweek=\"4\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4974049\" tid=\"1251025\" name=\"Литература/Б\" sid=\"85839\" studcnt=\"36\" hrsweek=\"3\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4963526\" tid=\"1289115\" name=\"Математика/Б\" sid=\"85831\" studcnt=\"10\" hrsweek=\"5\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5072494\" tid=\"1251023\" name=\"Нравственные основы семейной жизни(ВНД)/10А\" sid=\"294680\" studcnt=\"10\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4963550\" tid=\"1273208\" name=\"Обществознание/Б\" sid=\"86821\" studcnt=\"12\" hrsweek=\"2\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4743553\" tid=\"1281337\" name=\"Основы безопасности жизнедеятельности/10\" sid=\"85836\" studcnt=\"36\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4963551\" tid=\"1279264\" name=\"Право/У\" sid=\"86823\" studcnt=\"10\" hrsweek=\"2\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4963527\" tid=\"1251025\" name=\"Родной язык (русский)/Б\" sid=\"285087\" studcnt=\"36\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4974038\" tid=\"1251025\" name=\"Русский язык/10АБ-У\" sid=\"85841\" studcnt=\"36\" hrsweek=\"3\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4743547\" tid=\"1251036\" name=\"Физика/Б\" sid=\"85823\" studcnt=\"10\" hrsweek=\"2\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4743554\" tid=\"1251037\" name=\"Физическая культура/10А\" sid=\"85837\" studcnt=\"10\" hrsweek=\"3\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5069686\" tid=\"1267155\" name=\"Элективный курс иностр.язык/10АБ11А\" sid=\"86857\" studcnt=\"24\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5069689\" tid=\"1279264\" name=\"Элективный курс история/10А11А\" sid=\"87211\" studcnt=\"15\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5069687\" tid=\"1279264\" name=\"Элективный курс обществознание/10АБ11А\" sid=\"86858\" studcnt=\"19\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5069664\" tid=\"1251025\" name=\"Элективный курс русский язык/10А\" sid=\"86856\" studcnt=\"10\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\t\t</class>\t\n" +
+            "\t</Plan>\t\n" +
+            "\t</TimeTable>\n" +
+            "</TimeTableExchange>";
+
+    static public final String INPUT_DATA_LESSONS = "<TimeTableExchange>\n" +
+            "\t<LessonTimes/>\n" +
+            "\t<teachers/>\n" +
+            "\t<subjects/>\n" +
+            "\t<Rooms/>\n" +
+            "\t<Plan/>\n" +
+            "\t<TimeTable>\n" +
+            "\t\t<Week id=\"1\" name=\"Неделя 14.12.2020 - 20.12.2020\">\n" +
+            "\t\t\t\n" +
+            "\t\t\t<Day id=\"1\" name=\"понедельник\" wd=\"2\" >\n" +
+            "\t\t\t\t<Lesson timeId=\"1\">\n" +
+            "\t\t\t\t\t<csg id=\"4826774\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826795\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4743527\" roomid=\"53207\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826812\" roomid=\"53209\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4743514\" roomid=\"53227\"/>\n" +
+            "\t\t\t\t</Lesson>\n" +
+            "\t\t\t\t<Lesson timeId=\"2\">\n" +
+            "\t\t\t\t\t<csg id=\"4826784\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826832\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4743539\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826798\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4743526\" roomid=\"53207\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826815\" roomid=\"53209\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4743515\" roomid=\"53210\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826770\" roomid=\"53211\"/>\n" +
+            "\t\t\t\t</Lesson>\n" +
+            "\t\t\t\t<Lesson timeId=\"3\">\n" +
+            "\t\t\t\t\t<csg id=\"4867166\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4963526\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4963538\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4995502\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4963532\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4993677\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4743523\" roomid=\"53207\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826816\" roomid=\"53209\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4743512\" roomid=\"53210\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826773\" roomid=\"53211\"/>\n" +
+            "\t\t\t\t</Lesson>\n" +
+            "\t\t\t</Day>\n" +
+            "\t\t\t<Day id=\"2\" name=\"понедельник\" wd=\"2\" >\n" +
+            "\t\t\t\t<Lesson timeId=\"1\">\n" +
+            "\t\t\t\t\t<csg id=\"4826774\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826795\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4743527\" roomid=\"53207\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826812\" roomid=\"53209\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4743514\" roomid=\"53227\"/>\n" +
+            "\t\t\t\t</Lesson>\n" +
+            "\t\t\t\t<Lesson timeId=\"2\">\n" +
+            "\t\t\t\t\t<csg id=\"4826784\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826832\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4743539\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826798\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4743526\" roomid=\"53207\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826815\" roomid=\"53209\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4743515\" roomid=\"53210\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826770\" roomid=\"53211\"/>\n" +
+            "\t\t\t\t</Lesson>\n" +
+            "\t\t\t\t<Lesson timeId=\"3\">\n" +
+            "\t\t\t\t\t<csg id=\"4867166\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4963526\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4963538\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4995502\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4963532\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4993677\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4743523\" roomid=\"53207\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826816\" roomid=\"53209\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4743512\" roomid=\"53210\"/>\n" +
+            "\t\t\t\t\t<csg id=\"4826773\" roomid=\"53211\"/>\n" +
+            "\t\t\t\t</Lesson>\n" +
+            "\t\t\t</Day>" +
+            "\t\t</Week>\n" +
+            "\t</TimeTable>" +
+            "</TimeTableExchange>";
 }

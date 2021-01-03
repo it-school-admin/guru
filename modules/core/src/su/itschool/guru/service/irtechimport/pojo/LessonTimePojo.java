@@ -6,8 +6,8 @@ import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 public class LessonTimePojo extends AbstractPojoWithId {
-    public LocalTime startTime;
-    public LocalTime endTime;
+    public final LocalTime startTime;
+    public final LocalTime endTime;
 
     public LessonTimePojo(Element lessonTimeElement) {
         setIrTechId(lessonTimeElement,"id");

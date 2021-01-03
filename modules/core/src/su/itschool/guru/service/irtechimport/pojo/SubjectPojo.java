@@ -3,8 +3,8 @@ package su.itschool.guru.service.irtechimport.pojo;
 import org.jdom2.Element;
 
 public class SubjectPojo extends AbstractPojoWithId {
-    public String name;
-    public String abbr;
+    public final String name;
+    public final String abbr;
 
     public SubjectPojo(Element subjectElement) {
         setIrTechId(subjectElement,"sid");

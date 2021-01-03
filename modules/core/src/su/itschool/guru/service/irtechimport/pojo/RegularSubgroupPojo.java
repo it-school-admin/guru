@@ -3,11 +3,15 @@ package su.itschool.guru.service.irtechimport.pojo;
 import org.jdom2.Element;
 
 public class RegularSubgroupPojo extends AbstractPojoWithId{
-    public String name;
+    public final String name;
+    public final Integer classIrTechId;
+    public final Integer studentsCount;
 
-    public RegularSubgroupPojo(Element planItemElement) {
+    public RegularSubgroupPojo(Element planItemElement, Integer classIrTechId ) {
+        this.classIrTechId = classIrTechId;
         setIrTechId(planItemElement, "groupid");
         name = extractGroupName(planItemElement, hasParentSubject(planItemElement));
+        studentsCount = getInteger(planItemElement, "studcnt");
     }
 
     private String extractGroupName(Element planItemElement, boolean hasParentSubject) {

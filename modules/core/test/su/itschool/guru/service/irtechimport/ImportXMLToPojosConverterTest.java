@@ -1,8 +1,6 @@
 package su.itschool.guru.service.irtechimport;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
 
@@ -14,23 +12,15 @@ import static su.itschool.guru.service.irtechimport.XMLSamples.*;
 
 class ImportXMLToPojosConverterTest {
 
-    @BeforeEach
-    void setUp() {
-    }
-
-    @AfterEach
-    void tearDown() {
-    }
-
     @Test
     void importDataNotNull() {
-        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_LESSONS);
+        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_LESSONS_TIMES);
         Assertions.assertNotNull(timeTablePojos);
     }
 
     @Test
     void importDataLessonsImported() {
-        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_LESSONS);
+        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_LESSONS_TIMES);
         Assertions.assertNotNull(timeTablePojos.firstShiftLessonsTimes);
         Assertions.assertNotNull(timeTablePojos.secondShiftLessonsTimes);
         Assertions.assertEquals(7,timeTablePojos.firstShiftLessonsTimes.size());
@@ -82,16 +72,37 @@ class ImportXMLToPojosConverterTest {
     @Test
     void importDataSubgroupsImportedFor1_9Classes() {
         TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_1_9_CLASS_WITH_GROUPS);
-        Assertions.assertNotNull(timeTablePojos.subgroups);
-        Assertions.assertEquals(6,timeTablePojos.subgroups.size());
+        Assertions.assertNotNull(timeTablePojos.regularSubGroups);
+        Assertions.assertEquals(6,timeTablePojos.regularSubGroups.size());
     }
 
-/*    @Test
+    @Test
     void importDataSubgroupsImportedFor10_11Classes() {
-        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_PLAN);
-        Assertions.assertNotNull(timeTablePojos.subgroups);
-        Assertions.assertEquals(1,timeTablePojos.subgroups.size());
-    }*/
+        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_10_11_CLASS_WITH_GROUPS);
+        Assertions.assertNotNull(timeTablePojos.planItemIdsWithIndividualPlanSubgroups);
+        Assertions.assertEquals(17,timeTablePojos.planItemIdsWithIndividualPlanSubgroups.size());
+    }
+
+    @Test
+    void importDataPlanItemsImportedFor1_9Classes() {
+        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_1_9_CLASS_WITH_GROUPS);
+        Assertions.assertNotNull(timeTablePojos.planItems);
+        Assertions.assertEquals(16,timeTablePojos.planItems.size());
+    }
+
+    @Test
+    void importDataPlanItemsImportedFor10_11Classes() {
+        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_10_11_CLASS_WITH_GROUPS);
+        Assertions.assertNotNull(timeTablePojos.planItems);
+        Assertions.assertEquals(17,timeTablePojos.planItems.size());
+    }
+
+    @Test
+    void importLessons() {
+        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_LESSONS);
+        Assertions.assertNotNull(timeTablePojos.lessons);
+        Assertions.assertEquals(46,timeTablePojos.lessons.size());
+    }
 
     private TimeTablePojos getTimeTablePojos(String text) {
         ImportXMLToPojosConverter importXMLToPojosConverter = new ImportXMLToPojosConverter();

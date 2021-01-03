@@ -17,18 +17,36 @@ public class ImportXMLToPojosConverter {
             TimeTablePojos timeTablePojos = new TimeTablePojos();
             Document xmlDocument = saxBuilder.build(inputStream);
             Element rootElement = xmlDocument.getRootElement();
-            fillLessonsPojos(rootElement, timeTablePojos);
+            fillLessonTimesPojos(rootElement, timeTablePojos);
             fillTeachersPojos(rootElement, timeTablePojos);
             fillSubjectsPojos(rootElement, timeTablePojos);
             fillRoomsPojos(rootElement, timeTablePojos);
             fillClassesPojosAndAllInnerContent(rootElement, timeTablePojos);
+            fillLessonsPojos(rootElement, timeTablePojos);
 
             return timeTablePojos;
         } catch (JDOMException e) {
-            throw new RuntimeException();
+            throw new RuntimeException(e);
         } catch (IOException e) {
-            throw new RuntimeException();
+            throw new RuntimeException(e);
         }
+    }
+
+    private void fillLessonsPojos(Element rootElement, TimeTablePojos timeTablePojos) {
+        List<Element> dayElements = rootElement.getChild("TimeTable").getChild("Week").getChildren("Day");
+        for(Element dayElement: dayElements)
+        {
+            Integer dayId = Integer.valueOf(dayElement.getAttributeValue("id"));
+            for (Element lessonNumberElement: dayElement.getChildren("Lesson"))
+            {
+                Integer lessonNumber = Integer.valueOf(lessonNumberElement.getAttributeValue("timeId"));
+                for(Element lessonElement: lessonNumberElement.getChildren("csg"))
+                {
+                    timeTablePojos.lessons.add(new LessonPojo(lessonElement, lessonNumber, dayId));
+                }
+            }
+        }
+
     }
 
     private void fillClassesPojosAndAllInnerContent(Element rootElement, TimeTablePojos timeTablePojos) {
@@ -41,21 +59,46 @@ public class ImportXMLToPojosConverter {
             {
                 if (containsParentSubjectInformation(planItemElement))
                 {
-                    RootSubjectPojo rootSubjectPojo = new RootSubjectPojo(planItemElement);
-                    timeTablePojos.rootSubjects.put(rootSubjectPojo.irTechId, rootSubjectPojo);
+                    createRootSubject(timeTablePojos, planItemElement);
                 }
+
                 if(schoolClassPojo.grade<10)
                 {
                     if(!planItemElement.getAttributeValue("groupid").isEmpty())
                     {
-                        RegularSubgroupPojo regularSubgroupPojo = new RegularSubgroupPojo(planItemElement);
-                        timeTablePojos.subgroups.put(regularSubgroupPojo.irTechId, regularSubgroupPojo);
+                        createRegularSubgroup(timeTablePojos, schoolClassPojo, planItemElement);
                     }
+
+                }
+                else
+                {
+                    createIndividualPlanSubgroup(timeTablePojos, schoolClassPojo, planItemElement);
                 }
 
-            }
+                createPlanItem(timeTablePojos, schoolClassPojo, planItemElement);
 
+            }
         }
+    }
+
+    private void createPlanItem(TimeTablePojos timeTablePojos, SchoolClassPojo schoolClassPojo, Element planItemElement) {
+        PlanItemPojo planItemPojo = new PlanItemPojo(planItemElement, schoolClassPojo.irTechId);
+        timeTablePojos.planItems.put(planItemPojo.irTechId, planItemPojo);
+    }
+
+    private void createIndividualPlanSubgroup(TimeTablePojos timeTablePojos, SchoolClassPojo schoolClassPojo, Element planItemElement) {
+        IndividualPlanSubgroupPojo individualPlanSubgroupPojo = new IndividualPlanSubgroupPojo(planItemElement, schoolClassPojo.irTechId);
+        timeTablePojos.planItemIdsWithIndividualPlanSubgroups.put(individualPlanSubgroupPojo.planItemIrTechId, individualPlanSubgroupPojo);
+    }
+
+    private void createRegularSubgroup(TimeTablePojos timeTablePojos, SchoolClassPojo schoolClassPojo, Element planItemElement) {
+        RegularSubgroupPojo regularSubgroupPojo = new RegularSubgroupPojo(planItemElement, schoolClassPojo.irTechId);
+        timeTablePojos.regularSubGroups.put(regularSubgroupPojo.irTechId, regularSubgroupPojo);
+    }
+
+    private void createRootSubject(TimeTablePojos timeTablePojos, Element planItemElement) {
+        RootSubjectPojo rootSubjectPojo = new RootSubjectPojo(planItemElement);
+        timeTablePojos.rootSubjects.put(rootSubjectPojo.irTechId, rootSubjectPojo);
     }
 
     private boolean containsParentSubjectInformation(Element planItemElement) {
@@ -93,7 +136,7 @@ public class ImportXMLToPojosConverter {
 
     }
 
-    private void fillLessonsPojos(Element rootElement, TimeTablePojos timeTablePojos) {
+    private void fillLessonTimesPojos(Element rootElement, TimeTablePojos timeTablePojos) {
         List<Element> lessonTimeElements = rootElement.getChild("LessonTimes").getChildren("LessonTime");
         for (Element lessonTimeElement: lessonTimeElements)
         {
