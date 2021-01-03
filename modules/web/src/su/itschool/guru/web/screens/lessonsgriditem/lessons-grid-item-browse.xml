@@ -7,7 +7,9 @@
     <data readOnly="true">
         <collection id="lessonsGridItemsDc"
                     class="su.itschool.guru.entity.LessonsGridItem">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="gridType" view="_minimal"/>
+            </view>
             <loader id="lessonsGridItemsDl">
                 <query>
                     <![CDATA[select e from guru_LessonsGridItem e]]>
@@ -33,6 +35,9 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
+                <column id="lessonNumber"/>
+                <column id="lessonStartTime"/>
+                <column id="gridType"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

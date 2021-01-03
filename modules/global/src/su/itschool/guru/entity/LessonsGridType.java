@@ -23,17 +23,6 @@ public class LessonsGridType extends StandardEntity {
     @Column(name = "DEFAULT_LESSON_TIME", nullable = false)
     private Integer defaultLessonTime;
 
-    @Column(name = "SHIFT")
-    private Integer shift;
-
-    public Integer getShift() {
-        return shift;
-    }
-
-    public void setShift(Integer shift) {
-        this.shift = shift;
-    }
-
     public Integer getDefaultLessonTime() {
         return defaultLessonTime;
     }

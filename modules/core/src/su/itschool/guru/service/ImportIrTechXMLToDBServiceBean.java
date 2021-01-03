@@ -18,6 +18,8 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
     private IrTechImportFinderService finderService;
     @Inject
     private FileLoader fileLoader;
+    @Inject
+    private LessonsGridService lessonsGridService;
 
 /*    @Override
     public List<StandardEntity> parseIrTechXML(TimeTableImport timeTableImport, LessonsGridType lessonsGridType) {
@@ -52,7 +54,8 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
                 importSettings,
                 dataManager,
                 new ImportXMLToPojosConverter(),
-                fileLoader);
+                fileLoader,
+                lessonsGridService);
         irTechDataToDbProvider.executeImport();
     }
 

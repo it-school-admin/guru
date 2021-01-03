@@ -100,7 +100,6 @@ create table GURU_LESSONS_GRID (
     --
     LESSONS_GRID_TYPE_NAME varchar(255) not null,
     DEFAULT_LESSON_TIME integer not null,
-    SHIFT integer,
     --
     primary key (ID)
 )^

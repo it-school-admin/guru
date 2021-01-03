@@ -16,8 +16,8 @@
         <checkBox id="importLessonsGrid" caption="msg://checkBox.caption"/>
         <lookupPickerField id="lessonsGridFieldForFirstShift" caption="msg://lessonsGrid.caption" optionsContainer="lessonsGridTypesDc"
                            enable="false"/>
-        <lookupPickerField id="lessonsGridFieldForSecondShift" caption="msg://lessonsGrid.caption" optionsContainer="lessonsGridTypesDc"
-                           enable="false"/>
+        <lookupPickerField id="lessonsGridFieldForSecondShift" optionsContainer="lessonsGridTypesDc"
+                           enable="false" caption="msg://lessonsGridFieldForSecondShift.caption"/>
         <checkBox id="importSubjects" caption="msg://importSubjects.caption"/>
         <checkBox id="importTeachers" caption="msg://importTeachers.caption"/>
         <checkBox id="importRooms" caption="msg://importRooms.caption"/>

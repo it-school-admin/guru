@@ -22,6 +22,7 @@
                 <entry key="guru_SettingsProviderService" value="su.itschool.guru.service.SettingsProviderService"/>
                 <entry key="guru_LessonTimeByLessonsGridCalculatorService"
                        value="su.itschool.guru.service.LessonTimeByLessonsGridCalculatorService"/>
+                <entry key="guru_LessonsGridService" value="su.itschool.guru.service.LessonsGridService"/>
             </map>
         </property>
     </bean>

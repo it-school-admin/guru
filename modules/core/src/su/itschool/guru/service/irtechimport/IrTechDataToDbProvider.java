@@ -5,6 +5,7 @@ import com.haulmont.cuba.core.global.FileStorageException;
 
 import com.haulmont.cuba.core.global.DataManager;
 import su.itschool.guru.service.ImportSettings;
+import su.itschool.guru.service.LessonsGridService;
 import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
 
 import java.io.InputStream;
@@ -14,16 +15,19 @@ public class IrTechDataToDbProvider {
     private final DataManager dataManager;
     private ImportXMLToPojosConverter importXMLToPojosConverter;
     private final FileLoader fileLoader;
+    private final LessonsGridService lessonsGridService;
     private TimeTablePojos timeTablePojos;
 
     public IrTechDataToDbProvider(ImportSettings importSettings,
                                   DataManager dataManager,
                                   ImportXMLToPojosConverter importXMLToPojosConverter,
-                                  FileLoader fileLoader) {
+                                  FileLoader fileLoader,
+                                  LessonsGridService lessonsGridService) {
         this.importSettings = importSettings;
         this.dataManager = dataManager;
         this.importXMLToPojosConverter = importXMLToPojosConverter;
         this.fileLoader = fileLoader;
+        this.lessonsGridService = lessonsGridService;
     }
 
     public void executeImport() {
@@ -32,13 +36,23 @@ public class IrTechDataToDbProvider {
         {
             if(importSettings.getImportLessonsGrid())
             {
-                new LessonsGridImporter(timeTablePojos.firstShiftLessonsTimes,
-                        timeTablePojos.secondShiftLessonsTimes,
-                        importSettings.getLessonsGridForFirstShift(),
-                        dataManager)
-                .importDataToDb();
+                importLessonGrids();
             }
         }
+    }
+
+    private void importLessonGrids() {
+        new LessonsGridImporter(timeTablePojos.firstShiftLessonsTimes,
+                importSettings.getLessonsGridForFirstShift(),
+                dataManager,
+                lessonsGridService)
+        .importDataToDb();
+
+        new LessonsGridImporter(timeTablePojos.secondShiftLessonsTimes,
+                importSettings.getLessonsGridForSecondShift(),
+                dataManager,
+                lessonsGridService)
+        .importDataToDb();
     }
 
     private InputStream getImportedFileAsStream() {

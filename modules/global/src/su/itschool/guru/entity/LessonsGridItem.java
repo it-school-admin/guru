@@ -1,5 +1,6 @@
 package su.itschool.guru.entity;
 
+import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import java.time.LocalTime;
 
 @Table(name = "GURU_LESSONS_GRID_ITEM")
 @Entity(name = "guru_LessonsGridItem")
+@NamePattern("%s %s|gridType,lessonNumber")
 public class LessonsGridItem extends StandardEntity {
     private static final long serialVersionUID = 8221835714432453534L;
 

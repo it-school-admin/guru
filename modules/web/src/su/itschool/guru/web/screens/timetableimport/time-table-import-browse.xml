@@ -63,6 +63,7 @@
         <groupTable id="lessonsGridTypesTable" height="200px" width="400px" dataContainer="lessonsGridTypesDc">
             <columns>
                 <column id="lessonsGridTypeName"/>
+                <column id="defaultLessonTime"/>
             </columns>
         </groupTable>
     </layout>

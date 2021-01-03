@@ -6,7 +6,9 @@
     <data>
         <instance id="lessonsGridItemDc"
                   class="su.itschool.guru.entity.LessonsGridItem">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="gridType" view="_minimal"/>
+            </view>
             <loader/>
         </instance>
     </data>
@@ -15,6 +17,9 @@
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="lessonsGridItemDc">
             <column width="350px">
+                <textField id="lessonNumberField" property="lessonNumber"/>
+                <timeField id="lessonStartTimeField" property="lessonStartTime"/>
+                <pickerField id="gridTypeField" property="gridType"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">
