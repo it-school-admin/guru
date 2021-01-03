@@ -13,7 +13,7 @@ import java.io.IOException;
 
 import java.util.*;
 
-//TODO the stub
+//TODO move to JDOM
 public class IrTechXMLClassesExtractorForDialog {
 
     private List<SchoolClassWrapper> schoolClassesWrappersList = new ArrayList();
@@ -42,13 +42,11 @@ public class IrTechXMLClassesExtractorForDialog {
 
     private List<SchoolClassWrapper> extractClassesNodesFromRootElement(Element documentElement) {
         Node planNode = documentElement.getElementsByTagName("Plan").item(0);
-        List<Node> classesNodesList = new ArrayList<>();
         NodeList potentialClassesNodes = planNode.getChildNodes();
         for (int i = 0; i < potentialClassesNodes.getLength(); i++) {
             Node item = potentialClassesNodes.item(i);
             if (item.getNodeType() == Node.ELEMENT_NODE) {
                 schoolClassesWrappersList.add(new SchoolClassWrapper(item));
-//                classesNodesList.add(item);
             }
         }
 

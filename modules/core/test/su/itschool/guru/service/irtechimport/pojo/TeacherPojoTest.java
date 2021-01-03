@@ -15,8 +15,6 @@ class TeacherPojoTest extends AbstractPojoTest{
         assertEquals("Павел", teacherPojo.name);
         assertEquals("Владимирович", teacherPojo.middleName);
         assertEquals("Александров", teacherPojo.lastName);
-
-
     }
 
 }

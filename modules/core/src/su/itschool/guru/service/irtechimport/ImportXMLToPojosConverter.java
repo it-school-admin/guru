@@ -4,14 +4,10 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
-import su.itschool.guru.service.irtechimport.pojo.LessonTimePojo;
-import su.itschool.guru.service.irtechimport.pojo.TeacherPojo;
-import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
+import su.itschool.guru.service.irtechimport.pojo.*;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 public class ImportXMLToPojosConverter {
@@ -23,12 +19,43 @@ public class ImportXMLToPojosConverter {
             Element rootElement = xmlDocument.getRootElement();
             fillLessonsPojos(rootElement, timeTablePojos);
             fillTeachersPojos(rootElement, timeTablePojos);
+            fillSubjectsPojos(rootElement, timeTablePojos);
+            fillRoomsPojos(rootElement, timeTablePojos);
+            fillClassesPojos(rootElement, timeTablePojos);
 
             return timeTablePojos;
         } catch (JDOMException e) {
             throw new RuntimeException();
         } catch (IOException e) {
             throw new RuntimeException();
+        }
+    }
+
+    private void fillClassesPojos(Element rootElement, TimeTablePojos timeTablePojos) {
+        List<Element> classElements = rootElement.getChild("Plan").getChildren("class");
+        for (Element classElement: classElements)
+        {
+            SchoolClassPojo schoolClassPojo = new SchoolClassPojo(classElement);
+            timeTablePojos.classes.put(schoolClassPojo.irTechId, schoolClassPojo);
+        }
+    }
+
+    private void fillRoomsPojos(Element rootElement, TimeTablePojos timeTablePojos) {
+        List<Element> roomElements = rootElement.getChild("Rooms").getChildren("room");
+        for (Element roomElement: roomElements)
+        {
+            RoomPojo roomPojo = new RoomPojo(roomElement);
+            timeTablePojos.rooms.put(roomPojo.irTechId, roomPojo);
+        }
+
+    }
+
+    private void fillSubjectsPojos(Element rootElement, TimeTablePojos timeTablePojos) {
+        List<Element> subjectElements = rootElement.getChild("subjects").getChildren("subject");
+        for (Element subjectElement: subjectElements)
+        {
+            SubjectPojo subjectPojo = new SubjectPojo(subjectElement);
+            timeTablePojos.subjects.put(subjectPojo.irTechId, subjectPojo);
         }
     }
 

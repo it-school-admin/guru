@@ -8,4 +8,7 @@ public class TimeTablePojos {
     public Map<Integer, LessonTimePojo> secondShiftLessonsTimes = new HashMap();
 
     public Map<Integer, TeacherPojo> teachers = new HashMap();
+    public Map<Integer, SubjectPojo> subjects = new HashMap();
+    public Map<Integer, RoomPojo> rooms = new HashMap();
+    public Map<Integer, SchoolClassPojo> classes = new HashMap();
 }
