@@ -21,7 +21,7 @@ public class ImportXMLToPojosConverter {
             fillTeachersPojos(rootElement, timeTablePojos);
             fillSubjectsPojos(rootElement, timeTablePojos);
             fillRoomsPojos(rootElement, timeTablePojos);
-            fillClassesPojos(rootElement, timeTablePojos);
+            fillClassesPojosAndAllInnerContent(rootElement, timeTablePojos);
 
             return timeTablePojos;
         } catch (JDOMException e) {
@@ -31,13 +31,37 @@ public class ImportXMLToPojosConverter {
         }
     }
 
-    private void fillClassesPojos(Element rootElement, TimeTablePojos timeTablePojos) {
+    private void fillClassesPojosAndAllInnerContent(Element rootElement, TimeTablePojos timeTablePojos) {
         List<Element> classElements = rootElement.getChild("Plan").getChildren("class");
         for (Element classElement: classElements)
         {
             SchoolClassPojo schoolClassPojo = new SchoolClassPojo(classElement);
             timeTablePojos.classes.put(schoolClassPojo.irTechId, schoolClassPojo);
+            for(Element planItemElement: classElement.getChildren("csg"))
+            {
+                if (containsParentSubjectInformation(planItemElement))
+                {
+                    RootSubjectPojo rootSubjectPojo = new RootSubjectPojo(planItemElement);
+                    timeTablePojos.rootSubjects.put(rootSubjectPojo.irTechId, rootSubjectPojo);
+                }
+                if(schoolClassPojo.grade<10)
+                {
+                    if(!planItemElement.getAttributeValue("groupid").isEmpty())
+                    {
+                        RegularSubgroupPojo regularSubgroupPojo = new RegularSubgroupPojo(planItemElement);
+                        timeTablePojos.subgroups.put(regularSubgroupPojo.irTechId, regularSubgroupPojo);
+                    }
+                }
+
+            }
+
         }
+    }
+
+    private boolean containsParentSubjectInformation(Element planItemElement) {
+        String parentSubjectId = planItemElement.getAttributeValue("parentsubjectid");
+        return (!parentSubjectId.isEmpty())
+                && (!parentSubjectId.equals("1"));
     }
 
     private void fillRoomsPojos(Element rootElement, TimeTablePojos timeTablePojos) {

@@ -11,4 +11,6 @@ public class TimeTablePojos {
     public Map<Integer, SubjectPojo> subjects = new HashMap();
     public Map<Integer, RoomPojo> rooms = new HashMap();
     public Map<Integer, SchoolClassPojo> classes = new HashMap();
+    public Map<Integer, RootSubjectPojo> rootSubjects = new HashMap();
+    public Map<Integer, RegularSubgroupPojo> subgroups = new HashMap();
 }

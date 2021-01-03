@@ -64,6 +64,34 @@ class ImportXMLToPojosConverterTest {
         Assertions.assertEquals(4,timeTablePojos.classes.size());
     }
 
+    @Test
+    void importDataRootGroupsImported() {
+        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_PLAN);
+        Assertions.assertNotNull(timeTablePojos.classes);
+        Assertions.assertEquals(4,timeTablePojos.classes.size());
+    }
+
+    @Test
+    void importDataRootSubjectsImported() {
+        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_PLAN);
+        Assertions.assertNotNull(timeTablePojos.rootSubjects);
+        Assertions.assertEquals(1,timeTablePojos.rootSubjects.size());
+        Assertions.assertNotNull(timeTablePojos.rootSubjects.get(Integer.valueOf(FOREIGN_LANGUAGE_SUBJECT_ID)));
+    }
+
+    @Test
+    void importDataSubgroupsImportedFor1_9Classes() {
+        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_1_9_CLASS_WITH_GROUPS);
+        Assertions.assertNotNull(timeTablePojos.subgroups);
+        Assertions.assertEquals(6,timeTablePojos.subgroups.size());
+    }
+
+/*    @Test
+    void importDataSubgroupsImportedFor10_11Classes() {
+        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_PLAN);
+        Assertions.assertNotNull(timeTablePojos.subgroups);
+        Assertions.assertEquals(1,timeTablePojos.subgroups.size());
+    }*/
 
     private TimeTablePojos getTimeTablePojos(String text) {
         ImportXMLToPojosConverter importXMLToPojosConverter = new ImportXMLToPojosConverter();
