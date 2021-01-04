@@ -34,9 +34,8 @@ public class SchoolClass extends StandardEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     private LessonsGridType mainLessonsGridType;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MAIN_TEACHER_ID")
-    @NotNull
     private Teacher mainTeacher;
 
     @Column(name = "STUDENT_COUNT")

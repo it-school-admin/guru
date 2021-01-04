@@ -33,7 +33,7 @@ create table GURU_SCHOOL_CLASS (
     CLASS_LETTER char not null,
     CLASS_EMAIL varchar(255),
     MAIN_LESSONS_GRID_TYPE_ID uuid,
-    MAIN_TEACHER_ID uuid not null,
+    MAIN_TEACHER_ID uuid,
     STUDENT_COUNT integer,
     SHIFT integer,
     IS_IN_DISTANT boolean not null,
