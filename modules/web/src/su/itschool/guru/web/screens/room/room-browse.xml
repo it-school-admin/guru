@@ -37,8 +37,8 @@
             <columns>
                 <column id="roomName"/>
                 <column id="roomBlock"/>
-                <column id="roomFloor"/>
                 <column id="roomSeatsAmount"/>
+                <column id="roomFloor"/>
                 <column id="irTehId"/>
             </columns>
             <rowsCount/>

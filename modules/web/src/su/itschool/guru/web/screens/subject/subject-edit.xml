@@ -20,7 +20,6 @@
                 <textField id="subjectNameField" property="subjectName"/>
                 <textField id="shortenedNameField" property="shortenedName"/>
                 <pickerField id="parentSubjectField" property="parentSubject"/>
-                <textField id="irTechIdField" property="irTechId"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

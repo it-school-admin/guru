@@ -19,9 +19,8 @@
             <column width="350px">
                 <textField id="roomNameField" property="roomName"/>
                 <pickerField id="roomBlockField" property="roomBlock"/>
-                <textField id="roomFloorField" property="roomFloor"/>
                 <textField id="roomSeatsAmountField" property="roomSeatsAmount"/>
-                <textField id="irTehIdField" property="irTehId"/>
+                <textField id="roomFloorField" property="roomFloor"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">
