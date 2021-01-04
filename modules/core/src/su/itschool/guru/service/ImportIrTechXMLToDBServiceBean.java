@@ -15,7 +15,7 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
     @Inject
     private DataManager dataManager;
     @Inject
-    private IrTechImportFinderService finderService;
+    private IrTechImportFinderService irTechfinderService;
     @Inject
     private FileLoader fileLoader;
     @Inject
@@ -29,7 +29,8 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
                 dataManager,
                 new ImportXMLToPojosConverter(),
                 fileLoader,
-                lessonsGridService);
+                lessonsGridService,
+                irTechfinderService);
         return irTechDataToDbProvider.executeImport().getResultText();
     }
 

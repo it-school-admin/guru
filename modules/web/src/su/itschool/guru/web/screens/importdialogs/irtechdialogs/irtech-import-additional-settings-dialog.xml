@@ -18,11 +18,10 @@
                            enable="false"/>
         <lookupPickerField id="lessonsGridFieldForSecondShift" optionsContainer="lessonsGridTypesDc"
                            enable="false" caption="msg://lessonsGridFieldForSecondShift.caption"/>
-        <checkBox id="importSubjects" caption="msg://importSubjects.caption"/>
-        <checkBox id="importTeachers" caption="msg://importTeachers.caption"/>
-        <checkBox id="importRooms" caption="msg://importRooms.caption"/>
-        <checkBox id="importClasses" caption="msg://importClasses.caption"/>
-        <checkBox id="importStudyPlan" caption="msg://importStudyPlan.caption"/>
+        <checkBox id="importSubjectsField" caption="msg://importSubjects.caption"/>
+        <checkBox id="importTeachersField" caption="msg://importTeachers.caption"/>
+        <checkBox id="importRoomsField" caption="msg://importRooms.caption"/>
+        <checkBox id="importStudyPlanField" caption="msg://importStudyPlan.caption"/>
         <buttonsPanel>
             <button id="submitBtn" caption="msg://button.caption"/>
             <button id="cancelBtn" caption="msg://button.caption_1"/>

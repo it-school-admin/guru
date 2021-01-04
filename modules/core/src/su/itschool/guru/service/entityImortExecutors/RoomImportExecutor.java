@@ -20,7 +20,7 @@ public class RoomImportExecutor extends AbstractImportExecutorImpl {
         Room room = (Room) entity;
         room.setIrTehId(getIntegerAttributeValue(entityInformation, "id"));
         room.setRoomName(getStringAttributeValue(entityInformation, "name"));
-        room.setRoomFloor(getStringAttributeValue(entityInformation, "floor"));
+      //  room.setRoomFloor(getStringAttributeValue(entityInformation, "floor"));
         room.setRoomSeatsAmount(getIntegerAttributeValue(entityInformation, "seats"));
         return entity;
     }

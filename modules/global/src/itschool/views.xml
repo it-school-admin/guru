@@ -5,8 +5,10 @@
         <property name="gridType" view="_minimal">
             <property name="defaultLessonTime"/>
         </property>
-        <property name="endTime"/>
         <property name="lessonNumber"/>
         <property name="lessonStartTime"/>
+    </view>
+    <view entity="guru_Subject" name="subject-view-with-parent" extends="_local">
+        <property name="parentSubject" view="_minimal"/>
     </view>
 </views>

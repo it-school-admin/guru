@@ -99,6 +99,12 @@ public class ImportXMLToPojosConverter {
     private void createRootSubject(TimeTablePojos timeTablePojos, Element planItemElement) {
         RootSubjectPojo rootSubjectPojo = new RootSubjectPojo(planItemElement);
         timeTablePojos.rootSubjects.put(rootSubjectPojo.irTechId, rootSubjectPojo);
+        updateChildSubject(timeTablePojos, rootSubjectPojo, planItemElement);
+    }
+
+    private void updateChildSubject(TimeTablePojos timeTablePojos, RootSubjectPojo rootSubjectPojo, Element planItemElement) {
+        Integer subjectId = Integer.valueOf(planItemElement.getAttributeValue("sid"));
+        timeTablePojos.subjects.get(subjectId).setParentSubject(rootSubjectPojo.irTechId);
     }
 
     private boolean containsParentSubjectInformation(Element planItemElement) {

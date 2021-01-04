@@ -18,5 +18,13 @@ class SubjectPojoTest extends AbstractPojoTest {
         assertEquals("матем.", subjectPojo.abbr);
     }
 
+    @Test
+    void checkParentSubject()
+    {
+        SubjectPojo subjectPojo = new SubjectPojo(convertStringToElement(SUBJECT_XML));
+        subjectPojo.setParentSubject(1111);
+        assertEquals(1111, subjectPojo.getParentSubject());
+    }
+
 
 }

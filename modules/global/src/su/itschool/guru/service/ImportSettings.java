@@ -16,6 +16,10 @@ public class ImportSettings implements Serializable {
     private Boolean importLessonsGrid;
     private LessonsGridType lessonsGridForFirstShift;
     private LessonsGridType lessonsGridForSecondShift;
+    private Boolean importSubjects;
+    private Boolean importTeachers;
+    private Boolean importRooms;
+    private Boolean importStudyPlan;
 
     public ImportSettings(FileDescriptor fileDescriptor, String scheduleName, Boolean importAllClasses, Boolean importAdditionalData) {
         this.importedFileDescriptor = fileDescriptor;
@@ -36,7 +40,7 @@ public class ImportSettings implements Serializable {
         return importedFileDescriptor;
     }
 
-    public boolean getImportLessonsGrid() {
+    public Boolean getImportLessonsGrid() {
         return importLessonsGrid;
     }
 
@@ -81,5 +85,41 @@ public class ImportSettings implements Serializable {
 
     public void setLessonsGridForSecondShift(LessonsGridType lessonsGrid) {
         lessonsGridForSecondShift = lessonsGrid;
+    }
+
+    public Boolean getImportSubjects() {
+        return importSubjects;
+
+    }
+
+    public void setImportSubjects(Boolean importSubjects) {
+        this.importSubjects = importSubjects;
+    }
+
+    public void setImportTeachers(Boolean importTeachers) {
+
+        this.importTeachers = importTeachers;
+    }
+
+    public void setImportRooms(Boolean importRooms) {
+
+        this.importRooms = importRooms;
+    }
+
+    public void setImportStudyPlan(Boolean importStudyPlan) {
+
+        this.importStudyPlan = importStudyPlan;
+    }
+
+    public Boolean getImportTeachers() {
+        return importTeachers;
+    }
+
+    public Boolean getImportRooms() {
+        return importRooms;
+    }
+
+    public Boolean getImportStudyPlan() {
+        return importStudyPlan;
     }
 }

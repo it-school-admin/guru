@@ -21,13 +21,21 @@ public class Room extends StandardEntity {
     private Block roomBlock;
 
     @Column(name = "ROOM_FLOOR")
-    private String roomFloor;
+    private Integer roomFloor;
 
     @Column(name = "ROOM_SEATS_AMOUNT")
     private Integer roomSeatsAmount;
 
     @Column(name = "IR_TEH_ID")
     private Integer irTehId;
+
+    public void setRoomFloor(Integer roomFloor) {
+        this.roomFloor = roomFloor;
+    }
+
+    public Integer getRoomFloor() {
+        return roomFloor;
+    }
 
     public void setIrTehId(Integer irTehId) {
         this.irTehId = irTehId;
@@ -51,14 +59,6 @@ public class Room extends StandardEntity {
 
     public Block getRoomBlock() {
         return roomBlock;
-    }
-
-    public String getRoomFloor() {
-        return roomFloor;
-    }
-
-    public void setRoomFloor(String roomFloor) {
-        this.roomFloor = roomFloor;
     }
 
     public String getRoomName() {

@@ -6,9 +6,13 @@ import com.haulmont.cuba.core.global.FileStorageException;
 import com.haulmont.cuba.core.global.DataManager;
 import su.itschool.guru.entity.LessonsGridType;
 import su.itschool.guru.service.ImportSettings;
+import su.itschool.guru.service.IrTechImportFinderService;
 import su.itschool.guru.service.LessonsGridService;
-import su.itschool.guru.service.irtechimport.pojo.LessonTimePojo;
-import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
+import su.itschool.guru.service.irtechimport.importers.LessonsGridImporter;
+import su.itschool.guru.service.irtechimport.importers.RoomImporter;
+import su.itschool.guru.service.irtechimport.importers.SubjectImporter;
+import su.itschool.guru.service.irtechimport.importers.TeacherImporter;
+import su.itschool.guru.service.irtechimport.pojo.*;
 import su.itschool.guru.service.irtechimport.result.ImportFromIrtTechResultImpl;
 
 import java.io.InputStream;
@@ -20,18 +24,21 @@ public class IrTechDataToDbProvider {
     private ImportXMLToPojosConverter importXMLToPojosConverter;
     private final FileLoader fileLoader;
     private final LessonsGridService lessonsGridService;
+    private final IrTechImportFinderService irTechFinderService;
     private TimeTablePojos timeTablePojos;
 
     public IrTechDataToDbProvider(ImportSettings importSettings,
                                   DataManager dataManager,
                                   ImportXMLToPojosConverter importXMLToPojosConverter,
                                   FileLoader fileLoader,
-                                  LessonsGridService lessonsGridService) {
+                                  LessonsGridService lessonsGridService,
+                                  IrTechImportFinderService irTechFinderService) {
         this.importSettings = importSettings;
         this.dataManager = dataManager;
         this.importXMLToPojosConverter = importXMLToPojosConverter;
         this.fileLoader = fileLoader;
         this.lessonsGridService = lessonsGridService;
+        this.irTechFinderService = irTechFinderService;
     }
 
     public ImportFromIrtTechResult executeImport() {
@@ -44,9 +51,37 @@ public class IrTechDataToDbProvider {
                 importResult.addResult(importLessonGrid(timeTablePojos.firstShiftLessonsTimes, importSettings.getLessonsGridForFirstShift()));
                 importResult.addResult(importLessonGrid(timeTablePojos.secondShiftLessonsTimes, importSettings.getLessonsGridForSecondShift()));
             }
+
+            if(importSettings.getImportTeachers())
+            {
+                importResult.addResult(importTeachers(timeTablePojos.teachers));
+            }
+
+
+            if(importSettings.getImportSubjects())
+            {
+                importResult.addResult(importSubjects(timeTablePojos.subjects, timeTablePojos.rootSubjects));
+            }
+
+            if(importSettings.getImportRooms())
+            {
+                importResult.addResult(importRooms(timeTablePojos.rooms));
+            }
         }
 
         return importResult;
+    }
+
+    private ImportResult importRooms(Map<Integer, RoomPojo> rooms) {
+        return new RoomImporter(rooms, dataManager, irTechFinderService).importDataToDb();
+    }
+
+    private ImportResult importTeachers(Map<Integer, TeacherPojo> teachers) {
+        return new TeacherImporter(teachers, dataManager, irTechFinderService).importDataToDb();
+    }
+
+    private ImportResult importSubjects(Map<Integer, SubjectPojo> subjectPojos, Map<Integer, RootSubjectPojo> rootSubjects) {
+        return new SubjectImporter(subjectPojos, rootSubjects, dataManager, irTechFinderService).importDataToDb();
     }
 
     private ImportResult importLessonGrid(Map<Integer, LessonTimePojo> lessonTimePojos, LessonsGridType lessonsGridForFirstShift) {

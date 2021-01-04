@@ -235,7 +235,7 @@ create table GURU_ROOM (
     --
     ROOM_NAME varchar(255) not null,
     ROOM_BLOCK_ID uuid,
-    ROOM_FLOOR varchar(255),
+    ROOM_FLOOR integer,
     ROOM_SEATS_AMOUNT integer,
     IR_TEH_ID integer,
     --

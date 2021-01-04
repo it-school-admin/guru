@@ -35,12 +35,14 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
     @Override
     public Subject findSubjectByIrTechId(Integer irTechId) {
         try {
-            Subject subject = dataManager.
-                    load(Subject.class).
-                    query("SELECT s FROM guru_Subject s WHERE s.irTechId = :irTechId").
-                    parameter("irTechId", irTechId).
-                    one();
 
+            Subject subject = dataManager
+                    .load(Subject.class)
+                  //  .view("subject-view-with-parent")
+                    .viewProperties("subjectName","shortenedName","parentSubject", "irTechId")
+                    .query("SELECT s FROM guru_Subject s WHERE s.irTechId = :irTechId")
+                    .parameter("irTechId", irTechId).
+                    one();
             return subject;
         }
         catch (Exception e)

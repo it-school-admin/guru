@@ -31,6 +31,14 @@ public class IrtechImportAdditionalSettingsDialog extends Screen {
     private LookupPickerField<LessonsGridType> lessonsGridFieldForSecondShift;
     @Inject
     private Dialogs dialogs;
+    @Inject
+    private CheckBox importSubjectsField;
+    @Inject
+    private CheckBox importTeachersField;
+    @Inject
+    private CheckBox importRoomsField;
+    @Inject
+    private CheckBox importStudyPlanField;
 
     @Subscribe("submitBtn")
     public void onSubmitBtnClick(Button.ClickEvent event) {
@@ -44,7 +52,7 @@ public class IrtechImportAdditionalSettingsDialog extends Screen {
         }
         else
         {
-            close(new IrTechImportAction(SUBMITTED,fillMainSettingsAndReturn()));
+            close(new IrTechImportAction(SUBMITTED, fillAdditionalSettingsAndReturn()));
         }
     }
 
@@ -54,10 +62,14 @@ public class IrtechImportAdditionalSettingsDialog extends Screen {
                 && lessonsGridFieldForSecondShift.getValue() == null;
     }
 
-    private ImportSettings fillMainSettingsAndReturn() {
+    private ImportSettings fillAdditionalSettingsAndReturn() {
         importSettings.setImportLessonsGrid(getImportLessonsGrid());
         importSettings.setLessonsGridForFirstShift(lessonsGridFieldForFirstShift.getValue());
         importSettings.setLessonsGridForSecondShift(lessonsGridFieldForSecondShift.getValue());
+        importSettings.setImportSubjects(importSubjectsField.getValue());
+        importSettings.setImportTeachers(importTeachersField.getValue());
+        importSettings.setImportRooms(importRoomsField.getValue());
+        importSettings.setImportStudyPlan(importStudyPlanField.getValue());
         return importSettings;
     }
 

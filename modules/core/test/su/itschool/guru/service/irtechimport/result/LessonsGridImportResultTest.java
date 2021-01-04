@@ -6,12 +6,12 @@ import su.itschool.guru.service.irtechimport.pojo.AbstractPojoTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class LessonsGridImportResultImplTest extends AbstractPojoTest {
+class LessonsGridImportResultTest extends AbstractPojoTest {
 
     @Test
     void getResult()
     {
-        ImportResult lessonsGridImportResult = new LessonsGridImportResultImpl(1, "Тестовая сетка");
+        ImportResult lessonsGridImportResult = new LessonsGridImportResult(1, "Тестовая сетка");
         assertEquals("Импортировано 1 элемент в сетку уроков \"Тестовая сетка\"" , lessonsGridImportResult.getResultString());
     }
 
