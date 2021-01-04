@@ -8,13 +8,13 @@ import com.haulmont.cuba.gui.components.LookupPickerField;
 import com.haulmont.cuba.gui.screen.*;
 import su.itschool.guru.entity.LessonsGridType;
 import su.itschool.guru.service.ImportSettings;
-import su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.IrTechImportAction;
+import su.itschool.guru.web.importproviders.irtech.IrTechImportSettingsProvider.IrTechImportAction;
 
 
 import javax.inject.Inject;
 
-import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.CANCELLED;
-import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.SUBMITTED;
+import static su.itschool.guru.web.importproviders.irtech.IrTechImportSettingsProvider.ResultStatus.CANCELLED;
+import static su.itschool.guru.web.importproviders.irtech.IrTechImportSettingsProvider.ResultStatus.SUBMITTED;
 
 @UiController("guru_IrtechImportAdditionalSettingsDialog")
 //TODO remove using descriptor

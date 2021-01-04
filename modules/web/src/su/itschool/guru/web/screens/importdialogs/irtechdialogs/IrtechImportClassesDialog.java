@@ -1,6 +1,5 @@
 package su.itschool.guru.web.screens.importdialogs.irtechdialogs;
 
-import com.haulmont.cuba.core.entity.FileDescriptor;
 import com.haulmont.cuba.gui.Dialogs;
 import com.haulmont.cuba.gui.UiComponents;
 import com.haulmont.cuba.gui.components.*;
@@ -9,16 +8,14 @@ import com.haulmont.cuba.gui.screen.Subscribe;
 import com.haulmont.cuba.gui.screen.UiController;
 import com.haulmont.cuba.gui.screen.UiDescriptor;
 import su.itschool.guru.service.ImportSettings;
-import su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider;
-import su.itschool.guru.web.screens.lesson.IrTechXMLClassesExtractorForDialog;
-import su.itschool.guru.web.screens.lesson.IrTechXMLClassesExtractorForDialog.SchoolClassWrapper;
+import su.itschool.guru.web.importproviders.irtech.IrTechImportSettingsProvider;
+import su.itschool.guru.web.importproviders.irtech.SchoolClassWrapper;
 
 import javax.inject.Inject;
-import java.io.File;
 import java.util.*;
 
-import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.CANCELLED;
-import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.SUBMITTED;
+import static su.itschool.guru.web.importproviders.irtech.IrTechImportSettingsProvider.ResultStatus.CANCELLED;
+import static su.itschool.guru.web.importproviders.irtech.IrTechImportSettingsProvider.ResultStatus.SUBMITTED;
 
 @UiController("guru_IrtechImportClassesDialog")
 @UiDescriptor("irtech-import-classes-dialog.xml")

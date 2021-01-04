@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 public class AbstractPojoTest {
+    //TODO move to libruary
     protected final Element convertStringToElement(String lessonTimeXml) {
         try {
             SAXBuilder saxBuilder = new SAXBuilder();

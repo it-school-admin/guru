@@ -4,9 +4,10 @@ import com.haulmont.cuba.gui.Notifications;
 import com.haulmont.cuba.gui.Screens;
 import com.haulmont.cuba.gui.components.Button;
 import com.haulmont.cuba.gui.screen.*;
-import com.haulmont.cuba.gui.upload.FileUploadingAPI;
 import su.itschool.guru.entity.Lesson;
 import su.itschool.guru.service.ImportIrTechXMLToDBService;
+import su.itschool.guru.web.importproviders.irtech.IrTechImportSettingsProvider;
+import su.itschool.guru.web.importproviders.irtech.IrTechXMLClassesExtractorForDialog;
 
 import javax.inject.Inject;
 
@@ -20,12 +21,15 @@ public class LessonBrowseForDispatcher extends StandardLookup<Lesson> {
     private ImportIrTechXMLToDBService importIrTechXMLToDBService;
     @Inject
     private Screens screens;
+    @Inject
+    private Notifications notifications;
 
     @Subscribe("ImportBtn")
     public void onImportBtnClick(Button.ClickEvent event) {
         new IrTechImportSettingsProvider(screens,
                 importIrTechXMLToDBService,
-                new IrTechXMLClassesExtractorForDialog())
+                new IrTechXMLClassesExtractorForDialog(),
+                notifications)
             .startImport();
     }
 

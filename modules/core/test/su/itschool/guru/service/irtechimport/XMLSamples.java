@@ -22,7 +22,9 @@ public class XMLSamples {
             "\t<subjects/>\n" +
             "\t<Rooms/>\t\n" +
             "\t<Plan/>\n" +
-            "\t</TimeTable>\n" +
+            "\t<TimeTable>" +
+            "\t\t<Week/>\n" +
+            "\t</TimeTable>" +
             "</TimeTableExchange>";
 
     static public final String INPUT_DATA_TEACHERS = "<TimeTableExchange>\n" +
@@ -36,7 +38,9 @@ public class XMLSamples {
             "\t<subjects/>\n" +
             "\t<Rooms/>\t\n" +
             "\t<Plan/>\n" +
-            "\t</TimeTable>\n" +
+            "\t<TimeTable>" +
+            "\t\t<Week/>\n" +
+            "\t</TimeTable>" +
             "</TimeTableExchange>";
 
     static public final String INPUT_DATA_SUBJECTS = "<TimeTableExchange>\n" +
@@ -60,7 +64,9 @@ public class XMLSamples {
             "\t</subjects>\t\n" +
             "\t<Rooms/>\t\n" +
             "\t<Plan/>\n" +
-            "\t</TimeTable>\n" +
+            "\t<TimeTable>" +
+            "\t\t<Week/>\n" +
+            "\t</TimeTable>" +
             "</TimeTableExchange>";
 
     static public final String INPUT_DATA_ROOMS = "<TimeTableExchange>\n" +
@@ -77,7 +83,9 @@ public class XMLSamples {
             "\t\t<room id=\"53418\" name=\"29\" seats=\"30\" floor=\"1\"/>\n" +
             "\t</Rooms>\t\n" +
             "\t<Plan/>\n" +
-            "\t</TimeTable>\n" +
+            "\t<TimeTable>" +
+            "\t\t<Week/>\n" +
+            "\t</TimeTable>" +
             "</TimeTableExchange>";
 
     public static final String FOREIGN_LANGUAGE_SUBJECT_ID = "60699";
@@ -198,7 +206,9 @@ public class XMLSamples {
             "\n" +
             "\n" +
             "\t</Plan>\t\n" +
-            "\t</TimeTable>\n" +
+            "\t<TimeTable>" +
+            "\t\t<Week/>\n" +
+            "\t</TimeTable>" +
             "</TimeTableExchange>";
 
     static public final String INPUT_DATA_1_9_CLASS_WITH_GROUPS = "<TimeTableExchange>\n" +
@@ -226,7 +236,9 @@ public class XMLSamples {
             "\t\t\t<csg id=\"4866989\" sid=\"85837\" name=\"Физическая культура\" groupid=\"\" parentsubjectid=\"\" tid=\"1333034\" hrsweek=\"3\" studcnt=\"0\"/>\n" +
             "\t\t</class>\t\n" +
             "\t</Plan>\t\n" +
-            "\t</TimeTable>\n" +
+            "\t<TimeTable>" +
+            "\t\t<Week/>\n" +
+            "\t</TimeTable>" +
             "</TimeTableExchange>";
 
     static public final String INPUT_DATA_10_11_CLASS_WITH_GROUPS = "<TimeTableExchange>\n" +
@@ -272,7 +284,9 @@ public class XMLSamples {
             "\t\t\t<csg id=\"5069664\" tid=\"1251025\" name=\"Элективный курс русский язык/10А\" sid=\"86856\" studcnt=\"10\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
             "\t\t</class>\t\n" +
             "\t</Plan>\t\n" +
-            "\t</TimeTable>\n" +
+            "\t<TimeTable>" +
+            "\t\t<Week/>\n" +
+            "\t</TimeTable>" +
             "</TimeTableExchange>";
 
     static public final String INPUT_DATA_LESSONS = "<TimeTableExchange>\n" +

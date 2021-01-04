@@ -7,7 +7,6 @@ public class AbstractImporter {
 
     protected AbstractImporter(DataManager dataManager)
     {
-
         this.dataManager = dataManager;
     }
 }

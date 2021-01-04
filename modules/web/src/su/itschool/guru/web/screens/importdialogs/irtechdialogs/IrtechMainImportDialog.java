@@ -14,8 +14,9 @@ import com.haulmont.cuba.gui.screen.UiController;
 import com.haulmont.cuba.gui.screen.UiDescriptor;
 import com.haulmont.cuba.gui.upload.FileUploadingAPI;
 import su.itschool.guru.service.ImportSettings;
-import su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.IrTechImportAction;
-import su.itschool.guru.web.screens.lesson.IrTechXMLClassesExtractorForDialog;
+import su.itschool.guru.web.importproviders.irtech.IrTechImportSettingsProvider.IrTechImportAction;
+import su.itschool.guru.web.importproviders.irtech.IrTechXMLClassesExtractorForDialog;
+import su.itschool.guru.web.importproviders.irtech.SchoolClassWrapper;
 
 import javax.inject.Inject;
 import java.io.File;
@@ -23,8 +24,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
-import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.CANCELLED;
-import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.SUBMITTED;
+import static su.itschool.guru.web.importproviders.irtech.IrTechImportSettingsProvider.ResultStatus.CANCELLED;
+import static su.itschool.guru.web.importproviders.irtech.IrTechImportSettingsProvider.ResultStatus.SUBMITTED;
 
 @UiController("guru_IrtechFileImportDialog")
 @UiDescriptor("irtech-main-Import-dialog.xml")
@@ -49,7 +50,7 @@ public class IrtechMainImportDialog extends Screen {
     private DataManager dataManager;
     private IrTechXMLClassesExtractorForDialog irTechXMLClassesExtractorForDialog;
     @Deprecated
-    private List<IrTechXMLClassesExtractorForDialog.SchoolClassWrapper> schoolClassWrappers;
+    private List<SchoolClassWrapper> schoolClassWrappers;
 
     private ImportSettings createImportSettings() {
         ImportSettings importSettings = new ImportSettings(importedFileDescriptor,

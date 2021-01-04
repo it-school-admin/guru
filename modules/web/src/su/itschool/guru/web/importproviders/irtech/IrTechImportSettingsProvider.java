@@ -1,20 +1,19 @@
-package su.itschool.guru.web.screens.lesson;
+package su.itschool.guru.web.importproviders.irtech;
 
+import com.haulmont.cuba.gui.Notifications;
 import com.haulmont.cuba.gui.Screens;
 import com.haulmont.cuba.gui.screen.CloseAction;
-import com.haulmont.cuba.gui.screen.Screen;
 import su.itschool.guru.service.ImportIrTechXMLToDBService;
 import su.itschool.guru.service.ImportSettings;
+import su.itschool.guru.service.irtechimport.ImportFromIrtTechResult;
 import su.itschool.guru.web.screens.importdialogs.irtechdialogs.IrtechImportAdditionalSettingsDialog;
 import su.itschool.guru.web.screens.importdialogs.irtechdialogs.IrtechImportClassesDialog;
 import su.itschool.guru.web.screens.importdialogs.irtechdialogs.IrtechMainImportDialog;
-import su.itschool.guru.web.screens.lesson.IrTechXMLClassesExtractorForDialog.SchoolClassWrapper;
 
-import java.io.File;
 import java.util.List;
 
 import static com.haulmont.cuba.gui.screen.OpenMode.DIALOG;
-import static su.itschool.guru.web.screens.lesson.IrTechImportSettingsProvider.ResultStatus.SUBMITTED;
+import static su.itschool.guru.web.importproviders.irtech.IrTechImportSettingsProvider.ResultStatus.SUBMITTED;
 
 public class IrTechImportSettingsProvider {
 
@@ -72,14 +71,17 @@ public class IrTechImportSettingsProvider {
     private Screens screens;
     private ImportIrTechXMLToDBService importIrTechXMLToDBService;
     private IrTechXMLClassesExtractorForDialog irTechXMLClassesExtractorForDialog;
+    private final Notifications notifications;
 
     public IrTechImportSettingsProvider(Screens screens,
                                         ImportIrTechXMLToDBService importIrTechXMLToDBService,
-                                        IrTechXMLClassesExtractorForDialog irTechXMLClassesExtractorForDialog)
+                                        IrTechXMLClassesExtractorForDialog irTechXMLClassesExtractorForDialog,
+                                        Notifications notifications)
     {
         this.screens = screens;
         this.importIrTechXMLToDBService = importIrTechXMLToDBService;
         this.irTechXMLClassesExtractorForDialog = irTechXMLClassesExtractorForDialog;
+        this.notifications = notifications;
     }
 
     public void startImport() {
@@ -168,6 +170,14 @@ public class IrTechImportSettingsProvider {
     }
 
     private void startImportProcess(ImportSettings importSettings) {
-        importIrTechXMLToDBService.importData(importSettings);
+        showResultMessage(importIrTechXMLToDBService.importData(importSettings));
+    }
+
+    private void showResultMessage(String importResult) {
+        notifications
+                .create()
+                .withCaption("Импорт завершён")
+                .withDescription(importResult)
+                .show();
     }
 }

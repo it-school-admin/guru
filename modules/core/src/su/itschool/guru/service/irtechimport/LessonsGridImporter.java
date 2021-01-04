@@ -5,6 +5,7 @@ import su.itschool.guru.entity.LessonsGridItem;
 import su.itschool.guru.entity.LessonsGridType;
 import su.itschool.guru.service.LessonsGridService;
 import su.itschool.guru.service.irtechimport.pojo.LessonTimePojo;
+import su.itschool.guru.service.irtechimport.result.LessonsGridImportResultImpl;
 
 import java.util.Map;
 import java.util.Map.Entry;
@@ -25,7 +26,7 @@ public class LessonsGridImporter extends AbstractImporter{
         this.lessonsGridService = lessonsGridService;
     }
 
-    public void importDataToDb() {
+    public ImportResult importDataToDb() {
         lessonsGridService.clearLessonsGrid(lessonsGridToImportTo);
         for (Entry<Integer, LessonTimePojo> lessonTimePojoEntry:lessonTimes.entrySet())
         {
@@ -37,6 +38,8 @@ public class LessonsGridImporter extends AbstractImporter{
             lessonsGridItem.setLessonStartTime(lessonTimePojo.startTime);
             dataManager.commit(lessonsGridItem);
         }
+
+        return new LessonsGridImportResultImpl(lessonTimes.size(), lessonsGridToImportTo.getLessonsGridTypeName());
 
     }
 }
