@@ -18,10 +18,11 @@ public class LessonTimeByLessonsGridCalculatorServiceBean implements LessonTimeB
 
     @Override
     public LocalDateTime calculateStartTimeOfLesson(TimeTableTemplateItem templateItem, Week week) {
-        LessonsGridItem lessonsGridItem = findLessonsGridItemByNumber(
+/*        LessonsGridItem lessonsGridItem = findLessonsGridItemByNumber(
                 templateItem.getPlanningItem().getGroupOfLearning().getSchoolClass().getMainLessonsGridType(),
                 templateItem.getNumberOfLesson());
-        return getDateWithTime(templateItem.getWeekDay(), week, lessonsGridItem.getLessonStartTime());
+        return getDateWithTime(templateItem.getWeekDay(), week, lessonsGridItem.getLessonStartTime());*/
+        return null;
     }
 
     private LessonsGridItem findLessonsGridItemByNumber(LessonsGridType mainLessonsGridType, Integer numberOfLesson) {
