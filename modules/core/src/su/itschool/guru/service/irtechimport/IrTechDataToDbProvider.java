@@ -68,10 +68,35 @@ public class IrTechDataToDbProvider {
             if(importSettings.getImportClasses())
             {
                 importResult.addResult(importClasses(timeTablePojos.classes));
+               // importResult.addResult(importRegularSubgroups(timeTablePojos.regularSubGroups));
+                //importResult.addResult(importIndividualPlanSubgroups(timeTablePojos.classes));
             }
+
+/*
+            if(importSettings.getImportStudyPlan())
+            {
+                importResult.addResult(importStudyPlan(timeTablePojos.));
+                importResult.addResult(importStudyPlanByGroups(timeTablePojos.));
+
+            }
+
+
+            if(importSettings.getImportLessonsByClasses())
+            {
+                importResult.addResult(importStudyPlan(timeTablePojos.));
+
+            }*/
         }
 
         return importResult;
+    }
+
+/*    private ImportResult importRegularSubgroups(Map<Integer, RegularSubgroupPojo> subgroups) {
+        return ;
+    }*/
+
+    private ImportResult importStudyPlan(Map<Integer, SchoolClassPojo> classes) {
+        return new StudyPlanImporter(classes, dataManager, irTechFinderService).importDataToDb();
     }
 
     private ImportResult importClasses(Map<Integer, SchoolClassPojo> classes) {

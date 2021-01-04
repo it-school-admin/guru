@@ -26,6 +26,7 @@
                 <textField id="studentCountField" property="studentCount"/>
                 <checkBox id="isInDistantField" property="isInDistant"/>
                 <pickerField id="mainLessonsGridTypeField" property="mainLessonsGridType"/>
+                <checkBox id="isIndividualPlanField" property="isIndividualPlan"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

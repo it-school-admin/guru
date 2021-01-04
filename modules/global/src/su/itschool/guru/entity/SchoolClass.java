@@ -3,7 +3,6 @@ package su.itschool.guru.entity;
 import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
-import com.haulmont.cuba.core.entity.annotation.Listeners;
 import com.haulmont.cuba.core.entity.annotation.PublishEntityChangedEvents;
 
 import javax.persistence.*;
@@ -44,12 +43,23 @@ public class SchoolClass extends StandardEntity {
     @Column(name = "SHIFT")
     private Integer shift;
 
+    @Column(name = "IS_INDIVIDUAL_PLAN")
+    private Boolean isIndividualPlan;
+
     @NotNull
     @Column(name = "IS_IN_DISTANT", nullable = false)
     private Boolean isInDistant = false;
 
     @Column(name = "IR_TECH_ID")
     private Integer irTechId;
+
+    public void setIsIndividualPlan(Boolean isIndividualPlan) {
+        this.isIndividualPlan = isIndividualPlan;
+    }
+
+    public Boolean getIsIndividualPlan() {
+        return isIndividualPlan;
+    }
 
     public Integer getIrTechId() {
         return irTechId;

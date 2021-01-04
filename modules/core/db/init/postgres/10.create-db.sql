@@ -36,6 +36,7 @@ create table GURU_SCHOOL_CLASS (
     MAIN_TEACHER_ID uuid,
     STUDENT_COUNT integer,
     SHIFT integer,
+    IS_INDIVIDUAL_PLAN boolean,
     IS_IN_DISTANT boolean not null,
     IR_TECH_ID integer,
     --

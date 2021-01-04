@@ -35,6 +35,14 @@ public class ClassImporter extends AbstractImporter {
             schoolClass.setClassLevel(schoolClassPojo.grade);
             schoolClass.setClassLetter(schoolClassPojo.letter);
             schoolClass.setStudentCount(schoolClassPojo.countOfStudents);
+            if (schoolClassPojo.grade<10)
+            {
+                schoolClass.setIsIndividualPlan(false);
+            }
+            else
+            {
+                schoolClass.setIsIndividualPlan(true);
+            }
             dataManager.commit(schoolClass);
 
         }

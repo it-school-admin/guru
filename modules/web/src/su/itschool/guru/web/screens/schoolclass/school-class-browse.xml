@@ -43,6 +43,8 @@
                 <column id="mainLessonsGridType"/>
                 <column id="shift"/>
                 <column id="isInDistant"/>
+                <column id="irTechId"/>
+                <column id="isIndividualPlan"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
