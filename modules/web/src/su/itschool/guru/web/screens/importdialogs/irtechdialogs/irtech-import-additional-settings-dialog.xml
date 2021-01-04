@@ -21,6 +21,7 @@
         <checkBox id="importSubjectsField" caption="msg://importSubjects.caption"/>
         <checkBox id="importTeachersField" caption="msg://importTeachers.caption"/>
         <checkBox id="importRoomsField" caption="msg://importRooms.caption"/>
+        <checkBox id="importClassesField" caption="msg://importClassesField.caption"/>
         <checkBox id="importStudyPlanField" caption="msg://importStudyPlan.caption"/>
         <buttonsPanel>
             <button id="submitBtn" caption="msg://button.caption"/>

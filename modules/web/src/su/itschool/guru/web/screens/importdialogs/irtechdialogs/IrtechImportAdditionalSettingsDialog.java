@@ -39,6 +39,8 @@ public class IrtechImportAdditionalSettingsDialog extends Screen {
     private CheckBox importRoomsField;
     @Inject
     private CheckBox importStudyPlanField;
+    @Inject
+    private CheckBox importClassesField;
 
     @Subscribe("submitBtn")
     public void onSubmitBtnClick(Button.ClickEvent event) {
@@ -69,6 +71,7 @@ public class IrtechImportAdditionalSettingsDialog extends Screen {
         importSettings.setImportSubjects(importSubjectsField.getValue());
         importSettings.setImportTeachers(importTeachersField.getValue());
         importSettings.setImportRooms(importRoomsField.getValue());
+        importSettings.setImportClasses(importClassesField.getValue());
         importSettings.setImportStudyPlan(importStudyPlanField.getValue());
         return importSettings;
     }

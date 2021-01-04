@@ -13,8 +13,7 @@ import javax.inject.Inject;
 import java.util.List;
 import java.util.UUID;
 
-import static com.haulmont.cuba.core.app.events.EntityChangedEvent.Type.CREATED;
-import static com.haulmont.cuba.core.app.events.EntityChangedEvent.Type.DELETED;
+import static com.haulmont.cuba.core.app.events.EntityChangedEvent.Type.*;
 
 @Component("guru_SchoolClassChangedListener")
 public class SchoolClassChangedListener {

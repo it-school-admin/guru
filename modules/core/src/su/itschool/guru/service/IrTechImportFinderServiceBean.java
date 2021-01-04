@@ -170,4 +170,22 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
         //TODO
         throw new RuntimeException();
     }
+
+    @Override
+    public SchoolClass findClassByIrTechId(Integer irTechId) {
+        try {
+            SchoolClass schoolClass = dataManager.
+                    load(SchoolClass.class).
+                    query("select cl from guru_SchoolClass as cl " +
+                            "WHERE " +
+                            "cl.irTechId = :irTechId").
+                    parameter("irTechId", irTechId).
+                    one();
+
+            return schoolClass;
+        } catch (Exception e) {
+            //TODO
+            return null;
+        }
+    }
 }

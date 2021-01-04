@@ -13,7 +13,6 @@ import javax.validation.constraints.NotNull;
 @PublishEntityChangedEvents
 @Table(name = "GURU_SCHOOL_CLASS")
 @Entity(name = "guru_SchoolClass")
-@Listeners("guru_SchoolClassEntityListener")
 @NamePattern("%s|className")
 public class SchoolClass extends StandardEntity {
     private static final long serialVersionUID = 6151984380717443318L;
@@ -48,6 +47,17 @@ public class SchoolClass extends StandardEntity {
     @NotNull
     @Column(name = "IS_IN_DISTANT", nullable = false)
     private Boolean isInDistant = false;
+
+    @Column(name = "IR_TECH_ID")
+    private Integer irTechId;
+
+    public Integer getIrTechId() {
+        return irTechId;
+    }
+
+    public void setIrTechId(Integer irTechId) {
+        this.irTechId = irTechId;
+    }
 
     public Character getClassLetter() {
         return classLetter;

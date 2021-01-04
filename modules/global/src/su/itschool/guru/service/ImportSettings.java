@@ -20,6 +20,7 @@ public class ImportSettings implements Serializable {
     private Boolean importTeachers;
     private Boolean importRooms;
     private Boolean importStudyPlan;
+    private Boolean importClasses;
 
     public ImportSettings(FileDescriptor fileDescriptor, String scheduleName, Boolean importAllClasses, Boolean importAdditionalData) {
         this.importedFileDescriptor = fileDescriptor;
@@ -121,5 +122,14 @@ public class ImportSettings implements Serializable {
 
     public Boolean getImportStudyPlan() {
         return importStudyPlan;
+    }
+
+    public void setImportClasses(Boolean importClasses) {
+
+        this.importClasses = importClasses;
+    }
+
+    public boolean getImportClasses() {
+        return importClasses;
     }
 }

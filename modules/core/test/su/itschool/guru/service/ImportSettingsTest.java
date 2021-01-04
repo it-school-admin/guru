@@ -94,6 +94,18 @@ class ImportSettingsTest extends AbstractPojoTest {
         assertFalse(importSettings.getImportStudyPlan());
     }
 
+    @Test
+    void importSettings_import_classes()
+    {
+        ImportSettings importSettings = getImportSettings();
+
+        importSettings.setImportClasses(true);
+        assertTrue(importSettings.getImportClasses());
+
+        importSettings.setImportClasses(false);
+        assertFalse(importSettings.getImportClasses());
+    }
+
 
 
     private ImportSettings getImportSettings() {

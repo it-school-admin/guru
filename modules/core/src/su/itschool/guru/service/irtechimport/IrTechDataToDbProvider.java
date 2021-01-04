@@ -8,10 +8,7 @@ import su.itschool.guru.entity.LessonsGridType;
 import su.itschool.guru.service.ImportSettings;
 import su.itschool.guru.service.IrTechImportFinderService;
 import su.itschool.guru.service.LessonsGridService;
-import su.itschool.guru.service.irtechimport.importers.LessonsGridImporter;
-import su.itschool.guru.service.irtechimport.importers.RoomImporter;
-import su.itschool.guru.service.irtechimport.importers.SubjectImporter;
-import su.itschool.guru.service.irtechimport.importers.TeacherImporter;
+import su.itschool.guru.service.irtechimport.importers.*;
 import su.itschool.guru.service.irtechimport.pojo.*;
 import su.itschool.guru.service.irtechimport.result.ImportFromIrtTechResultImpl;
 
@@ -67,9 +64,18 @@ public class IrTechDataToDbProvider {
             {
                 importResult.addResult(importRooms(timeTablePojos.rooms));
             }
+
+            if(importSettings.getImportClasses())
+            {
+                importResult.addResult(importClasses(timeTablePojos.classes));
+            }
         }
 
         return importResult;
+    }
+
+    private ImportResult importClasses(Map<Integer, SchoolClassPojo> classes) {
+        return new ClassImporter(classes, dataManager, irTechFinderService).importDataToDb();
     }
 
     private ImportResult importRooms(Map<Integer, RoomPojo> rooms) {

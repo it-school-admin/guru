@@ -19,4 +19,6 @@ public interface IrTechImportFinderService {
     Room getRoomByIrTechId(Integer irTechId);
 
     GroupForLesson findRootGroupByClass(SchoolClass schoolClass);
+
+    SchoolClass findClassByIrTechId(Integer irTechId);
 }
