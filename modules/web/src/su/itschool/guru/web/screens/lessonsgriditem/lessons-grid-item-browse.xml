@@ -38,6 +38,8 @@
                 <column id="lessonNumber"/>
                 <column id="lessonStartTime"/>
                 <column id="gridType"/>
+                <column id="endTime"/>
+                <column id="lessonEndTime"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

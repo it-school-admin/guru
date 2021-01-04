@@ -49,9 +49,9 @@ public class IrTechDataToDbProvider {
         return importResult;
     }
 
-    private ImportResult importLessonGrid(Map<Integer, LessonTimePojo> lessonTimePojos, LessonsGridType lessonsGrid) {
+    private ImportResult importLessonGrid(Map<Integer, LessonTimePojo> lessonTimePojos, LessonsGridType lessonsGridForFirstShift) {
         return new LessonsGridImporter(lessonTimePojos,
-                lessonsGrid,
+                lessonsGridForFirstShift,
                 dataManager,
                 lessonsGridService)
                 .importDataToDb();

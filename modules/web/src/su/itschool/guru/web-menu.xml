@@ -11,8 +11,7 @@
                   caption="mainMsg://menu_config.guru_Lesson.browse-for-dispatcher"/>
         </menu>
         <menu id="planning" caption="mainMsg://menu_config.planning">
-            <item screen="guru_LessonsGridItem.browse" caption="mainMsg://menu_config.guru_LessonsGridItem.browse"/>
-            <item screen="guru_LessonsGrid.browse" caption="mainMsg://menu_config.guru_LessonsGrid.browse"/>
+            <item screen="guru_LessonsGridWithItems" caption="mainMsg://menu_config.guru_LessonsGridWithItems"/>
             <item screen="guru_GroupForLesson.browse" caption="mainMsg://menu_config.guru_GroupForLesson.browse"/>
             <item screen="guru_LessonsPlanningItem.browse"
                   caption="mainMsg://menu_config.guru_LessonsPlanningItem.browse"/>
@@ -36,6 +35,5 @@
             <item screen="guru_SchoolClassMapping.browse"
                   caption="mainMsg://menu_config.guru_SchoolClassMapping.browse"/>
         </menu>
-        <item screen="guru_LessonsGridWithItems" caption="mainMsg://menu_config.guru_LessonsGridWithItems"/>
     </menu>
 </menu-config>

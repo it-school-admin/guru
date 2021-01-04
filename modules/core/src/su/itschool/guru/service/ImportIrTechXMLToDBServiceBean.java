@@ -3,7 +3,6 @@ package su.itschool.guru.service;
 import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.core.global.FileLoader;
 import org.springframework.stereotype.Service;
-import su.itschool.guru.service.irtechimport.ImportFromIrtTechResult;
 import su.itschool.guru.service.irtechimport.ImportXMLToPojosConverter;
 import su.itschool.guru.service.irtechimport.IrTechDataToDbProvider;
 

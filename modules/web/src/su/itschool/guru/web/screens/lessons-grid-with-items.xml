@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
         caption="msg://lessonsGridWithItems.caption"
         messagesPack="su.itschool.guru.web.screens">
     <data>
@@ -11,11 +12,24 @@
                 </query>
             </loader>
         </collection>
-        <collection id="lessonsGridItemsDc" class="su.itschool.guru.entity.LessonsGridItem">
-            <view extends="_local"/>
+        <collection id="lessonsGridItemsDc" class="su.itschool.guru.entity.LessonsGridItem"
+        >
+            <view extends="_local">
+                <property name="gridType" view="_minimal">
+                    <property name="defaultLessonTime"/>
+                </property>
+                <property name="lessonEndTime"/>
+            </view>
             <loader id="lessonsGridItemsDl">
                 <query>
                     <![CDATA[select e from guru_LessonsGridItem e]]>
+                    <condition>
+                        <and>
+                            <c:jpql>
+                                <c:where>e.gridType = :grid</c:where>
+                            </c:jpql>
+                        </and>
+                    </condition>
                 </query>
             </loader>
         </collection>
@@ -57,6 +71,7 @@
                 <columns>
                     <column id="lessonNumber"/>
                     <column id="lessonStartTime"/>
+                    <column id="lessonEndTime"/>
                 </columns>
             </groupTable>
         </split>

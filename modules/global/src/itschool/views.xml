@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <views xmlns="http://schemas.haulmont.com/cuba/view.xsd">
 
+    <view entity="guru_LessonsGridItem" name="lessonsGridItem-with-end-time-view">
+        <property name="gridType" view="_minimal">
+            <property name="defaultLessonTime"/>
+        </property>
+        <property name="endTime"/>
+        <property name="lessonNumber"/>
+        <property name="lessonStartTime"/>
+    </view>
 </views>

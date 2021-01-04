@@ -1,5 +1,6 @@
 package su.itschool.guru.entity;
 
+import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
@@ -48,5 +49,11 @@ public class LessonsGridItem extends StandardEntity {
 
     public void setGridType(LessonsGridType gridType) {
         this.gridType = gridType;
+    }
+
+    @Transient
+    @MetaProperty(related = {"lessonStartTime", "gridType"})
+    public LocalTime getLessonEndTime() {
+        return lessonStartTime.plusMinutes(gridType.getDefaultLessonTime());
     }
 }

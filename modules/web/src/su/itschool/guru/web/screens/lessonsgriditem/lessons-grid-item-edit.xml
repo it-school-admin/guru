@@ -20,6 +20,8 @@
                 <textField id="lessonNumberField" property="lessonNumber"/>
                 <timeField id="lessonStartTimeField" property="lessonStartTime"/>
                 <pickerField id="gridTypeField" property="gridType"/>
+                <timeField id="endTimeField" property="lessonEndTime"/>
+                <timeField id="lessonEndTimeField" property="lessonEndTime"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">
