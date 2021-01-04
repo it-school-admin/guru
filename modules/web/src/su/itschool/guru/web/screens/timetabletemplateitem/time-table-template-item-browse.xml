@@ -9,9 +9,7 @@
                     class="su.itschool.guru.entity.TimeTableTemplateItem">
             <view extends="_local">
                 <property name="room" view="_minimal"/>
-                <property name="groupForLesson" view="_minimal"/>
                 <property name="planningItem" view="_minimal"/>
-                <property name="dayOfWeek" view="_minimal"/>
             </view>
             <loader id="timeTableTemplateItemsDl">
                 <query>

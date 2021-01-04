@@ -5,11 +5,6 @@
         <property name="displayName"/>
     </view>
     <view entity="guru_Lesson" name="lesson-view-for-calendar" extends="_minimal">
-        <property name="planningItem" view="_minimal">
-            <property name="groupOfLearning" view="_minimal">
-                <property name="isFullClassGroup"/>
-            </property>
-        </property>
         <property name="endTime"/>
         <property name="room" view="_minimal">
             <property name="roomName"/>

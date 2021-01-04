@@ -7,10 +7,8 @@
         <instance id="timeTableTemplateItemDc"
                   class="su.itschool.guru.entity.TimeTableTemplateItem">
             <view extends="_local">
-                <property name="groupForLesson" view="_minimal"/>
                 <property name="room" view="_minimal"/>
                 <property name="planningItem" view="_minimal"/>
-                <property name="dayOfWeek" view="_minimal"/>
             </view>
             <loader/>
         </instance>
@@ -20,18 +18,7 @@
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="timeTableTemplateItemDc">
             <column width="350px">
-                <pickerField id="groupForLessonField" property="groupForLesson">
-                    <actions>
-                        <action id="lookup" type="picker_lookup"/>
-                        <action id="clear" type="picker_clear"/>
-                    </actions>
-                </pickerField>
-                <dateField id="timeStartField" property="timeStart"/>
-                <dateField id="timeEndField" property="timeEnd"/>
-                <pickerField id="roomField" property="room"/>
-                <textField id="freeSubjectField" property="freeSubject"/>
-                <pickerField id="planningItemField" property="planningItem"/>
-                <pickerField id="dayOfWeekField" property="dayOfWeek"/>
+
             </column>
         </form>
         <hbox id="editActions" spacing="true">
