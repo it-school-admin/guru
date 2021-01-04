@@ -18,11 +18,11 @@ public class Block extends StandardEntity {
     @Column(name = "BLOCK_NAME", nullable = false)
     private String blockName;
 
-    @Column(name = "BLOCK_GEO_POINT")
-    private String blockGeoPoint;
-
     @Column(name = "BLOCK_ADDRESS")
     private String blockAddress;
+
+    @Column(name = "BLOCK_GEO_POINT")
+    private String blockGeoPoint;
 
     public String getBlockGeoPoint() {
         return blockGeoPoint;

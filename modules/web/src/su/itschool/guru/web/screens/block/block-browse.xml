@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://blockBrowse.caption"
+        focusComponent="blocksTable"
+        messagesPack="su.itschool.guru.web.screens.block">
+    <data readOnly="true">
+        <collection id="blocksDc"
+                    class="su.itschool.guru.entity.Block">
+            <view extends="_local"/>
+            <loader id="blocksDl">
+                <query>
+                    <![CDATA[select e from guru_Block e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="blocksTable"
+            spacing="true">
+        <groupTable id="blocksTable"
+                    width="100%"
+                    dataContainer="blocksDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="blockName"/>
+                <column id="blockAddress"/>
+                <column id="blockGeoPoint"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="blocksTable.create"/>
+                <button id="editBtn" action="blocksTable.edit"/>
+                <button id="removeBtn" action="blocksTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

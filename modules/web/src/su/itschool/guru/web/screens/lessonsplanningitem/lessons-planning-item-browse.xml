@@ -44,7 +44,6 @@
             <columns>
                 <column id="irTechID"/>
                 <column id="hoursPerWeek"/>
-                <column id="groupOfLearning"/>
             </columns>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

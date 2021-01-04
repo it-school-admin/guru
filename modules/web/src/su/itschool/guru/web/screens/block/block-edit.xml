@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
-        caption="msg://lessonsPlanningItemEdit.caption"
+        caption="msg://blockEdit.caption"
         focusComponent="form"
-        messagesPack="su.itschool.guru.web.screens.lessonsplanningitem">
+        messagesPack="su.itschool.guru.web.screens.block">
     <data>
-        <instance id="lessonsPlanningItemDc"
-                  class="su.itschool.guru.entity.LessonsPlanningItem">
+        <instance id="blockDc"
+                  class="su.itschool.guru.entity.Block">
+            <view extends="_local"/>
             <loader/>
         </instance>
     </data>
     <dialogMode height="600"
                 width="800"/>
     <layout expand="editActions" spacing="true">
-        <form id="form" dataContainer="lessonsPlanningItemDc">
+        <form id="form" dataContainer="blockDc">
             <column width="350px">
-                <textField id="schoolClassField" property="schoolClass"/>
-                <textField id="hoursPerWeekField" property="hoursPerWeek"/>
+                <textField id="blockNameField" property="blockName"/>
+                <textField id="blockAddressField" property="blockAddress"/>
+                <textField id="blockGeoPointField" property="blockGeoPoint"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

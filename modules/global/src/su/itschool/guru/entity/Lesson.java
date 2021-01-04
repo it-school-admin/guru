@@ -192,7 +192,7 @@ public class Lesson extends StandardEntity {
 
     private String calculateDescriptionForCalendarEvent() {
         String result = "";
-        if (isDistant) {
+      /*  if (isDistant) {
             result = "Дистанционный";
         } else {
             result = "Очный";
@@ -203,13 +203,13 @@ public class Lesson extends StandardEntity {
         }
         if (planningItem != null) {
             result = result + " " + planningItem.getGroupOfLearning().getTeacher().getFamilyNameWithAbbreviation();
-        }
+        }*/
         return result;
     }
 
     private String calculateCaptionForCalendarEvent() {
         String result = "";
-        if (planningItem != null) {
+       /* if (planningItem != null) {
             GroupForLesson groupOfLearning = planningItem.getGroupOfLearning();
             if (groupOfLearning.getIsFullClassGroup()) {
                 result = groupOfLearning.getSchoolClass().getClassName() +
@@ -235,7 +235,7 @@ public class Lesson extends StandardEntity {
                 }
             }
 
-        }
+        }*/
 
         return result;
 

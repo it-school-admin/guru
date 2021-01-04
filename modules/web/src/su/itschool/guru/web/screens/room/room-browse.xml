@@ -7,7 +7,9 @@
     <data readOnly="true">
         <collection id="roomsDc"
                     class="su.itschool.guru.entity.Room">
-            <view extends="_local"/>
+            <view extends="_local">
+                <property name="roomBlock" view="_minimal"/>
+            </view>
             <loader id="roomsDl">
                 <query>
                     <![CDATA[select e from guru_Room e]]>
@@ -34,6 +36,7 @@
             </actions>
             <columns>
                 <column id="roomName"/>
+                <column id="roomBlock"/>
                 <column id="roomFloor"/>
                 <column id="roomSeatsAmount"/>
                 <column id="irTehId"/>

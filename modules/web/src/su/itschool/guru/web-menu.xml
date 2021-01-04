@@ -17,6 +17,7 @@
                   caption="mainMsg://menu_config.guru_LessonsPlanningItem.browse"/>
         </menu>
         <menu id="school" caption="mainMsg://menu_config.school">
+            <item screen="guru_Block.browse" caption="mainMsg://menu_config.guru_Block.browse"/>
             <item screen="guru_Room.browse" caption="mainMsg://menu_config.guru_Room.browse"/>
             <item screen="guru_Subject.browse" caption="mainMsg://menu_config.guru_Subject.browse"/>
             <item screen="guru_SchoolClass.browse" caption="mainMsg://menu_config.guru_SchoolClass.browse"/>
