@@ -18,7 +18,7 @@
                 <textField id="teacherSecondNameField" property="teacherSecondName"/>
                 <textField id="teacherFamilyNameField" property="teacherFamilyName"/>
                 <textField id="teacherEmailField" property="teacherEmail"/>
-                <textField id="irTechIdField" property="irTechId"/>
+                <textField id="familyNameWithAbbreviationField" property="familyNameWithAbbreviation"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

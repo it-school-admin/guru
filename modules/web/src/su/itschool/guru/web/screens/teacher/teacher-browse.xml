@@ -36,6 +36,7 @@
                 <column id="teacherSecondName" caption="msg://teacherSecondName.caption"/>
                 <column id="teacherFamilyName" caption="msg://teacherFamilyName.caption"/>
                 <column id="teacherEmail" caption="msg://teacherEmail.caption"/>
+                <column id="familyNameWithAbbreviation"/>
                 <column id="irTechId"/>
             </columns>
             <rowsCount/>
