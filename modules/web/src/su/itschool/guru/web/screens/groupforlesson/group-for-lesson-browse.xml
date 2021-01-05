@@ -6,13 +6,8 @@
         messagesPack="su.itschool.guru.web.screens.groupforlesson">
     <data readOnly="true">
         <collection id="groupForLessonsDc"
-                    class="su.itschool.guru.entity.GroupForLesson">
-            <view extends="_local">
-                <property name="schoolClass" view="_minimal"/>
-                <property name="subject" view="_minimal"/>
-                <property name="teacher" view="_minimal"/>
-                <property name="parentGroup" view="_minimal"/>
-            </view>
+                    class="su.itschool.guru.entity.GroupForLesson" view="groupForLesson-view">
+
             <loader id="groupForLessonsDl">
                 <query>
                     <![CDATA[select e from guru_GroupForLesson e]]>
@@ -40,20 +35,14 @@
                         <action id="remove" type="remove"/>
                     </actions>
                     <columns>
-                        <column id="teacher"/>
                         <column id="groupName"/>
-                        <column id="groupIrTechName"/>
                         <column id="isRootClassGroup"/>
-                        <column id="isSubjectGroup"/>
-                        <column id="groupTeamsTeam"/>
                         <column id="schoolClass"/>
-                        <column id="groupEmail"/>
                         <column id="parentGroup"/>
-                        <column id="subject"/>
-                        <column id="groupIrTechId"/>
-                        <column id="isFullClassGroup"/>
                         <column id="countStudent"/>
+                        <column id="groupEmail"/>
                         <column id="ownName"/>
+                        <column id="irTechId"/>
                     </columns>
                     <rowsCount/>
                     <buttonsPanel id="buttonsPanel"
@@ -69,22 +58,14 @@
                 <treeTable id="groupForLessonsTreeTable" height="100px" width="100%" dataContainer="groupForLessonsDc"
                            hierarchyProperty="parentGroup">
                     <columns>
-                        <column id="schoolClass"/>
-                        <column id="subject"/>
-                        <column id="isFullClassGroup"/>
-                        <column id="parentGroup"/>
-                        <column id="subGroupName"/>
-                        <column id="teacher"/>
-                        <column id="groupEmail"/>
-                        <column id="groupTeamsTeam"/>
-                        <column id="groupIrTechId"/>
-                        <column id="irTechCountStudent"/>
-                        <column id="groupIrTechName"/>
                         <column id="groupName"/>
+                        <column id="schoolClass"/>
                         <column id="isRootClassGroup"/>
-                        <column id="isSubjectGroup"/>
+                        <column id="parentGroup"/>
                         <column id="countStudent"/>
+                        <column id="groupEmail"/>
                         <column id="ownName"/>
+                        <column id="irTechId"/>
                     </columns>
                 </treeTable>
             </tab>

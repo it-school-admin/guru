@@ -11,4 +11,10 @@
     <view entity="guru_Subject" name="subject-view-with-parent" extends="_local">
         <property name="parentSubject" view="_minimal"/>
     </view>
+    <view entity="guru_GroupForLesson" name="groupForLesson-view" extends="_local">
+        <property name="schoolClass" view="_minimal"/>
+        <property name="parentGroup" view="_minimal"/>
+        <property name="isRootClassGroup"/>
+        <property name="groupName"/>
+    </view>
 </views>

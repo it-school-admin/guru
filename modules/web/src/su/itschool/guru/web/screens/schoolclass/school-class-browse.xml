@@ -29,7 +29,7 @@
         </filter>
         <groupTable id="schoolClassesTable"
                     width="100%"
-                    dataContainer="schoolClassesDc">
+                    dataContainer="schoolClassesDc" multiselect="true">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>

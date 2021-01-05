@@ -13,6 +13,7 @@ import su.itschool.guru.service.irtechimport.pojo.*;
 import su.itschool.guru.service.irtechimport.result.ImportFromIrtTechResultImpl;
 
 import java.io.InputStream;
+import java.util.List;
 import java.util.Map;
 
 public class IrTechDataToDbProvider {
@@ -68,7 +69,7 @@ public class IrTechDataToDbProvider {
             if(importSettings.getImportClasses())
             {
                 importResult.addResult(importClasses(timeTablePojos.classes));
-               // importResult.addResult(importRegularSubgroups(timeTablePojos.regularSubGroups));
+                importResult.addResult(importRegularSubgroups(timeTablePojos.regularSubGroups));
                 //importResult.addResult(importIndividualPlanSubgroups(timeTablePojos.classes));
             }
 
@@ -89,6 +90,10 @@ public class IrTechDataToDbProvider {
         }
 
         return importResult;
+    }
+
+    private ImportResult importRegularSubgroups(List<RegularSubgroupPojo> regularSubGroups) {
+        return new RegularGroupsImporter(regularSubGroups, dataManager, irTechFinderService).importDataToDb();
     }
 
 /*    private ImportResult importRegularSubgroups(Map<Integer, RegularSubgroupPojo> subgroups) {

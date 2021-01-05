@@ -3,6 +3,8 @@ package su.itschool.guru.entity;
 import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.OnDelete;
+import com.haulmont.cuba.core.global.DeletePolicy;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -19,39 +21,23 @@ public class GroupForLesson extends StandardEntity {
     @JoinColumn(name = "SCHOOL_CLASS_ID")
     private SchoolClass schoolClass;
 
-    @Column(name = "IS_FULL_CLASS_GROUP")
-    private Boolean isFullClassGroup;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PARENT_GROUP_ID")
+    @OnDelete(DeletePolicy.DENY)
     private GroupForLesson parentGroup;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "SUBJECT_ID")
-    private Subject subject;
 
     @Column(name = "OWN_NAME")
     private String ownName;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "TEACHER_ID")
-    private Teacher teacher;
 
     @Column(name = "GROUP_EMAIL")
     @Email
     private String groupEmail;
 
-    @Column(name = "GROUP_TEAMS_TEAM")
-    private String groupTeamsTeam;
-
-    @Column(name = "GROUP_IR_TECH_ID")
-    private Integer groupIrTechId;
-
     @Column(name = "COUNT_STUDENT")
     private Integer countStudent;
 
-    @Column(name = "GROUP_IR_TECH_NAME")
-    private String groupIrTechName;
+    @Column(name = "GROUP_IR_TECH_ID")
+    private Integer irTechId;
 
     public Integer getCountStudent() {
         return countStudent;
@@ -69,20 +55,12 @@ public class GroupForLesson extends StandardEntity {
         this.ownName = ownName;
     }
 
-    public void setGroupIrTechId(Integer groupIrTechId) {
-        this.groupIrTechId = groupIrTechId;
+    public void setIrTechId(Integer irTechId) {
+        this.irTechId = irTechId;
     }
 
-    public Integer getGroupIrTechId() {
-        return groupIrTechId;
-    }
-
-    public String getGroupTeamsTeam() {
-        return groupTeamsTeam;
-    }
-
-    public void setGroupTeamsTeam(String groupTeamsTeam) {
-        this.groupTeamsTeam = groupTeamsTeam;
+    public Integer getIrTechId() {
+        return irTechId;
     }
 
     public String getGroupEmail() {
@@ -93,44 +71,12 @@ public class GroupForLesson extends StandardEntity {
         this.groupEmail = groupEmail;
     }
 
-    public Boolean getIsFullClassGroup() {
-        return isFullClassGroup;
-    }
-
-    public void setIsFullClassGroup(Boolean isFullClassGroup) {
-        this.isFullClassGroup = isFullClassGroup;
-    }
-
-    public String getGroupIrTechName() {
-        return groupIrTechName;
-    }
-
-    public void setGroupIrTechName(String groupIrTechName) {
-        this.groupIrTechName = groupIrTechName;
-    }
-
     public GroupForLesson getParentGroup() {
         return parentGroup;
     }
 
     public void setParentGroup(GroupForLesson parentGroup) {
         this.parentGroup = parentGroup;
-    }
-
-    public Teacher getTeacher() {
-        return teacher;
-    }
-
-    public void setTeacher(Teacher teacher) {
-        this.teacher = teacher;
-    }
-
-    public Subject getSubject() {
-        return subject;
-    }
-
-    public void setSubject(Subject subject) {
-        this.subject = subject;
     }
 
     public SchoolClass getSchoolClass() {
@@ -149,29 +95,23 @@ public class GroupForLesson extends StandardEntity {
     }
 
     @Transient
-    @MetaProperty(related = {"subject"})
-    public Boolean getIsSubjectGroup()
-    {
-        return subject!=null;
-    }
-
-    @Transient
-    @MetaProperty(related = {"schoolClass", "subject", "ownName"})
+    @MetaProperty(related = {"schoolClass", "ownName", "parentGroup"})
     public String getGroupName()
     {
-        if(getIsRootClassGroup())
+        if(parentGroup == null)
         {
-            return schoolClass.getClassName();
+            if(schoolClass != null)
+            {
+                return schoolClass.getClassName();
+            }
         }
-        if(getIsSubjectGroup())
+        else
         {
-            return schoolClass.getClassName() + "/" + subject.getSubjectName();
+            if(schoolClass != null && ownName != null)
+            {
+                return schoolClass.getClassName() + "/" +  ownName;
+            }
         }
-        if(!isFullClassGroup && getIsSubjectGroup())
-        {
-            return schoolClass.getClassName() + "/" + subject.getSubjectName() + "/" + ownName;
-        }
-        //TODO give exception name
-        throw new RuntimeException();
+        return "";
     }
 }

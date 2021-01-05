@@ -53,7 +53,29 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
     }
 
     @Override
-    public GroupForLesson findLearningSubGroup(Integer groupIrTechId, SchoolClass schoolClass, Integer subjectIrTechId) {
+    public GroupForLesson findSubGroupByIrTechIdAndClass(Integer irTechId, SchoolClass schoolClass) {
+        try {
+
+            GroupForLesson groupForLesson = dataManager
+                    .load(GroupForLesson.class)
+                    .viewProperties("ownName", "parentGroup", "irTechId", "countStudent", "schoolClass")
+                    .query("SELECT g FROM guru_GroupForLesson g" +
+                            " WHERE g.irTechId = :irTechId" +
+                            " AND g.schoolClass = :schoolClass")
+                    .parameter("irTechId", irTechId)
+                    .parameter("schoolClass", schoolClass)
+                    .one();
+            return groupForLesson;
+        }
+        catch (Exception e)
+        {
+            //TODO
+            return null;
+        }
+    }
+
+/*    @Override
+    public GroupForLesson findSubGroup(Integer groupIrTechId, SchoolClass schoolClass, Integer subjectIrTechId) {
         try {
             GroupForLesson groupForLesson = dataManager.
                     load(GroupForLesson.class).
@@ -73,23 +95,21 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
             //TODO
             return null;
         }
-    }
+    }*/
 
     @Override
-    public GroupForLesson findMainLearningGroup(Integer classIrTechId, Integer subjectIrTechId) {
+    public GroupForLesson findRootClassGroup(Integer classIrTechId) {
         try {
             GroupForLesson groupForLesson = dataManager.
-                    load(GroupForLesson.class).
-                    query("select gr from guru_GroupForLesson as gr " +
+                    load(GroupForLesson.class)
+                    .viewProperties("parentGroup", "irTechId", "schoolClass")
+                    .query("select gr from guru_GroupForLesson as gr " +
                             "JOIN gr.schoolClass cl " +
-                            "JOIN gr.subject sub " +
                             "WHERE " +
-                            "gr.isFullClassGroup = true " +
-                            "AND sub.irTechId = :subjectIrTechId " +
-                            "AND cl.irTechId = :classIrTechId").
-                    parameter("classIrTechId", classIrTechId).
-                    parameter("subjectIrTechId", subjectIrTechId).
-                    one();
+                            "gr.parentGroup IS NULL " +
+                            "AND cl.irTechId = :classIrTechId")
+                    .parameter("classIrTechId", classIrTechId)
+                    .one();
 
             return groupForLesson;
         } catch (Exception e) {

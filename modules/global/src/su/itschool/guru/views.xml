@@ -10,11 +10,6 @@
             <property name="roomName"/>
             <property name="roomBlock" view="_minimal"/>
         </property>
-        <property name="groupOnTheFly" view="_minimal">
-            <property name="teacher" view="_minimal">
-                <property name="familyNameWithAbbreviation"/>
-            </property>
-        </property>
         <property name="subjectOnTheFly" view="_minimal"/>
         <property name="teacherOnTheFly" view="_minimal"/>
         <property name="isDistant"/>

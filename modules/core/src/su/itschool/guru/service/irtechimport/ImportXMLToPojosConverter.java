@@ -93,7 +93,7 @@ public class ImportXMLToPojosConverter {
 
     private void createRegularSubgroup(TimeTablePojos timeTablePojos, SchoolClassPojo schoolClassPojo, Element planItemElement) {
         RegularSubgroupPojo regularSubgroupPojo = new RegularSubgroupPojo(planItemElement, schoolClassPojo.irTechId);
-        timeTablePojos.regularSubGroups.put(regularSubgroupPojo.irTechId, regularSubgroupPojo);
+        timeTablePojos.regularSubGroups.add(regularSubgroupPojo);
     }
 
     private void createRootSubject(TimeTablePojos timeTablePojos, Element planItemElement) {

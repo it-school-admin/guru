@@ -8,9 +8,9 @@ public interface IrTechImportFinderService {
 
     Subject findSubjectByIrTechId(Integer irTechId);
 
-    GroupForLesson findLearningSubGroup(Integer groupIrTechId, SchoolClass schoolClass, Integer subjectIrTechId);
+    GroupForLesson findSubGroupByIrTechIdAndClass(Integer irTechId, SchoolClass schoolClass);
 
-    GroupForLesson findMainLearningGroup(Integer classIrTechId, Integer subjectIrTechId);
+    GroupForLesson findRootClassGroup(Integer classIrTechId);
 
     LessonsGridItem getLessonGridItemByIrTechId(LessonsGridType lessonsGridType, Integer lessonTimeId);
 
