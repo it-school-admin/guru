@@ -92,7 +92,132 @@ public class XMLSamples {
     static public final String INPUT_DATA_PLAN = "<TimeTableExchange>\n" +
             "\t<LessonTimes/>\n" +
             "\t<teachers/>\n" +
-            "\t<subjects/>\n" +
+            "\t<subjects>\n" +
+            "\t</subjects>\n" +
+            "\t<Rooms/>\n" +
+            "\t<Plan>\n" +
+            "\t\t<class id=\"913934\" name=\"2А\" grade=\"2\" studcnt=\"26\" boys=\"15\" girls=\"11\"> \n" +
+            "\t\t\t<csg id=\"4826768\" sid=\"85825\" name=\"Изобразительное искусство\" groupid=\"\" parentsubjectid=\"\" tid=\"1251015\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4826769\" sid=\"85827\" name=\"Музыка\" groupid=\"\" parentsubjectid=\"\" tid=\"1251043\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4929093\" sid=\"89298\" name=\"Иностранный язык/Иностранный язык (Английский язык)/англ.2 под\" groupid=\"81492\" parentsubjectid=\"\" tid=\"1251087\" hrsweek=\"2\" studcnt=\"13\"/>\n" +
+            "\t\t\t<csg id=\"4826770\" sid=\"85831\" name=\"Математика\" groupid=\"\" parentsubjectid=\"\" tid=\"1279262\" hrsweek=\"5\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4826774\" sid=\"86802\" name=\"Литературное чтение\" groupid=\"\" parentsubjectid=\"\" tid=\"1279262\" hrsweek=\"4\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4826773\" sid=\"85841\" name=\"Русский язык\" groupid=\"\" parentsubjectid=\"\" tid=\"1279262\" hrsweek=\"3\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4826775\" sid=\"86803\" name=\"Окружающий мир\" groupid=\"\" parentsubjectid=\"\" tid=\"1279262\" hrsweek=\"2\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"5013102\" sid=\"88072\" name=\"Кружок &quot;Азбука добра&quot;\" groupid=\"\" parentsubjectid=\"\" tid=\"1279262\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"5013103\" sid=\"88086\" name=\"Кружок &quot;Инфознайка&quot;\" groupid=\"\" parentsubjectid=\"\" tid=\"1279262\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4826777\" sid=\"88078\" name=\"Кружок &quot;Мои проекты&quot;\" groupid=\"\" parentsubjectid=\"\" tid=\"1279262\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4826778\" sid=\"88079\" name=\"Кружок &quot;Наглядная геометрия&quot;\" groupid=\"\" parentsubjectid=\"\" tid=\"1279262\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"5013104\" sid=\"92556\" name=\"Кружок «Оригами»\" groupid=\"\" parentsubjectid=\"\" tid=\"1279262\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4928876\" sid=\"285087\" name=\"Родной язык (русский)\" groupid=\"\" parentsubjectid=\"\" tid=\"1279262\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4826771\" sid=\"85834\" name=\"Технология\" groupid=\"\" parentsubjectid=\"\" tid=\"1279262\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4826772\" sid=\"85837\" name=\"Физическая культура\" groupid=\"\" parentsubjectid=\"\" tid=\"1281337\" hrsweek=\"3\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4866912\" sid=\"89298\" name=\"Иностранный язык/Иностранный язык (Английский язык)/англ.1 под\" groupid=\"81491\" parentsubjectid=\"\" tid=\"1322890\" hrsweek=\"2\" studcnt=\"13\"/>\n" +
+            "\t\t</class>\t\t\n" +
+            "\t\t<class id=\"913947\" name=\"6Б\" grade=\"6\" studcnt=\"25\" boys=\"8\" girls=\"17\"> \n" +
+            "\t\t\t<csg id=\"4866982\" sid=\"85821\" name=\"География\" groupid=\"\" parentsubjectid=\"\" tid=\"1251012\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4866988\" sid=\"85834\" name=\"Технология/д\" groupid=\"80636\" parentsubjectid=\"\" tid=\"1251015\" hrsweek=\"2\" studcnt=\"17\"/>\n" +
+            "\t\t\t<csg id=\"4866983\" sid=\"85825\" name=\"Изобразительное искусство\" groupid=\"\" parentsubjectid=\"\" tid=\"1251015\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"5040545\" sid=\"293454\" name=\"Кружок &quot;Волшебный карандаш&quot;\" groupid=\"\" parentsubjectid=\"\" tid=\"1251015\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4955487\" sid=\"85834\" name=\"Технология/м\" groupid=\"80635\" parentsubjectid=\"\" tid=\"1251023\" hrsweek=\"2\" studcnt=\"8\"/>\n" +
+            "\t\t\t<csg id=\"4866991\" sid=\"85841\" name=\"Русский язык\" groupid=\"\" parentsubjectid=\"\" tid=\"1251025\" hrsweek=\"7\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4866990\" sid=\"85839\" name=\"Литература\" groupid=\"\" parentsubjectid=\"\" tid=\"1251025\" hrsweek=\"3\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4866984\" sid=\"85827\" name=\"Музыка\" groupid=\"\" parentsubjectid=\"\" tid=\"1251043\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4866985\" sid=\"85830\" name=\"Информатика/1 гр.\" groupid=\"80685\" parentsubjectid=\"\" tid=\"1251067\" hrsweek=\"1\" studcnt=\"17\"/>\n" +
+            "\t\t\t<csg id=\"4963277\" sid=\"85830\" name=\"Информатика/2 гр.\" groupid=\"80637\" parentsubjectid=\"\" tid=\"1251067\" hrsweek=\"1\" studcnt=\"8\"/>\n" +
+            "\t\t\t<csg id=\"4955495\" sid=\"89298\" name=\"Иностранный язык/Иностранный язык (Английский язык)/англ.2 под\" groupid=\"81492\" parentsubjectid=\"\" tid=\"1251087\" hrsweek=\"3\" studcnt=\"12\"/>\n" +
+            "\t\t\t<csg id=\"4866981\" sid=\"85820\" name=\"Биология\" groupid=\"\" parentsubjectid=\"\" tid=\"1273210\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4866986\" sid=\"85831\" name=\"Математика\" groupid=\"\" parentsubjectid=\"\" tid=\"1278096\" hrsweek=\"6\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4866995\" sid=\"94312\" name=\"Кружок &quot;Развитие функциональной грамотности&quot;\" groupid=\"\" parentsubjectid=\"\" tid=\"1278096\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4866987\" sid=\"85832\" name=\"История России. Всеобщая история\" groupid=\"\" parentsubjectid=\"\" tid=\"1279264\" hrsweek=\"2\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4866992\" sid=\"86821\" name=\"Обществознание\" groupid=\"\" parentsubjectid=\"\" tid=\"1279264\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4866994\" sid=\"89298\" name=\"Иностранный язык/Иностранный язык (Английский язык)/англ.1 под\" groupid=\"81491\" parentsubjectid=\"\" tid=\"1327411\" hrsweek=\"3\" studcnt=\"13\"/>\n" +
+            "\t\t\t<csg id=\"4866989\" sid=\"85837\" name=\"Физическая культура\" groupid=\"\" parentsubjectid=\"\" tid=\"1333034\" hrsweek=\"3\" studcnt=\"0\"/>\n" +
+            "\t\t\t<csg id=\"4866993\" sid=\"88090\" name=\"Секция &quot;Спортивные игры&quot;\" groupid=\"\" parentsubjectid=\"\" tid=\"1333034\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
+            "\t\t</class>\t\n" +
+            "\t\t<class id=\"927320\" name=\"10А\" grade=\"10\" studcnt=\"10\" boys=\"1\" girls=\"9\"> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5079239\" tid=\"1279263\" name=\"Индивидуальный проект/10АБ\" sid=\"282687\" studcnt=\"36\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4963529\" tid=\"1267155\" name=\"Иностранный язык/Иностранный язык (Английский язык)/У\" sid=\"89298\" studcnt=\"10\" hrsweek=\"6\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4962941\" tid=\"1279264\" name=\"История России. Всеобщая история/У\" sid=\"85832\" studcnt=\"10\" hrsweek=\"4\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4974049\" tid=\"1251025\" name=\"Литература/Б\" sid=\"85839\" studcnt=\"36\" hrsweek=\"3\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4963526\" tid=\"1289115\" name=\"Математика/Б\" sid=\"85831\" studcnt=\"10\" hrsweek=\"5\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5072494\" tid=\"1251023\" name=\"Нравственные основы семейной жизни(ВНД)/10А\" sid=\"294680\" studcnt=\"10\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4963550\" tid=\"1273208\" name=\"Обществознание/Б\" sid=\"86821\" studcnt=\"12\" hrsweek=\"2\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4743553\" tid=\"1281337\" name=\"Основы безопасности жизнедеятельности/10\" sid=\"85836\" studcnt=\"36\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4963551\" tid=\"1279264\" name=\"Право/У\" sid=\"86823\" studcnt=\"10\" hrsweek=\"2\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4963527\" tid=\"1251025\" name=\"Родной язык (русский)/Б\" sid=\"285087\" studcnt=\"36\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4974038\" tid=\"1251025\" name=\"Русский язык/10АБ-У\" sid=\"85841\" studcnt=\"36\" hrsweek=\"3\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4743547\" tid=\"1251036\" name=\"Физика/Б\" sid=\"85823\" studcnt=\"10\" hrsweek=\"2\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4743554\" tid=\"1251037\" name=\"Физическая культура/10А\" sid=\"85837\" studcnt=\"10\" hrsweek=\"3\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5069686\" tid=\"1267155\" name=\"Элективный курс иностр.язык/10АБ11А\" sid=\"86857\" studcnt=\"24\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5069689\" tid=\"1279264\" name=\"Элективный курс история/10А11А\" sid=\"87211\" studcnt=\"15\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5069687\" tid=\"1279264\" name=\"Элективный курс обществознание/10АБ11А\" sid=\"86858\" studcnt=\"19\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5069664\" tid=\"1251025\" name=\"Элективный курс русский язык/10А\" sid=\"86856\" studcnt=\"10\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\t\t</class>\t\n" +
+            "\n" +
+            "\t\t<class id=\"913958\" name=\"11Б\" grade=\"11\" studcnt=\"24\" boys=\"19\" girls=\"5\"> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4993608\" tid=\"1251004\" name=\"Астрономия/11Б\" sid=\"92764\" studcnt=\"24\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4963561\" tid=\"1273210\" name=\"Биология/Б\" sid=\"85820\" studcnt=\"24\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5079249\" tid=\"1279263\" name=\"Индивидуальный проект/11Б\" sid=\"282687\" studcnt=\"24\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4974047\" tid=\"1267155\" name=\"Иностранный язык/Иностранный язык (Английский язык)/11Б-Б\" sid=\"89298\" studcnt=\"21\" hrsweek=\"3\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4993557\" tid=\"1251067\" name=\"Информатика/11Б-1\" sid=\"85830\" studcnt=\"12\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4993560\" tid=\"1251067\" name=\"Информатика/11Б-2\" sid=\"85830\" studcnt=\"12\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"2\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4995502\" tid=\"1251025\" name=\"Литература/11Б\" sid=\"85839\" studcnt=\"24\" hrsweek=\"3\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5072515\" tid=\"1251023\" name=\"Нравственные основы семейной жизни(ВНД)/11Б\" sid=\"294680\" studcnt=\"24\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4995526\" tid=\"1281337\" name=\"Основы безопасности жизнедеятельности/11Б\" sid=\"85836\" studcnt=\"24\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4993541\" tid=\"1251025\" name=\"Родной язык (русский)/11Б\" sid=\"285087\" studcnt=\"24\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4995463\" tid=\"1251025\" name=\"Русский язык/11Б-У\" sid=\"85841\" studcnt=\"24\" hrsweek=\"3\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4963564\" tid=\"1251004\" name=\"Физика/У\" sid=\"85823\" studcnt=\"24\" hrsweek=\"5\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"4995521\" tid=\"1251037\" name=\"Физическая культура/11Б\" sid=\"85837\" studcnt=\"24\" hrsweek=\"3\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5068816\" tid=\"1279263\" name=\"Химия/11Б-Б\" sid=\"85824\" studcnt=\"24\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\n" +
+            "\t\t\t<csg id=\"5101481\" tid=\"1251067\" name=\"Элективный курс информатика/11Б\" sid=\"87212\" studcnt=\"6\" hrsweek=\"1\" parentsubjectid=\"1\" groupid=\"1\" /> \n" +
+            "\t\t</class>\t\t\n" +
+            "\n" +
+            "\n" +
+            "\t</Plan>\t\n" +
+            "\t<TimeTable>" +
+            "\t\t<Week/>\n" +
+            "\t</TimeTable>" +
+            "</TimeTableExchange>";
+
+    static public final String INPUT_DATA_PLAN_WITH_ROOT_SUBJECTS = "<TimeTableExchange>\n" +
+            "\t<LessonTimes/>\n" +
+            "\t<teachers/>\n" +
+            "\t<subjects>\n" +
+            "\t\t<subject sid=\"89298\" name=\"Английский язык\" abbr=\"ино.\"/>\n" +
+            "\t</subjects>\n" +
             "\t<Rooms/>\n" +
             "\t<Plan>\n" +
             "\t\t<class id=\"913934\" name=\"2А\" grade=\"2\" studcnt=\"26\" boys=\"15\" girls=\"11\"> \n" +
@@ -226,13 +351,13 @@ public class XMLSamples {
             "\t\t\t<csg id=\"4866984\" sid=\"85827\" name=\"Музыка\" groupid=\"\" parentsubjectid=\"\" tid=\"1251043\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
             "\t\t\t<csg id=\"4866985\" sid=\"85830\" name=\"Информатика/1 гр.\" groupid=\"80685\" parentsubjectid=\"\" tid=\"1251067\" hrsweek=\"1\" studcnt=\"17\"/>\n" +
             "\t\t\t<csg id=\"4963277\" sid=\"85830\" name=\"Информатика/2 гр.\" groupid=\"80637\" parentsubjectid=\"\" tid=\"1251067\" hrsweek=\"1\" studcnt=\"8\"/>\n" +
-            "\t\t\t<csg id=\"4955495\" sid=\"89298\" name=\"Иностранный язык/Иностранный язык (Английский язык)/англ.2 под\" groupid=\"81492\" parentsubjectid=\"60699\" tid=\"1251087\" hrsweek=\"3\" studcnt=\"12\"/>\n" +
+            "\t\t\t<csg id=\"4955495\" sid=\"89298\" name=\"Иностранный язык/Иностранный язык (Английский язык)/англ.2 под\" groupid=\"81492\" parentsubjectid=\"\" tid=\"1251087\" hrsweek=\"3\" studcnt=\"12\"/>\n" +
             "\t\t\t<csg id=\"4866981\" sid=\"85820\" name=\"Биология\" groupid=\"\" parentsubjectid=\"\" tid=\"1273210\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
             "\t\t\t<csg id=\"4866986\" sid=\"85831\" name=\"Математика\" groupid=\"\" parentsubjectid=\"\" tid=\"1278096\" hrsweek=\"6\" studcnt=\"0\"/>\n" +
             "\t\t\t<csg id=\"4866995\" sid=\"94312\" name=\"Кружок &quot;Развитие функциональной грамотности&quot;\" groupid=\"\" parentsubjectid=\"\" tid=\"1278096\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
             "\t\t\t<csg id=\"4866987\" sid=\"85832\" name=\"История России. Всеобщая история\" groupid=\"\" parentsubjectid=\"\" tid=\"1279264\" hrsweek=\"2\" studcnt=\"0\"/>\n" +
             "\t\t\t<csg id=\"4866992\" sid=\"86821\" name=\"Обществознание\" groupid=\"\" parentsubjectid=\"\" tid=\"1279264\" hrsweek=\"1\" studcnt=\"0\"/>\n" +
-            "\t\t\t<csg id=\"4866994\" sid=\"89298\" name=\"Иностранный язык/Иностранный язык (Английский язык)/англ.1 под\" groupid=\"81491\" parentsubjectid=\"60699\" tid=\"1327411\" hrsweek=\"3\" studcnt=\"13\"/>\n" +
+            "\t\t\t<csg id=\"4866994\" sid=\"89298\" name=\"Иностранный язык/Иностранный язык (Английский язык)/англ.1 под\" groupid=\"81491\" parentsubjectid=\"\" tid=\"1327411\" hrsweek=\"3\" studcnt=\"13\"/>\n" +
             "\t\t\t<csg id=\"4866989\" sid=\"85837\" name=\"Физическая культура\" groupid=\"\" parentsubjectid=\"\" tid=\"1333034\" hrsweek=\"3\" studcnt=\"0\"/>\n" +
             "\t\t</class>\t\n" +
             "\t</Plan>\t\n" +

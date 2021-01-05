@@ -63,7 +63,7 @@ class ImportXMLToPojosConverterTest {
 
     @Test
     void importDataRootSubjectsImported() {
-        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_PLAN);
+        TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_PLAN_WITH_ROOT_SUBJECTS);
         Assertions.assertNotNull(timeTablePojos.rootSubjects);
         Assertions.assertEquals(1,timeTablePojos.rootSubjects.size());
         Assertions.assertNotNull(timeTablePojos.rootSubjects.get(Integer.valueOf(FOREIGN_LANGUAGE_SUBJECT_ID)));
