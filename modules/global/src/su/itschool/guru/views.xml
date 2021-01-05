@@ -21,4 +21,9 @@
         <property name="topicOfTheLesson"/>
         <property name="styleForCalendar"/>
     </view>
+    <view entity="guru_GroupForLesson" name="groupForLesson-view-for-lookup" extends="_minimal">
+        <property name="schoolClass" view="_minimal"/>
+        <property name="parentGroup" view="_minimal"/>
+        <property name="ownName"/>
+    </view>
 </views>

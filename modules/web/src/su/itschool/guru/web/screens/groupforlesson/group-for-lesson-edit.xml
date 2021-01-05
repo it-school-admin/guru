@@ -8,7 +8,7 @@
                   class="su.itschool.guru.entity.GroupForLesson">
             <view extends="_local">
                 <property name="schoolClass" view="_minimal"/>
-                <property name="parentGroup" view="_minimal"/>
+                <property name="parentGroup" view="groupForLesson-view-for-lookup"/>
                 <property name="isRootClassGroup"/>
                 <property name="groupName"/>
             </view>
