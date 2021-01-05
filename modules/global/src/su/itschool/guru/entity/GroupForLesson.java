@@ -95,7 +95,7 @@ public class GroupForLesson extends StandardEntity {
     }
 
     @Transient
-    @MetaProperty(related = {"schoolClass", "ownName", "parentGroup"})
+    @MetaProperty(related = {"schoolClass", "ownName"})
     public String getGroupName()
     {
         if(parentGroup == null)

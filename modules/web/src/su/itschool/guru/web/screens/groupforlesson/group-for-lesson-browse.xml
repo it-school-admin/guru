@@ -6,8 +6,13 @@
         messagesPack="su.itschool.guru.web.screens.groupforlesson">
     <data readOnly="true">
         <collection id="groupForLessonsDc"
-                    class="su.itschool.guru.entity.GroupForLesson" view="groupForLesson-view">
-
+                    class="su.itschool.guru.entity.GroupForLesson">
+            <view extends="_local">
+                <property name="schoolClass" view="_minimal"/>
+                <property name="parentGroup" view="_minimal"/>
+                <property name="isRootClassGroup"/>
+                <property name="groupName"/>
+            </view>
             <loader id="groupForLessonsDl">
                 <query>
                     <![CDATA[select e from guru_GroupForLesson e]]>
@@ -17,59 +22,39 @@
     </data>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="groupsTabSheet"
+    <layout expand="groupForLessonsTable"
             spacing="true">
         <filter id="filter"
                 applyTo="groupForLessonsTable"
                 dataLoader="groupForLessonsDl">
             <properties include=".*"/>
         </filter>
-        <tabSheet id="groupsTabSheet">
-            <tab id="groupListTab" caption="msg://groupListTab.caption" expand="groupForLessonsTable">
-                <groupTable id="groupForLessonsTable"
-                            width="100%"
-                            dataContainer="groupForLessonsDc">
-                    <actions>
-                        <action id="create" type="create"/>
-                        <action id="edit" type="edit"/>
-                        <action id="remove" type="remove"/>
-                    </actions>
-                    <columns>
-                        <column id="groupName"/>
-                        <column id="isRootClassGroup"/>
-                        <column id="schoolClass"/>
-                        <column id="parentGroup"/>
-                        <column id="countStudent"/>
-                        <column id="groupEmail"/>
-                        <column id="ownName"/>
-                        <column id="irTechId"/>
-                    </columns>
-                    <rowsCount/>
-                    <buttonsPanel id="buttonsPanel"
-                                  alwaysVisible="true">
-                        <button id="createBtn" action="groupForLessonsTable.create"/>
-                        <button id="editBtn" action="groupForLessonsTable.edit"/>
-                        <button id="removeBtn" action="groupForLessonsTable.remove"/>
-                    </buttonsPanel>
-                </groupTable>
-            </tab>
-            <tab id="groupsTreeTab" caption="msg://groupsTreeTab.caption" margin="true,false,false,false" spacing="true"
-                 expand="groupForLessonsTreeTable">
-                <treeTable id="groupForLessonsTreeTable" height="100px" width="100%" dataContainer="groupForLessonsDc"
-                           hierarchyProperty="parentGroup">
-                    <columns>
-                        <column id="groupName"/>
-                        <column id="schoolClass"/>
-                        <column id="isRootClassGroup"/>
-                        <column id="parentGroup"/>
-                        <column id="countStudent"/>
-                        <column id="groupEmail"/>
-                        <column id="ownName"/>
-                        <column id="irTechId"/>
-                    </columns>
-                </treeTable>
-            </tab>
-        </tabSheet>
+        <groupTable id="groupForLessonsTable"
+                    width="100%"
+                    dataContainer="groupForLessonsDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="schoolClass"/>
+                <column id="parentGroup"/>
+                <column id="ownName"/>
+                <column id="groupEmail"/>
+                <column id="countStudent"/>
+                <column id="irTechId"/>
+                <column id="isRootClassGroup"/>
+                <column id="groupName"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="groupForLessonsTable.create"/>
+                <button id="editBtn" action="groupForLessonsTable.edit"/>
+                <button id="removeBtn" action="groupForLessonsTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
             <button action="lookupSelectAction"/>
             <button action="lookupCancelAction"/>
