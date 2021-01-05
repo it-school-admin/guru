@@ -21,17 +21,4 @@
         <property name="topicOfTheLesson"/>
         <property name="styleForCalendar"/>
     </view>
-    <view entity="guru_GroupForLesson" name="groupForLesson-view">
-        <property name="schoolClass" view="_minimal"/>
-        <property name="isRootClassGroup"/>
-        <property name="groupName"/>
-        <property name="ownName"/>
-        <property name="groupEmail"/>
-        <property name="countStudent"/>
-        <property name="irTechId"/>
-        <property name="parentGroup" view="groupForLesson-view_for_parent_lookup"/>
-    </view>
-    <view entity="guru_GroupForLesson" name="groupForLesson-view_for_parent_lookup">
-        <property name="groupName"/>
-    </view>
 </views>
