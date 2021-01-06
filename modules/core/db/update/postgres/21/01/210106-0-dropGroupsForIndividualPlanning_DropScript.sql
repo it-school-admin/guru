@@ -1,0 +1,1 @@
+drop table if exists GURU_GROUPS_FOR_INDIVIDUAL_PLANNING__U47272 cascade ;

@@ -25,5 +25,6 @@
         <class>su.itschool.guru.entity.enums.GuruSettings</class>
         <class>su.itschool.guru.entity.SchoolClassMapping</class>
         <class>su.itschool.guru.entity.ThirdPartySystem</class>
+        <class>su.itschool.guru.entity.GroupForIndividualPlanning</class>
     </persistence-unit>
 </persistence>

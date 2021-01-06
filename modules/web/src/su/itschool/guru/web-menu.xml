@@ -36,5 +36,7 @@
             <item screen="guru_SchoolClassMapping.browse"
                   caption="mainMsg://menu_config.guru_SchoolClassMapping.browse"/>
         </menu>
+        <item screen="guru_GroupForIndividualPlanning.browse"
+              caption="mainMsg://menu_config.guru_GroupForIndividualPlanning.browse"/>
     </menu>
 </menu-config>

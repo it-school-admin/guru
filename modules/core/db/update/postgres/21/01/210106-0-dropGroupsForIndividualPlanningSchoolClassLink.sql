@@ -1,0 +1,1 @@
+alter table guru_groups_for_individual_planning_school_class_link rename to GURU_GROUPS_FOR_INDIVIDUAL_PLANNING_SCHOOL_CLASS_LINK__U21983 ;

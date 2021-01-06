@@ -10,7 +10,6 @@ import su.itschool.guru.entity.GroupForLesson;
 import su.itschool.guru.entity.SchoolClass;
 
 import javax.inject.Inject;
-import java.util.List;
 import java.util.UUID;
 
 import static com.haulmont.cuba.core.app.events.EntityChangedEvent.Type.*;
@@ -27,29 +26,6 @@ public class SchoolClassChangedListener {
         if(event.getType()== CREATED)
         {
             createRootGroupForLesson(loadSchoolClass(classId));
-        }
-    }
-
-
-    @TransactionalEventListener(phase = TransactionPhase.BEFORE_COMMIT)
-    public void beforeCommit(EntityChangedEvent<SchoolClass, UUID> event) {
-        Id<SchoolClass, UUID> classId = event.getEntityId();
-        if(event.getType()== DELETED)
-        {
-            removeRelatedWithClassGroups(classId);
-        }
-    }
-
-    private void removeRelatedWithClassGroups(Id<SchoolClass, UUID> classId) {
-        List<GroupForLesson> schoolClasses = dataManager
-                .load(GroupForLesson.class)
-                .query("SELECT gp FROM guru_GroupForLesson AS gp" +
-                        " WHERE gp.schoolClass=:schoolClass")
-                .parameter("schoolClass", loadSchoolClass(classId))
-                .list();
-        for(GroupForLesson groupForLesson: schoolClasses)
-        {
-            dataManager.remove(groupForLesson);
         }
     }
 

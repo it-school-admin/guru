@@ -444,3 +444,28 @@ create table GURU_THIRD_PARTY_SYSTEM (
     primary key (ID)
 )^
 -- end GURU_THIRD_PARTY_SYSTEM
+-- begin GURU_GROUP_FOR_INDIVIDUAL_PLANNING
+create table GURU_GROUP_FOR_INDIVIDUAL_PLANNING (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    NAME varchar(255) not null,
+    SUBJECT_ID uuid not null,
+    STUDENTS_COUNT integer,
+    --
+    primary key (ID)
+)^
+-- end GURU_GROUP_FOR_INDIVIDUAL_PLANNING
+-- begin GURU_GROUP_FOR_INDIVIDUAL_PLANNING_SCHOOL_CLASS_LINK
+create table GURU_GROUP_FOR_INDIVIDUAL_PLANNING_SCHOOL_CLASS_LINK (
+    GROUP_FOR_INDIVIDUAL_PLANNING_ID uuid,
+    SCHOOL_CLASS_ID uuid,
+    primary key (GROUP_FOR_INDIVIDUAL_PLANNING_ID, SCHOOL_CLASS_ID)
+)^
+-- end GURU_GROUP_FOR_INDIVIDUAL_PLANNING_SCHOOL_CLASS_LINK

@@ -3,11 +3,15 @@ package su.itschool.guru.entity;
 import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.OnDelete;
+import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.entity.annotation.PublishEntityChangedEvents;
+import com.haulmont.cuba.core.global.DeletePolicy;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @PublishEntityChangedEvents
 @Table(name = "GURU_SCHOOL_CLASS")
@@ -52,6 +56,21 @@ public class SchoolClass extends StandardEntity {
 
     @Column(name = "IR_TECH_ID")
     private Integer irTechId;
+    @JoinTable(name = "GURU_GROUP_FOR_INDIVIDUAL_PLANNING_SCHOOL_CLASS_LINK",
+            joinColumns = @JoinColumn(name = "SCHOOL_CLASS_ID"),
+            inverseJoinColumns = @JoinColumn(name = "GROUP_FOR_INDIVIDUAL_PLANNING_ID"))
+    @OnDeleteInverse(DeletePolicy.UNLINK)
+    @OnDelete(DeletePolicy.UNLINK)
+    @ManyToMany
+    private List<GroupForIndividualPlanning> groupForIndividualPlannings;
+
+    public List<GroupForIndividualPlanning> getGroupForIndividualPlannings() {
+        return groupForIndividualPlannings;
+    }
+
+    public void setGroupForIndividualPlannings(List<GroupForIndividualPlanning> groupForIndividualPlannings) {
+        this.groupForIndividualPlannings = groupForIndividualPlannings;
+    }
 
     public void setIsIndividualPlan(Boolean isIndividualPlan) {
         this.isIndividualPlan = isIndividualPlan;

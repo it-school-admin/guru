@@ -3,7 +3,7 @@ package su.itschool.guru.entity;
 import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
-import com.haulmont.cuba.core.entity.annotation.OnDelete;
+import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
 
 import javax.persistence.*;
@@ -19,11 +19,11 @@ public class GroupForLesson extends StandardEntity {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "SCHOOL_CLASS_ID")
+    @OnDeleteInverse(DeletePolicy.CASCADE)
     private SchoolClass schoolClass;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "PARENT_GROUP_ID")
-    @OnDelete(DeletePolicy.DENY)
     private GroupForLesson parentGroup;
 
     @Column(name = "OWN_NAME")
