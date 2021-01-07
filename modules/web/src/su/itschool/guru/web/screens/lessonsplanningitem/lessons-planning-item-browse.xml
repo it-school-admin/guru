@@ -6,14 +6,7 @@
         messagesPack="su.itschool.guru.web.screens.lessonsplanningitem">
     <data readOnly="true">
         <collection id="lessonsPlanningItemsDc"
-                    class="su.itschool.guru.entity.LessonsPlanningItem">
-            <view extends="_local">
-                <property name="regularSubject" view="_minimal"/>
-                <property name="regularGroup" view="groupForLesson-view-for-lookup"/>
-                <property name="teacher" view="_minimal"/>
-                <property name="individualPlanGroup" view="_minimal"/>
-                <property name="subject" view="_minimal"/>
-            </view>
+                    class="su.itschool.guru.entity.LessonsPlanningItem" view="lessonsPlanningItem-view">
             <loader id="lessonsPlanningItemsDl">
                 <query>
                     <![CDATA[select e from guru_LessonsPlanningItem e]]>
@@ -46,14 +39,11 @@
                 <button id="removeBtn" action="lessonsPlanningItemsTable.remove"/>
             </buttonsPanel>
             <columns>
+                <column id="name"/>
+                <column id="isIndividualPlanItem"/>
                 <column id="teacher"/>
                 <column id="hoursPerWeek"/>
-                <column id="regularSubject"/>
                 <column id="irTechID"/>
-                <column id="regularGroup"/>
-                <column id="individualPlanGroup"/>
-                <column id="isIndividualPlanItem"/>
-                <column id="subject"/>
             </columns>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

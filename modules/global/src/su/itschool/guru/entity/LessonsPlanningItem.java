@@ -6,20 +6,21 @@ import com.haulmont.cuba.core.entity.StandardEntity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 @Table(name = "GURU_LESSONS_PLANNING_ITEM")
 @Entity(name = "guru_LessonsPlanningItem")
-@NamePattern("%s|hoursPerWeek")
+@NamePattern("%s|name")
 public class LessonsPlanningItem extends StandardEntity {
     private static final long serialVersionUID = 3761661617055118840L;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "SUBJECT_ID")
-    private Subject regularSubject;
 
     @Column(name = "IS_INDIVIDUAL_PLAN_ITEM", nullable = false)
     @NotNull
     private Boolean isIndividualPlanItem = false;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "SUBJECT_ID")
+    private Subject regularSubject;
 
     @JoinColumn(name = "REGULAR_GROUP_ID")
     @ManyToOne(fetch = FetchType.LAZY)
@@ -42,25 +43,32 @@ public class LessonsPlanningItem extends StandardEntity {
     private Integer irTechID;
 
     @Transient
-    @MetaProperty(related = {"regularSubject", "isIndividualPlanItem", "individualPlanGroup"}, mandatory = true)
-    public Subject getSubject() {
+    @MetaProperty(related = {"individualPlanGroup", "isIndividualPlanItem", "regularGroup", "regularSubject", "teacher"})
+    public String getName() {
         if(!isIndividualPlanItem)
         {
-            if(regularSubject != null)
+            if(regularGroup != null)
             {
-                return regularSubject;
-
+                return regularGroup.getGroupName() + "/" + regularSubject.getSubjectName();
             }
         }
         else
         {
             if(individualPlanGroup != null)
             {
-                return individualPlanGroup.getSubject();
-            }
+                return classesToString(individualPlanGroup.getLinkedClasses()) + "/" + individualPlanGroup.getFullName();
+             }
         }
-
         return null;
+    }
+
+    private String classesToString(Set<SchoolClass> linkedClasses) {
+        String result = "";
+        for (SchoolClass schoolClass: linkedClasses)
+        {
+            result += schoolClass.getClassName();
+        }
+        return result;
     }
 
     public GroupForIndividualPlanning getIndividualPlanGroup() {
