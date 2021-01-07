@@ -8,7 +8,7 @@
         <collection id="lessonsPlanningItemsDc"
                     class="su.itschool.guru.entity.LessonsPlanningItem">
             <view extends="_local">
-                <property name="subject" view="_minimal"/>
+                <property name="regularSubject" view="_minimal"/>
                 <property name="regularGroup" view="groupForLesson-view-for-lookup"/>
                 <property name="teacher" view="_minimal"/>
                 <property name="individualPlanGroup" view="_minimal"/>
@@ -47,7 +47,7 @@
             <columns>
                 <column id="teacher"/>
                 <column id="hoursPerWeek"/>
-                <column id="subject"/>
+                <column id="regularSubject"/>
                 <column id="irTechID"/>
                 <column id="regularGroup"/>
                 <column id="individualPlanGroup"/>

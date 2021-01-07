@@ -14,7 +14,7 @@ public class LessonsPlanningItem extends StandardEntity {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SUBJECT_ID")
-    private Subject subject;
+    private Subject regularSubject;
 
     @Column(name = "IS_INDIVIDUAL_PLAN_ITEM")
     private Boolean isIndividualPlanItem;
@@ -71,12 +71,12 @@ public class LessonsPlanningItem extends StandardEntity {
         return regularGroup;
     }
 
-    public Subject getSubject() {
-        return subject;
+    public Subject getRegularSubject() {
+        return regularSubject;
     }
 
-    public void setSubject(Subject subject) {
-        this.subject = subject;
+    public void setRegularSubject(Subject regularSubject) {
+        this.regularSubject = regularSubject;
     }
 
     public void setHoursPerWeek(Integer hoursPerWeek) {

@@ -34,7 +34,7 @@ public class RegularStudyPlanImporter extends AbstractImporter {
             }
             planningItem.setIsIndividualPlanItem(false);
             setRegularGroup(regularPlanItemPojo, planningItem);
-            planningItem.setSubject(irTechFinderService.findSubjectByIrTechId(regularPlanItemPojo.subjectId));
+            planningItem.setRegularSubject(irTechFinderService.findSubjectByIrTechId(regularPlanItemPojo.subjectId));
             planningItem.setTeacher(irTechFinderService.findTeacherByIrTechId(regularPlanItemPojo.teacherId));
             planningItem.setHoursPerWeek(regularPlanItemPojo.hoursPerWeek);
             dataManager.commit(planningItem);
