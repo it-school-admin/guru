@@ -12,7 +12,7 @@ import java.util.Set;
 
 @Table(name = "GURU_GROUP_FOR_INDIVIDUAL_PLANNING")
 @Entity(name = "guru_GroupForIndividualPlanning")
-@NamePattern("%s|name")
+@NamePattern("%s|fullName")
 public class GroupForIndividualPlanning extends StandardEntity {
     private static final long serialVersionUID = -8155404451291370219L;
 

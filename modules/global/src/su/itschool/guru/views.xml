@@ -34,5 +34,6 @@
         <property name="subject" view="_minimal"/>
         <property name="regularGroup" view="_minimal"/>
         <property name="teacher" view="_minimal"/>
+        <property name="individualPlanGroup" view="_minimal"/>
     </view>
 </views>

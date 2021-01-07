@@ -11,6 +11,7 @@
                 <property name="subject" view="_minimal"/>
                 <property name="regularGroup" view="groupForLesson-view-for-lookup"/>
                 <property name="teacher" view="_minimal"/>
+                <property name="individualPlanGroup" view="_minimal"/>
             </view>
             <loader id="lessonsPlanningItemsDl">
                 <query>
@@ -49,6 +50,8 @@
                 <column id="subject"/>
                 <column id="irTechID"/>
                 <column id="regularGroup"/>
+                <column id="individualPlanGroup"/>
+                <column id="isIndividualPlanItem"/>
             </columns>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

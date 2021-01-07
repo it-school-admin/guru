@@ -12,14 +12,20 @@ import javax.validation.constraints.NotNull;
 public class LessonsPlanningItem extends StandardEntity {
     private static final long serialVersionUID = 3761661617055118840L;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "SUBJECT_ID")
-    @NotNull
     private Subject subject;
+
+    @Column(name = "IS_INDIVIDUAL_PLAN_ITEM")
+    private Boolean isIndividualPlanItem;
 
     @JoinColumn(name = "REGULAR_GROUP_ID")
     @ManyToOne(fetch = FetchType.LAZY)
     private GroupForLesson regularGroup;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "INDIVIDUAL_PLAN_GROUP_ID")
+    private GroupForIndividualPlanning individualPlanGroup;
 
     @JoinColumn(name = "TEACHER_ID")
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -32,6 +38,22 @@ public class LessonsPlanningItem extends StandardEntity {
 
     @Column(name = "IR_TECH_ID", unique = true)
     private Integer irTechID;
+
+    public GroupForIndividualPlanning getIndividualPlanGroup() {
+        return individualPlanGroup;
+    }
+
+    public void setIndividualPlanGroup(GroupForIndividualPlanning individualPlanGroup) {
+        this.individualPlanGroup = individualPlanGroup;
+    }
+
+    public Boolean getIsIndividualPlanItem() {
+        return isIndividualPlanItem;
+    }
+
+    public void setIsIndividualPlanItem(Boolean isIndividualPlanItem) {
+        this.isIndividualPlanItem = isIndividualPlanItem;
+    }
 
     public void setTeacher(Teacher teacher) {
         this.teacher = teacher;

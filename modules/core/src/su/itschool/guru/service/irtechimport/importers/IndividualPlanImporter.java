@@ -1,6 +1,7 @@
 package su.itschool.guru.service.irtechimport.importers;
 
 import com.haulmont.cuba.core.global.DataManager;
+import su.itschool.guru.entity.LessonsPlanningItem;
 import su.itschool.guru.service.IrTechImportFinderService;
 import su.itschool.guru.service.irtechimport.AbstractImporter;
 import su.itschool.guru.service.irtechimport.ImportResult;
@@ -21,6 +22,21 @@ public class IndividualPlanImporter extends AbstractImporter {
 
     @Override
     public ImportResult importDataToDb() {
+        for(IndividualPlanItemPojo planItemPojo: individualPlanItems)
+        {
+            LessonsPlanningItem planningItem = irTechFinderService.getPlanningItemByIrTechId(planItemPojo.irTechId);
+            if(planningItem == null)
+            {
+                planningItem = dataManager.create(LessonsPlanningItem.class);
+                planningItem.setIrTechID(planItemPojo.irTechId);
+            }
+            planningItem.setIsIndividualPlanItem(true);
+            planningItem.setIndividualPlanGroup(irTechFinderService.findIndividualPlanSubgroupByPlanItemIrTechId(planItemPojo.irTechId));
+
+            planningItem.setTeacher(irTechFinderService.findTeacherByIrTechId(planItemPojo.teacherId));
+            planningItem.setHoursPerWeek(planItemPojo.hoursPerWeek);
+            dataManager.commit(planningItem);
+        }
         return new IndividualPlanImportResult(individualPlanItems.size());
     }
 }

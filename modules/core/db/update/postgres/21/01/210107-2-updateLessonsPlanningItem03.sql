@@ -1,0 +1,2 @@
+alter table GURU_LESSONS_PLANNING_ITEM add column IS_INDIVIDUAL_PLAN_ITEM boolean ;
+alter table GURU_LESSONS_PLANNING_ITEM add column INDIVIDUAL_PLAN_GROUP_ID uuid ;

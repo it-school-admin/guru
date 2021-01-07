@@ -10,6 +10,7 @@
                 <property name="subject" view="_minimal"/>
                 <property name="regularGroup" view="_minimal"/>
                 <property name="teacher" view="_minimal"/>
+                <property name="individualPlanGroup" view="_minimal"/>
             </view>
             <loader/>
         </instance>
@@ -24,6 +25,8 @@
                 <pickerField id="subjectField" property="subject"/>
                 <pickerField id="regularGroupField" property="regularGroup"/>
                 <textField id="irTechIDField" property="irTechID"/>
+                <pickerField id="individualPlanGroupField" property="individualPlanGroup"/>
+                <checkBox id="isIndividualPlanItemField" property="isIndividualPlanItem"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

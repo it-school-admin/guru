@@ -82,8 +82,10 @@ create table GURU_LESSONS_PLANNING_ITEM (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    SUBJECT_ID uuid not null,
+    SUBJECT_ID uuid,
+    IS_INDIVIDUAL_PLAN_ITEM boolean,
     REGULAR_GROUP_ID uuid,
+    INDIVIDUAL_PLAN_GROUP_ID uuid,
     TEACHER_ID uuid not null,
     HOURS_PER_WEEK integer not null,
     IR_TECH_ID integer,

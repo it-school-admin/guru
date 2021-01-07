@@ -32,6 +32,7 @@ public class RegularStudyPlanImporter extends AbstractImporter {
                 planningItem = dataManager.create(LessonsPlanningItem.class);
                 planningItem.setIrTechID(regularPlanItemPojo.irTechId);
             }
+            planningItem.setIsIndividualPlanItem(false);
             setRegularGroup(regularPlanItemPojo, planningItem);
             planningItem.setSubject(irTechFinderService.findSubjectByIrTechId(regularPlanItemPojo.subjectId));
             planningItem.setTeacher(irTechFinderService.findTeacherByIrTechId(regularPlanItemPojo.teacherId));
