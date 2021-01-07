@@ -36,10 +36,12 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="name"/>
+                <column id="fullName"/>
                 <column id="subject"/>
                 <column id="linkedClasses"/>
                 <column id="studentsCount"/>
+                <column id="name"/>
+                <column id="planItemIrTechId"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

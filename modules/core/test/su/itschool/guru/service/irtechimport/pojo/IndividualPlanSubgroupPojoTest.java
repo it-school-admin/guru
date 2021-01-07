@@ -20,6 +20,7 @@ class IndividualPlanSubgroupPojoTest extends AbstractPojoTest {
                 DEFAULT_SCHOOL_CLASS_IR_TECH_ID);
         assertEquals(Integer.valueOf(PLAN_ITEM_ID), individualPlanSubgroupPojo.planItemIrTechId);
         Assertions.assertEquals(DEFAULT_SCHOOL_CLASS_IR_TECH_ID, individualPlanSubgroupPojo.defaultSchoolClassIrTechId);
+        Assertions.assertEquals(87211, individualPlanSubgroupPojo.subject);
     }
 
     @Test

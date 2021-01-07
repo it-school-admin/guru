@@ -27,6 +27,7 @@
                     </actions>
                 </pickerField>
                 <textField id="studentsCountField" property="studentsCount"/>
+                <textField id="fullNameField" property="fullName"/>
             </column>
         </form>
         <groupBox id="linkedClassesBox"

@@ -1,5 +1,6 @@
 package su.itschool.guru.entity;
 
+import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
@@ -34,6 +35,23 @@ public class GroupForIndividualPlanning extends StandardEntity {
 
     @Column(name = "STUDENTS_COUNT")
     private Integer studentsCount;
+
+    @Column(name = "PLAN_ITEM_IR_TECH_ID")
+    private Integer planItemIrTechId;
+
+    @Transient
+    @MetaProperty(related = {"name", "subject"})
+    public String getFullName() {
+        return subject.getSubjectName() + "/" + name;
+    }
+
+    public Integer getPlanItemIrTechId() {
+        return planItemIrTechId;
+    }
+
+    public void setPlanItemIrTechId(Integer planItemIrTechId) {
+        this.planItemIrTechId = planItemIrTechId;
+    }
 
     public Integer getStudentsCount() {
         return studentsCount;

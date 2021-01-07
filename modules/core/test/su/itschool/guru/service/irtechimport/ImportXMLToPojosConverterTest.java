@@ -86,15 +86,15 @@ class ImportXMLToPojosConverterTest {
     @Test
     void importDataPlanItemsImportedFor1_9Classes() {
         TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_1_9_CLASS_WITH_GROUPS);
-        Assertions.assertNotNull(timeTablePojos.planItems);
-        Assertions.assertEquals(16,timeTablePojos.planItems.size());
+        Assertions.assertNotNull(timeTablePojos.regularPlanItems);
+        Assertions.assertEquals(16,timeTablePojos.regularPlanItems.size());
     }
 
     @Test
     void importDataPlanItemsImportedFor10_11Classes() {
         TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_10_11_CLASS_WITH_GROUPS);
-        Assertions.assertNotNull(timeTablePojos.planItems);
-        Assertions.assertEquals(17,timeTablePojos.planItems.size());
+        Assertions.assertNotNull(timeTablePojos.regularPlanItems);
+        Assertions.assertEquals(17,timeTablePojos.regularPlanItems.size());
     }
 
     @Test

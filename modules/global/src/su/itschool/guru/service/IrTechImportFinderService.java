@@ -21,4 +21,6 @@ public interface IrTechImportFinderService {
     GroupForLesson findRootGroupByClass(SchoolClass schoolClass);
 
     SchoolClass findClassByIrTechId(Integer irTechId);
+
+    GroupForIndividualPlanning findIndividualPlanSubgroupByPlanItemIrTechId(Integer planItemIrTechId);
 }

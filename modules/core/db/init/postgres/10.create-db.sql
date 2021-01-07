@@ -458,6 +458,7 @@ create table GURU_GROUP_FOR_INDIVIDUAL_PLANNING (
     NAME varchar(255) not null,
     SUBJECT_ID uuid not null,
     STUDENTS_COUNT integer,
+    PLAN_ITEM_IR_TECH_ID integer,
     --
     primary key (ID)
 )^

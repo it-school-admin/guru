@@ -208,4 +208,23 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
             return null;
         }
     }
+
+    @Override
+    public GroupForIndividualPlanning findIndividualPlanSubgroupByPlanItemIrTechId(Integer planItemIrTechId) {
+        try {
+            GroupForIndividualPlanning group = dataManager.
+                    load(GroupForIndividualPlanning.class).
+                    query("select g from guru_GroupForIndividualPlanning as g " +
+                            "WHERE " +
+                            "g.planItemIrTechId = :irTechId").
+                    parameter("irTechId", planItemIrTechId).
+                    one();
+
+            return group;
+        } catch (Exception e) {
+            //TODO
+            return null;
+        }
+
+    }
 }

@@ -70,16 +70,17 @@ public class IrTechDataToDbProvider {
             {
                 importResult.addResult(importClasses(timeTablePojos.classes));
                 importResult.addResult(importRegularSubgroups(timeTablePojos.regularSubGroups));
-                //importResult.addResult(importIndividualPlanSubgroups(timeTablePojos.classes));
+                importResult.addResult(importIndividualPlanSubgroups(timeTablePojos.planItemIdsWithIndividualPlanSubgroups));
             }
+
+/*            if(importSettings.getImportStudyPlan())
+            {
+                importResult.addResult(importStudyPlan(timeTablePojos.regularPlanItems));
+                //importResult.addResult(importStudyPlanByGroups(timeTablePojos.));
+
+            }*/
 
 /*
-            if(importSettings.getImportStudyPlan())
-            {
-                importResult.addResult(importStudyPlan(timeTablePojos.));
-                importResult.addResult(importStudyPlanByGroups(timeTablePojos.));
-
-            }
 
 
             if(importSettings.getImportLessonsByClasses())
@@ -92,17 +93,17 @@ public class IrTechDataToDbProvider {
         return importResult;
     }
 
+    private ImportResult importIndividualPlanSubgroups(Map<Integer, IndividualPlanSubgroupPojo> individualPlanSubgroupPojoMap) {
+        return new IndividualPlanSubgroupsImporter(individualPlanSubgroupPojoMap, dataManager, irTechFinderService).importDataToDb();
+    }
+
     private ImportResult importRegularSubgroups(List<RegularSubgroupPojo> regularSubGroups) {
         return new RegularGroupsImporter(regularSubGroups, dataManager, irTechFinderService).importDataToDb();
     }
 
-/*    private ImportResult importRegularSubgroups(Map<Integer, RegularSubgroupPojo> subgroups) {
-        return ;
+/*    private ImportResult importStudyPlan(Map<Integer, PlanItemPojo> planItems) {
+        return new StudyPlanImporter(planItems, dataManager, irTechFinderService).importDataToDb();
     }*/
-
-    private ImportResult importStudyPlan(Map<Integer, SchoolClassPojo> classes) {
-        return new StudyPlanImporter(classes, dataManager, irTechFinderService).importDataToDb();
-    }
 
     private ImportResult importClasses(Map<Integer, SchoolClassPojo> classes) {
         return new ClassImporter(classes, dataManager, irTechFinderService).importDataToDb();

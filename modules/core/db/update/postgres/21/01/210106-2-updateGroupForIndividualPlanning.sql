@@ -1,0 +1,1 @@
+alter table GURU_GROUP_FOR_INDIVIDUAL_PLANNING add column PLAN_ITEM_IR_TECH_ID integer ;

@@ -83,7 +83,7 @@ public class ImportXMLToPojosConverter {
 
     private void createPlanItem(TimeTablePojos timeTablePojos, SchoolClassPojo schoolClassPojo, Element planItemElement) {
         PlanItemPojo planItemPojo = new PlanItemPojo(planItemElement, schoolClassPojo.irTechId);
-        timeTablePojos.planItems.put(planItemPojo.irTechId, planItemPojo);
+        timeTablePojos.regularPlanItems.put(planItemPojo.irTechId, planItemPojo);
     }
 
     private void createIndividualPlanSubgroup(TimeTablePojos timeTablePojos, SchoolClassPojo schoolClassPojo, Element planItemElement) {
