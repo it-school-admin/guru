@@ -8,7 +8,9 @@
         <collection id="lessonsPlanningItemsDc"
                     class="su.itschool.guru.entity.LessonsPlanningItem">
             <view extends="_local">
-                <property name="groupOfLearning" view="_minimal"/>
+                <property name="subject" view="_minimal"/>
+                <property name="regularGroup" view="groupForLesson-view-for-lookup"/>
+                <property name="teacher" view="_minimal"/>
             </view>
             <loader id="lessonsPlanningItemsDl">
                 <query>
@@ -28,7 +30,7 @@
         </filter>
         <groupTable id="lessonsPlanningItemsTable"
                     width="100%"
-                    dataContainer="lessonsPlanningItemsDc">
+                    dataContainer="lessonsPlanningItemsDc" multiselect="true">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
@@ -42,8 +44,11 @@
                 <button id="removeBtn" action="lessonsPlanningItemsTable.remove"/>
             </buttonsPanel>
             <columns>
-                <column id="irTechID"/>
+                <column id="teacher"/>
                 <column id="hoursPerWeek"/>
+                <column id="subject"/>
+                <column id="irTechID"/>
+                <column id="regularGroup"/>
             </columns>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

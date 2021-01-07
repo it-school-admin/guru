@@ -2,17 +2,15 @@ package su.itschool.guru.service.irtechimport.pojo;
 
 import org.jdom2.Element;
 
-public class PlanItemPojo extends AbstractPojoWithId{
+public class RegularPlanItemPojo extends AbstractPlanItemPojo{
     public final Integer classIrTechId;
     public final Integer subjectId;
-    public final Integer teacherId;
     public final Integer subGroupId;
 
-    public PlanItemPojo(Element planItemElement, Integer classIrTechId) {
+    public RegularPlanItemPojo(Element planItemElement, Integer classIrTechId) {
+        super(planItemElement);
         this.classIrTechId = classIrTechId;
-        setIrTechId(planItemElement, "id");
         subjectId = getInteger(planItemElement, "sid");
-        teacherId = getInteger(planItemElement, "tid");
         String subGroupId = getString(planItemElement, "groupid");
         if(subGroupId.isEmpty())
         {

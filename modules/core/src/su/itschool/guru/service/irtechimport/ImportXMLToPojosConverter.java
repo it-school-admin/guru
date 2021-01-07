@@ -69,21 +69,27 @@ public class ImportXMLToPojosConverter {
                         createRegularSubgroup(timeTablePojos, schoolClassPojo, planItemElement);
                     }
 
+                    createRegularPlanItem(timeTablePojos, schoolClassPojo, planItemElement);
+
                 }
                 else
                 {
                     createIndividualPlanSubgroup(timeTablePojos, schoolClassPojo, planItemElement);
+                    createIndividualPlanItem(timeTablePojos, planItemElement);
                 }
 
-                createPlanItem(timeTablePojos, schoolClassPojo, planItemElement);
 
             }
         }
     }
 
-    private void createPlanItem(TimeTablePojos timeTablePojos, SchoolClassPojo schoolClassPojo, Element planItemElement) {
-        PlanItemPojo planItemPojo = new PlanItemPojo(planItemElement, schoolClassPojo.irTechId);
-        timeTablePojos.regularPlanItems.put(planItemPojo.irTechId, planItemPojo);
+    private void createIndividualPlanItem(TimeTablePojos timeTablePojos, Element planItemElement) {
+        timeTablePojos.individualPlanItems.add(new IndividualPlanItemPojo(planItemElement));
+    }
+
+    private void createRegularPlanItem(TimeTablePojos timeTablePojos, SchoolClassPojo schoolClassPojo, Element planItemElement) {
+        RegularPlanItemPojo regularPlanItemPojo = new RegularPlanItemPojo(planItemElement, schoolClassPojo.irTechId);
+        timeTablePojos.regularPlanItems.put(regularPlanItemPojo.irTechId, regularPlanItemPojo);
     }
 
     private void createIndividualPlanSubgroup(TimeTablePojos timeTablePojos, SchoolClassPojo schoolClassPojo, Element planItemElement) {

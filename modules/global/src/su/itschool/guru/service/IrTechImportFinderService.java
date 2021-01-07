@@ -8,7 +8,7 @@ public interface IrTechImportFinderService {
 
     Subject findSubjectByIrTechId(Integer irTechId);
 
-    GroupForLesson findSubGroupByIrTechIdAndClass(Integer irTechId, SchoolClass schoolClass);
+    GroupForLesson findSubGroupByIrTechIdAndClass(Integer irTechId, Integer schoolClassIrTechId);
 
     GroupForLesson findRootClassGroup(Integer classIrTechId);
 
@@ -17,8 +17,6 @@ public interface IrTechImportFinderService {
     LessonsPlanningItem getPlanningItemByIrTechId(Integer irTechId);
 
     Room getRoomByIrTechId(Integer irTechId);
-
-    GroupForLesson findRootGroupByClass(SchoolClass schoolClass);
 
     SchoolClass findClassByIrTechId(Integer irTechId);
 

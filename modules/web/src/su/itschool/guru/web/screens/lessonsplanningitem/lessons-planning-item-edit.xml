@@ -6,6 +6,11 @@
     <data>
         <instance id="lessonsPlanningItemDc"
                   class="su.itschool.guru.entity.LessonsPlanningItem">
+            <view extends="_local">
+                <property name="subject" view="_minimal"/>
+                <property name="regularGroup" view="_minimal"/>
+                <property name="teacher" view="_minimal"/>
+            </view>
             <loader/>
         </instance>
     </data>
@@ -14,8 +19,11 @@
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="lessonsPlanningItemDc">
             <column width="350px">
-                <textField id="schoolClassField" property="schoolClass"/>
                 <textField id="hoursPerWeekField" property="hoursPerWeek"/>
+                <pickerField id="teacherField" property="teacher"/>
+                <pickerField id="subjectField" property="subject"/>
+                <pickerField id="regularGroupField" property="regularGroup"/>
+                <textField id="irTechIDField" property="irTechID"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

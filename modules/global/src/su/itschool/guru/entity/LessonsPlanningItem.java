@@ -12,15 +12,19 @@ import javax.validation.constraints.NotNull;
 public class LessonsPlanningItem extends StandardEntity {
     private static final long serialVersionUID = 3761661617055118840L;
 
-    @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "SCHOOL_CLASS_ID")
-    private SchoolClass schoolClass;
-
-    @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "SUBJECT_ID")
+    @NotNull
     private Subject subject;
+
+    @JoinColumn(name = "REGULAR_GROUP_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private GroupForLesson regularGroup;
+
+    @JoinColumn(name = "TEACHER_ID")
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @NotNull
+    private Teacher teacher;
 
     @Column(name = "HOURS_PER_WEEK", nullable = false)
     @NotNull
@@ -29,20 +33,28 @@ public class LessonsPlanningItem extends StandardEntity {
     @Column(name = "IR_TECH_ID", unique = true)
     private Integer irTechID;
 
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setRegularGroup(GroupForLesson regularGroup) {
+        this.regularGroup = regularGroup;
+    }
+
+    public GroupForLesson getRegularGroup() {
+        return regularGroup;
+    }
+
     public Subject getSubject() {
         return subject;
     }
 
     public void setSubject(Subject subject) {
         this.subject = subject;
-    }
-
-    public SchoolClass getSchoolClass() {
-        return schoolClass;
-    }
-
-    public void setSchoolClass(SchoolClass schoolClass) {
-        this.schoolClass = schoolClass;
     }
 
     public void setHoursPerWeek(Integer hoursPerWeek) {

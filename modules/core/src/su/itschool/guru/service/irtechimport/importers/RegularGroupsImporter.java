@@ -25,8 +25,8 @@ public class RegularGroupsImporter extends AbstractImporter {
     public ImportResult importDataToDb() {
         for (RegularSubgroupPojo subgroupPojo: regularSubGroups)
         {
+            GroupForLesson subgroup = irTechFinderService.findSubGroupByIrTechIdAndClass(subgroupPojo.irTechId, subgroupPojo.classIrTechId);
             SchoolClass schoolClass = irTechFinderService.findClassByIrTechId(subgroupPojo.classIrTechId);
-            GroupForLesson subgroup = irTechFinderService.findSubGroupByIrTechIdAndClass(subgroupPojo.irTechId, schoolClass);
             if(subgroup == null)
             {
                 subgroup = dataManager.create(GroupForLesson.class);

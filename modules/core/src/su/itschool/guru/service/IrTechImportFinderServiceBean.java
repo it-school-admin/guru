@@ -52,18 +52,20 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
         }
     }
 
+    //TODO make two methods. One is for update. Second is for getting refference to entity.
     @Override
-    public GroupForLesson findSubGroupByIrTechIdAndClass(Integer irTechId, SchoolClass schoolClass) {
+    public GroupForLesson findSubGroupByIrTechIdAndClass(Integer irTechId, Integer schoolClassIrTechId) {
         try {
 
             GroupForLesson groupForLesson = dataManager
                     .load(GroupForLesson.class)
-                    .viewProperties("ownName", "parentGroup", "irTechId", "countStudent", "schoolClass")
+                    .viewProperties("ownName", "parentGroup", "irTechId", "countStudent", "schoolClass", "schoolClass.irTechId")
                     .query("SELECT g FROM guru_GroupForLesson g" +
+                            " JOIN g.schoolClass cl " +
                             " WHERE g.irTechId = :irTechId" +
-                            " AND g.schoolClass = :schoolClass")
+                            " AND cl.irTechId = :classIrTechId")
                     .parameter("irTechId", irTechId)
-                    .parameter("schoolClass", schoolClass)
+                    .parameter("classIrTechId", schoolClassIrTechId)
                     .one();
             return groupForLesson;
         }
@@ -74,35 +76,12 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
         }
     }
 
-/*    @Override
-    public GroupForLesson findSubGroup(Integer groupIrTechId, SchoolClass schoolClass, Integer subjectIrTechId) {
-        try {
-            GroupForLesson groupForLesson = dataManager.
-                    load(GroupForLesson.class).
-                    query("select gr from guru_GroupForLesson as gr " +
-                            "JOIN gr.subject sub " +
-                            "WHERE " +
-                            "gr.schoolClass = :schoolClass " +
-                            "AND sub.irTechId = :subjectIrTechId " +
-                            "AND gr.groupIrTechId = :groupIrTechId").
-                    parameter("groupIrTechId", groupIrTechId).
-                    parameter("subjectIrTechId", subjectIrTechId).
-                    parameter("schoolClass", schoolClass).
-                    one();
-
-            return groupForLesson;
-        } catch (Exception e) {
-            //TODO
-            return null;
-        }
-    }*/
-
     @Override
     public GroupForLesson findRootClassGroup(Integer classIrTechId) {
         try {
             GroupForLesson groupForLesson = dataManager.
                     load(GroupForLesson.class)
-                    .viewProperties("parentGroup", "irTechId", "schoolClass")
+                    .viewProperties("parentGroup", "schoolClass.irTechId", "schoolClass")
                     .query("select gr from guru_GroupForLesson as gr " +
                             "JOIN gr.schoolClass cl " +
                             "WHERE " +
@@ -142,9 +121,9 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
     public LessonsPlanningItem getPlanningItemByIrTechId(Integer irTechId) {
         try {
             LessonsPlanningItem lessonsPlanningItem = dataManager.
-                    load(LessonsPlanningItem.class).
-                    viewProperties("groupOfLearning").
-                    query("select pi from guru_LessonsPlanningItem as pi " +
+                    load(LessonsPlanningItem.class)
+                    .view("lessonsPlanningItem-view")
+                    .query("select pi from guru_LessonsPlanningItem as pi " +
                             "WHERE " +
                             "pi.irTechID = :irTechId").
                     parameter("irTechId", irTechId).
@@ -176,22 +155,6 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
     }
 
     @Override
-    public GroupForLesson findRootGroupByClass(SchoolClass schoolClass) {
-        GroupForLesson group = dataManager
-                .load(GroupForLesson.class)
-                .query("select gp from guru_GroupForLesson as gp" +
-                        " where gp.schoolClass=:schoolClass" +
-                        " and gp.parentGroup = null")
-                .parameter("schoolClass", schoolClass)
-                .one();
-        if(group!= null)
-            return group;
-
-        //TODO
-        throw new RuntimeException();
-    }
-
-    @Override
     public SchoolClass findClassByIrTechId(Integer irTechId) {
         try {
             SchoolClass schoolClass = dataManager.
@@ -213,11 +176,12 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
     public GroupForIndividualPlanning findIndividualPlanSubgroupByPlanItemIrTechId(Integer planItemIrTechId) {
         try {
             GroupForIndividualPlanning group = dataManager.
-                    load(GroupForIndividualPlanning.class).
-                    query("select g from guru_GroupForIndividualPlanning as g " +
+                    load(GroupForIndividualPlanning.class)
+                    .view("groupForIndividualPlanning-view")
+                    .query("select g from guru_GroupForIndividualPlanning as g " +
                             "WHERE " +
-                            "g.planItemIrTechId = :irTechId").
-                    parameter("irTechId", planItemIrTechId).
+                            "g.planItemIrTechId = :irTechId")
+                    .parameter("irTechId", planItemIrTechId).
                     one();
 
             return group;

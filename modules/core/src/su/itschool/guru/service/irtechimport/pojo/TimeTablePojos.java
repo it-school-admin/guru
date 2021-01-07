@@ -16,6 +16,7 @@ public class TimeTablePojos {
     public final Map<Integer, RootSubjectPojo> rootSubjects = new HashMap();
     public final List<RegularSubgroupPojo> regularSubGroups = new ArrayList();
     public final Map<Integer, IndividualPlanSubgroupPojo> planItemIdsWithIndividualPlanSubgroups = new HashMap();
-    public final Map<Integer, PlanItemPojo> regularPlanItems = new HashMap();
+    public final Map<Integer, RegularPlanItemPojo> regularPlanItems = new HashMap();
     public final List<LessonPojo> lessons = new ArrayList();
+    public final List<IndividualPlanItemPojo> individualPlanItems = new ArrayList();
 }

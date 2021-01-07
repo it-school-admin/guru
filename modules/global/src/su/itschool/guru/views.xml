@@ -26,4 +26,13 @@
         <property name="parentGroup" view="_minimal"/>
         <property name="ownName"/>
     </view>
+    <view entity="guru_GroupForIndividualPlanning" name="groupForIndividualPlanning-view" extends="_local">
+        <property name="linkedClasses" view="_minimal"/>
+        <property name="subject" view="_minimal"/>
+    </view>
+    <view entity="guru_LessonsPlanningItem" name="lessonsPlanningItem-view" extends="_local">
+        <property name="subject" view="_minimal"/>
+        <property name="regularGroup" view="_minimal"/>
+        <property name="teacher" view="_minimal"/>
+    </view>
 </views>
