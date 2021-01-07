@@ -83,7 +83,7 @@ create table GURU_LESSONS_PLANNING_ITEM (
     DELETED_BY varchar(50),
     --
     SUBJECT_ID uuid,
-    IS_INDIVIDUAL_PLAN_ITEM boolean,
+    IS_INDIVIDUAL_PLAN_ITEM boolean not null,
     REGULAR_GROUP_ID uuid,
     INDIVIDUAL_PLAN_GROUP_ID uuid,
     TEACHER_ID uuid not null,

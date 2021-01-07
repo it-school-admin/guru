@@ -1,5 +1,6 @@
 package su.itschool.guru.entity;
 
+import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
@@ -16,8 +17,9 @@ public class LessonsPlanningItem extends StandardEntity {
     @JoinColumn(name = "SUBJECT_ID")
     private Subject regularSubject;
 
-    @Column(name = "IS_INDIVIDUAL_PLAN_ITEM")
-    private Boolean isIndividualPlanItem;
+    @Column(name = "IS_INDIVIDUAL_PLAN_ITEM", nullable = false)
+    @NotNull
+    private Boolean isIndividualPlanItem = false;
 
     @JoinColumn(name = "REGULAR_GROUP_ID")
     @ManyToOne(fetch = FetchType.LAZY)
@@ -38,6 +40,28 @@ public class LessonsPlanningItem extends StandardEntity {
 
     @Column(name = "IR_TECH_ID", unique = true)
     private Integer irTechID;
+
+    @Transient
+    @MetaProperty(related = {"regularSubject", "isIndividualPlanItem", "individualPlanGroup"}, mandatory = true)
+    public Subject getSubject() {
+        if(!isIndividualPlanItem)
+        {
+            if(regularSubject != null)
+            {
+                return regularSubject;
+
+            }
+        }
+        else
+        {
+            if(individualPlanGroup != null)
+            {
+                return individualPlanGroup.getSubject();
+            }
+        }
+
+        return null;
+    }
 
     public GroupForIndividualPlanning getIndividualPlanGroup() {
         return individualPlanGroup;
