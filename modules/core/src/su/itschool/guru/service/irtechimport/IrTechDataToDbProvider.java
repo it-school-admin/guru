@@ -70,13 +70,13 @@ public class IrTechDataToDbProvider {
             {
                 importResult.addResult(importClasses(timeTablePojos.classes));
                 importResult.addResult(importRegularSubgroups(timeTablePojos.regularSubGroups));
-                importResult.addResult(importIndividualPlanSubgroups(timeTablePojos.planItemIdsWithIndividualPlanSubgroups));
             }
 
             if(importSettings.getImportStudyPlan())
             {
-                importResult.addResult(importStudyPlan(timeTablePojos.regularPlanItems));
-                //importResult.addResult(importStudyPlanByGroups(timeTablePojos.));
+                importResult.addResult(importIndividualPlanSubgroups(timeTablePojos.planItemIdsWithIndividualPlanSubgroups));
+                importResult.addResult(importRegularStudyPlan(timeTablePojos.regularPlanItems));
+                importResult.addResult(importIndividualStudyPlan(timeTablePojos.individualPlanItems));
 
             }
 
@@ -93,6 +93,10 @@ public class IrTechDataToDbProvider {
         return importResult;
     }
 
+    private ImportResult importIndividualStudyPlan(List<IndividualPlanItemPojo> individualPlanItems) {
+        return new IndividualPlanImporter(individualPlanItems, dataManager, irTechFinderService).importDataToDb();
+    }
+
     private ImportResult importIndividualPlanSubgroups(Map<Integer, IndividualPlanSubgroupPojo> individualPlanSubgroupPojoMap) {
         return new IndividualPlanSubgroupsImporter(individualPlanSubgroupPojoMap, dataManager, irTechFinderService).importDataToDb();
     }
@@ -101,7 +105,7 @@ public class IrTechDataToDbProvider {
         return new RegularGroupsImporter(regularSubGroups, dataManager, irTechFinderService).importDataToDb();
     }
 
-    private ImportResult importStudyPlan(Map<Integer, RegularPlanItemPojo> planItems) {
+    private ImportResult importRegularStudyPlan(Map<Integer, RegularPlanItemPojo> planItems) {
         return new RegularStudyPlanImporter(planItems, dataManager, irTechFinderService).importDataToDb();
     }
 
