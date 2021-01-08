@@ -2,51 +2,67 @@ package su.itschool.guru.service.irtechimport.importers;
 
 import com.haulmont.cuba.core.global.DataManager;
 import su.itschool.guru.entity.SchoolClass;
+import su.itschool.guru.service.ImportSettings;
 import su.itschool.guru.service.IrTechImportFinderService;
-import su.itschool.guru.service.irtechimport.AbstractImporter;
 import su.itschool.guru.service.irtechimport.ImportResult;
 import su.itschool.guru.service.irtechimport.pojo.SchoolClassPojo;
-import su.itschool.guru.service.irtechimport.result.ClassesImportResult;
+import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
+import su.itschool.guru.service.irtechimport.result.SomethingImportedResult;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import java.util.Map;
+import java.util.List;
 
-public class ClassImporter extends AbstractImporter {
-    private final Map<Integer, SchoolClassPojo> classes;
-    private final IrTechImportFinderService irTechFinderService;
+public class ClassImporter extends AbstractImporter<SchoolClass, SchoolClassPojo> {
 
-    public ClassImporter(Map<Integer, SchoolClassPojo> classes, DataManager dataManager, IrTechImportFinderService irTechFinderService) {
-        super(dataManager);
-        this.classes = classes;
-        this.irTechFinderService = irTechFinderService;
+
+    public ClassImporter(DataManager dataManager, IrTechImportFinderService finderService) {
+        super(dataManager, finderService);
     }
 
     @Override
-    public ImportResult importDataToDb() {
-        for (Map.Entry<Integer, SchoolClassPojo> classPojoEntry: classes.entrySet())
-        {
-            SchoolClassPojo schoolClassPojo = classPojoEntry.getValue();
-            SchoolClass schoolClass = irTechFinderService.findClassByIrTechId(schoolClassPojo.irTechId);
-            if(schoolClass == null)
-            {
-                schoolClass = dataManager.create(SchoolClass.class);
-                schoolClass.setIrTechId(schoolClassPojo.irTechId);
-            }
-            schoolClass.setClassLevel(schoolClassPojo.grade);
-            schoolClass.setClassLetter(schoolClassPojo.letter);
-            schoolClass.setStudentCount(schoolClassPojo.countOfStudents);
-            if (schoolClassPojo.grade<10)
-            {
-                schoolClass.setIsIndividualPlan(false);
-            }
-            else
-            {
-                schoolClass.setIsIndividualPlan(true);
-            }
-            dataManager.commit(schoolClass);
+    protected List getPojos(TimeTablePojos timeTablePojos) {
+        return timeTablePojos.classes;
+    }
 
+    @Override
+    protected ImportResult getImportResult(TimeTablePojos timeTablePojos) {
+        return new SomethingImportedResult("Импортировано %0 классов",
+                String.valueOf(timeTablePojos.classes.size()));
+    }
+
+    @Override
+    protected void fillIrTechId(SchoolClass instance, SchoolClassPojo pojo) {
+        instance.setIrTechId(pojo.irTechId);
+
+    }
+
+    @Override
+    protected void fillOrUpdateFields(SchoolClass instance, SchoolClassPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
+        instance.setClassLevel(pojo.grade);
+        instance.setClassLetter(pojo.letter);
+        instance.setStudentCount(pojo.countOfStudents);
+        if (pojo.grade<10)
+        {
+            instance.setIsIndividualPlan(false);
+        }
+        else
+        {
+            instance.setIsIndividualPlan(true);
         }
 
-        return new ClassesImportResult(classes.size());
+    }
+
+    @Override
+    protected Class getClassEntityClass() {
+        return SchoolClass.class;
+    }
+
+    @Override
+    protected SchoolClass findExistingInstance(SchoolClassPojo pojo) {
+        return finderService.findClassByIrTechId(pojo.irTechId);
+    }
+
+    @Override
+    protected boolean importIsNecessary(ImportSettings importSettings) {
+        return importSettings.getImportClasses();
     }
 }

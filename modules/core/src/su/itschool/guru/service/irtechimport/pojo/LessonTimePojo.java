@@ -5,7 +5,7 @@ import org.jdom2.Element;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-public class LessonTimePojo extends AbstractPojoWithId {
+public class LessonTimePojo extends AbstractPojoWithIrTechId {
     public final LocalTime startTime;
     public final LocalTime endTime;
     public final Integer lessonNumber;

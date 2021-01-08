@@ -4,10 +4,7 @@ import com.haulmont.cuba.core.entity.FileDescriptor;
 import com.haulmont.cuba.core.global.DataManager;
 import com.haulmont.cuba.core.global.FileStorageException;
 import com.haulmont.cuba.gui.Dialogs;
-import com.haulmont.cuba.gui.components.Button;
-import com.haulmont.cuba.gui.components.CheckBox;
-import com.haulmont.cuba.gui.components.FileUploadField;
-import com.haulmont.cuba.gui.components.TextField;
+import com.haulmont.cuba.gui.components.*;
 import com.haulmont.cuba.gui.screen.Screen;
 import com.haulmont.cuba.gui.screen.Subscribe;
 import com.haulmont.cuba.gui.screen.UiController;
@@ -51,14 +48,21 @@ public class IrtechMainImportDialog extends Screen {
     private IrTechXMLClassesExtractorForDialog irTechXMLClassesExtractorForDialog;
     @Deprecated
     private List<SchoolClassWrapper> schoolClassWrappers;
+    @Inject
+    private CheckBox timeTableImportCheckBox;
 
     private ImportSettings createImportSettings() {
         ImportSettings importSettings = new ImportSettings(importedFileDescriptor,
+                getImportTimetable(),
                 getScheduleName(),
                 getImportAllClasses(),
                 getImportAdditionalData());
 
         return importSettings;
+    }
+
+    private Boolean getImportTimetable() {
+        return timeTableImportCheckBox.getValue();
     }
 
     private Boolean getImportAdditionalData() {
@@ -121,6 +125,7 @@ public class IrtechMainImportDialog extends Screen {
     public void onBeforeShow(BeforeShowEvent event) {
         submitBtn.setEnabled(false);
         timeTableTemplateNameField.setValue("Шаблон расписания ИрТех " + LocalDateTime.now().toString());
+        timeTableImportCheckBox.setValue(true);
     }
 
     @Subscribe("importedFileField")
@@ -131,5 +136,16 @@ public class IrtechMainImportDialog extends Screen {
 
     public void setIrTechXMLClassesExtractorForDialog(IrTechXMLClassesExtractorForDialog irTechXMLClassesExtractorForDialog) {
         this.irTechXMLClassesExtractorForDialog = irTechXMLClassesExtractorForDialog;
+    }
+
+    @Subscribe("timeTableImportCheckBox")
+    public void onTimeTableImportCheckBoxValueChange(HasValue.ValueChangeEvent<Boolean> event) {
+        Boolean importTimeTable = event.getValue();
+        importAllClasses.setEnabled(importTimeTable);
+        timeTableTemplateNameField.setEnabled(importTimeTable);
+        if(!importTimeTable)
+        {
+            importAllClasses.setValue(false);
+        }
     }
 }

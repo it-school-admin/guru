@@ -5,7 +5,7 @@ import su.itschool.guru.service.irtechimport.pojo.AbstractPojoTest;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class LessonsGridImporterTest extends AbstractPojoTest {
+class LessonsGridImporterForFirstShiftTest extends AbstractPojoTest {
 
     @Test
     void importDataToDb()

@@ -79,8 +79,8 @@ class ImportXMLToPojosConverterTest {
     @Test
     void importDataSubgroupsImportedFor10_11Classes() {
         TimeTablePojos timeTablePojos = getTimeTablePojos(INPUT_DATA_10_11_CLASS_WITH_GROUPS);
-        Assertions.assertNotNull(timeTablePojos.planItemIdsWithIndividualPlanSubgroups);
-        Assertions.assertEquals(17,timeTablePojos.planItemIdsWithIndividualPlanSubgroups.size());
+        Assertions.assertNotNull(timeTablePojos.individualPlanSubgroups);
+        Assertions.assertEquals(17,timeTablePojos.individualPlanSubgroups.size());
     }
 
     @Test

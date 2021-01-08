@@ -2,7 +2,7 @@ package su.itschool.guru.service.irtechimport.pojo;
 
 import org.jdom2.Element;
 
-public class RegularPlanItemPojo extends AbstractPlanItemPojo{
+public class RegularPlanItemPojo extends AbstractPlanItemPojoIrTech {
     public final Integer classIrTechId;
     public final Integer subjectId;
     public final Integer subGroupId;

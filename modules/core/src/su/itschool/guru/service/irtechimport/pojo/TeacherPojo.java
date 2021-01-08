@@ -2,7 +2,7 @@ package su.itschool.guru.service.irtechimport.pojo;
 
 import org.jdom2.Element;
 
-public class TeacherPojo extends AbstractPojoWithId {
+public class TeacherPojo extends AbstractPojoWithIrTechId {
     public final String name;
     public final String middleName;
     public final String lastName;

@@ -2,7 +2,7 @@ package su.itschool.guru.service.irtechimport.pojo;
 
 import org.jdom2.Element;
 
-public class RootSubjectPojo extends AbstractPojoWithId{
+public class RootSubjectPojo extends AbstractPojoWithIrTechId {
     public final String name;
 
     public RootSubjectPojo(Element planItemElement) {

@@ -2,41 +2,60 @@ package su.itschool.guru.service.irtechimport.importers;
 
 import com.haulmont.cuba.core.global.DataManager;
 import su.itschool.guru.entity.LessonsPlanningItem;
+import su.itschool.guru.service.ImportSettings;
 import su.itschool.guru.service.IrTechImportFinderService;
-import su.itschool.guru.service.irtechimport.AbstractImporter;
 import su.itschool.guru.service.irtechimport.ImportResult;
 import su.itschool.guru.service.irtechimport.pojo.IndividualPlanItemPojo;
-import su.itschool.guru.service.irtechimport.result.IndividualPlanImportResult;
+import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
+import su.itschool.guru.service.irtechimport.result.SomethingImportedResult;
 
 import java.util.List;
 
-public class IndividualPlanImporter extends AbstractImporter {
-    private final List<IndividualPlanItemPojo> individualPlanItems;
-    private final IrTechImportFinderService irTechFinderService;
+public class IndividualPlanImporter extends AbstractImporter<LessonsPlanningItem, IndividualPlanItemPojo> {
 
-    public IndividualPlanImporter(List<IndividualPlanItemPojo> individualPlanItems, DataManager dataManager, IrTechImportFinderService irTechFinderService) {
-        super(dataManager);
-        this.individualPlanItems = individualPlanItems;
-        this.irTechFinderService = irTechFinderService;
+
+    public IndividualPlanImporter(DataManager dataManager, IrTechImportFinderService finderService) {
+        super(dataManager, finderService);
     }
 
     @Override
-    public ImportResult importDataToDb() {
-        for(IndividualPlanItemPojo planItemPojo: individualPlanItems)
-        {
-            LessonsPlanningItem planningItem = irTechFinderService.getPlanningItemByIrTechId(planItemPojo.irTechId);
-            if(planningItem == null)
-            {
-                planningItem = dataManager.create(LessonsPlanningItem.class);
-                planningItem.setIrTechID(planItemPojo.irTechId);
-            }
-            planningItem.setIsIndividualPlanItem(true);
-            planningItem.setIndividualPlanGroup(irTechFinderService.findIndividualPlanSubgroupByPlanItemIrTechId(planItemPojo.irTechId));
+    protected List<IndividualPlanItemPojo> getPojos(TimeTablePojos timeTablePojos) {
+        return timeTablePojos.individualPlanItems;
+    }
 
-            planningItem.setTeacher(irTechFinderService.findTeacherByIrTechId(planItemPojo.teacherId));
-            planningItem.setHoursPerWeek(planItemPojo.hoursPerWeek);
-            dataManager.commit(planningItem);
-        }
-        return new IndividualPlanImportResult(individualPlanItems.size());
+    @Override
+    protected ImportResult getImportResult(TimeTablePojos timeTablePojos) {
+        return new SomethingImportedResult("Импортирована информация о %0 элементах плана(индивидуальное планирование)",
+                String.valueOf(timeTablePojos.individualPlanItems.size()));
+    }
+
+    @Override
+    protected void fillIrTechId(LessonsPlanningItem instance, IndividualPlanItemPojo pojo) {
+        instance.setIrTechID(pojo.irTechId);
+    }
+
+    @Override
+    protected void fillOrUpdateFields(LessonsPlanningItem instance, IndividualPlanItemPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
+        instance.setIsIndividualPlanItem(true);
+        instance.setIndividualPlanGroup(finderService.findIndividualPlanSubgroupByPlanItemIrTechId(pojo.irTechId));
+
+        instance.setTeacher(finderService.findTeacherByIrTechId(pojo.teacherId));
+        instance.setHoursPerWeek(pojo.hoursPerWeek);
+
+    }
+
+    @Override
+    protected Class<LessonsPlanningItem> getClassEntityClass() {
+        return LessonsPlanningItem.class;
+    }
+
+    @Override
+    protected LessonsPlanningItem findExistingInstance(IndividualPlanItemPojo pojo) {
+        return finderService.getPlanningItemByIrTechId(pojo.irTechId);
+    }
+
+    @Override
+    protected boolean importIsNecessary(ImportSettings importSettings) {
+        return importSettings.getImportStudyPlan();
     }
 }

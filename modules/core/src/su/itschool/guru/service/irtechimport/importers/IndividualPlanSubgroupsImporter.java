@@ -2,46 +2,65 @@ package su.itschool.guru.service.irtechimport.importers;
 
 import com.haulmont.cuba.core.global.DataManager;
 import su.itschool.guru.entity.GroupForIndividualPlanning;
-import su.itschool.guru.entity.SchoolClass;
+import su.itschool.guru.service.ImportSettings;
 import su.itschool.guru.service.IrTechImportFinderService;
-import su.itschool.guru.service.irtechimport.AbstractImporter;
 import su.itschool.guru.service.irtechimport.ImportResult;
 import su.itschool.guru.service.irtechimport.pojo.IndividualPlanSubgroupPojo;
-import su.itschool.guru.service.irtechimport.result.IndividualPlanSubgroupsImportResult;
+import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
+import su.itschool.guru.service.irtechimport.result.SomethingImportedResult;
 
 import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.List;
 
-public class IndividualPlanSubgroupsImporter extends AbstractImporter {
-    private final Map<Integer, IndividualPlanSubgroupPojo> individualPlanSubgroupPojoMap;
-    private final IrTechImportFinderService irTechFinderService;
+import static su.itschool.guru.service.irtechimport.importers.AbstractImporter.UpdateInstanceMode.NEW_INSTANCE;
 
-    public IndividualPlanSubgroupsImporter(Map<Integer, IndividualPlanSubgroupPojo> individualPlanSubgroupPojoMap, DataManager dataManager, IrTechImportFinderService irTechFinderService) {
-        super(dataManager);
-        this.individualPlanSubgroupPojoMap = individualPlanSubgroupPojoMap;
-        this.irTechFinderService = irTechFinderService;
+public class IndividualPlanSubgroupsImporter extends AbstractImporter<GroupForIndividualPlanning, IndividualPlanSubgroupPojo> {
+
+    public IndividualPlanSubgroupsImporter(DataManager dataManager, IrTechImportFinderService finderService) {
+        super(dataManager, finderService);
     }
 
     @Override
-    public ImportResult importDataToDb() {
-        for (Map.Entry<Integer, IndividualPlanSubgroupPojo> subgroupPojoEntry: individualPlanSubgroupPojoMap.entrySet())
+    protected List<IndividualPlanSubgroupPojo> getPojos(TimeTablePojos timeTablePojos) {
+        return timeTablePojos.individualPlanSubgroups;
+    }
+
+    @Override
+    protected ImportResult getImportResult(TimeTablePojos timeTablePojos) {
+        return new SomethingImportedResult("Импортирована информация о %0 подгруппах для индивидуального планирования",
+                String.valueOf(timeTablePojos.individualPlanSubgroups.size()));
+    }
+
+    @Override
+    protected void fillIrTechId(GroupForIndividualPlanning instance, IndividualPlanSubgroupPojo pojo) {
+        instance.setPlanItemIrTechId(pojo.planItemIrTechId);
+    }
+
+    @Override
+    protected void fillOrUpdateFields(GroupForIndividualPlanning instance, IndividualPlanSubgroupPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
+        if(updateMode == NEW_INSTANCE)
         {
-            IndividualPlanSubgroupPojo subgroupPojo = subgroupPojoEntry.getValue();
-            GroupForIndividualPlanning subgroup = irTechFinderService.findIndividualPlanSubgroupByPlanItemIrTechId(subgroupPojo.planItemIrTechId);
-            if(subgroup == null)
-            {
-                subgroup = dataManager.create(GroupForIndividualPlanning.class);
-                subgroup.setPlanItemIrTechId(subgroupPojo.planItemIrTechId);
-                HashSet hashSet = new HashSet();
-                hashSet.add(irTechFinderService.findClassByIrTechId(subgroupPojo.defaultSchoolClassIrTechId));
-                subgroup.setLinkedClasses(hashSet);
-            }
-            subgroup.setName(subgroupPojo.name);
-            subgroup.setStudentsCount(subgroupPojo.studentsCount);
-            subgroup.setSubject(irTechFinderService.findSubjectByIrTechId(subgroupPojo.subject));
-            dataManager.commit(subgroup);
+            HashSet hashSet = new HashSet();
+            hashSet.add(finderService.findClassByIrTechId(pojo.defaultSchoolClassIrTechId));
+            instance.setLinkedClasses(hashSet);
         }
-        return new IndividualPlanSubgroupsImportResult(individualPlanSubgroupPojoMap.size());
+        instance.setName(pojo.name);
+        instance.setStudentsCount(pojo.studentsCount);
+        instance.setSubject(finderService.findSubjectByIrTechId(pojo.subject));
+    }
+
+    @Override
+    protected Class<GroupForIndividualPlanning> getClassEntityClass() {
+        return GroupForIndividualPlanning.class;
+    }
+
+    @Override
+    protected GroupForIndividualPlanning findExistingInstance(IndividualPlanSubgroupPojo pojo) {
+        return finderService.findIndividualPlanSubgroupByPlanItemIrTechId(pojo.planItemIrTechId);
+    }
+
+    @Override
+    protected boolean importIsNecessary(ImportSettings importSettings) {
+        return importSettings.getImportStudyPlan();
     }
 }

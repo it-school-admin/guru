@@ -20,8 +20,9 @@ public class ImportFromIrtTechResultImpl implements ImportFromIrtTechResult
 
     @Override
     public String getResultText() {
+        List<ImportResult> onlyImportedResults = getOnlyImportedResults();
         String result = "";
-        int size = importResults.size();
+        int size = onlyImportedResults.size();
 
         if(size == 0)
         {
@@ -29,7 +30,7 @@ public class ImportFromIrtTechResultImpl implements ImportFromIrtTechResult
         }
 
         int i = 1;
-        for (ImportResult importResult: importResults)
+        for (ImportResult importResult: onlyImportedResults)
         {
             result += importResult.getResultString();
             if (i < size)
@@ -39,5 +40,17 @@ public class ImportFromIrtTechResultImpl implements ImportFromIrtTechResult
             i++;
         }
         return result;
+    }
+
+    private List<ImportResult> getOnlyImportedResults() {
+        List<ImportResult> clearedList = new ArrayList();
+        for(ImportResult result: importResults)
+        {
+            if(result.isImported())
+            {
+                clearedList.add(result);
+            }
+        }
+        return clearedList;
     }
 }

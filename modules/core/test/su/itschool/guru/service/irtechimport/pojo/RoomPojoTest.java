@@ -10,7 +10,7 @@ class RoomPojoTest extends AbstractPojoTest {
     @Test
     void checkCreation()
     {
-        RoomPojo roomPojo = new RoomPojo(convertStringToElement(ROOM_XML));
+        RoomPojoIrTech roomPojo = new RoomPojoIrTech(convertStringToElement(ROOM_XML));
         assertEquals(53207, roomPojo.irTechId);
         assertEquals("2 кабинет", roomPojo.name);
         assertEquals(30, roomPojo.seats);

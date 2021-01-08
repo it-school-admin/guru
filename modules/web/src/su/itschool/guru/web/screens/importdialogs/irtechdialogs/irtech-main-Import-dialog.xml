@@ -5,6 +5,7 @@
     <layout spacing="true">
         <upload id="importedFileField" clearButtonCaption="msg://upload.clearButtonCaption" showFileName="true" showClearButton="true"
                 uploadButtonCaption="msg://upload.uploadButtonCaption" caption="msg://importedFile.caption"/>
+        <checkBox id="timeTableImportCheckBox" caption="msg://timeTableImportCheckBox.caption"/>
         <textField id="timeTableTemplateNameField" caption="msg://timeTableTemplateNameField.caption"/>
         <checkBox id="importAllClasses" caption="msg://importAllClasses.caption"/>
         <checkBox id="importAdditionalData" caption="msg://importAdditionalEntities.caption"/>

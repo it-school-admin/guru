@@ -2,7 +2,7 @@ package su.itschool.guru.service.irtechimport.pojo;
 
 import org.jdom2.Element;
 
-public class SchoolClassPojo extends AbstractPojoWithId {
+public class SchoolClassPojo extends AbstractPojoWithIrTechId {
     public final Integer grade;
     public final Character letter;
     public final Integer countOfStudents;

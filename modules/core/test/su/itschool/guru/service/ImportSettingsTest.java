@@ -35,7 +35,7 @@ class ImportSettingsTest extends AbstractPojoTest {
         String scheduleName = "";
         LessonsGridType firstShiftGrid = mock(LessonsGridType.class);
         LessonsGridType secondShiftGrid = mock(LessonsGridType.class);
-        ImportSettings importSettings = new ImportSettings(fileDescriptor, scheduleName, false, true);
+        ImportSettings importSettings = new ImportSettings(fileDescriptor, true, scheduleName, false, true);
         importSettings.setImportLessonsGrid(true);
         importSettings.setLessonsGridForFirstShift(firstShiftGrid);
         importSettings.setLessonsGridForSecondShift(secondShiftGrid);
@@ -111,7 +111,7 @@ class ImportSettingsTest extends AbstractPojoTest {
     private ImportSettings getImportSettings() {
         FileDescriptor fileDescriptor = mock(FileDescriptor.class);
         String scheduleName = "";
-        return new ImportSettings(fileDescriptor, scheduleName, false, true);
+        return new ImportSettings(fileDescriptor, true, scheduleName, false, true);
     }
 
 

@@ -9,6 +9,7 @@ import java.util.Set;
 
 public class ImportSettings implements Serializable {
     private final FileDescriptor importedFileDescriptor;
+    private final Boolean importTimetable;
     private final String scheduleName;
     private final Boolean importAllClasses;
     private final Boolean importAdditionalData;
@@ -22,8 +23,9 @@ public class ImportSettings implements Serializable {
     private Boolean importStudyPlan;
     private Boolean importClasses;
 
-    public ImportSettings(FileDescriptor fileDescriptor, String scheduleName, Boolean importAllClasses, Boolean importAdditionalData) {
+    public ImportSettings(FileDescriptor fileDescriptor, Boolean importTimetable, String scheduleName, Boolean importAllClasses, Boolean importAdditionalData) {
         this.importedFileDescriptor = fileDescriptor;
+        this.importTimetable = importTimetable;
         this.scheduleName = scheduleName;
         this.importAllClasses = importAllClasses;
         this.importAdditionalData = importAdditionalData;
@@ -131,5 +133,17 @@ public class ImportSettings implements Serializable {
 
     public boolean getImportClasses() {
         return importClasses;
+    }
+
+    public Boolean getImportTimetable() {
+        return importTimetable;
+    }
+
+    public Set<Integer> getSelectedClassesIds() {
+        return selectedClassesIds;
+    }
+
+    public String getScheduleName() {
+        return scheduleName;
     }
 }
