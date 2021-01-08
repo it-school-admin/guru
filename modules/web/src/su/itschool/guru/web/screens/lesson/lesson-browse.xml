@@ -64,21 +64,13 @@
                         <action id="remove" type="remove"/>
                     </actions>
                     <columns>
-                        <column id="planningItem"/>
-                        <column id="groupOnTheFly"/>
-                        <column id="startTime"/>
-                        <column id="endTime"/>
-                        <column id="isDistant"/>
                         <column id="room"/>
-                        <column id="topicOfTheLesson"/>
-                        <column id="toolsDescription"/>
-                        <column id="subjectOnTheFly"/>
-                        <column id="teacherOnTheFly"/>
-                        <column id="homeTaskDescription"/>
-                        <column id="captionForCalendar"/>
-                        <column id="week"/>
-                        <column id="descriptionForCalendar"/>
+                        <column id="isDistant"/>
+                        <column id="endTime"/>
+                        <column id="duration"/>
                         <column id="styleForCalendar"/>
+                        <column id="startTime"/>
+                        <column id="descriptionForCalendar"/>
                     </columns>
                     <rowsCount/>
                     <buttonsPanel id="buttonsPanel"

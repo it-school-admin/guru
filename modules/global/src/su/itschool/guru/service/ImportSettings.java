@@ -2,6 +2,7 @@ package su.itschool.guru.service;
 
 import com.haulmont.cuba.core.entity.FileDescriptor;
 import su.itschool.guru.entity.LessonsGridType;
+import su.itschool.guru.entity.TimetableTemplate;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -10,8 +11,8 @@ import java.util.Set;
 public class ImportSettings implements Serializable {
     private final FileDescriptor importedFileDescriptor;
     private final Boolean importTimetable;
-    private final String scheduleName;
-    private final Boolean importAllClasses;
+    private final TimetableTemplate timetableTemplate;
+    private final Boolean importTimeTableForAllClasses;
     private final Boolean importAdditionalData;
     private Set<Integer> selectedClassesIds = new HashSet();
     private Boolean importLessonsGrid;
@@ -23,16 +24,16 @@ public class ImportSettings implements Serializable {
     private Boolean importStudyPlan;
     private Boolean importClasses;
 
-    public ImportSettings(FileDescriptor fileDescriptor, Boolean importTimetable, String scheduleName, Boolean importAllClasses, Boolean importAdditionalData) {
+    public ImportSettings(FileDescriptor fileDescriptor, Boolean importTimetable, TimetableTemplate timetableTemplate, Boolean importTimeTableForAllClasses, Boolean importAdditionalData) {
         this.importedFileDescriptor = fileDescriptor;
         this.importTimetable = importTimetable;
-        this.scheduleName = scheduleName;
-        this.importAllClasses = importAllClasses;
+        this.timetableTemplate = timetableTemplate;
+        this.importTimeTableForAllClasses = importTimeTableForAllClasses;
         this.importAdditionalData = importAdditionalData;
     }
 
-    public Boolean getImportAllClasses() {
-        return importAllClasses;
+    public Boolean getImportTimeTableForAllClasses() {
+        return importTimeTableForAllClasses;
     }
 
     public Boolean getImportAdditionalData() {
@@ -143,7 +144,7 @@ public class ImportSettings implements Serializable {
         return selectedClassesIds;
     }
 
-    public String getScheduleName() {
-        return scheduleName;
+    public TimetableTemplate getTimetableTemplate() {
+        return timetableTemplate;
     }
 }

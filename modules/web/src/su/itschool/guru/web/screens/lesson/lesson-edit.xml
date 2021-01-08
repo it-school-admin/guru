@@ -14,21 +14,13 @@
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="lessonDc">
             <column width="350px">
-                <textField id="startTimeField" property="startTime"/>
-                <textField id="endTimeField" property="endTime"/>
-                <checkBox id="isDistantField" property="isDistant"/>
                 <pickerField id="roomField" property="room"/>
-                <textArea rows="5" id="topicOfTheLessonField" property="topicOfTheLesson"/>
-                <textArea rows="5" id="toolsDescriptionField" property="toolsDescription"/>
-                <pickerField id="planningItemField" property="planningItem"/>
-                <pickerField id="subjectOnTheFlyField" property="subjectOnTheFly"/>
-                <pickerField id="teacherOnTheFlyField" property="teacherOnTheFly"/>
-                <textArea rows="5" id="homeTaskDesriptionField" property="homeTaskDescription"/>
-                <textField id="captionForCalendarField" property="captionForCalendar"/>
-                <pickerField id="weekField" property="week"/>
-                <textField id="descriptionForCalendarField" property="descriptionForCalendar"/>
-                <pickerField id="groupOnTheFlyField" property="groupOnTheFly"/>
+                <checkBox id="isDistantField" property="isDistant"/>
+                <dateField id="endTimeField" property="endTime"/>
+                <textField id="durationField" property="duration"/>
                 <textField id="styleForCalendarField" property="styleForCalendar"/>
+                <dateField id="startTimeField" property="startTime"/>
+                <textField id="descriptionForCalendarField" property="descriptionForCalendar"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

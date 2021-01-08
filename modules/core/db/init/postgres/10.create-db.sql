@@ -55,18 +55,11 @@ create table GURU_LESSON (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    PLANNING_ITEM_ID uuid,
+    PLAN_ITEM_ID uuid,
     START_TIME timestamp not null,
     DURATION integer not null,
-    GROUP_ON_THE_FLY_ID uuid,
-    SUBJECT_ON_THE_FLY_ID uuid,
-    TEACHER_ON_THE_FLY_ID uuid,
     IS_DISTANT boolean not null,
-    WEEK_ID uuid not null,
     ROOM_ID uuid,
-    TOPIC_OF_THE_LESSON text,
-    TOOLS_DESCRIPTION text,
-    HOME_TASK_DESCRIPTION text,
     --
     primary key (ID)
 )^
@@ -197,32 +190,16 @@ create table GURU_TIME_TABLE_TEMPLATE_ITEM (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
+    TIMETABLE_TEMPLATE_ID uuid not null,
+    PLANNING_ITEM_ID uuid,
     NUMBER_OF_LESSON integer not null,
     ROOM_ID uuid,
     WEEK_DAY integer not null,
-    PLANNING_ITEM_ID uuid,
     --
     primary key (ID)
 )^
 -- end GURU_TIME_TABLE_TEMPLATE_ITEM
 
--- begin GURU_TIME_TABLE_IMPORT
-create table GURU_TIME_TABLE_IMPORT (
-    ID uuid,
-    VERSION integer not null,
-    CREATE_TS timestamp,
-    CREATED_BY varchar(50),
-    UPDATE_TS timestamp,
-    UPDATED_BY varchar(50),
-    DELETE_TS timestamp,
-    DELETED_BY varchar(50),
-    --
-    IMPORT_TIME timestamp not null,
-    IMPORT_XML_DATA text not null,
-    --
-    primary key (ID)
-)^
--- end GURU_TIME_TABLE_IMPORT
 -- begin GURU_ROOM
 create table GURU_ROOM (
     ID uuid,
@@ -473,3 +450,19 @@ create table GURU_GROUP_FOR_INDIVIDUAL_PLANNING_SCHOOL_CLASS_LINK (
     primary key (GROUP_FOR_INDIVIDUAL_PLANNING_ID, SCHOOL_CLASS_ID)
 )^
 -- end GURU_GROUP_FOR_INDIVIDUAL_PLANNING_SCHOOL_CLASS_LINK
+-- begin GURU_TIMETABLE_TEMPLATE
+create table GURU_TIMETABLE_TEMPLATE (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    NAME varchar(255) not null,
+    --
+    primary key (ID)
+)^
+-- end GURU_TIMETABLE_TEMPLATE

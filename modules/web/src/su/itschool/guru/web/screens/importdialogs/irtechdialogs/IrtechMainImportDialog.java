@@ -10,6 +10,7 @@ import com.haulmont.cuba.gui.screen.Subscribe;
 import com.haulmont.cuba.gui.screen.UiController;
 import com.haulmont.cuba.gui.screen.UiDescriptor;
 import com.haulmont.cuba.gui.upload.FileUploadingAPI;
+import su.itschool.guru.entity.TimetableTemplate;
 import su.itschool.guru.service.ImportSettings;
 import su.itschool.guru.web.importproviders.irtech.IrTechImportSettingsProvider.IrTechImportAction;
 import su.itschool.guru.web.importproviders.irtech.IrTechXMLClassesExtractorForDialog;
@@ -34,8 +35,6 @@ public class IrtechMainImportDialog extends Screen {
     @Inject
     private FileUploadField importedFileField;
     @Inject
-    private TextField<String> timeTableTemplateNameField;
-    @Inject
     private CheckBox importAllClasses;
     @Inject
     private CheckBox importAdditionalData;
@@ -50,6 +49,8 @@ public class IrtechMainImportDialog extends Screen {
     private List<SchoolClassWrapper> schoolClassWrappers;
     @Inject
     private CheckBox timeTableImportCheckBox;
+    @Inject
+    private LookupPickerField timeTableTemplateNameField;
 
     private ImportSettings createImportSettings() {
         ImportSettings importSettings = new ImportSettings(importedFileDescriptor,
@@ -73,8 +74,8 @@ public class IrtechMainImportDialog extends Screen {
         return importAllClasses.getValue();
     }
 
-    private String getScheduleName() {
-        return timeTableTemplateNameField.getValue();
+    private TimetableTemplate getScheduleName() {
+        return (TimetableTemplate) timeTableTemplateNameField.getValue();
     }
 
     @Subscribe("importedFileField")
@@ -124,7 +125,6 @@ public class IrtechMainImportDialog extends Screen {
     @Subscribe
     public void onBeforeShow(BeforeShowEvent event) {
         submitBtn.setEnabled(false);
-        timeTableTemplateNameField.setValue("Шаблон расписания ИрТех " + LocalDateTime.now().toString());
         timeTableImportCheckBox.setValue(true);
     }
 

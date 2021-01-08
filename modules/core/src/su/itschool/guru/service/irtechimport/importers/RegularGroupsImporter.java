@@ -9,7 +9,7 @@ import su.itschool.guru.service.irtechimport.pojo.RegularSubgroupPojo;
 import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
 import su.itschool.guru.service.irtechimport.result.SomethingImportedResult;
 
-import java.util.List;
+import java.util.Collection;
 
 public class RegularGroupsImporter extends AbstractImporter<GroupForLesson, RegularSubgroupPojo> {
 
@@ -19,7 +19,7 @@ public class RegularGroupsImporter extends AbstractImporter<GroupForLesson, Regu
     }
 
     @Override
-    protected List<RegularSubgroupPojo> getPojos(TimeTablePojos timeTablePojos) {
+    protected Collection<RegularSubgroupPojo> getPojos(TimeTablePojos timeTablePojos) {
         return timeTablePojos.regularSubGroups;
     }
 

@@ -4,23 +4,7 @@
     <view entity="guru_Week" name="week-view-for-lookup" extends="_local">
         <property name="displayName"/>
     </view>
-    <view entity="guru_Lesson" name="lesson-view-for-calendar" extends="_minimal">
-        <property name="endTime"/>
-        <property name="room" view="_minimal">
-            <property name="roomName"/>
-            <property name="roomBlock" view="_minimal"/>
-        </property>
-        <property name="subjectOnTheFly" view="_minimal"/>
-        <property name="teacherOnTheFly" view="_minimal"/>
-        <property name="isDistant"/>
-        <property name="week" view="_minimal"/>
-        <property name="toolsDescription"/>
-        <property name="homeTaskDescription"/>
-        <property name="captionForCalendar"/>
-        <property name="descriptionForCalendar"/>
-        <property name="topicOfTheLesson"/>
-        <property name="styleForCalendar"/>
-    </view>
+
     <view entity="guru_GroupForLesson" name="groupForLesson-view-for-lookup" extends="_minimal">
         <property name="schoolClass" view="_minimal"/>
         <property name="parentGroup" view="_minimal"/>

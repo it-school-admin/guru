@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
-        caption="msg://timeTableImportEdit.caption"
+        caption="msg://timetableTemplateEdit.caption"
         focusComponent="form"
-        messagesPack="su.itschool.guru.web.screens.timetableimport">
+        messagesPack="su.itschool.guru.web.screens.timetabletemplate">
     <data>
-        <instance id="timeTableImportDc"
-                  class="su.itschool.guru.entity.TimeTableImport">
+        <instance id="timetableTemplateDc"
+                  class="su.itschool.guru.entity.TimetableTemplate">
             <view extends="_local"/>
             <loader/>
         </instance>
@@ -13,10 +13,9 @@
     <dialogMode height="600"
                 width="800"/>
     <layout expand="editActions" spacing="true">
-        <form id="form" dataContainer="timeTableImportDc">
+        <form id="form" dataContainer="timetableTemplateDc">
             <column width="350px">
-                <dateField id="importTimeField" property="importTime"/>
-                <textArea rows="5" id="importXMLDataField" property="importedXMLData"/>
+                <textField id="nameField" property="name"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

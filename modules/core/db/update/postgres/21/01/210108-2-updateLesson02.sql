@@ -1,0 +1,2 @@
+alter table GURU_LESSON add constraint FK_GURU_LESSON_ON_PLAN_ITEM foreign key (PLAN_ITEM_ID) references GURU_LESSONS_PLANNING_ITEM(ID);
+create index IDX_GURU_LESSON_ON_PLAN_ITEM on GURU_LESSON (PLAN_ITEM_ID);

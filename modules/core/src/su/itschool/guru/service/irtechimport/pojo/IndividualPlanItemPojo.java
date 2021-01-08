@@ -4,9 +4,9 @@ import org.jdom2.Element;
 
 public class IndividualPlanItemPojo extends AbstractPlanItemPojoIrTech
 {
-    public IndividualPlanItemPojo(Element planItemElement)
+    public IndividualPlanItemPojo(Element planItemElement, Integer classIrTechId)
     {
-        super(planItemElement);
+        super(planItemElement, classIrTechId);
     }
 
 }

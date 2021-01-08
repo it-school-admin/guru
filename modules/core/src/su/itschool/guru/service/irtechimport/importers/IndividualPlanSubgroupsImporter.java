@@ -9,8 +9,8 @@ import su.itschool.guru.service.irtechimport.pojo.IndividualPlanSubgroupPojo;
 import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
 import su.itschool.guru.service.irtechimport.result.SomethingImportedResult;
 
+import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 
 import static su.itschool.guru.service.irtechimport.importers.AbstractImporter.UpdateInstanceMode.NEW_INSTANCE;
 
@@ -21,7 +21,7 @@ public class IndividualPlanSubgroupsImporter extends AbstractImporter<GroupForIn
     }
 
     @Override
-    protected List<IndividualPlanSubgroupPojo> getPojos(TimeTablePojos timeTablePojos) {
+    protected Collection<IndividualPlanSubgroupPojo> getPojos(TimeTablePojos timeTablePojos) {
         return timeTablePojos.individualPlanSubgroups;
     }
 

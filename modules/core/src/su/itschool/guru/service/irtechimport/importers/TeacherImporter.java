@@ -8,7 +8,7 @@ import su.itschool.guru.service.irtechimport.ImportResult;
 import su.itschool.guru.service.irtechimport.pojo.TeacherPojo;
 import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
 
-import java.util.List;
+import java.util.Collection;
 
 import static su.itschool.guru.service.irtechimport.result.SomethingImportedResult.somethingImported;
 
@@ -20,7 +20,7 @@ public class TeacherImporter extends AbstractImporter<Teacher, TeacherPojo> {
     }
 
     @Override
-    protected List<TeacherPojo> getPojos(TimeTablePojos timeTablePojos) {
+    protected Collection<TeacherPojo> getPojos(TimeTablePojos timeTablePojos) {
         return timeTablePojos.teachers;
     }
 

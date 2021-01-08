@@ -2,6 +2,7 @@ package su.itschool.guru.entity;
 
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.entity.annotation.OnDelete;
+import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
 import su.itschool.guru.entity.enums.WeekDay;
 
@@ -12,6 +13,17 @@ import javax.validation.constraints.NotNull;
 @Entity(name = "guru_TimeTableTemplateItem")
 public class TimeTableTemplateItem extends StandardEntity {
     private static final long serialVersionUID = 3063126557897405154L;
+
+    @NotNull
+    @OnDeleteInverse(DeletePolicy.CASCADE)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "TIMETABLE_TEMPLATE_ID")
+    private TimetableTemplate timetableTemplate;
+
+    @JoinColumn(name = "PLANNING_ITEM_ID")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @OnDelete(DeletePolicy.CASCADE)
+    private LessonsPlanningItem planningItem;
 
     @NotNull
     @Column(name = "NUMBER_OF_LESSON", nullable = false)
@@ -25,10 +37,13 @@ public class TimeTableTemplateItem extends StandardEntity {
     @Column(name = "WEEK_DAY", nullable = false)
     private Integer weekDay;
 
-    @JoinColumn(name = "PLANNING_ITEM_ID")
-    @ManyToOne(fetch = FetchType.LAZY)
-    @OnDelete(DeletePolicy.CASCADE)
-    private LessonsPlanningItem planningItem;
+    public TimetableTemplate getTimetableTemplate() {
+        return timetableTemplate;
+    }
+
+    public void setTimetableTemplate(TimetableTemplate timetableTemplate) {
+        this.timetableTemplate = timetableTemplate;
+    }
 
     public WeekDay getWeekDay() {
         return weekDay == null ? null : WeekDay.fromId(weekDay);

@@ -6,9 +6,11 @@
             <item screen="guru_ScheduleForTeachers" caption="mainMsg://menu_config.guru_ScheduleForTeachers"/>
             <item screen="guru_TimeTableTemplateItem.browse"
                   caption="mainMsg://menu_config.guru_TimeTableTemplateItem.browse"/>
-            <item screen="guru_TimeTableImport.browse" caption="mainMsg://menu_config.guru_TimeTableImport.browse"/>
             <item screen="guru_Lesson.browse-for-dispatcher"
                   caption="mainMsg://menu_config.guru_Lesson.browse-for-dispatcher"/>
+            <item screen="guru_TimetableTemplate.browse"
+                  caption="mainMsg://menu_config.guru_TimetableTemplate.browse"/>
+
         </menu>
         <menu id="planning" caption="mainMsg://menu_config.planning">
             <item screen="guru_GroupForLesson.browse" caption="mainMsg://menu_config.guru_GroupForLesson.browse"/>

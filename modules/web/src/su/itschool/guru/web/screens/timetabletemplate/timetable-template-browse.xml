@@ -1,52 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
         xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
-        caption="msg://lessonBrowseForDispatcher.caption"
-        focusComponent="lessonsTable"
-        messagesPack="su.itschool.guru.web.screens.lesson">
+        caption="msg://timetableTemplateBrowse.caption"
+        focusComponent="timetableTemplatesTable"
+        messagesPack="su.itschool.guru.web.screens.timetabletemplate">
     <data readOnly="true">
-        <collection id="lessonsDc"
-                    class="su.itschool.guru.entity.Lesson">
-            <loader id="lessonsDl">
+        <collection id="timetableTemplatesDc"
+                    class="su.itschool.guru.entity.TimetableTemplate">
+            <view extends="_local"/>
+            <loader id="timetableTemplatesDl">
                 <query>
-                    <![CDATA[select e from guru_Lesson e]]>
+                    <![CDATA[select e from guru_TimetableTemplate e]]>
                 </query>
             </loader>
         </collection>
     </data>
     <dialogMode height="600"
                 width="800"/>
-    <layout expand="lessonsTable"
+    <layout expand="timetableTemplatesTable"
             spacing="true">
         <filter id="filter"
-                applyTo="lessonsTable"
-                dataLoader="lessonsDl">
+                applyTo="timetableTemplatesTable"
+                dataLoader="timetableTemplatesDl">
             <properties include=".*"/>
         </filter>
-        <groupTable id="lessonsTable"
+        <groupTable id="timetableTemplatesTable"
                     width="100%"
-                    dataContainer="lessonsDc">
+                    dataContainer="timetableTemplatesDc">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="room"/>
-                <column id="isDistant"/>
-                <column id="endTime"/>
-                <column id="duration"/>
-                <column id="styleForCalendar"/>
-                <column id="startTime"/>
-                <column id="descriptionForCalendar"/>
+                <column id="name"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
                           alwaysVisible="true">
-                <button id="createBtn" action="lessonsTable.create"/>
-                <button id="editBtn" action="lessonsTable.edit"/>
-                <button id="removeBtn" action="lessonsTable.remove"/>
-                <button id="ImportBtn" caption="msg://ImportBtn.caption"/>
+                <button id="createBtn" action="timetableTemplatesTable.create"/>
+                <button id="editBtn" action="timetableTemplatesTable.edit"/>
+                <button id="removeBtn" action="timetableTemplatesTable.remove"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">

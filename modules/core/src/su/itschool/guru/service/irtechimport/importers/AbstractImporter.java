@@ -9,6 +9,7 @@ import su.itschool.guru.service.irtechimport.pojo.AbstractPojo;
 import su.itschool.guru.service.irtechimport.pojo.AbstractPojoWithIrTechId;
 import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
 
+import java.util.Collection;
 import java.util.List;
 
 import static su.itschool.guru.service.irtechimport.importers.AbstractImporter.UpdateInstanceMode.EXISTING_INSTANCE;
@@ -63,7 +64,7 @@ public abstract class AbstractImporter<E extends StandardEntity, P extends Abstr
 
     }
 
-    protected abstract List<P> getPojos(TimeTablePojos timeTablePojos);
+    protected abstract Collection<P> getPojos(TimeTablePojos timeTablePojos);
 
     protected abstract ImportResult getImportResult(TimeTablePojos timeTablePojos);
 

@@ -8,7 +8,7 @@ import su.itschool.guru.service.irtechimport.ImportResult;
 import su.itschool.guru.service.irtechimport.pojo.RootSubjectPojo;
 import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
 
-import java.util.List;
+import java.util.Collection;
 
 import static su.itschool.guru.service.irtechimport.result.SomethingImportedResult.somethingImported;
 
@@ -18,7 +18,7 @@ public class RootSubjectsImporter extends AbstractImporter<Subject, RootSubjectP
     }
 
     @Override
-    protected List<RootSubjectPojo> getPojos(TimeTablePojos timeTablePojos) {
+    protected Collection<RootSubjectPojo> getPojos(TimeTablePojos timeTablePojos) {
         return timeTablePojos.rootSubjects;
     }
 

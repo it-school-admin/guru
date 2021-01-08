@@ -20,7 +20,7 @@ class LessonPojoTest extends AbstractPojoTest {
         LessonPojo lessonPojo = new LessonPojo(
                 convertStringToElement(LESSON_WITHOUT_ROOM),
                 LESSON_NUMBER,
-                DAY_OF_WEEK);
+                DAY_OF_WEEK, timeTablePojos.regularPlanItems, timeTablePojos.individualPlanItems);
         assertEquals(5069664, lessonPojo.planItemId);
         assertEquals(DAY_OF_WEEK, lessonPojo.dayOfWeekNumber);
         assertEquals(LESSON_NUMBER, lessonPojo.lessonNumber);
@@ -33,7 +33,7 @@ class LessonPojoTest extends AbstractPojoTest {
         LessonPojo lessonPojo = new LessonPojo(
                 convertStringToElement(LESSON_WITH_ROOM),
                 LESSON_NUMBER,
-                DAY_OF_WEEK);
+                DAY_OF_WEEK, timeTablePojos.regularPlanItems, timeTablePojos.individualPlanItems);
         assertEquals(53207, lessonPojo.roomId);
     }
 

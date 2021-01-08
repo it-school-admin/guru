@@ -2,12 +2,12 @@ package su.itschool.guru.service.irtechimport.pojo;
 
 import org.jdom2.Element;
 
-public class RoomPojoIrTech extends AbstractPojoWithIrTechId {
+public class RoomPojo extends AbstractPojoWithIrTechId {
     public final String name;
     public final Integer seats;
     public final Integer floor;
 
-    public RoomPojoIrTech(Element roomElement) {
+    public RoomPojo(Element roomElement) {
         setIrTechId(roomElement, "id");
         name = getString(roomElement, "name");
         seats = getInteger(roomElement, "seats");

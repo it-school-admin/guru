@@ -9,8 +9,7 @@ import su.itschool.guru.service.irtechimport.pojo.SubjectPojo;
 import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
 
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 import static su.itschool.guru.service.irtechimport.result.SomethingImportedResult.somethingImported;
 
@@ -21,8 +20,8 @@ public class SubjectsImporter extends AbstractImporter<Subject, SubjectPojo> {
     }
 
     @Override
-    protected List<SubjectPojo> getPojos(TimeTablePojos timeTablePojos) {
-        return new ArrayList(timeTablePojos.subjects.values());
+    protected Collection<SubjectPojo> getPojos(TimeTablePojos timeTablePojos) {
+        return timeTablePojos.subjects.values();
     }
 
     @Override

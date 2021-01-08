@@ -10,7 +10,7 @@ import su.itschool.guru.service.irtechimport.pojo.RegularPlanItemPojo;
 import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
 import su.itschool.guru.service.irtechimport.result.SomethingImportedResult;
 
-import java.util.List;
+import java.util.Collection;
 
 public class RegularStudyPlanImporter extends AbstractImporter<LessonsPlanningItem, RegularPlanItemPojo> {
 
@@ -33,8 +33,8 @@ public class RegularStudyPlanImporter extends AbstractImporter<LessonsPlanningIt
     }
 
     @Override
-    protected List<RegularPlanItemPojo> getPojos(TimeTablePojos timeTablePojos) {
-        return timeTablePojos.regularPlanItems;
+    protected Collection<RegularPlanItemPojo> getPojos(TimeTablePojos timeTablePojos) {
+        return timeTablePojos.regularPlanItems.values();
     }
 
     @Override

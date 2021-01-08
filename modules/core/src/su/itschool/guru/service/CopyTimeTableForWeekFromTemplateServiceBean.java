@@ -42,7 +42,7 @@ public class CopyTimeTableForWeekFromTemplateServiceBean implements CopyTimeTabl
 
         for (TimeTableTemplateItem templateItem:templateItems)
         {
-            Lesson lesson = dataManager.create(Lesson.class);
+/*            Lesson lesson = dataManager.create(Lesson.class);
             lesson.setPlanningItem(templateItem.getPlanningItem());
 
             //TODO
@@ -58,7 +58,7 @@ public class CopyTimeTableForWeekFromTemplateServiceBean implements CopyTimeTabl
             lesson.setIsDistant(isDistant);
             lesson.setRoom(templateItem.getRoom());
             lesson.setWeek(week);
-           dataManager.commit(lesson);
+           dataManager.commit(lesson);*/
         }
 
     }

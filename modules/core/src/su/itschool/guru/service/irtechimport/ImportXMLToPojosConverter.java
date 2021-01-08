@@ -42,7 +42,12 @@ public class ImportXMLToPojosConverter {
                 Integer lessonNumber = Integer.valueOf(lessonNumberElement.getAttributeValue("timeId"));
                 for(Element lessonElement: lessonNumberElement.getChildren("csg"))
                 {
-                    timeTablePojos.lessons.add(new LessonPojo(lessonElement, lessonNumber, dayId));
+                    timeTablePojos.lessons.add(
+                            new LessonPojo(lessonElement,
+                            lessonNumber,
+                            dayId,
+                            timeTablePojos.regularPlanItems,
+                            timeTablePojos.individualPlanItems));
                 }
             }
         }
@@ -75,7 +80,7 @@ public class ImportXMLToPojosConverter {
                 else
                 {
                     createIndividualPlanSubgroup(timeTablePojos, schoolClassPojo, planItemElement);
-                    createIndividualPlanItem(timeTablePojos, planItemElement);
+                    createIndividualPlanItem(timeTablePojos, schoolClassPojo, planItemElement);
                 }
 
 
@@ -83,13 +88,14 @@ public class ImportXMLToPojosConverter {
         }
     }
 
-    private void createIndividualPlanItem(TimeTablePojos timeTablePojos, Element planItemElement) {
-        timeTablePojos.individualPlanItems.add(new IndividualPlanItemPojo(planItemElement));
+    private void createIndividualPlanItem(TimeTablePojos timeTablePojos, SchoolClassPojo schoolClassPojo, Element planItemElement) {
+        IndividualPlanItemPojo planItemPojo = new IndividualPlanItemPojo(planItemElement, schoolClassPojo.irTechId);
+        timeTablePojos.individualPlanItems.put(planItemPojo.irTechId, planItemPojo);
     }
 
     private void createRegularPlanItem(TimeTablePojos timeTablePojos, SchoolClassPojo schoolClassPojo, Element planItemElement) {
         RegularPlanItemPojo regularPlanItemPojo = new RegularPlanItemPojo(planItemElement, schoolClassPojo.irTechId);
-        timeTablePojos.regularPlanItems.add(regularPlanItemPojo);
+        timeTablePojos.regularPlanItems.put(regularPlanItemPojo.irTechId, regularPlanItemPojo);
     }
 
     private void createIndividualPlanSubgroup(TimeTablePojos timeTablePojos, SchoolClassPojo schoolClassPojo, Element planItemElement) {
@@ -123,7 +129,7 @@ public class ImportXMLToPojosConverter {
         List<Element> roomElements = rootElement.getChild("Rooms").getChildren("room");
         for (Element roomElement: roomElements)
         {
-            RoomPojoIrTech roomPojo = new RoomPojoIrTech(roomElement);
+            RoomPojo roomPojo = new RoomPojo(roomElement);
             timeTablePojos.rooms.add(roomPojo);
         }
 

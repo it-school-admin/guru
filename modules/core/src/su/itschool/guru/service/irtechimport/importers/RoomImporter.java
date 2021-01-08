@@ -5,20 +5,20 @@ import su.itschool.guru.entity.Room;
 import su.itschool.guru.service.ImportSettings;
 import su.itschool.guru.service.IrTechImportFinderService;
 import su.itschool.guru.service.irtechimport.ImportResult;
-import su.itschool.guru.service.irtechimport.pojo.RoomPojoIrTech;
+import su.itschool.guru.service.irtechimport.pojo.RoomPojo;
 import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
 import su.itschool.guru.service.irtechimport.result.SomethingImportedResult;
 
-import java.util.List;
+import java.util.Collection;
 
-public class RoomImporter extends AbstractImporter<Room, RoomPojoIrTech> {
+public class RoomImporter extends AbstractImporter<Room, RoomPojo> {
 
     public RoomImporter(DataManager dataManager, IrTechImportFinderService finderService) {
         super(dataManager, finderService);
     }
 
     @Override
-    protected List<RoomPojoIrTech> getPojos(TimeTablePojos timeTablePojos) {
+    protected Collection<RoomPojo> getPojos(TimeTablePojos timeTablePojos) {
         return timeTablePojos.rooms;
     }
 
@@ -29,12 +29,12 @@ public class RoomImporter extends AbstractImporter<Room, RoomPojoIrTech> {
     }
 
     @Override
-    protected void fillIrTechId(Room instance, RoomPojoIrTech pojo) {
+    protected void fillIrTechId(Room instance, RoomPojo pojo) {
         instance.setIrTehId(pojo.irTechId);
     }
 
     @Override
-    protected void fillOrUpdateFields(Room instance, RoomPojoIrTech pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
+    protected void fillOrUpdateFields(Room instance, RoomPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
         instance.setRoomName(pojo.name);
         instance.setRoomFloor(pojo.floor);
         instance.setRoomSeatsAmount(pojo.seats);
@@ -47,7 +47,7 @@ public class RoomImporter extends AbstractImporter<Room, RoomPojoIrTech> {
     }
 
     @Override
-    protected Room findExistingInstance(RoomPojoIrTech pojo) {
+    protected Room findExistingInstance(RoomPojo pojo) {
         return finderService.getRoomByIrTechId(pojo.irTechId);
     }
 

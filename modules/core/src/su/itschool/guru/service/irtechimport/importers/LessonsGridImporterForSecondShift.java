@@ -10,7 +10,7 @@ import su.itschool.guru.service.irtechimport.pojo.LessonTimePojo;
 import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
 import su.itschool.guru.service.irtechimport.result.SomethingImportedResult;
 
-import java.util.List;
+import java.util.Collection;
 
 public class LessonsGridImporterForSecondShift extends AbstractLessonsGridImporter{
     public LessonsGridImporterForSecondShift(DataManager dataManager, IrTechImportFinderService finderService, LessonsGridService lessonsGridService) {
@@ -18,7 +18,7 @@ public class LessonsGridImporterForSecondShift extends AbstractLessonsGridImport
     }
 
     @Override
-    protected List<LessonTimePojo> getPojos(TimeTablePojos timeTablePojos) {
+    protected Collection<LessonTimePojo> getPojos(TimeTablePojos timeTablePojos) {
         return timeTablePojos.secondShiftLessonsTimes;
     }
 
