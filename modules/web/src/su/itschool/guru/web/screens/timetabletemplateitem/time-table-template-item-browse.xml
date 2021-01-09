@@ -32,11 +32,11 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="room"/>
                 <column id="planningItem"/>
-                <column id="weekDay"/>
-                <column id="timetableTemplate"/>
                 <column id="numberOfLesson"/>
+                <column id="weekDay"/>
+                <column id="room"/>
+                <column id="timetableTemplate"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
