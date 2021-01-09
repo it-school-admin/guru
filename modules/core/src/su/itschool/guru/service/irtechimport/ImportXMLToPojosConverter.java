@@ -110,7 +110,7 @@ public class ImportXMLToPojosConverter {
 
     private void createRootSubject(TimeTablePojos timeTablePojos, Element planItemElement) {
         RootSubjectPojo rootSubjectPojo = new RootSubjectPojo(planItemElement);
-        timeTablePojos.rootSubjects.add(rootSubjectPojo);
+        timeTablePojos.rootSubjects.put(rootSubjectPojo.irTechId, rootSubjectPojo);
         updateChildSubject(timeTablePojos, rootSubjectPojo, planItemElement);
     }
 

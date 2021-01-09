@@ -13,7 +13,7 @@ public class TimeTablePojos {
     public final Map<Integer, SubjectPojo> subjects = new HashMap();
     public final List<RoomPojo> rooms = new ArrayList();
     public final List<SchoolClassPojo> classes = new ArrayList();
-    public final List<RootSubjectPojo> rootSubjects = new ArrayList();
+    public final Map<Integer, RootSubjectPojo> rootSubjects = new HashMap();
     public final List<RegularSubgroupPojo> regularSubGroups = new ArrayList();
     public final List<IndividualPlanSubgroupPojo> individualPlanSubgroups = new ArrayList();
     public final Map<Integer, RegularPlanItemPojo> regularPlanItems = new HashMap();

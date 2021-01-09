@@ -2,7 +2,9 @@ package su.itschool.guru.service;
 
 import com.haulmont.cuba.core.entity.FileDescriptor;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import su.itschool.guru.entity.LessonsGridType;
+import su.itschool.guru.entity.TimetableTemplate;
 import su.itschool.guru.service.irtechimport.pojo.AbstractPojoTest;
 
 
@@ -35,7 +37,7 @@ class ImportSettingsTest extends AbstractPojoTest {
         String scheduleName = "";
         LessonsGridType firstShiftGrid = mock(LessonsGridType.class);
         LessonsGridType secondShiftGrid = mock(LessonsGridType.class);
-        ImportSettings importSettings = new ImportSettings(fileDescriptor, true, scheduleName, false, true);
+        ImportSettings importSettings = new ImportSettings(fileDescriptor, true, mock(TimetableTemplate.class), false, true);
         importSettings.setImportLessonsGrid(true);
         importSettings.setLessonsGridForFirstShift(firstShiftGrid);
         importSettings.setLessonsGridForSecondShift(secondShiftGrid);
@@ -109,9 +111,10 @@ class ImportSettingsTest extends AbstractPojoTest {
 
 
     private ImportSettings getImportSettings() {
+        TimetableTemplate timetableTemplate = mock(TimetableTemplate.class);
         FileDescriptor fileDescriptor = mock(FileDescriptor.class);
         String scheduleName = "";
-        return new ImportSettings(fileDescriptor, true, scheduleName, false, true);
+        return new ImportSettings(fileDescriptor, true, timetableTemplate, false, true);
     }
 
 

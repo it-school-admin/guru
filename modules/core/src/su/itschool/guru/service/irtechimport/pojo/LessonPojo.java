@@ -11,7 +11,11 @@ public class LessonPojo extends AbstractPojo{
     public final Integer roomId;
     public final Integer irTechClassId;
 
-    public LessonPojo(Element lessonElement, Integer lessonNumber, Integer dayOfWeekNumber, Map<Integer, RegularPlanItemPojo> regularPlanItems, Map<Integer, IndividualPlanItemPojo> individualPlanItems) {
+    public LessonPojo(Element lessonElement,
+                      Integer lessonNumber,
+                      Integer dayOfWeekNumber,
+                      Map<Integer, RegularPlanItemPojo> regularPlanItems,
+                      Map<Integer, IndividualPlanItemPojo> individualPlanItems) {
         planItemId = getInteger(lessonElement, "id");
         this.lessonNumber = lessonNumber;
         this.dayOfWeekNumber = dayOfWeekNumber;

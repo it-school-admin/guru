@@ -19,7 +19,7 @@ public class RootSubjectsImporter extends AbstractImporter<Subject, RootSubjectP
 
     @Override
     protected Collection<RootSubjectPojo> getPojos(TimeTablePojos timeTablePojos) {
-        return timeTablePojos.rootSubjects;
+        return timeTablePojos.rootSubjects.values();
     }
 
     @Override

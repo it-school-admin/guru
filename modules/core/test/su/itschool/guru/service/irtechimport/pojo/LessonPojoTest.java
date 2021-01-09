@@ -2,6 +2,8 @@ package su.itschool.guru.service.irtechimport.pojo;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.HashMap;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class LessonPojoTest extends AbstractPojoTest {
@@ -20,7 +22,7 @@ class LessonPojoTest extends AbstractPojoTest {
         LessonPojo lessonPojo = new LessonPojo(
                 convertStringToElement(LESSON_WITHOUT_ROOM),
                 LESSON_NUMBER,
-                DAY_OF_WEEK, timeTablePojos.regularPlanItems, timeTablePojos.individualPlanItems);
+                DAY_OF_WEEK, new HashMap<Integer, RegularPlanItemPojo>(), new HashMap<Integer, IndividualPlanItemPojo>());
         assertEquals(5069664, lessonPojo.planItemId);
         assertEquals(DAY_OF_WEEK, lessonPojo.dayOfWeekNumber);
         assertEquals(LESSON_NUMBER, lessonPojo.lessonNumber);
@@ -33,7 +35,7 @@ class LessonPojoTest extends AbstractPojoTest {
         LessonPojo lessonPojo = new LessonPojo(
                 convertStringToElement(LESSON_WITH_ROOM),
                 LESSON_NUMBER,
-                DAY_OF_WEEK, timeTablePojos.regularPlanItems, timeTablePojos.individualPlanItems);
+                DAY_OF_WEEK, new HashMap<Integer, RegularPlanItemPojo>(), new HashMap<Integer, IndividualPlanItemPojo>());
         assertEquals(53207, lessonPojo.roomId);
     }
 
