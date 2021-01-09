@@ -56,6 +56,7 @@ public class SchoolClass extends StandardEntity {
 
     @Column(name = "IR_TECH_ID")
     private Integer irTechId;
+
     @JoinTable(name = "GURU_GROUP_FOR_INDIVIDUAL_PLANNING_SCHOOL_CLASS_LINK",
             joinColumns = @JoinColumn(name = "SCHOOL_CLASS_ID"),
             inverseJoinColumns = @JoinColumn(name = "GROUP_FOR_INDIVIDUAL_PLANNING_ID"))

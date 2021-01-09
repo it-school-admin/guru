@@ -40,5 +40,6 @@
             <item screen="guru_SchoolClassMapping.browse"
                   caption="mainMsg://menu_config.guru_SchoolClassMapping.browse"/>
         </menu>
+        <item screen="guru_TimetableMaking" caption="mainMsg://menu_config.guru_TimetableMaking"/>
     </menu>
 </menu-config>

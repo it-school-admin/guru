@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://timetableMaking.caption"
+        messagesPack="su.itschool.guru.web.screens">
+    <data>
+        <collection id="lessonsPlanningItemsDc" class="su.itschool.guru.entity.LessonsPlanningItem">
+            <view extends="_local"/>
+            <loader id="lessonsPlanningItemsDl">
+                <query>
+                    <![CDATA[select e from guru_LessonsPlanningItem e]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="timeTableTemplateItemsDc" class="su.itschool.guru.entity.TimeTableTemplateItem">
+            <view extends="_local"/>
+            <loader id="timeTableTemplateItemsDl">
+                <query>
+                    <![CDATA[select e from guru_TimeTableTemplateItem e]]>
+                </query>
+            </loader>
+        </collection>
+        <collection id="schoolClassesDc" class="su.itschool.guru.entity.SchoolClass">
+            <view extends="_minimal"/>
+            <loader id="schoolClassesDl">
+                <query>
+                    <![CDATA[select e from guru_SchoolClass e order by e.classLevel asc, e.classLetter asc]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <layout expand="scheduleTypes">
+        <tabSheet id="scheduleTypes">
+            <tab id="classSchedule" caption="msg://classSchedule.caption" expand="splitter">
+                <split id="splitter" orientation="horizontal" height="50px" width="100%">
+                    <vbox spacing="true">
+                        <buttonsPanel margin="true">
+                            <lookupField id="classesLookUpField" optionsContainer="schoolClassesDc"
+                                         caption="msg://classesLookUpField.caption" captionProperty="className"
+                                         nullOptionVisible="false"/>
+                            <button id="btnSaveClassTimetableAsTemplateBtn"
+                                    caption="msg://btnSaveClassTimetableAsTemplateBtn.caption"/>
+                        </buttonsPanel>
+                        <calendar width="100%"/>
+                    </vbox>
+                    <tabSheet id="lessonsSourcesTabSheet">
+                        <tab id="planItemsTab" caption="msg://planItemsTab.caption" expand="lessonsPlanningItemsTable">
+                            <dataGrid id="lessonsPlanningItemsTable" height="100%" width="100%"
+                                      dataContainer="lessonsPlanningItemsDc">
+                                <columns>
+                                    <column id="name" property="name"/>
+                                    <column id="hoursPerWeek" property="hoursPerWeek"/>
+                                </columns>
+                            </dataGrid>
+                        </tab>
+                        <tab id="templatesTab" caption="msg://templatesTab.caption">
+                            <vbox spacing="true" expand="timeTableTemplateItemsTable">
+                                <lookupField/>
+                                <lookupField/>
+                                <dataGrid id="timeTableTemplateItemsTable" height="100px" width="100%"
+                                          dataContainer="timeTableTemplateItemsDc">
+                                    <columns>
+                                        <column id="numberOfLesson" property="numberOfLesson"/>
+                                        <column id="weekDay" property="weekDay"/>
+                                    </columns>
+                                </dataGrid>
+                            </vbox>
+                        </tab>
+                    </tabSheet>
+                </split>
+            </tab>
+            <tab id="schoolSchedule" caption="msg://schoolSchedule.caption"/>
+        </tabSheet>
+    </layout>
+</window>
