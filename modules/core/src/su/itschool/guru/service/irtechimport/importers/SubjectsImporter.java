@@ -58,6 +58,6 @@ public class SubjectsImporter extends AbstractImporter<Subject, SubjectPojo> {
 
     @Override
     protected boolean importIsNecessary(ImportSettings importSettings) {
-        return importSettings.getImportSubjects();
+        return importSettings.getImportAdditionalData() && importSettings.getImportSubjects();
     }
 }

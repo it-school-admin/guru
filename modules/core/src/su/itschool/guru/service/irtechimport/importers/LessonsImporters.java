@@ -35,18 +35,21 @@ public class LessonsImporters implements Importer {
 
             timetableIrTechImportService.clearTimeTableTemplate(timetableTemplate);
 
+            int importedCount = 0;
             for (LessonPojo lessonPojo: timeTablePojos.lessons)
             {
                 if(importSettings.getImportTimeTableForAllClasses())
                 {
                     ImportTimetableTemplateItem(timetableTemplate, lessonPojo);
+                    importedCount++;
                 }
                 else if(loadedClassesIrTechIds.contains(lessonPojo.irTechClassId))
                 {
                     ImportTimetableTemplateItem(timetableTemplate, lessonPojo);
+                    importedCount++;
                 }
             }
-            return somethingImported("Импортированы данные о %0 уроках");
+            return somethingImported("Импортированы данные о %0 уроках", String.valueOf(importedCount));
         }
         else
         {
@@ -64,5 +67,6 @@ public class LessonsImporters implements Importer {
             timeTableTemplateItem.setRoom(finderService.getRoomByIrTechId(lessonPojo.roomId));
         }
         timeTableTemplateItem.setPlanningItem(finderService.getPlanningItemByIrTechId(lessonPojo.planItemId));
+        dataManager.commit(timeTableTemplateItem);
     }
 }

@@ -69,6 +69,6 @@ public class RegularStudyPlanImporter extends AbstractImporter<LessonsPlanningIt
 
     @Override
     protected boolean importIsNecessary(ImportSettings importSettings) {
-        return importSettings.getImportStudyPlan();
+        return importSettings.getImportAdditionalData() && importSettings.getImportStudyPlan();
     }
 }

@@ -30,7 +30,7 @@ public abstract class AbstractLessonsGridImporter extends AbstractImporter<Lesso
 
     @Override
     protected boolean importIsNecessary(ImportSettings importSettings) {
-        return importSettings.getImportLessonsGrid();
+        return importSettings.getImportAdditionalData() && importSettings.getImportLessonsGrid();
     }
 
     @Override

@@ -7,6 +7,7 @@ import com.haulmont.cuba.core.global.DataManager;
 import su.itschool.guru.service.ImportSettings;
 import su.itschool.guru.service.IrTechImportFinderService;
 import su.itschool.guru.service.LessonsGridService;
+import su.itschool.guru.service.TimetableIrTechImportService;
 import su.itschool.guru.service.irtechimport.importers.*;
 import su.itschool.guru.service.irtechimport.pojo.*;
 import su.itschool.guru.service.irtechimport.result.ImportFromIrtTechResultImpl;
@@ -23,6 +24,7 @@ public class IrTechDataToDbProvider {
     private final FileLoader fileLoader;
     private final LessonsGridService lessonsGridService;
     private final IrTechImportFinderService irTechFinderService;
+    private final TimetableIrTechImportService timetableIrTechImportService;
     private final List<Importer> importers;
     private TimeTablePojos timeTablePojos;
 
@@ -31,13 +33,15 @@ public class IrTechDataToDbProvider {
                                   ImportXMLToPojosConverter importXMLToPojosConverter,
                                   FileLoader fileLoader,
                                   LessonsGridService lessonsGridService,
-                                  IrTechImportFinderService irTechFinderService) {
+                                  IrTechImportFinderService irTechFinderService,
+                                  TimetableIrTechImportService timetableIrTechImportService) {
         this.importSettings = importSettings;
         this.dataManager = dataManager;
         this.importXMLToPojosConverter = importXMLToPojosConverter;
         this.fileLoader = fileLoader;
         this.lessonsGridService = lessonsGridService;
         this.irTechFinderService = irTechFinderService;
+        this.timetableIrTechImportService = timetableIrTechImportService;
 
         importers = createImporters();
     }
@@ -54,7 +58,8 @@ public class IrTechDataToDbProvider {
                 new RegularGroupsImporter(dataManager, irTechFinderService),
                 new RegularStudyPlanImporter(dataManager, irTechFinderService),
                 new IndividualPlanSubgroupsImporter(dataManager, irTechFinderService),
-                new IndividualPlanImporter(dataManager, irTechFinderService));
+                new IndividualPlanImporter(dataManager, irTechFinderService),
+                new LessonsImporters(dataManager, irTechFinderService, timetableIrTechImportService));
     }
 
     protected IrTechDataToDbProvider(ImportSettings importSettings,
@@ -63,6 +68,7 @@ public class IrTechDataToDbProvider {
                                   FileLoader fileLoader,
                                   LessonsGridService lessonsGridService,
                                   IrTechImportFinderService irTechFinderService,
+                                  TimetableIrTechImportService timetableIrTechImportService,
                                   List<Importer> importers) {
         this.importSettings = importSettings;
         this.dataManager = dataManager;
@@ -70,6 +76,7 @@ public class IrTechDataToDbProvider {
         this.fileLoader = fileLoader;
         this.lessonsGridService = lessonsGridService;
         this.irTechFinderService = irTechFinderService;
+        this.timetableIrTechImportService = timetableIrTechImportService;
         this.importers = importers;
     }
 

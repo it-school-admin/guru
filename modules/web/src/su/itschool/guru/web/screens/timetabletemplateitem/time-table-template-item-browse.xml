@@ -6,11 +6,7 @@
         messagesPack="su.itschool.guru.web.screens.timetabletemplateitem">
     <data readOnly="true">
         <collection id="timeTableTemplateItemsDc"
-                    class="su.itschool.guru.entity.TimeTableTemplateItem">
-            <view extends="_local">
-                <property name="room" view="_minimal"/>
-                <property name="planningItem" view="_minimal"/>
-            </view>
+                    class="su.itschool.guru.entity.TimeTableTemplateItem" view="timeTableTemplateItem-view">
             <loader id="timeTableTemplateItemsDl">
                 <query>
                     <![CDATA[select e from guru_TimeTableTemplateItem e]]>
@@ -36,13 +32,11 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="groupForLesson"/>
-                <column id="freeSubject"/>
-                <column id="timeStart"/>
-                <column id="timeEnd"/>
                 <column id="room"/>
                 <column id="planningItem"/>
-                <column id="dayOfWeek"/>
+                <column id="weekDay"/>
+                <column id="timetableTemplate"/>
+                <column id="numberOfLesson"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

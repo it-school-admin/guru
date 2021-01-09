@@ -30,9 +30,9 @@ public abstract class AbstractImporter<E extends StandardEntity, P extends Abstr
     @Override
     public final ImportResult importDataToDb(TimeTablePojos timeTablePojos, ImportSettings importSettings)
     {
-        executeBeforeImportActions(timeTablePojos, importSettings);
         if(importIsNecessary(importSettings))
         {
+            executeBeforeImportActions(timeTablePojos, importSettings);
             for (P pojo: getPojos(timeTablePojos))
             {
                 E existingInstance = findExistingInstance(pojo);

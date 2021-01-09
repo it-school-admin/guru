@@ -25,4 +25,16 @@
         </property>
         <property name="name"/>
     </view>
+    <view entity="guru_TimeTableTemplateItem" name="timeTableTemplateItem-view" extends="_local">
+        <property name="timetableTemplate" view="_minimal"/>
+        <property name="planningItem" view="_minimal">
+            <property name="regularGroup" view="_minimal">
+                <property name="parentGroup" view="_minimal"/>
+            </property>
+            <property name="individualPlanGroup" view="_minimal">
+                <property name="linkedClasses" view="_minimal"/>
+            </property>
+        </property>
+        <property name="room" view="_minimal"/>
+    </view>
 </views>

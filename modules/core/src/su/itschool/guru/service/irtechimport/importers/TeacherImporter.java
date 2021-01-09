@@ -54,6 +54,6 @@ public class TeacherImporter extends AbstractImporter<Teacher, TeacherPojo> {
 
     @Override
     protected boolean importIsNecessary(ImportSettings importSettings) {
-        return importSettings.getImportSubjects();
+        return importSettings.getImportAdditionalData() && importSettings.getImportSubjects();
     }
 }

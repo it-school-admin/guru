@@ -9,6 +9,7 @@
             <view extends="_local">
                 <property name="room" view="_minimal"/>
                 <property name="planningItem" view="_minimal"/>
+                <property name="timetableTemplate" view="_minimal"/>
             </view>
             <loader/>
         </instance>
@@ -18,7 +19,11 @@
     <layout expand="editActions" spacing="true">
         <form id="form" dataContainer="timeTableTemplateItemDc">
             <column width="350px">
-
+                <pickerField id="roomField" property="room"/>
+                <pickerField id="planningItemField" property="planningItem"/>
+                <lookupField id="weekDayField" property="weekDay"/>
+                <pickerField id="timetableTemplateField" property="timetableTemplate"/>
+                <textField id="numberOfLessonField" property="numberOfLesson"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

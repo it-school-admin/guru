@@ -63,6 +63,6 @@ public class ClassImporter extends AbstractImporter<SchoolClass, SchoolClassPojo
 
     @Override
     protected boolean importIsNecessary(ImportSettings importSettings) {
-        return importSettings.getImportClasses();
+        return importSettings.getImportAdditionalData() && importSettings.getImportClasses();
     }
 }

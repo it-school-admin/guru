@@ -53,6 +53,6 @@ public class RoomImporter extends AbstractImporter<Room, RoomPojo> {
 
     @Override
     protected boolean importIsNecessary(ImportSettings importSettings) {
-        return importSettings.getImportRooms();
+        return importSettings.getImportAdditionalData() && importSettings.getImportRooms();
     }
 }

@@ -32,12 +32,13 @@
                 <action id="remove" type="remove"/>
             </actions>
             <columns>
-                <column id="room"/>
-                <column id="isDistant"/>
-                <column id="endTime"/>
-                <column id="duration"/>
-                <column id="styleForCalendar"/>
                 <column id="startTime"/>
+                <column id="duration"/>
+                <column id="endTime"/>
+                <column id="planItem"/>
+                <column id="styleForCalendar"/>
+                <column id="isDistant"/>
+                <column id="room"/>
                 <column id="descriptionForCalendar"/>
             </columns>
             <rowsCount/>

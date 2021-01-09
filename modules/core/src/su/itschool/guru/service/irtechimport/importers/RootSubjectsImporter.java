@@ -50,6 +50,6 @@ public class RootSubjectsImporter extends AbstractImporter<Subject, RootSubjectP
 
     @Override
     protected boolean importIsNecessary(ImportSettings importSettings) {
-        return importSettings.getImportSubjects();
+        return importSettings.getImportAdditionalData() && importSettings.getImportSubjects();
     }
 }

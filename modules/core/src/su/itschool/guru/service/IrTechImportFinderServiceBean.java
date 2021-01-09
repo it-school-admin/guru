@@ -143,7 +143,7 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
                     load(Room.class).
                     query("select rm from guru_Room as rm " +
                             "WHERE " +
-                            "rm.irTechId = :irTechId").
+                            "rm.irTehId = :irTechId").
                     parameter("irTechId", irTechId).
                     one();
 

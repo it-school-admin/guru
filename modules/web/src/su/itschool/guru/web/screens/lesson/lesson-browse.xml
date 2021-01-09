@@ -6,7 +6,14 @@
         messagesPack="su.itschool.guru.web.screens.lesson">
     <data readOnly="true">
         <collection id="lessonsDc"
-                    class="su.itschool.guru.entity.Lesson" view="lesson-view-for-calendar">
+                    class="su.itschool.guru.entity.Lesson">
+            <view extends="_local">
+                <property name="planItem" view="_minimal"/>
+                <property name="room" view="_minimal"/>
+                <property name="descriptionForCalendar"/>
+                <property name="styleForCalendar"/>
+                <property name="endTime"/>
+            </view>
             <loader id="lessonsDl">
                 <query>
                     <![CDATA[select e from guru_Lesson e]]>
@@ -64,12 +71,13 @@
                         <action id="remove" type="remove"/>
                     </actions>
                     <columns>
-                        <column id="room"/>
-                        <column id="isDistant"/>
-                        <column id="endTime"/>
-                        <column id="duration"/>
-                        <column id="styleForCalendar"/>
                         <column id="startTime"/>
+                        <column id="duration"/>
+                        <column id="endTime"/>
+                        <column id="planItem"/>
+                        <column id="styleForCalendar"/>
+                        <column id="isDistant"/>
+                        <column id="room"/>
                         <column id="descriptionForCalendar"/>
                     </columns>
                     <rowsCount/>

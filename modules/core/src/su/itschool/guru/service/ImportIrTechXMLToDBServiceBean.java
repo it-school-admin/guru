@@ -20,6 +20,8 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
     private FileLoader fileLoader;
     @Inject
     private LessonsGridService lessonsGridService;
+    @Inject
+    private TimetableIrTechImportService timetableIrTechImportService;
 
 
     @Override
@@ -30,7 +32,8 @@ public class ImportIrTechXMLToDBServiceBean implements ImportIrTechXMLToDBServic
                 new ImportXMLToPojosConverter(),
                 fileLoader,
                 lessonsGridService,
-                irTechfinderService);
+                irTechfinderService,
+                timetableIrTechImportService);
         return irTechDataToDbProvider.executeImport().getResultText();
     }
 

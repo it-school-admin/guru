@@ -54,6 +54,6 @@ public class RegularGroupsImporter extends AbstractImporter<GroupForLesson, Regu
 
     @Override
     protected boolean importIsNecessary(ImportSettings importSettings) {
-        return importSettings.getImportClasses();
+        return importSettings.getImportAdditionalData() && importSettings.getImportClasses();
     }
 }
