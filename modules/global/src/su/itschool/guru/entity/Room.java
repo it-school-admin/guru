@@ -26,8 +26,16 @@ public class Room extends StandardEntity {
     @Column(name = "ROOM_SEATS_AMOUNT")
     private Integer roomSeatsAmount;
 
-    @Column(name = "IR_TEH_ID")
-    private Integer irTehId;
+    @Column(name = "IR_TECH_ID")
+    private Integer irTechId;
+
+    public Integer getIrTechId() {
+        return irTechId;
+    }
+
+    public void setIrTechId(Integer irTechId) {
+        this.irTechId = irTechId;
+    }
 
     public void setRoomFloor(Integer roomFloor) {
         this.roomFloor = roomFloor;
@@ -35,14 +43,6 @@ public class Room extends StandardEntity {
 
     public Integer getRoomFloor() {
         return roomFloor;
-    }
-
-    public void setIrTehId(Integer irTehId) {
-        this.irTehId = irTehId;
-    }
-
-    public Integer getIrTehId() {
-        return irTehId;
     }
 
     public Integer getRoomSeatsAmount() {

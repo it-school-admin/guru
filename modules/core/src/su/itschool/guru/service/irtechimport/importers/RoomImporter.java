@@ -30,7 +30,7 @@ public class RoomImporter extends AbstractImporter<Room, RoomPojo> {
 
     @Override
     protected void fillIrTechId(Room instance, RoomPojo pojo) {
-        instance.setIrTehId(pojo.irTechId);
+        instance.setIrTechId(pojo.irTechId);
     }
 
     @Override

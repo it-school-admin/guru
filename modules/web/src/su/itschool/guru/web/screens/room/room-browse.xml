@@ -28,7 +28,7 @@
         </filter>
         <groupTable id="roomsTable"
                     width="100%"
-                    dataContainer="roomsDc">
+                    dataContainer="roomsDc" multiselect="true">
             <actions>
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
@@ -39,7 +39,7 @@
                 <column id="roomBlock"/>
                 <column id="roomSeatsAmount"/>
                 <column id="roomFloor"/>
-                <column id="irTehId"/>
+                <column id="irTechId"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

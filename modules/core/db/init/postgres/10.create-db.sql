@@ -215,7 +215,7 @@ create table GURU_ROOM (
     ROOM_BLOCK_ID uuid,
     ROOM_FLOOR integer,
     ROOM_SEATS_AMOUNT integer,
-    IR_TEH_ID integer,
+    IR_TECH_ID integer,
     --
     primary key (ID)
 )^
