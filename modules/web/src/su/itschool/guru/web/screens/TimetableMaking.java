@@ -6,6 +6,7 @@ import com.haulmont.cuba.gui.screen.Subscribe;
 import com.haulmont.cuba.gui.screen.UiController;
 import com.haulmont.cuba.gui.screen.UiDescriptor;
 import su.itschool.guru.entity.SchoolClass;
+import su.itschool.guru.entity.TimetableTemplate;
 
 import javax.inject.Inject;
 
@@ -14,9 +15,12 @@ import javax.inject.Inject;
 public class TimetableMaking extends Screen {
     @Inject
     private CollectionLoader<SchoolClass> schoolClassesDl;
+    @Inject
+    private CollectionLoader<TimetableTemplate> timetableTemplatesDl;
 
     @Subscribe
     public void onBeforeShow(BeforeShowEvent event) {
         schoolClassesDl.load();
+        timetableTemplatesDl.load();
     }
 }
