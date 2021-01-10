@@ -11,8 +11,8 @@
                 </query>
             </loader>
         </collection>
-        <collection id="timeTableTemplateItemsDc" class="su.itschool.guru.entity.TimeTableTemplateItem">
-            <view extends="_local"/>
+        <collection id="timeTableTemplateItemsDc" class="su.itschool.guru.entity.TimeTableTemplateItem"
+                    view="timeTableTemplateItem-view">
             <loader id="timeTableTemplateItemsDl">
                 <query>
                     <![CDATA[select e from guru_TimeTableTemplateItem e]]>
@@ -58,7 +58,8 @@
                         <calendar width="100%" dataContainer="lessonsDc" descriptionProperty="descriptionForCalendar"/>
                     </vbox>
                     <tabSheet id="lessonsSourcesTabSheet">
-                        <tab id="planItemsTab" caption="msg://planItemsTab.caption" expand="lessonsPlanningItemsTable">
+                        <tab id="planItemsTab" caption="msg://planItemsTab.caption" expand="lessonsPlanningItemsTable"
+                             margin="true">
                             <dataGrid id="lessonsPlanningItemsTable" height="100%" width="100%"
                                       dataContainer="lessonsPlanningItemsDc">
                                 <columns>
@@ -67,21 +68,23 @@
                                 </columns>
                             </dataGrid>
                         </tab>
-                        <tab id="templatesTab" caption="msg://templatesTab.caption">
-                            <vbox spacing="true" expand="timeTableTemplateItemsTable">
-                                <lookupField id="timetableTemplateLookUpField" optionsContainer="timetableTemplatesDc"
-                                             captionProperty="name" nullOptionVisible="false"/>
-                                <lookupField id="weekDayLookUpField"
-                                             optionsEnum="su.itschool.guru.entity.enums.WeekDay"
-                                             nullOptionVisible="false"/>
-                                <dataGrid id="timeTableTemplateItemsTable" height="100px" width="100%"
-                                          dataContainer="timeTableTemplateItemsDc">
-                                    <columns>
-                                        <column id="numberOfLesson" property="numberOfLesson"/>
-                                        <column id="weekDay" property="weekDay"/>
-                                    </columns>
-                                </dataGrid>
-                            </vbox>
+                        <tab id="templatesTab" caption="msg://templatesTab.caption"
+                             expand="timeTableTemplateItemsTable" margin="true" spacing="true">
+                            <lookupField id="timetableTemplateLookUpField" optionsContainer="timetableTemplatesDc"
+                                         captionProperty="name" nullOptionVisible="false"/>
+                            <lookupField id="weekDayLookUpField"
+                                         optionsEnum="su.itschool.guru.entity.enums.WeekDay"
+                                         nullOptionVisible="false"/>
+                            <dataGrid id="timeTableTemplateItemsTable" height="100%" width="100%"
+                                      dataContainer="timeTableTemplateItemsDc">
+                                <columns>
+                                    <column id="numberOfLesson" property="numberOfLesson"/>
+                                    <column id="weekDay" property="weekDay"/>
+                                    <column id="room"/>
+                                    <column id="planningItem"/>
+                                    <column id="timetableTemplate"/>
+                                </columns>
+                            </dataGrid>
                         </tab>
                     </tabSheet>
                 </split>
