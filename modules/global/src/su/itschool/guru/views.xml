@@ -30,6 +30,7 @@
         <property name="planningItem" view="_minimal">
             <property name="regularGroup" view="_minimal">
                 <property name="parentGroup" view="_minimal"/>
+                <property name="schoolClass" view="_minimal"/>
             </property>
             <property name="individualPlanGroup" view="_minimal">
                 <property name="linkedClasses" view="_minimal"/>
