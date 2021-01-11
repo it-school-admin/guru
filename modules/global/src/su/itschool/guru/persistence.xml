@@ -26,5 +26,8 @@
         <class>su.itschool.guru.entity.ThirdPartySystem</class>
         <class>su.itschool.guru.entity.GroupForIndividualPlanning</class>
         <class>su.itschool.guru.entity.TimetableTemplate</class>
+        <class>su.itschool.guru.entity.ClassGrade</class>
+        <class>su.itschool.guru.entity.StudyLevel</class>
+        <class>su.itschool.guru.entity.StudyProfile</class>
     </persistence-unit>
 </persistence>
