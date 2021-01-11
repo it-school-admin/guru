@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        xmlns:c="http://schemas.haulmont.com/cuba/screen/jpql_condition.xsd"
+        caption="msg://studyProfileBrowse.caption"
+        focusComponent="studyProfilesTable"
+        messagesPack="su.itschool.guru.web.screens.studyprofile">
+    <data readOnly="true">
+        <collection id="studyProfilesDc"
+                    class="su.itschool.guru.entity.StudyProfile">
+            <view extends="_local"/>
+            <loader id="studyProfilesDl">
+                <query>
+                    <![CDATA[select e from guru_StudyProfile e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="studyProfilesTable"
+            spacing="true">
+        <filter id="filter"
+                applyTo="studyProfilesTable"
+                dataLoader="studyProfilesDl">
+            <properties include=".*"/>
+        </filter>
+        <groupTable id="studyProfilesTable"
+                    width="100%"
+                    dataContainer="studyProfilesDc">
+            <actions>
+                <action id="create" type="create"/>
+                <action id="edit" type="edit"/>
+                <action id="remove" type="remove"/>
+            </actions>
+            <columns>
+                <column id="profileName"/>
+            </columns>
+            <rowsCount/>
+            <buttonsPanel id="buttonsPanel"
+                          alwaysVisible="true">
+                <button id="createBtn" action="studyProfilesTable.create"/>
+                <button id="editBtn" action="studyProfilesTable.edit"/>
+                <button id="removeBtn" action="studyProfilesTable.remove"/>
+            </buttonsPanel>
+        </groupTable>
+        <hbox id="lookupActions" spacing="true" visible="false">
+            <button action="lookupSelectAction"/>
+            <button action="lookupCancelAction"/>
+        </hbox>
+    </layout>
+</window>

@@ -24,6 +24,9 @@
             <item screen="guru_Block.browse" caption="mainMsg://menu_config.guru_Block.browse"/>
             <item screen="guru_Room.browse" caption="mainMsg://menu_config.guru_Room.browse"/>
             <item screen="guru_Subject.browse" caption="mainMsg://menu_config.guru_Subject.browse"/>
+            <item screen="guru_StudyLevel.browse" caption="mainMsg://menu_config.guru_StudyLevel.browse"/>
+            <item screen="guru_StudyProfile.browse" caption="mainMsg://menu_config.guru_StudyProfile.browse"/>
+            <item screen="guru_ClassGrade.browse" caption="mainMsg://menu_config.guru_ClassGrade.browse"/>
             <item screen="guru_SchoolClass.browse" caption="mainMsg://menu_config.guru_SchoolClass.browse"/>
             <item screen="guru_Teacher.browse" caption="mainMsg://menu_config.guru_Teacher.browse"/>
             <item screen="guru_School.browse" caption="mainMsg://menu_config.guru_School.browse"/>

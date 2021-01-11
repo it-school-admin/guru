@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://classGradeEdit.caption"
+        focusComponent="form"
+        messagesPack="su.itschool.guru.web.screens.classgrade">
+    <data>
+        <instance id="classGradeDc"
+                  class="su.itschool.guru.entity.ClassGrade">
+            <view extends="_local">
+                <property name="level" view="_minimal"/>
+            </view>
+            <loader/>
+        </instance>
+        <collection id="levelsDc" class="su.itschool.guru.entity.StudyLevel" view="_minimal">
+            <loader id="levelsDl">
+                <query>
+                    <![CDATA[select e from guru_StudyLevel e]]>
+                </query>
+            </loader>
+        </collection>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="classGradeDc">
+            <column width="350px">
+                <textField id="gradeNumberField" property="gradeNumber"/>
+                <lookupField id="planningTypeField" property="planningType"/>
+                <lookupPickerField id="levelField" optionsContainer="levelsDc" property="level"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://schemas.haulmont.com/cuba/screen/window.xsd"
+        caption="msg://studyProfileEdit.caption"
+        focusComponent="form"
+        messagesPack="su.itschool.guru.web.screens.studyprofile">
+    <data>
+        <instance id="studyProfileDc"
+                  class="su.itschool.guru.entity.StudyProfile">
+            <view extends="_local"/>
+            <loader/>
+        </instance>
+    </data>
+    <dialogMode height="600"
+                width="800"/>
+    <layout expand="editActions" spacing="true">
+        <form id="form" dataContainer="studyProfileDc">
+            <column width="350px">
+                <textField id="profileNameField" property="profileName"/>
+            </column>
+        </form>
+        <hbox id="editActions" spacing="true">
+            <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+            <button id="closeBtn" action="windowClose"/>
+        </hbox>
+    </layout>
+</window>
