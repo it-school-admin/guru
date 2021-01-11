@@ -3,6 +3,8 @@ package su.itschool.guru.entity;
 import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.Lookup;
+import com.haulmont.cuba.core.entity.annotation.LookupType;
 import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
 
@@ -33,11 +35,25 @@ public class GroupForIndividualPlanning extends StandardEntity {
     @JoinColumn(name = "SUBJECT_ID")
     private Subject subject;
 
+    @Lookup(type = LookupType.DROPDOWN, actions = "lookup")
+    @OnDeleteInverse(DeletePolicy.DENY)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "STUDY_PROFILE_ID")
+    private StudyProfile studyProfile;
+
     @Column(name = "STUDENTS_COUNT")
     private Integer studentsCount;
 
     @Column(name = "PLAN_ITEM_IR_TECH_ID")
     private Integer planItemIrTechId;
+
+    public StudyProfile getStudyProfile() {
+        return studyProfile;
+    }
+
+    public void setStudyProfile(StudyProfile studyProfile) {
+        this.studyProfile = studyProfile;
+    }
 
     @Transient
     @MetaProperty(related = {"name", "subject"})

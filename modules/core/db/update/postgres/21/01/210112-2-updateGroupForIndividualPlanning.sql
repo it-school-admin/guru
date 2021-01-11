@@ -1,0 +1,1 @@
+alter table GURU_GROUP_FOR_INDIVIDUAL_PLANNING add column STUDY_PROFILE_ID uuid ;
