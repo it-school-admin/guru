@@ -1,0 +1,1 @@
+create unique index IDX_GURU_STUDY_LEVEL_UK_LEVEL_NAME on GURU_STUDY_LEVEL (LEVEL_NAME) where DELETE_TS is null ;

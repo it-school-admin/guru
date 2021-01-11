@@ -2,11 +2,13 @@ package su.itschool.guru.entity;
 
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.Lookup;
+import com.haulmont.cuba.core.entity.annotation.LookupType;
+import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
+import com.haulmont.cuba.core.global.DeletePolicy;
 import su.itschool.guru.entity.enums.PlanningTypes;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Table(name = "GURU_CLASS_GRADE")
@@ -22,6 +24,21 @@ public class ClassGrade extends StandardEntity {
     @NotNull
     @Column(name = "PLANNING_TYPE", nullable = false)
     private Integer planningType;
+
+    @Lookup(type = LookupType.DROPDOWN, actions = "lookup")
+    @NotNull
+    @OnDeleteInverse(DeletePolicy.DENY)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "LEVEL_ID")
+    private StudyLevel level;
+
+    public StudyLevel getLevel() {
+        return level;
+    }
+
+    public void setLevel(StudyLevel level) {
+        this.level = level;
+    }
 
     public PlanningTypes getPlanningType() {
         return planningType == null ? null : PlanningTypes.fromId(planningType);

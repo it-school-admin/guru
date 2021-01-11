@@ -36,9 +36,9 @@ create table GURU_SCHOOL_CLASS (
     MAIN_TEACHER_ID uuid,
     STUDENT_COUNT integer,
     SHIFT integer,
-    IS_INDIVIDUAL_PLAN boolean,
     IS_IN_DISTANT boolean not null,
     IR_TECH_ID integer,
+    GRADE_ID uuid,
     --
     primary key (ID)
 )^
@@ -479,7 +479,40 @@ create table GURU_CLASS_GRADE (
     --
     GRADE_NUMBER integer not null,
     PLANNING_TYPE integer not null,
+    LEVEL_ID uuid not null,
     --
     primary key (ID)
 )^
 -- end GURU_CLASS_GRADE
+-- begin GURU_STUDY_PROFILE
+create table GURU_STUDY_PROFILE (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    PROFILE_NAME varchar(255) not null,
+    --
+    primary key (ID)
+)^
+-- end GURU_STUDY_PROFILE
+-- begin GURU_STUDY_LEVEL
+create table GURU_STUDY_LEVEL (
+    ID uuid,
+    VERSION integer not null,
+    CREATE_TS timestamp,
+    CREATED_BY varchar(50),
+    UPDATE_TS timestamp,
+    UPDATED_BY varchar(50),
+    DELETE_TS timestamp,
+    DELETED_BY varchar(50),
+    --
+    LEVEL_NAME varchar(255) not null,
+    --
+    primary key (ID)
+)^
+-- end GURU_STUDY_LEVEL

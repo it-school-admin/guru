@@ -1,0 +1,2 @@
+alter table GURU_SCHOOL_CLASS add constraint FK_GURU_SCHOOL_CLASS_ON_GRADE foreign key (GRADE_ID) references GURU_CLASS_GRADE(ID);
+create index IDX_GURU_SCHOOL_CLASS_ON_GRADE on GURU_SCHOOL_CLASS (GRADE_ID);

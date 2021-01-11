@@ -40,15 +40,6 @@ public class ClassImporter extends AbstractImporter<SchoolClass, SchoolClassPojo
         instance.setClassLevel(pojo.grade);
         instance.setClassLetter(pojo.letter);
         instance.setStudentCount(pojo.countOfStudents);
-        if (pojo.grade<10)
-        {
-            instance.setIsIndividualPlan(false);
-        }
-        else
-        {
-            instance.setIsIndividualPlan(true);
-        }
-
     }
 
     @Override

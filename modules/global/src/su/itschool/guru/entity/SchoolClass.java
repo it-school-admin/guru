@@ -3,9 +3,7 @@ package su.itschool.guru.entity;
 import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
-import com.haulmont.cuba.core.entity.annotation.OnDelete;
-import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
-import com.haulmont.cuba.core.entity.annotation.PublishEntityChangedEvents;
+import com.haulmont.cuba.core.entity.annotation.*;
 import com.haulmont.cuba.core.global.DeletePolicy;
 
 import javax.persistence.*;
@@ -47,15 +45,18 @@ public class SchoolClass extends StandardEntity {
     @Column(name = "SHIFT")
     private Integer shift;
 
-    @Column(name = "IS_INDIVIDUAL_PLAN")
-    private Boolean isIndividualPlan;
-
     @NotNull
     @Column(name = "IS_IN_DISTANT", nullable = false)
     private Boolean isInDistant = false;
 
     @Column(name = "IR_TECH_ID")
     private Integer irTechId;
+
+    @Lookup(type = LookupType.DROPDOWN, actions = "lookup")
+    @OnDeleteInverse(DeletePolicy.DENY)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "GRADE_ID")
+    private ClassGrade grade;
 
     @JoinTable(name = "GURU_GROUP_FOR_INDIVIDUAL_PLANNING_SCHOOL_CLASS_LINK",
             joinColumns = @JoinColumn(name = "SCHOOL_CLASS_ID"),
@@ -65,20 +66,20 @@ public class SchoolClass extends StandardEntity {
     @ManyToMany
     private List<GroupForIndividualPlanning> groupForIndividualPlannings;
 
+    public ClassGrade getGrade() {
+        return grade;
+    }
+
+    public void setGrade(ClassGrade grade) {
+        this.grade = grade;
+    }
+
     public List<GroupForIndividualPlanning> getGroupForIndividualPlannings() {
         return groupForIndividualPlannings;
     }
 
     public void setGroupForIndividualPlannings(List<GroupForIndividualPlanning> groupForIndividualPlannings) {
         this.groupForIndividualPlannings = groupForIndividualPlannings;
-    }
-
-    public void setIsIndividualPlan(Boolean isIndividualPlan) {
-        this.isIndividualPlan = isIndividualPlan;
-    }
-
-    public Boolean getIsIndividualPlan() {
-        return isIndividualPlan;
     }
 
     public Integer getIrTechId() {
