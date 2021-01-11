@@ -1,4 +1,4 @@
-package su.itschool.guru.entity.enums;
+package su.itschool.guru.entity;
 
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
