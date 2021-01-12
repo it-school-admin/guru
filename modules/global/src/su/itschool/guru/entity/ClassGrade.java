@@ -6,7 +6,7 @@ import com.haulmont.cuba.core.entity.annotation.Lookup;
 import com.haulmont.cuba.core.entity.annotation.LookupType;
 import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
-import su.itschool.guru.entity.enums.PlanningTypes;
+import su.itschool.guru.entity.enums.PlanningType;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -40,11 +40,11 @@ public class ClassGrade extends StandardEntity {
         this.level = level;
     }
 
-    public PlanningTypes getPlanningType() {
-        return planningType == null ? null : PlanningTypes.fromId(planningType);
+    public PlanningType getPlanningType() {
+        return planningType == null ? null : PlanningType.fromId(planningType);
     }
 
-    public void setPlanningType(PlanningTypes planningType) {
+    public void setPlanningType(PlanningType planningType) {
         this.planningType = planningType == null ? null : planningType.getId();
     }
 

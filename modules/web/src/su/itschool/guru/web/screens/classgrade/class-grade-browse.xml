@@ -36,8 +36,8 @@
             </actions>
             <columns>
                 <column id="gradeNumber"/>
-                <column id="planningType"/>
                 <column id="level"/>
+                <column id="planningType"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
