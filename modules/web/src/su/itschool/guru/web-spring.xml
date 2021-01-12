@@ -25,6 +25,8 @@
                 <entry key="guru_LessonsGridService" value="su.itschool.guru.service.LessonsGridService"/>
                 <entry key="guru_TimetableIrTechImportService"
                        value="su.itschool.guru.service.TimetableIrTechImportService"/>
+                <entry key="guru_LevelService" value="su.itschool.guru.service.LevelService"/>
+                <entry key="guru_GradesService" value="su.itschool.guru.service.GradesService"/>
             </map>
         </property>
     </bean>

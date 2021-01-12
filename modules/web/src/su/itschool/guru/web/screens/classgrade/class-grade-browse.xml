@@ -45,6 +45,7 @@
                 <button id="createBtn" action="classGradesTable.create"/>
                 <button id="editBtn" action="classGradesTable.edit"/>
                 <button id="removeBtn" action="classGradesTable.remove"/>
+                <button id="createGradesBtn" caption="msg://createGradesBtn.caption"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
