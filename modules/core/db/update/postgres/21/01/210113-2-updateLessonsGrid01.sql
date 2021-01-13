@@ -1,0 +1,2 @@
+alter table GURU_LESSONS_GRID rename column standart_amount_of_lessons to standart_amount_of_lessons__u12171 ;
+alter table GURU_LESSONS_GRID add column STANDARD_AMOUNT_OF_LESSONS integer ;

@@ -1,0 +1,1 @@
+alter table GURU_LESSONS_GRID drop column STANDART_AMOUNT_OF_LESSONS__U12171 cascade ;

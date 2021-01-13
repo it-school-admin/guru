@@ -3,6 +3,8 @@ package su.itschool.guru.entity;
 import com.haulmont.chile.core.annotations.MetaProperty;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
+import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
+import com.haulmont.cuba.core.global.DeletePolicy;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -17,6 +19,7 @@ public class LessonsGridItem extends StandardEntity {
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "GRID_TYPE_ID")
+    @OnDeleteInverse(DeletePolicy.CASCADE)
     private LessonsGridType gridType;
 
     @NotNull
@@ -54,6 +57,10 @@ public class LessonsGridItem extends StandardEntity {
     @Transient
     @MetaProperty(related = {"lessonStartTime", "gridType"})
     public LocalTime getLessonEndTime() {
-        return lessonStartTime.plusMinutes(gridType.getDefaultLessonTime());
+        if(lessonStartTime != null && gridType != null)
+        {
+            return lessonStartTime.plusMinutes(gridType.getDefaultLessonTime());
+        }
+        return null;
     }
 }

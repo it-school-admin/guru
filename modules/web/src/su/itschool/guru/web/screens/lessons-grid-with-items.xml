@@ -38,35 +38,33 @@
         <split id="mainPanel" orientation="horizontal" height="100%" width="100%">
             <groupTable id="lessonsGridTypesTable" height="100%" width="100%" dataContainer="lessonsGridTypesDc">
                 <actions>
+                    <action id="create" type="create"/>
                     <action id="edit" type="edit"/>
-                    <action id="refresh" type="refresh"/>
                     <action id="remove" type="remove"/>
-                    <action id="view" type="view"/>
                 </actions>
                 <buttonsPanel alwaysVisible="true">
                     <button id="lessonsGridTypesTableEditBtn" action="lessonsGridTypesTable.edit"/>
-                    <button id="lessonsGridTypesTableRefreshBtn" action="lessonsGridTypesTable.refresh"/>
                     <button id="lessonsGridTypesTableRemoveBtn" action="lessonsGridTypesTable.remove"/>
+                    <button id="lessonsGridTypesTableCreateBtn" action="lessonsGridTypesTable.create"/>
                 </buttonsPanel>
                 <columns>
                     <column id="lessonsGridTypeName"/>
                     <column id="defaultLessonTime"/>
+                    <column id="defaultPauseDuration"/>
+                    <column id="startTime"/>
+                    <column id="standardAmountOfLessons"/>
                 </columns>
             </groupTable>
             <groupTable id="lessonsGridItemsTable" height="100%" width="100%" dataContainer="lessonsGridItemsDc">
                 <actions>
-                    <action id="add" type="add"/>
                     <action id="create" type="create"/>
                     <action id="edit" type="edit"/>
                     <action id="remove" type="remove"/>
-                    <action id="view" type="view"/>
                 </actions>
                 <buttonsPanel alwaysVisible="true">
-                    <button id="lessonsGridItemsTableAddBtn" action="lessonsGridItemsTable.add"/>
                     <button id="lessonsGridItemsTableCreateBtn" action="lessonsGridItemsTable.create"/>
                     <button id="lessonsGridItemsTableEditBtn" action="lessonsGridItemsTable.edit"/>
                     <button id="lessonsGridItemsTableRemoveBtn" action="lessonsGridItemsTable.remove"/>
-                    <button id="lessonsGridItemsTableViewBtn" action="lessonsGridItemsTable.view"/>
                 </buttonsPanel>
                 <columns>
                     <column id="lessonNumber"/>

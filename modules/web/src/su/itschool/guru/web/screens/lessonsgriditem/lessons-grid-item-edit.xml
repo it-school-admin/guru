@@ -7,7 +7,10 @@
         <instance id="lessonsGridItemDc"
                   class="su.itschool.guru.entity.LessonsGridItem">
             <view extends="_local">
-                <property name="gridType" view="_minimal"/>
+                <property name="gridType" view="_minimal">
+                    <property name="defaultLessonTime"/>
+                </property>
+                <property name="lessonEndTime"/>
             </view>
             <loader/>
         </instance>

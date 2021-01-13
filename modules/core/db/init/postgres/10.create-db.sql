@@ -98,6 +98,9 @@ create table GURU_LESSONS_GRID (
     --
     LESSONS_GRID_TYPE_NAME varchar(255) not null,
     DEFAULT_LESSON_TIME integer not null,
+    DEFAULT_PAUSE_DURATION integer,
+    STANDARD_AMOUNT_OF_LESSONS integer,
+    START_TIME time,
     --
     primary key (ID)
 )^

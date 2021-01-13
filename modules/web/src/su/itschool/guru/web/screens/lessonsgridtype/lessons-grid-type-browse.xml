@@ -35,6 +35,9 @@
             <columns>
                 <column id="lessonsGridTypeName"/>
                 <column id="defaultLessonTime"/>
+                <column id="defaultPauseDuration"/>
+                <column id="startTime"/>
+                <column id="standardAmountOfLessons"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"
