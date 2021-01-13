@@ -37,7 +37,6 @@ public class ClassImporter extends AbstractImporter<SchoolClass, SchoolClassPojo
 
     @Override
     protected void fillOrUpdateFields(SchoolClass instance, SchoolClassPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings, IrTechImportFinderService finderService) {
-        //instance.setClassLevel(pojo.grade);
         instance.setGrade(finderService.findGradeByNumber(pojo.grade));
         instance.setClassLetter(pojo.letter);
         instance.setStudentCount(pojo.countOfStudents);

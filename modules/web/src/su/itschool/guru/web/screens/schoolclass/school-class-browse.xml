@@ -6,12 +6,7 @@
         messagesPack="su.itschool.guru.web.screens.schoolclass">
     <data readOnly="true">
         <collection id="schoolClassesDc"
-                    class="su.itschool.guru.entity.SchoolClass">
-            <view extends="_local">
-                <property name="mainLessonsGridType" view="_minimal"/>
-                <property name="mainTeacher" view="_minimal"/>
-                <property name="grade" view="_minimal"/>
-            </view>
+                    class="su.itschool.guru.entity.SchoolClass" view="schoolClass-view-full">
             <loader id="schoolClassesDl">
                 <query>
                     <![CDATA[select e from guru_SchoolClass e]]>
@@ -38,10 +33,12 @@
             </actions>
             <columns>
                 <column id="className"/>
-                <column id="studentCount"/>
                 <column id="mainTeacher"/>
+                <column id="grade.level"/>
+                <column id="grade.planningType"/>
                 <column id="classEmail"/>
                 <column id="mainLessonsGridType"/>
+                <column id="studentCount"/>
                 <column id="shift"/>
                 <column id="isInDistant"/>
                 <column id="irTechId"/>

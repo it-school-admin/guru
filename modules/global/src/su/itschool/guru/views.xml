@@ -44,4 +44,14 @@
         <property name="irTechId"/>
         <property name="grade" view="_minimal"/>
     </view>
+    <view entity="guru_SchoolClass" name="schoolClass-view-full" extends="_local">
+        <property name="grade" view="_minimal">
+            <property name="planningType"/>
+            <property name="level" view="_minimal"/>
+        </property>
+        <property name="mainLessonsGridType" view="_minimal"/>
+        <property name="mainTeacher" view="_minimal"/>
+        <property name="groupForIndividualPlannings" view="_minimal"/>
+        <property name="className"/>
+    </view>
 </views>
