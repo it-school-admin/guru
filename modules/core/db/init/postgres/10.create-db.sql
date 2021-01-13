@@ -29,7 +29,7 @@ create table GURU_SCHOOL_CLASS (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    GRADE_ID uuid not null,
+    GRADE_ID uuid,
     CLASS_LETTER char not null,
     CLASS_EMAIL varchar(255),
     MAIN_LESSONS_GRID_TYPE_ID uuid,
