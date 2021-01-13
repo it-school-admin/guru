@@ -30,6 +30,11 @@
                 <action id="create" type="create"/>
                 <action id="edit" type="edit"/>
                 <action id="remove" type="remove"/>
+                <action id="bulkEdit" type="bulkEdit">
+                    <properties>
+                        <property name="includeProperties" value="mainLessonsGridType, isInDistant"/>
+                    </properties>
+                </action>
             </actions>
             <columns>
                 <column id="className"/>
@@ -39,7 +44,6 @@
                 <column id="classEmail"/>
                 <column id="mainLessonsGridType"/>
                 <column id="studentCount"/>
-                <column id="shift"/>
                 <column id="isInDistant"/>
                 <column id="irTechId"/>
             </columns>
@@ -49,6 +53,7 @@
                 <button id="createBtn" action="schoolClassesTable.create"/>
                 <button id="editBtn" action="schoolClassesTable.edit"/>
                 <button id="removeBtn" action="schoolClassesTable.remove"/>
+                <button id="schoolClassesTableBulkEditBtn" action="schoolClassesTable.bulkEdit"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
