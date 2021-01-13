@@ -1,6 +1,7 @@
 package su.itschool.guru.web.screens.classgrade;
 
 import com.haulmont.cuba.gui.Dialogs;
+import com.haulmont.cuba.gui.Notifications;
 import com.haulmont.cuba.gui.app.core.inputdialog.DialogOutcome;
 import com.haulmont.cuba.gui.app.core.inputdialog.InputParameter;
 import com.haulmont.cuba.gui.components.Button;
@@ -10,6 +11,7 @@ import su.itschool.guru.entity.ClassGrade;
 import su.itschool.guru.entity.StudyLevel;
 import su.itschool.guru.entity.enums.PlanningType;
 import su.itschool.guru.service.GradesService;
+import su.itschool.guru.web.bulkcreation.BulkCreationNotifier;
 
 import javax.inject.Inject;
 
@@ -26,6 +28,8 @@ public class ClassGradeBrowse extends StandardLookup<ClassGrade> {
     private Dialogs dialogs;
     @Inject
     private CollectionLoader<ClassGrade> classGradesDl;
+    @Inject
+    private Notifications notifications;
 
     //TODO localize
     @Subscribe("createGradesBtn")
@@ -53,7 +57,7 @@ public class ClassGradeBrowse extends StandardLookup<ClassGrade> {
     }
 
     private void createGrades(Integer from, Integer to, StudyLevel level, PlanningType planningType) {
-        gradesService.createGrades(from, to, level, planningType);
+        new BulkCreationNotifier(notifications).showBulkCreationResult(gradesService.createGrades(from, to, level, planningType));
         classGradesDl.load();
     }
 }

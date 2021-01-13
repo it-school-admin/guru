@@ -16,15 +16,23 @@ public class GradesServiceBean implements GradesService {
 
     @Override
     public BulkCreationResult createGrades(Integer from, Integer to, StudyLevel level, PlanningType planningType) {
+        BulkCreationResult result = new BulkCreationResult();
+
         for (int gradeNumber=from;gradeNumber<=to;gradeNumber++)
         {
             ClassGrade classGrade = dataManager.create(ClassGrade.class);
             classGrade.setGradeNumber(gradeNumber);
             classGrade.setLevel(level);
             classGrade.setPlanningType(planningType);
-            dataManager.commit(classGrade);
+
+            try {
+                dataManager.commit(classGrade);
+            }
+            catch (Exception e)
+            {
+                result.addErrorResult(String.valueOf(gradeNumber));
+            }
         }
-//TODO
-        return null;
+        return result;
     }
 }

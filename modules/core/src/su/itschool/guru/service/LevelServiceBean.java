@@ -22,7 +22,10 @@ public class LevelServiceBean implements LevelService {
         BulkCreationResult result = new BulkCreationResult();
         for (String levelName: russianStudyLevels)
         {
-            result.addResult(levelName, createLevel(levelName));
+            if(!createLevel(levelName))
+            {
+                result.addErrorResult(levelName);
+            }
         }
         return result;
     }

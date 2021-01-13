@@ -9,10 +9,6 @@ class LevelServiceResultTest {
     void testResultAllisOk()
     {
         BulkCreationResult result = new BulkCreationResult();
-        result.addResult("first", true);
-        result.addResult("second", true);
-        result.addResult("third", true);
-        result.addResult("first", true);
         assertTrue(result.allIsOK());
     }
 
@@ -20,22 +16,18 @@ class LevelServiceResultTest {
     void testResultNotAllisOk()
     {
         BulkCreationResult result = new BulkCreationResult();
-        result.addResult("first", true);
-        result.addResult("second", false);
-        result.addResult("third", false);
-        result.addResult("first", true);
+        result.addErrorResult("first");
+        result.addErrorResult("second");
+        result.addErrorResult("third");
+        result.addErrorResult("first");
         assertFalse(result.allIsOK());
-        assertEquals(2, result.getNamesWithProblems().size());
+        assertEquals(4, result.getNamesWithProblems().size());
     }
 
     @Test
     void testResultException()
     {
         BulkCreationResult result = new BulkCreationResult();
-        result.addResult("first", true);
-        result.addResult("second", true);
-        result.addResult("third", true);
-        result.addResult("first", true);
         assertThrows(RuntimeException.class, ()->{result.getNamesWithProblems();});
     }
 

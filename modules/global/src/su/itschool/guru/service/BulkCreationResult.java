@@ -24,12 +24,9 @@ public class BulkCreationResult implements Serializable {
         return allIsOK;
     }
 
-    public void addResult(String levelName, Boolean result){
-        if (!result)
-        {
-            allIsOK = false;
-            namesWithProblems.add(levelName);
-        }
+    public void addErrorResult(String itemName){
+        allIsOK = false;
+        namesWithProblems.add(itemName);
     }
 
 }
