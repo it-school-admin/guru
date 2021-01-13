@@ -37,7 +37,7 @@
                 </action>
             </actions>
             <columns>
-                <column id="className"/>
+                <column id="className" sort="ASCENDING"/>
                 <column id="mainTeacher"/>
                 <column id="grade.level"/>
                 <column id="grade.planningType"/>
