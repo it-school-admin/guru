@@ -41,6 +41,7 @@
                 <button id="createBtn" action="studyProfilesTable.create"/>
                 <button id="editBtn" action="studyProfilesTable.edit"/>
                 <button id="removeBtn" action="studyProfilesTable.remove"/>
+                <button id="createStandardProfilesBtn" caption="msg://createStandartProfilesBtn.caption"/>
             </buttonsPanel>
         </groupTable>
         <hbox id="lookupActions" spacing="true" visible="false">
