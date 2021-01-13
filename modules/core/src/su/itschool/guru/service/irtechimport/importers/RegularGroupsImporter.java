@@ -35,9 +35,9 @@ public class RegularGroupsImporter extends AbstractImporter<GroupForLesson, Regu
     }
 
     @Override
-    protected void fillOrUpdateFields(GroupForLesson instance, RegularSubgroupPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
-        instance.setSchoolClass(finderService.findClassByIrTechId(pojo.classIrTechId));
-        instance.setParentGroup(finderService.findRootClassGroup(pojo.classIrTechId));
+    protected void fillOrUpdateFields(GroupForLesson instance, RegularSubgroupPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings, IrTechImportFinderService finderService) {
+        instance.setSchoolClass(this.finderService.findClassByIrTechId(pojo.classIrTechId));
+        instance.setParentGroup(this.finderService.findRootClassGroup(pojo.classIrTechId));
         instance.setOwnName(pojo.name);
         instance.setCountStudent(pojo.studentsCount);
     }

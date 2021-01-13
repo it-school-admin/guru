@@ -36,13 +36,13 @@ public class SubjectsImporter extends AbstractImporter<Subject, SubjectPojo> {
     }
 
     @Override
-    protected void fillOrUpdateFields(Subject instance, SubjectPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
+    protected void fillOrUpdateFields(Subject instance, SubjectPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings, IrTechImportFinderService finderService) {
         instance.setSubjectName(pojo.name);
         instance.setShortenedName(pojo.abbr);
         Integer parentSubjectId = pojo.getParentSubject();
         if(parentSubjectId != null)
         {
-            instance.setParentSubject(finderService.findSubjectByIrTechId(parentSubjectId));
+            instance.setParentSubject(this.finderService.findSubjectByIrTechId(parentSubjectId));
         }
     }
 

@@ -29,7 +29,7 @@ create table GURU_SCHOOL_CLASS (
     DELETE_TS timestamp,
     DELETED_BY varchar(50),
     --
-    CLASS_LEVEL integer not null,
+    GRADE_ID uuid not null,
     CLASS_LETTER char not null,
     CLASS_EMAIL varchar(255),
     MAIN_LESSONS_GRID_TYPE_ID uuid,
@@ -38,7 +38,6 @@ create table GURU_SCHOOL_CLASS (
     SHIFT integer,
     IS_IN_DISTANT boolean not null,
     IR_TECH_ID integer,
-    GRADE_ID uuid,
     --
     primary key (ID)
 )^

@@ -101,7 +101,7 @@ public class IrTechImportSettingsProvider {
                 if(importAction.getActionResult() == SUBMITTED)
                 {
                     ImportSettings importSettings = importAction.getImportSettings();
-                    if (!importSettings.getImportTimeTableForAllClasses())
+                    if (importSettings.getImportTimetable() && (!importSettings.getImportTimeTableForAllClasses()))
                     {
                         askAboutSchoolClasses(importSettings, importAction.getSchoolClassWrappers());
                     }

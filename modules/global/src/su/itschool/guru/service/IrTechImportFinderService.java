@@ -12,8 +12,6 @@ public interface IrTechImportFinderService {
 
     GroupForLesson findRootClassGroup(Integer classIrTechId);
 
-    LessonsGridItem getLessonGridItemByIrTechId(LessonsGridType lessonsGridType, Integer lessonTimeId);
-
     LessonsPlanningItem getPlanningItemByIrTechId(Integer irTechId);
 
     Room getRoomByIrTechId(Integer irTechId);
@@ -21,4 +19,6 @@ public interface IrTechImportFinderService {
     SchoolClass findClassByIrTechId(Integer irTechId);
 
     GroupForIndividualPlanning findIndividualPlanSubgroupByPlanItemIrTechId(Integer planItemIrTechId);
+
+    ClassGrade findGradeByNumber(Integer gradeNumber);
 }

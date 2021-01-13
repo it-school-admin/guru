@@ -29,7 +29,7 @@ public class LessonsGridImporterForSecondShift extends AbstractLessonsGridImport
     }
 
     @Override
-    protected void fillOrUpdateFields(LessonsGridItem instance, LessonTimePojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
+    protected void fillOrUpdateFields(LessonsGridItem instance, LessonTimePojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings, IrTechImportFinderService finderService) {
         instance.setGridType(importSettings.getLessonsGridForSecondShift());
         instance.setLessonNumber(pojo.lessonNumber);
         instance.setLessonStartTime(pojo.startTime);

@@ -38,7 +38,7 @@ public class LessonsGridImporterForFirstShift extends AbstractLessonsGridImporte
     }
 
     @Override
-    protected void fillOrUpdateFields(LessonsGridItem instance, LessonTimePojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
+    protected void fillOrUpdateFields(LessonsGridItem instance, LessonTimePojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings, IrTechImportFinderService finderService) {
         instance.setGridType(importSettings.getLessonsGridForFirstShift());
         instance.setLessonNumber(pojo.lessonNumber);
         instance.setLessonStartTime(pojo.startTime);

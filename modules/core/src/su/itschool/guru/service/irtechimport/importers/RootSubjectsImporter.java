@@ -34,7 +34,7 @@ public class RootSubjectsImporter extends AbstractImporter<Subject, RootSubjectP
     }
 
     @Override
-    protected void fillOrUpdateFields(Subject instance, RootSubjectPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
+    protected void fillOrUpdateFields(Subject instance, RootSubjectPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings, IrTechImportFinderService finderService) {
         instance.setSubjectName(pojo.name);
     }
 

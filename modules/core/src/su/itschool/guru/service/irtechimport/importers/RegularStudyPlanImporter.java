@@ -49,11 +49,11 @@ public class RegularStudyPlanImporter extends AbstractImporter<LessonsPlanningIt
     }
 
     @Override
-    protected void fillOrUpdateFields(LessonsPlanningItem instance, RegularPlanItemPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
+    protected void fillOrUpdateFields(LessonsPlanningItem instance, RegularPlanItemPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings, IrTechImportFinderService finderService) {
         instance.setIsIndividualPlanItem(false);
         setRegularGroup(pojo, instance);
-        instance.setRegularSubject(finderService.findSubjectByIrTechId(pojo.subjectId));
-        instance.setTeacher(finderService.findTeacherByIrTechId(pojo.teacherId));
+        instance.setRegularSubject(this.finderService.findSubjectByIrTechId(pojo.subjectId));
+        instance.setTeacher(this.finderService.findTeacherByIrTechId(pojo.teacherId));
         instance.setHoursPerWeek(pojo.hoursPerWeek);
     }
 

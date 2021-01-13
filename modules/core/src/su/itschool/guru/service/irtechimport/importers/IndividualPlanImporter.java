@@ -35,11 +35,11 @@ public class IndividualPlanImporter extends AbstractImporter<LessonsPlanningItem
     }
 
     @Override
-    protected void fillOrUpdateFields(LessonsPlanningItem instance, IndividualPlanItemPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
+    protected void fillOrUpdateFields(LessonsPlanningItem instance, IndividualPlanItemPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings, IrTechImportFinderService finderService) {
         instance.setIsIndividualPlanItem(true);
-        instance.setIndividualPlanGroup(finderService.findIndividualPlanSubgroupByPlanItemIrTechId(pojo.irTechId));
+        instance.setIndividualPlanGroup(this.finderService.findIndividualPlanSubgroupByPlanItemIrTechId(pojo.irTechId));
 
-        instance.setTeacher(finderService.findTeacherByIrTechId(pojo.teacherId));
+        instance.setTeacher(this.finderService.findTeacherByIrTechId(pojo.teacherId));
         instance.setHoursPerWeek(pojo.hoursPerWeek);
 
     }

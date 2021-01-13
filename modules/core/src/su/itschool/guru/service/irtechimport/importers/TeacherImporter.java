@@ -36,7 +36,7 @@ public class TeacherImporter extends AbstractImporter<Teacher, TeacherPojo> {
     }
 
     @Override
-    protected void fillOrUpdateFields(Teacher instance, TeacherPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
+    protected void fillOrUpdateFields(Teacher instance, TeacherPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings, IrTechImportFinderService finderService) {
         instance.setTeacherName(pojo.name);
         instance.setTeacherSecondName(pojo.middleName);
         instance.setTeacherFamilyName(pojo.lastName);

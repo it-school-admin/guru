@@ -18,9 +18,11 @@ import java.util.List;
 public class SchoolClass extends StandardEntity {
     private static final long serialVersionUID = 6151984380717443318L;
 
-    @Column(name = "CLASS_LEVEL", nullable = false)
-    @NotNull
-    private Integer classLevel;
+    @Lookup(type = LookupType.DROPDOWN, actions = "lookup")
+    @OnDeleteInverse(DeletePolicy.DENY)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "GRADE_ID")
+    private ClassGrade grade;
 
     @NotNull
     @Column(name = "CLASS_LETTER", nullable = false)
@@ -51,12 +53,6 @@ public class SchoolClass extends StandardEntity {
 
     @Column(name = "IR_TECH_ID")
     private Integer irTechId;
-
-    @Lookup(type = LookupType.DROPDOWN, actions = "lookup")
-    @OnDeleteInverse(DeletePolicy.DENY)
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "GRADE_ID")
-    private ClassGrade grade;
 
     @JoinTable(name = "GURU_GROUP_FOR_INDIVIDUAL_PLANNING_SCHOOL_CLASS_LINK",
             joinColumns = @JoinColumn(name = "SCHOOL_CLASS_ID"),
@@ -114,14 +110,6 @@ public class SchoolClass extends StandardEntity {
         this.shift = shift;
     }
 
-    public void setClassLevel(Integer classLevel) {
-        this.classLevel = classLevel;
-    }
-
-    public Integer getClassLevel() {
-        return classLevel;
-    }
-
     public Integer getStudentCount() {
         return studentCount;
     }
@@ -155,10 +143,10 @@ public class SchoolClass extends StandardEntity {
     }
 
     @Transient
-    @MetaProperty(related = {"classLetter", "classLevel"})
+    @MetaProperty(related = {"classLetter", "grade"})
     public String getClassName() {
-        if (classLevel != null && classLetter != null)
-            return classLevel.toString() + classLetter;
+        if (classLetter != null && grade != null)
+            return grade.getGradeNumber().toString() + classLetter;
         else
             return null;
     }

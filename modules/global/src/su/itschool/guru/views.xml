@@ -38,4 +38,10 @@
         </property>
         <property name="room" view="_minimal"/>
     </view>
+    <view entity="guru_SchoolClass" name="schoolClass-view-for-import" extends="_minimal">
+        <property name="classLetter"/>
+        <property name="studentCount"/>
+        <property name="irTechId"/>
+        <property name="grade" view="_minimal"/>
+    </view>
 </views>

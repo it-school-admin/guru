@@ -98,26 +98,6 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
     }
 
     @Override
-    public LessonsGridItem getLessonGridItemByIrTechId(LessonsGridType lessonsGridType, Integer lessonTimeId) {
-        try {
-            LessonsGridItem lessonsGridItem = dataManager.
-                    load(LessonsGridItem.class).
-                    query("select gi from guru_LessonsGridItem as gi " +
-                            "WHERE " +
-                            "gi.gridType = :lessonsGridType " +
-                            "AND gi.irTechId = :irTechId").
-                    parameter("lessonsGridType", lessonsGridType).
-                    parameter("irTechId", lessonTimeId).
-                    one();
-
-            return lessonsGridItem;
-        } catch (Exception e) {
-            //TODO
-            return null;
-        }
-    }
-
-    @Override
     public LessonsPlanningItem getPlanningItemByIrTechId(Integer irTechId) {
         try {
             LessonsPlanningItem lessonsPlanningItem = dataManager.
@@ -157,13 +137,14 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
     @Override
     public SchoolClass findClassByIrTechId(Integer irTechId) {
         try {
-            SchoolClass schoolClass = dataManager.
-                    load(SchoolClass.class).
-                    query("select cl from guru_SchoolClass as cl " +
+            SchoolClass schoolClass = dataManager
+                    .load(SchoolClass.class)
+                    .view("schoolClass-view-for-import")
+                    .query("select cl from guru_SchoolClass as cl " +
                             "WHERE " +
-                            "cl.irTechId = :irTechId").
-                    parameter("irTechId", irTechId).
-                    one();
+                            "cl.irTechId = :irTechId")
+                    .parameter("irTechId", irTechId)
+                    .one();
 
             return schoolClass;
         } catch (Exception e) {
@@ -190,5 +171,23 @@ public class IrTechImportFinderServiceBean implements IrTechImportFinderService 
             return null;
         }
 
+    }
+
+    @Override
+    public ClassGrade findGradeByNumber(Integer gradeNumber) {
+        try {
+            ClassGrade grade = dataManager.
+                    load(ClassGrade.class)
+                    .query("select g from guru_ClassGrade as g " +
+                            "WHERE " +
+                            "g.gradeNumber = :gradeNumber")
+                    .parameter("gradeNumber", gradeNumber).
+                            one();
+
+            return grade;
+        } catch (Exception e) {
+            //TODO
+            return null;
+        }
     }
 }

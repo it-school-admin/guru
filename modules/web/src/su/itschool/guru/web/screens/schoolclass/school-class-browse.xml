@@ -10,6 +10,7 @@
             <view extends="_local">
                 <property name="mainLessonsGridType" view="_minimal"/>
                 <property name="mainTeacher" view="_minimal"/>
+                <property name="grade" view="_minimal"/>
             </view>
             <loader id="schoolClassesDl">
                 <query>
@@ -43,8 +44,7 @@
                 <column id="mainLessonsGridType"/>
                 <column id="shift"/>
                 <column id="isInDistant"/>
-                <column id="irTechId" sort="DESCENDING"/>
-                <column id="isIndividualPlan"/>
+                <column id="irTechId"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

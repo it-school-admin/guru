@@ -103,7 +103,7 @@ public class IrtechMainImportDialog extends Screen {
 
     @Subscribe("submitBtn")
     public void onSubmitBtnClick(Button.ClickEvent event) {
-        if(timeTableTemplateNameField.isEmpty())
+        if(timeTableImportCheckBox.getValue() && timeTableTemplateNameField.isEmpty())
         {
             dialogs.createMessageDialog()
                     .withCaption("Предупреждение")

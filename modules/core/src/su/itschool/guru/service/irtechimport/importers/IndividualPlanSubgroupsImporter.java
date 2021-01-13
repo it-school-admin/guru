@@ -37,16 +37,16 @@ public class IndividualPlanSubgroupsImporter extends AbstractImporter<GroupForIn
     }
 
     @Override
-    protected void fillOrUpdateFields(GroupForIndividualPlanning instance, IndividualPlanSubgroupPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
+    protected void fillOrUpdateFields(GroupForIndividualPlanning instance, IndividualPlanSubgroupPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings, IrTechImportFinderService finderService) {
         if(updateMode == NEW_INSTANCE)
         {
             HashSet hashSet = new HashSet();
-            hashSet.add(finderService.findClassByIrTechId(pojo.defaultSchoolClassIrTechId));
+            hashSet.add(this.finderService.findClassByIrTechId(pojo.defaultSchoolClassIrTechId));
             instance.setLinkedClasses(hashSet);
         }
         instance.setName(pojo.name);
         instance.setStudentsCount(pojo.studentsCount);
-        instance.setSubject(finderService.findSubjectByIrTechId(pojo.subject));
+        instance.setSubject(this.finderService.findSubjectByIrTechId(pojo.subject));
     }
 
     @Override

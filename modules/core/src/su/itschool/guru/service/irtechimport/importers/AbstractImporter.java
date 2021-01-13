@@ -10,7 +10,6 @@ import su.itschool.guru.service.irtechimport.pojo.AbstractPojoWithIrTechId;
 import su.itschool.guru.service.irtechimport.pojo.TimeTablePojos;
 
 import java.util.Collection;
-import java.util.List;
 
 import static su.itschool.guru.service.irtechimport.importers.AbstractImporter.UpdateInstanceMode.EXISTING_INSTANCE;
 import static su.itschool.guru.service.irtechimport.importers.AbstractImporter.UpdateInstanceMode.NEW_INSTANCE;
@@ -43,11 +42,11 @@ public abstract class AbstractImporter<E extends StandardEntity, P extends Abstr
                     {
                         fillIrTechId(existingInstance, pojo);
                     }
-                    fillOrUpdateFields(existingInstance, pojo, NEW_INSTANCE, importSettings);
+                    fillOrUpdateFields(existingInstance, pojo, NEW_INSTANCE, importSettings, finderService);
                 }
                 else
                 {
-                    fillOrUpdateFields(existingInstance, pojo, EXISTING_INSTANCE, importSettings);
+                    fillOrUpdateFields(existingInstance, pojo, EXISTING_INSTANCE, importSettings, finderService);
 
                 }
                 dataManager.commit(existingInstance);
@@ -70,7 +69,7 @@ public abstract class AbstractImporter<E extends StandardEntity, P extends Abstr
 
     protected abstract void fillIrTechId(E instance, P pojo);
 
-    protected abstract void fillOrUpdateFields(E instance, P pojo, UpdateInstanceMode updateMode, ImportSettings importSettings);
+    protected abstract void fillOrUpdateFields(E instance, P pojo, UpdateInstanceMode updateMode, ImportSettings importSettings, IrTechImportFinderService finderService);
 
     protected abstract Class<E> getClassEntityClass();
 

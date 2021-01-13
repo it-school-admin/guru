@@ -34,7 +34,7 @@ public class RoomImporter extends AbstractImporter<Room, RoomPojo> {
     }
 
     @Override
-    protected void fillOrUpdateFields(Room instance, RoomPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings) {
+    protected void fillOrUpdateFields(Room instance, RoomPojo pojo, UpdateInstanceMode updateMode, ImportSettings importSettings, IrTechImportFinderService finderService) {
         instance.setRoomName(pojo.name);
         instance.setRoomFloor(pojo.floor);
         instance.setRoomSeatsAmount(pojo.seats);
