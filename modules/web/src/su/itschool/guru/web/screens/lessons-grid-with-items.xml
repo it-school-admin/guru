@@ -53,26 +53,36 @@
                     <column id="defaultPauseDuration"/>
                     <column id="startTime"/>
                     <column id="standardAmountOfLessons"/>
+                    <column id="studyDaysAmount"/>
                 </columns>
             </groupTable>
-            <groupTable id="lessonsGridItemsTable" height="100%" width="100%" dataContainer="lessonsGridItemsDc"
-                        multiselect="true">
-                <actions>
-                    <action id="create" type="create"/>
-                    <action id="edit" type="edit"/>
-                    <action id="remove" type="remove"/>
-                </actions>
-                <buttonsPanel alwaysVisible="true">
-                    <button id="lessonsGridItemsTableCreateBtn" action="lessonsGridItemsTable.create"/>
-                    <button id="lessonsGridItemsTableEditBtn" action="lessonsGridItemsTable.edit"/>
-                    <button id="lessonsGridItemsTableRemoveBtn" action="lessonsGridItemsTable.remove"/>
-                </buttonsPanel>
-                <columns>
-                    <column id="lessonNumber"/>
-                    <column id="lessonStartTime"/>
-                    <column id="lessonEndTime"/>
-                </columns>
-            </groupTable>
+            <vbox expand="lessonsGridItemsTable" width="100%" height="100%">
+                <groupTable id="lessonsGridItemsTable" height="100%" width="100%" dataContainer="lessonsGridItemsDc"
+                            multiselect="true">
+                    <actions>
+                        <action id="create" type="create"/>
+                        <action id="edit" type="edit"/>
+                        <action id="remove" type="remove"/>
+                    </actions>
+                    <buttonsPanel alwaysVisible="true">
+                        <button id="lessonsGridItemsTableCreateBtn" action="lessonsGridItemsTable.create"/>
+                        <button id="lessonsGridItemsTableEditBtn" action="lessonsGridItemsTable.edit"/>
+                        <button id="lessonsGridItemsTableRemoveBtn" action="lessonsGridItemsTable.remove"/>
+                        <button id="fillGridItemsBtn" caption="msg://fillGridItems.caption"/>
+                        <button id="shiftTimeOfLessonsBtn" caption="msg://shiftTimeOfLessonsBtn.caption"
+                                enable="false"/>
+                    </buttonsPanel>
+                    <columns>
+                        <column id="lessonNumber" sort="ASCENDING"/>
+                        <column id="lessonStartTime"/>
+                        <column id="lessonEndTime"/>
+                        <column id="weekDay"/>
+                    </columns>
+                </groupTable>
+                <filter id="filter" applyTo="lessonsGridItemsTable" dataLoader="lessonsGridItemsDl">
+                    <properties include="weekDay"/>
+                </filter>
+            </vbox>
         </split>
     </layout>
 </window>

@@ -28,6 +28,7 @@
                 <entry key="guru_LevelService" value="su.itschool.guru.service.LevelService"/>
                 <entry key="guru_GradesService" value="su.itschool.guru.service.GradesService"/>
                 <entry key="guru_StudyProfilesService" value="su.itschool.guru.service.StudyProfilesService"/>
+                <entry key="guru_LessonsGridItemsService" value="su.itschool.guru.service.LessonsGridItemsService"/>
             </map>
         </property>
     </bean>

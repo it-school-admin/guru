@@ -20,6 +20,7 @@
                 <textField id="defaultPauseDurationField" property="defaultPauseDuration"/>
                 <timeField id="startTimeField" property="startTime"/>
                 <textField id="standardAmountOfLessonsField" property="standardAmountOfLessons"/>
+                <textField id="studyDaysAmountField" property="studyDaysAmount"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">

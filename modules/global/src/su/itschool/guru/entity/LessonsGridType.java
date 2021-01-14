@@ -32,8 +32,20 @@ public class LessonsGridType extends StandardEntity {
     @Column(name = "STANDARD_AMOUNT_OF_LESSONS")
     private Integer standardAmountOfLessons;
 
+    @NotNull
+    @Column(name = "STUDY_DAYS_AMOUNT", nullable = false)
+    private Integer studyDaysAmount;
+
     @Column(name = "START_TIME")
     private LocalTime startTime;
+
+    public Integer getStudyDaysAmount() {
+        return studyDaysAmount;
+    }
+
+    public void setStudyDaysAmount(Integer studyDaysAmount) {
+        this.studyDaysAmount = studyDaysAmount;
+    }
 
     public Integer getStandardAmountOfLessons() {
         return standardAmountOfLessons;

@@ -100,6 +100,7 @@ create table GURU_LESSONS_GRID (
     DEFAULT_LESSON_TIME integer not null,
     DEFAULT_PAUSE_DURATION integer,
     STANDARD_AMOUNT_OF_LESSONS integer,
+    STUDY_DAYS_AMOUNT integer not null,
     START_TIME time,
     --
     primary key (ID)

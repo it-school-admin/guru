@@ -38,6 +38,7 @@
                 <column id="defaultPauseDuration"/>
                 <column id="startTime"/>
                 <column id="standardAmountOfLessons"/>
+                <column id="studyDaysAmount"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

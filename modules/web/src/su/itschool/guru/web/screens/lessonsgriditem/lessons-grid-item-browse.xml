@@ -40,6 +40,7 @@
                 <column id="gridType"/>
                 <column id="endTime"/>
                 <column id="lessonEndTime"/>
+                <column id="weekDay"/>
             </columns>
             <rowsCount/>
             <buttonsPanel id="buttonsPanel"

@@ -1,15 +1,15 @@
-package su.itschool.guru.listeners;
+package su.itschool.guru.service;
 
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 import su.itschool.guru.entity.LessonsGridType;
 
 import java.time.LocalTime;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
-class LessonsGridTypeChangedListenerTest {
+class LessonsGridItemsServiceBeanTest {
 
     @Test
     void timeCalculatorTest()
@@ -18,7 +18,7 @@ class LessonsGridTypeChangedListenerTest {
         when(gridTypeMock.getDefaultLessonTime()).thenReturn(40);
         when(gridTypeMock.getDefaultPauseDuration()).thenReturn(10);
         when(gridTypeMock.getStartTime()).thenReturn(LocalTime.of(8,0));
-        LessonsGridTypeChangedListener.LessonTimeCalculator lessonTimeCalculator = new LessonsGridTypeChangedListener.LessonTimeCalculator(gridTypeMock);
+        LessonsGridItemsServiceBean.LessonTimeCalculator lessonTimeCalculator = new LessonsGridItemsServiceBean.LessonTimeCalculator(gridTypeMock);
 
         assertEquals(LocalTime.of(8,0), lessonTimeCalculator.getStartTime(1));
         assertEquals(LocalTime.of(8,50), lessonTimeCalculator.getStartTime(2));

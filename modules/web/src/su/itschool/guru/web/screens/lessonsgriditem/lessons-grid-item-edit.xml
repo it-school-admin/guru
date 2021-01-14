@@ -25,6 +25,7 @@
                 <pickerField id="gridTypeField" property="gridType"/>
                 <timeField id="endTimeField" property="lessonEndTime"/>
                 <timeField id="lessonEndTimeField" property="lessonEndTime"/>
+                <lookupField id="weekDayField" property="weekDay"/>
             </column>
         </form>
         <hbox id="editActions" spacing="true">
