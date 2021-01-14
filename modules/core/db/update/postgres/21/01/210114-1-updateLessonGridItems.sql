@@ -1,1 +1,0 @@
-DELETE FROM guru_lessons_grid_item;
