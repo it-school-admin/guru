@@ -5,6 +5,7 @@ import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
+import su.itschool.guru.entity.enums.WeekDay;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -23,12 +24,24 @@ public class LessonsGridItem extends StandardEntity {
     private LessonsGridType gridType;
 
     @NotNull
+    @Column(name = "WEEK_DAY", nullable = false)
+    private Integer weekDay;
+
+    @NotNull
     @Column(name = "LESSON_NUMBER", nullable = false)
     private Integer lessonNumber;
 
     @Column(name = "LESSON_START_TIME", nullable = false)
     @NotNull
     private LocalTime lessonStartTime;
+
+    public WeekDay getWeekDay() {
+        return weekDay == null ? null : WeekDay.fromId(weekDay);
+    }
+
+    public void setWeekDay(WeekDay weekDay) {
+        this.weekDay = weekDay == null ? null : weekDay.getId();
+    }
 
     public Integer getLessonNumber() {
         return lessonNumber;

@@ -252,6 +252,7 @@ create table GURU_LESSONS_GRID_ITEM (
     DELETED_BY varchar(50),
     --
     GRID_TYPE_ID uuid not null,
+    WEEK_DAY integer not null,
     LESSON_NUMBER integer not null,
     LESSON_START_TIME time not null,
     --
