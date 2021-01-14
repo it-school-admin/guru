@@ -20,8 +20,9 @@ public class SchoolClass extends StandardEntity {
 
     @Lookup(type = LookupType.DROPDOWN, actions = "lookup")
     @OnDeleteInverse(DeletePolicy.DENY)
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "GRADE_ID")
+    @NotNull
     private ClassGrade grade;
 
     @NotNull
