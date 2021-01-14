@@ -29,5 +29,6 @@
         <class>su.itschool.guru.entity.ClassGrade</class>
         <class>su.itschool.guru.entity.StudyLevel</class>
         <class>su.itschool.guru.entity.StudyProfile</class>
+        <class>su.itschool.guru.entity.StudyShift</class>
     </persistence-unit>
 </persistence>
