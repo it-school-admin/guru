@@ -26,7 +26,10 @@ public class LessonsGridWithItems extends Screen {
 
     @Subscribe("lessonsGridTypesTable")
     public void onLessonsGridTypesTableSelection(Table.SelectionEvent<LessonsGridType> event) {
-        lessonsGridItemsDl.setParameter("grid", event.getSelected().iterator().next());
-        lessonsGridItemsDl.load();
+        if(event.getSelected().size()>0)
+        {
+            lessonsGridItemsDl.setParameter("grid", event.getSelected().iterator().next());
+            lessonsGridItemsDl.load();
+        }
     }
 }

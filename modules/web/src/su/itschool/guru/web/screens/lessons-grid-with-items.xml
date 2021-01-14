@@ -55,7 +55,8 @@
                     <column id="standardAmountOfLessons"/>
                 </columns>
             </groupTable>
-            <groupTable id="lessonsGridItemsTable" height="100%" width="100%" dataContainer="lessonsGridItemsDc">
+            <groupTable id="lessonsGridItemsTable" height="100%" width="100%" dataContainer="lessonsGridItemsDc"
+                        multiselect="true">
                 <actions>
                     <action id="create" type="create"/>
                     <action id="edit" type="edit"/>

@@ -1,7 +1,6 @@
 package su.itschool.guru.listeners;
 
 import com.haulmont.cuba.core.app.events.EntityChangedEvent;
-import com.haulmont.cuba.core.entity.Entity;
 import com.haulmont.cuba.core.global.DataManager;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.event.TransactionPhase;
